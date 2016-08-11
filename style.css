@@ -91,6 +91,15 @@ ul {
 }
 
 
+/* attach tiles */
+
+#cont {
+  margin-top: -20px;
+  width: 100%;
+  background-color: #F2F2F2;
+}
+
+
 /* set 1st span, use :nth-of-type(1), with font size 1.25em and font-weight bold - 10pts */
 
 span:nth-of-type(1) {
@@ -165,58 +174,117 @@ span:nth-of-type(3) {
   }
   /* set headers for tables */
   #htable {
-    display: block;
-    padding: .15em;
-    width: 100%;
-    height: 25px;
     font-size: 18px;
     font-family: "HelveticaNeue-CondensedBold", "Helvetica Neue", 'HelveticaNeue-Medium', 'Helvetica Neue Medium', Helvetica;
     font-color: white;
-    text-align: left;
     background-color: #3399CC;
   }
-/* table preferences */
-  tr {
+  /* table preferences */
+  .ru {
     font-family: 'HelveticaNeue-Medium', 'Helvetica Neue Medium', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
     font-size: 18px;
   }
   #inner {
     text-align: center;
   }
-  table {
+  .ru {
     border-collapse: collapse;
   }
   /* Set borders */
-  table td, th {
+  .ru td,
+  .ru th {
     border: 1px solid;
     border-color: #3399CC;
   }
-  
-  table th{
-    border-top:0;
+  .ru th {
+    border-top: 0;
   }
-  
-  table tr td:first-child,
-  table tr th:first-child {
+  .ru tr td:first-child,
+  .ru tr th:first-child {
     border-left: 0;
   }
-  table tr td:last-child,
-  table tr th:last-child {
+  .ru tr td:last-child,
+  .ru tr th:last-child {
     border-right: 0;
   }
-  /* Fills up empty space in tile */
-  .figure {
-    display: inline-block;
-  }
-  .figure a {
+  /* Google chart settings */
+  #chart_div {
     display: block;
   }
-  .figure .caption {
+  .chartWithOverlay {
+    position: relative;
+  }
+  .overlay {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -30px;
+    /* chartArea top  */
+    left: 120px;
+    /* chartArea left */
+  }
+  /* style for accordian */
+  body {
+    font-family: arial, sans-serif;
+    font-size: 14px;
+  }
+  button.accordion {
+    background-color: #3399cc;
+    color: #F2F2F2;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 15px;
+    transition: 0.4s;
+    font-weight: bold;
+  }
+  button.accordion:before {
+    content: '\02795';
+    font-size: 13px;
+    color: #FFFFFF;
+    float: left;
+    margin-right: 5px;
+  }
+  button.accordion.active:before {
+    content: "\2796";
+  }
+  div.panel {
+    padding: 0;
+    background-color: white;
+    max-height: 0;
+    overflow: hidden;
+    transition: 0.6s ease-in-out;
+    opacity: 0;
+  }
+  div.panel.show {
+    opacity: 1;
+    max-height: 500px;
+  }
+  tbody tr:nth-of-type(2n) {
+    background-color: #F2F2F2;
+  }
+  tbody {
+    background-color: #F2F2F2;
+  }
+  th {
+    background-color: #F2F2F2;
+    font-weight: bold;
+    color: #000;
+    padding: 7px;
+  }
+  td {
+    padding: 7px;
     text-align: center;
-    display: block;
-    height: 100px;
   }
-  .figure {
-    vertical-align: top
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 2px solid #3399CC;
+    margin-top: 13%;
+    padding: 0;
   }
 }

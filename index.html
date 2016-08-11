@@ -1,6 +1,6 @@
-<h1 class="title"><img src="http://ec2-54-209-80-184.compute-1.amazonaws.com/wordpress/wp-content/uploads/2016/02/Wiley_Wordmark_black.png" width="200" height="100"  alt"" /></h1>
+<h1 class="title"><img src="http://ec2-54-209-80-184.compute-1.amazonaws.com/wordpress/wp-content/uploads/2016/02/Wiley_Wordmark_black.png" width="15%" height="100vh"  alt"" style="margin-left:-24px;"/></h1>
 
-<h2 class="header"><img src="https://s10.postimg.org/9az7n9k1l/Capture7.png" width=100% height=50%  alt"" /></h2>
+<h2 class="header"><img src="https://s10.postimg.org/9az7n9k1l/Capture7.png" width=102% height=50%  alt"" style="margin-left:-24px;"/></h2>
 
 <head>
   <!--Load the AJAX API-->
@@ -57,43 +57,48 @@
           minColor: '#3399CC',
           midColor: '#FFCC33',
           maxColor: '#66CC66',
-          headerHeight: 15,
+          headerHeight: 40,
+          headerColor: '#f2f2f2',
           fontColor: 'black',
-          showScale: true
+          fontFamily: 'Helvetica',
+          fontSize: 18
         });
             var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart2.draw(data2, options2);   
-        
-        
         }
   </script>
 </head>
 
 <ul class="learn">
   <li>
+    <span><font color="white">PRODUCT UPDATES</font></span>
 
-    <span><font color="white">GDA gets going in Brazil August 2016!</font></span>
+    <img src="https://s9.postimg.org/hkcvpelvj/Capture5.png" alt="" style="width: 90%; height: 60%; display: block;
+    margin-top: 10%; margin-left: 5%;" />
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/a/ae/Christ_on_Corcovado_mountain.JPG" alt="" />
+    <body>
+      <div id="donutchart" style="width: 100%; height: 400px;"></div>
+    </body>
   </li>
+
   <li>
-    <span><font color="white">IDEAS & PROJECTS</font></span>
+    <span><font color="white">PROJECTS & IDEAS</font></span>
 
-    <div id="chart_div" style="width: 55%; height: 60%; float:left; margin-left:20px; margin-top: 70px"></div>
+    <div id="chart_div" style="width: 55%; height: 60%; float:left; margin-left:20px; margin-top: 38px"></div>
 
-    <div style="margin-left:425px; margin-top: 70px">
-      <img src="http://oi68.tinypic.com/v30pwo.jpg" alt="" style="width:300px !important;height:300px !important;" />
+    <div class="chartWithOverlay" style="margin-left:425px; margin-top: 80px">
+      <img src="http://oi68.tinypic.com/v30pwo.jpg" alt="" style="width:90% !important;height:90% !important;" />
+      <div class="overlay">
+        <div style="font-family:'Helvetica'; font-size: 18px;"><b>Ideas</b></div>
+      </div>
     </div>
 
-
+    <hr width="100%">
   </li>
   <li>
     <span><font color="white">RELIABILITY & USAGE</font></span>
-    <div class="figure">
-      <div class="caption"></div>
-    </div>
 
-    <table style="width:100%">
+    <table class="ru" , style="width:100%; margin-top: 10%">
       <tr>
         <th id="inner">
           <font color="blue">
@@ -108,7 +113,7 @@
           <font color="blue"><u>WPLS</u></th>
       </tr>
 
-      <tr>
+      <tr id="htable">
         <th id="htable">
           <font color="white">RELIABILITY</th>
       </tr>
@@ -149,102 +154,160 @@
 
 
   </li>
+
+  <!-- Accordian -->
   <li>
-
-    <img src="https://s9.postimg.org/59xltekxb/Capture7.png" alt="" />
-  </li>
-
-  <li>
-    <span><font color="white">PRODUCT UPDATES</font></span>
-
-    <img src="https://s9.postimg.org/hkcvpelvj/Capture5.png" alt="" />
+    <span id="cont"></span>
 
     <body>
-      <div id="donutchart" style="width: 100%; height: 400px;"></div>
+      <table width="100%">
+        <tbody valign="middle">
+          <th>
+            <tr>
+              <td style="text-align:left;"><strong>NAME</strong></td>
+              <td><strong>COMPLETE</strong></td>
+              <td><strong>DUE DATE</strong></td>
+              <td><strong>RISK</strong></td> 
+            </tr>
+          </th>
+        </tbody>
+      </table>
+      <button class="accordion">PROCESS</button>
+      <div class="panel">
+        <table width="97%">
+          <tbody valign="middle">
+            <tr>
+              <td style="text-align:left;width:23%;"><a href="#">Operationalizing Digital Delivery</a></td>
+              <td style="width:27%;">85%</td>
+              <td style="width:36%;">08/17</td>
+              <td style="width:11%;"><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
+              <td>85%</td>
+              <td>09/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
+              <td>85%</td>
+              <td>10/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Career Portal</a></td>
+              <td>85%</td>
+              <td>11/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
+              <td>85%</td>
+              <td>12/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="accordion">MAINTENANCE</button>
+      <div class="panel">
+        <table width="97%">
+          <tbody valign="middle">
+            <tr>
+              <td style="text-align:left;width:23%;"><a href="#">Operationalizing Digital Delivery</a></td>
+              <td style="width:27%;">85%</td>
+              <td style="width:36%;">08/17</td>
+              <td style="width:11%;"><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
+              <td>85%</td>
+              <td>09/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
+              <td>85%</td>
+              <td>10/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Career Portal</a></td>
+              <td>85%</td>
+              <td>11/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
+              <td>85%</td>
+              <td>12/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="accordion">NEW PRODUCT</button>
+      <div id="foo" class="panel">
+        <table width="97%">
+          <tbody valign="middle">
+            <tr>
+              <td style="text-align:left;width:23%;"><a href="#">Operationalizing Digital Delivery</a></td>
+              <td style="width:27%;">85%</td>
+              <td style="width:36%;">08/17</td>
+              <td style="width:11%;"><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
+              <td>85%</td>
+              <td>09/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
+              <td>85%</td>
+              <td>10/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Career Portal</a></td>
+              <td>85%</td>
+              <td>11/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+            <tr>
+              <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
+              <td>85%</td>
+              <td>12/17</td>
+              <td><img src="green.png"></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+            acc[i].onclick = function(){
+                this.classList.toggle("active");
+                this.nextElementSibling.classList.toggle("show");
+          }
+        }
+      </script>
+
     </body>
   </li>
 
+  <!-- Projects & Ideas Continued
   <li>
-
-    <span><font color="white">SLIDESHOW</font></span>
-
-    <div id="rt-showcase" class="slider-container rt-overlay-dark">
-      <div class="rt-container slider-container">
-        <div class="rt-grid-12 rt-alpha rt-omega">
-
-
-          <link rel="stylesheet" href="http://cssslider.com/sliders/demo-4/engine1/style.css">
-          <!--[if IE]><link rel="stylesheet" href="http://cssslider.com/sliders/demo-4/engine1/ie.css"><![endif]-->
-          <!--[if lte IE 9]><script type="text/javascript" src="http://cssslider.com/sliders/demo-4/engine1/ie.js"></script><![endif]-->
-
-          <div class="csslider1 autoplay">
-            <input name="cs_anchor1" id="cs_slide1_0" class="cs_anchor slide" type="radio">
-            <input name="cs_anchor1" id="cs_slide1_1" class="cs_anchor slide" type="radio">
-            <input name="cs_anchor1" id="cs_slide1_2" class="cs_anchor slide" type="radio">
-            <input name="cs_anchor1" id="cs_play1" class="cs_anchor" checked="" type="radio">
-            <input name="cs_anchor1" id="cs_pause1" class="cs_anchor" type="radio">
-            <ul>
-              <div style="width: 100%; visibility: hidden; font-size: 0px; line-height: 0;">
-                <img src="http://cssslider.com/sliders/demo-4/data1/images/4.jpg" style="width: 100%;">
-              </div>
-              <li class="num0 img">
-                <img src="http://static.wixstatic.com/media/9d3e6a_118c7e0f3dba41e495feed88dffbe65f~mv1.jpg" alt="Olympics" title="Olympics">
-              </li>
-              <li class="num1 img">
-                <img src="http://i2.cdn.turner.com/cnnnext/dam/assets/160531002057-brazil-olympics-curse-watson-pkg-00015907-super-169.jpg" alt="Sports" title="Sports">
-              </li>
-              <li class="num2 img">
-                <img src="http://www.swiftpassportservices.com/blog/wp-content/uploads/2016/01/Olympic-Venues-Map-Rio-2016-Summer-Olympics-Paralympics.png" alt="Map" title="Map">
-              </li>
-
-            </ul>
-            <div class="cs_description">
-              <label class="num0">
-            <span class="cs_title"><span class="cs_wrapper"></span>Rio Olympics</span>
-            
-        </label>
-              <label class="num1">
-            <span class="cs_title"><span class="cs_wrapper">Sports</span></span>
-            
-        </label>
-              <label class="num2">
-            <span class="cs_title"><span class="cs_wrapper">Map</span></span>
-            
-        </label>
-            </div>
-
-            <div class="cs_arrowprev">
-              <label class="num0" for="cs_slide1_0"></label>
-              <label class="num1" for="cs_slide1_1"></label>
-              <label class="num2" for="cs_slide1_2"></label>
-            </div>
-            <div class="cs_arrownext">
-              <label class="num0" for="cs_slide1_0"></label>
-              <label class="num1" for="cs_slide1_1"></label>
-              <label class="num2" for="cs_slide1_2"></label>
-            </div>
-
-            <div class="cs_bullets">
-              <label class="num0" for="cs_slide1_0">
-            <span class="cs_point"></span>
-            <span class="cs_thumb"><img src="http://cssslider.com/sliders/demo-4/data1/tooltips/4.jpg" alt="Clouds" title="Clouds"></span>
-        </label>
-              <label class="num1" for="cs_slide1_1">
-            <span class="cs_point"></span>
-            <span class="cs_thumb"><img src="http://cssslider.com/sliders/demo-4/data1/tooltips/6.jpg" alt="Typewriter" title="Typewriter"></span>
-        </label>
-              <label class="num2" for="cs_slide1_2">
-            <span class="cs_point"></span>
-            <span class="cs_thumb"><img src="http://cssslider.com/sliders/demo-4/data1/tooltips/5.jpg" alt="Bicycle" title="Bicycle"></span>
-        </label>
-            </div>
-
-          </div>
-        </div>
-        <div class="clear"></div>
-      </div>
-    </div>
+    <span id="cont"></span>
+    <img src="https://s9.postimg.org/59xltekxb/Capture7.png" alt="" />
   </li>
+-->
+
   <li id="news">
     <span><font color="white">YEAR-TO-DATE SALES</font></span>
     <img src="https://s9.postimg.org/vgkvlz7zj/Capture6.png" alt="" />

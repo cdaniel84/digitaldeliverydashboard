@@ -14,7 +14,7 @@
 }
 
 
-/* set the whole row to be as wide as screen with padding 20px, minimum width 250px */
+/* set the whole row to be as wide as screen */
 
 .learn {
   display: block;
@@ -27,7 +27,7 @@
 /* You don't have to change CSS code above, but feel free to do so */
 
 
-/* Please add your own CSS below to implement the page as shown in 3 pictures with different screen size */
+/* Please add your own CSS below to implement the page */
 
 
 /* Use the comments below to guide you through the process */
@@ -36,7 +36,7 @@
 /* ***************************************************************** */
 
 
-/* set tile to share the row, 4 in a row, with proper display, width 25% and height to be 520px - 10pts */
+/* set tile to share the row, 4 in a row, with proper display */
 
 ul {
   display: table;
@@ -50,7 +50,7 @@ ul {
 }
 
 
-/* set tile to remove gap with margin-right:-4px; and set border 5px white and margin-bottom 10px - 10pts */
+/* set tile to remove gap  */
 
 .learn li {
   margin-right: 10px;
@@ -59,16 +59,15 @@ ul {
 }
 
 
-/* set background color lightgrey and vertical align top - 10pts */
+/* set background color lightgrey and vertical align top */
 
 .learn li {
   background-color: #f2f2f2;
-  /* bgcolor="#368BC1" */
   vertical-align: top;
 }
 
 
-/* set image display, width to be as wide as tile - 5pts */
+/* set image display, width to be as wide as tile */
 
 .learn li img {
   display: block;
@@ -77,7 +76,7 @@ ul {
 }
 
 
-/* set span display, width, padding and font-family sans-serif - 10pts */
+/* set span display, width, padding and font-family */
 
 .learn > li > span {
   display: block;
@@ -100,7 +99,7 @@ ul {
 }
 
 
-/* set 1st span, use :nth-of-type(1), with font size 1.25em and font-weight bold - 10pts */
+/* set 1st span, use :nth-of-type(1), */
 
 span:nth-of-type(1) {
   font-size: 1.25em;
@@ -108,7 +107,7 @@ span:nth-of-type(1) {
 }
 
 
-/* set 3rd span, use span:nth-of-type(3), with text-transform uppercase and color green - 10pts */
+/* set 3rd span, use span:nth-of-type(3), */
 
 span:nth-of-type(3) {
   text-transform: uppercase;
@@ -119,14 +118,14 @@ span:nth-of-type(3) {
 /* place 3rd span 10px away from bottom of the tile, in next 2 steps */
 
 
-/* step1, set tile postion relative - 5pts */
+/* step1, set tile postion relative */
 
 .learn li {
   position: relative;
 }
 
 
-/* step2, set 3rd span, use span:nth-of-type(3) selector, position absolute and 10px bottom - 10pts */
+/* step2, set 3rd span, use span:nth-of-type(3) selector, position absolute and 10px bottom */
 
 span:nth-of-type(3) {
   position: absolute;
@@ -135,14 +134,14 @@ span:nth-of-type(3) {
 }
 
 
-/* add > sign with span:nth-of-type(3):after selector and content property - 5pts */
+/* add > sign with span:nth-of-type(3):after selector and content property */
 
 .learn > li > span:nth-of-type(3):after {
   content: "    >";
 }
 
 
-/* single tile row for screen size less than 499px - 5pts */
+/* single tile row for screen size */
 
 @media (max-width: 499px) {
   /* set each tile width 100% */
@@ -152,7 +151,7 @@ span:nth-of-type(3) {
 }
 
 
-/* double tile row for screen size from 500px to 999px - 5pts */
+/* double tile row for screen size from 500px to 999px */
 
 @media (min-width: 500px) and (max-width: 999px) {
   /* set each tile width 50% */
@@ -162,7 +161,7 @@ span:nth-of-type(3) {
 }
 
 
-/* quad tile row for screen size more than 1000px - 5pts */
+/* quad tile row for screen size more than 1000px */
 
 @media (min-width: 1000px) {
   /* set each tile width 25% */
@@ -190,21 +189,24 @@ span:nth-of-type(3) {
   .ru {
     border-collapse: collapse;
   }
+  table{
+    border-collapse: collapse;
+  }
   /* Set borders */
-  .ru td,
-  .ru th {
+  table td,
+  table th {
     border: 1px solid;
     border-color: #3399CC;
   }
-  .ru th {
+  table th {
     border-top: 0;
   }
-  .ru tr td:first-child,
-  .ru tr th:first-child {
+   tr td:first-child,
+   tr th:first-child {
     border-left: 0;
   }
-  .ru tr td:last-child,
-  .ru tr th:last-child {
+  tr td:last-child,
+  tr th:last-child {
     border-right: 0;
   }
   /* Google chart settings */
@@ -280,11 +282,12 @@ span:nth-of-type(3) {
     text-align: center;
   }
   hr {
+    position: absolute;
     display: block;
     height: 1px;
     border: 0;
     border-top: 2px solid #3399CC;
-    margin-top: 13%;
+    margin-top: 60%;
     padding: 0;
   }
 }

@@ -45,9 +45,9 @@ function drawChart() {
         });  
             // Create the data table.
           var data2 = google.visualization.arrayToDataTable([
-            ['Status', 'Percent'],
-            ['Submitted',     60],
-            ['In Review',      40],
+            ['Status', 'Value'],
+            ['Sumbitted',     10],
+            ['In Review',      6],
   //          ['Descoped',  5],
           ]);
 
@@ -57,7 +57,8 @@ function drawChart() {
             title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.4,
-            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16}, 
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
+            pieSliceText: 'value',
             fontSize: 14,
             slices: {
             0: { color: '#66CC66' },

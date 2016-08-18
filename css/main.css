@@ -2,7 +2,7 @@ img{max-height:100%;max-width:100%}#nt-example2 {max-width: 100%;margin: auto;bo
 ul {-webkit-padding-start: 0 !important;}
 #nt-example2 li::before {content:"NEWS";color:#FFF;padding-right:1.3em;}
 #nt-example2 li {color: #000;background-image:linear-gradient(to right,#3399cc,#3399cc 85px,#ffffff 85px,#ffffff 85%,#ffffff 85%);position:static;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;height:27px;line-height: 30px;list-style: none;text-align: left;padding: 0 16px 0 16px;font-size:18px;}
-.headline {width:100%;height:60px;background:#3399CC;}.headline h1 {color:#FFFFFF; text-transform:uppercase; text-align:center; font: bold 28px/60px "Helvetica Neue", Helvetica, Arial, sans-serif;}.columns{background:#F2F2F2;}button.accordion {
+.headline {width:100%;height:40px;background:#3399CC;}.headline h1 {color:#FFFFFF; text-transform:uppercase; text-align:center; font: bold 1.3em/2.2em" Helvetica Neue", Helvetica, Arial, sans-serif;}.columns{background:#F2F2F2;}button.accordion {
     background-color: #3399cc;
     color: #F2F2F2;
     cursor: pointer;

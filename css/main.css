@@ -6,7 +6,7 @@ ul {-webkit-padding-start: 0 !important;}
 .headline {width:100%;height:40px;background:#3399CC;}
 .headline h1 {color:#FFFFFF; text-transform:uppercase; text-align:center; font: bold 1.3em/2.2em" Helvetica Neue", Helvetica, Arial, sans-serif;}
 .columns{background:#F2F2F2;}
-button.accordion background-color: #3399cc;color: #F2F2F2;cursor: pointer;padding: 10px;width: 100%;border: none;text-align: left;outline: none;font-size: 15px;transition: 0.4s;font-weight: bold;}
+button.accordion{ background-color: #3399cc;color: #F2F2F2;cursor: pointer;padding: 10px;width: 100%;border: none;text-align: left;outline: none;font-size: 15px;transition: 0.4s;font-weight: bold;}
 button.accordion:before{content: '\02795';font-size: 13px;color: #FFFFFF !important;float: left;margin-right: 5px;}
 button.accordion.active:before{content: "\2796";color:#FFFFFF;}
 div.panel {padding: 0;background-color:#F2F2F2;max-height: 0;overflow: hidden;transition: 0.6s ease-in-out;opacity: 0;}

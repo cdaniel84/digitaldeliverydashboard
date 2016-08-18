@@ -27,7 +27,9 @@
   <!-- Favicon
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
   <link rel="icon" type="image/png" href="images/favicon.png">
-
+  <!--Load the AJAX API-->
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript" src="script.js"></script>
 </head>
 <body>
 
@@ -42,9 +44,16 @@
 		<li>Sample News Story #3</li>
 		<li>Sample News Story #4</li>
 	</ul>
-
   <div class="row">
-    <div class="six columns">
+    <div class="twelve columns">
+    <div class="headline"><h1>Year-to-date sales
+   	    <img src="images/contact-icon.png" data-featherlight="#mylightbox" alt="" style="float:right; margin-top:9px;"/></h1>
+    </div> 
+    <img src="https://i.imgsafe.org/205d00492f.jpg" alt="" />
+    </div>
+    </div>
+  <div class="row">
+    <div class="six columns">   
    	  <div class="headline"><h1>Product Updates
       <img src="images/contact-icon.png" data-featherlight="#mylightbox" alt="" style="float:right; margin-top:9px;"/></h1></div> <img src="https://s9.postimg.org/hkcvpelvj/Capture5.png" />
 	  <div class="lightbox" id="mylightbox">
@@ -80,7 +89,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <td>256</td>
   </tr>
   <tr bgcolor="#3399CC">
-    <td colspan="5" style="text-align:left;color:#FFFFFF;"">UNIQUE VISITORS</td>
+    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
     </tr>
   <tr>
     <td style="text-align:left">Past 7 Days</td>
@@ -102,6 +111,8 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <div class="six columns"><div class="headline"><h1>Ideas &amp; Projects
    	      <img src="images/contact-icon.png" data-featherlight="#mylightbox" alt="" style="float:right; margin-top:9px;"/></h1>
     </div>
+        <div id="chart_div" style="width: 45%; height: 78%; float:left; margin-left:20px; margin-top: 38px"></div>
+        <div id="donutchart" style="width: 45%; height: 78%; float:right; margin-top: 38px"></div>
         <table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle">
     <tr>
@@ -228,14 +239,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 
         </div>
   </div>
-  <div class="row">
-    <div class="twelve columns">
-    <div class="headline"><h1>Year-to-date sales
-   	    <img src="images/contact-icon.png" data-featherlight="#mylightbox" alt="" style="float:right; margin-top:9px;"/></h1>
-    </div> 
-    <img src="https://i.imgsafe.org/205d00492f.jpg" alt="" />
-    </div>
-    </div>
+
 </div>
 
     <!-- Placed at the end of the document so the pages load faster -->

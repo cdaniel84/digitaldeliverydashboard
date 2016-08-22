@@ -29,7 +29,193 @@
   <link rel="icon" type="image/png" href="images/favicon.png">
   <!--Load the AJAX API-->
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+google.load('visualization', '1', {
+    'packages': ['corechart']
+});
+google.load('visualization', '1', {
+    'packages': ['treemap']
+});
+
+
+google.setOnLoadCallback(drawChart);
+
+function drawChart() {
+
+                        // Create the data table.        
+        var data = google.visualization.arrayToDataTable([
+          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
+          ['Projects',    null,                 0,                               0],
+          ['Prototype',   'Projects',             0,                               0],
+          ['POC',    'Projects',             0,                               0],
+          ['Discovery',      'Projects',             0,                               0],
+          ['On Hold', 'Projects',             0,                               0],
+          ['Pilot',    'Projects',             0,                               0],
+          ['Prototype 1',    'Prototype',            11,                              5],
+          ['Prototype 2',       'Prototype',            52,                              10],
+          ['POC 1',    'POC',             42,                              100],
+          ['POC 2',   'POC',             31,                              90],
+          ['Discovery 1',     'Discovery',               36,                              55],
+          ['Discovery 2',     'Discovery',               20,                              50],
+          ['Discovery 3',     'Discovery',               40,                              63],
+          ['Pilot 1',     'Pilot',             21,                              50],
+          ['On Hold 1',     'On Hold',             21,                              5],          
+        ]);
+            // Instantiate and draw our chart, passing in some options.
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+
+        tree.draw(data, {
+          minColor: '#3399CC',
+          midColor: '#FFCC33',
+          maxColor: '#66CC66',
+          headerHeight: 40,
+          headerColor: '#f2f2f2',          
+          titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
+          fontColor: 'black',
+          fontFamily: 'Helvetica',
+          fontSize: 18
+        });  
+            // Create the data table.
+          var data2 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Submitted',     10],
+            ['In Review',      6],
+  //          ['Descoped',  5],
+          ]);
+
+          var options2 = {
+            legend: {position: 'bottom'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.4,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#66CC66' },
+            1: { color: '#FFCC33' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart2.draw(data2, options2);   
+  
+  
+              // Create the data tables for project updates
+          var data3 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     33],
+            ['On Track',      33],
+            ['Descoped',  33],
+          ]);
+
+          var options3 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 1, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: 'darkgrey' },
+            1: { color: 'darkgrey' },
+            2: { color: 'darkgrey'}}
+          }; 
+
+            var chart3 = new google.visualization.PieChart(document.getElementById('donutchart2'));
+            chart3.draw(data3, options3);
+  
+                // Create the data table.
+          var data4 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     35],
+            ['On Track',      60],
+            ['Descoped',  5],
+          ]);
+
+          var options4 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart4 = new google.visualization.PieChart(document.getElementById('donutchart3'));
+            chart4.draw(data4, options4);
+  
+                // Create the data table.
+          var data5 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     20],
+            ['On Track',      75],
+            ['Descoped',  5],
+          ]);
+
+          var options5 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart5 = new google.visualization.PieChart(document.getElementById('donutchart4'));
+            chart5.draw(data5, options5);
+  
+                // Create the data table.
+          var data6 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     20],
+            ['On Track',      80],
+            ['Descoped',  0],
+          ]);
+
+          var options6 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2', 
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart6 = new google.visualization.PieChart(document.getElementById('donutchart5'));
+            chart6.draw(data6, options6);
+        
+}
+
+</script>
 </head>
 <body>
 
@@ -55,7 +241,34 @@
   <div class="row">
     <div class="six columns">   
    	  <div class="headline"><h1>Product Updates
-      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1></div> <img src="https://s9.postimg.org/hkcvpelvj/Capture5.png" />
+      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+	 
+	  <!-- Product Updates Charts -->
+	  
+	<div style="font-size: 22px; margin-top:10%; margin-left: 7%"><font color="blue"><u><b>Dummies</b></u></font>
+     <div style="font-size: 22px; margin-left: 60px; display:inline-block"><font color="blue"><u><b>WEL</b></u></font></div>
+     <div style="font-size: 22px; margin-left: 50px; display:inline-block"><font color="blue"><u><b>WileyPLUS</b></u></font></div>
+     <div style="font-size: 22px; margin-left: 40px; display:inline-block"><font color="blue"><u><b>WPLS</b></u></font></div>
+    </div>
+    
+    
+    <div class=intext style="margin-left: 3%; margin-top: 70px; z-index: 3">Jun 30
+      <div style="display:inline-block; margin-left: 65px">Jun 30</div>
+      <div style="display:inline-block; margin-left: 65px">Aug 25</div>      
+      <div style="display:inline-block; margin-left: 65px">Sep 10</div>
+        <div class=innertext style="margin-top: -15px">next release
+			  <div style="display:inline-block; margin-left: 65px">next release</div>
+			  <div style="display:inline-block; margin-left: 70px">next release </div>      
+			  <div style="display:inline-block; margin-left: 70px">next release</div>
+		</div>    
+    </div>
+
+    <div id="donutchart2" style="width: 22%; height: 44%; margin-left:10px; display: inline-block; position: relative"></div>
+        <div id="donutchart3" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
+        <div id="donutchart4" style="width:22%; height: 44%; margin-left:10px; display: inline-block"></div>
+       <div id="donutchart5" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
+    <img src="https://i.imgsafe.org/5d8b819914.jpg" alt="" style="width: 50%; height: 10%; margin-left: 45%; margin-top: 20px"/>
+
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
 
@@ -111,8 +324,14 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <div class="six columns"><div class="headline"><h1>Ideas &amp; Projects
    	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
     </div>
-        <div id="chart_div" style="width: 45%; height: 78%; float:left; margin-left:20px; margin-top: 38px"></div>
-        <div id="donutchart" style="width: 45%; height: 78%; float:right; margin-top: 38px"></div>
+      
+<!-- Ideas and projects charts -->	
+	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; border-top: 2px solid #3399CC; margin-top: 19%; padding: 0;">
+    <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
+
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 60%; margin-top: 40px"></div>
+	  
+	  
         <table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle">
     <tr>
@@ -161,7 +380,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 </table>
 </div>
 
-<button class="accordion">MAINTANCE</button>
+<button class="accordion">MAINTENANCE</button>
 <div class="panel">
   <table width="100%">
 <tbody valign="middle">

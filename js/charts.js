@@ -37,7 +37,7 @@ function drawChart() {
           midColor: '#FFCC33',
           maxColor: '#66CC66',
           headerHeight: 40,
-          headerColor: '#f2f2f2',
+          headerColor: '#f2f2f2',          
           titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
           fontColor: 'black',
           fontFamily: 'Helvetica',
@@ -46,7 +46,7 @@ function drawChart() {
             // Create the data table.
           var data2 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
-            ['Sumbitted',     10],
+            ['Submitted',     10],
             ['In Review',      6],
   //          ['Descoped',  5],
           ]);
@@ -57,6 +57,7 @@ function drawChart() {
             title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.4,
+            'chartArea': {'width': '100%', 'height': '80%'},
             pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
             pieSliceText: 'value',
             fontSize: 14,
@@ -68,5 +69,114 @@ function drawChart() {
 
             var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart2.draw(data2, options2);   
+  
+  
+              // Create the data tables for project updates
+          var data3 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     33],
+            ['On Track',      33],
+            ['Descoped',  33],
+          ]);
+
+          var options3 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 1, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: 'darkgrey' },
+            1: { color: 'darkgrey' },
+            2: { color: 'darkgrey'}}
+          }; 
+
+            var chart3 = new google.visualization.PieChart(document.getElementById('donutchart2'));
+            chart3.draw(data3, options3);
+  
+                // Create the data table.
+          var data4 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     35],
+            ['On Track',      60],
+            ['Descoped',  5],
+          ]);
+
+          var options4 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart4 = new google.visualization.PieChart(document.getElementById('donutchart3'));
+            chart4.draw(data4, options4);
+  
+                // Create the data table.
+          var data5 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     20],
+            ['On Track',      75],
+            ['Descoped',  5],
+          ]);
+
+          var options5 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart5 = new google.visualization.PieChart(document.getElementById('donutchart4'));
+            chart5.draw(data5, options5);
+  
+                // Create the data table.
+          var data6 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',     20],
+            ['On Track',      80],
+            ['Descoped',  0],
+          ]);
+
+          var options6 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2', 
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.55,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+
+            var chart6 = new google.visualization.PieChart(document.getElementById('donutchart5'));
+            chart6.draw(data6, options6);
         
 }

@@ -15,6 +15,8 @@ tbody tr:nth-of-type(2n) {background-color: #F2F2F2;}
 tbody {background-color: #F2F2F2;}
 th {background-color:#F2F2F2;font-weight:bold;color:#000;padding:7px;}
 td {padding:7px;text-align: center;}
+.tooltipHelp {display: inline;background-color: #daded4;padding: 1px 7px;border-radius: 10px;font-size: 15px; font-weight: 600;line-height: 18px;text-align: center;color: #272f37;cursor: pointer;}
+.tooltipHelp:hover,.tooltipHelp:focus,.tooltipHelp:active {text-decoration: none;color: #272f37;}
 .lightbox { display: none; }
   .intext{
     position: absolute;

@@ -8,10 +8,10 @@ google.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
-                        // Create the data table.        
-        var data = google.visualization.arrayToDataTable([
+                        // PROJECTS - TREEMAP  - clean up template names    
+        var data = google.visualization.arrayToDataTable([ 
           ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
-          ['Projects',    null,                 0,                               0],
+          ['Projects',    null, 0, 0],
           ['Prototype',   'Projects',             0,                               0],
           ['POC',    'Projects',             0,                               0],
           ['Discovery',      'Projects',             0,                               0],
@@ -41,18 +41,17 @@ function drawChart() {
           fontFamily: 'Helvetica',
           fontSize: 18
         });  
-            // Create the data table.
+            // PROJECTS & IDEAS - DONUT CHART
           var data2 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Sumbitted',     10],
             ['In Review',      6],
-  //          ['Descoped',  5],
           ]);
 
           var options2 = {
             legend: {position: 'bottom'},
             backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
+            title: 'ideas_donut',
             titlePosition: 'none',
             pieHole: 0.5,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -69,7 +68,7 @@ function drawChart() {
             ideas.draw(data2, options2);   
   
   
-              // Create the data tables for project updates
+              // DONUT CHART 1 FOR PRODUCT UPDATES
           var data3 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     33],
@@ -80,7 +79,7 @@ function drawChart() {
           var options3 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
+            title: 'productdonut1',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -96,7 +95,7 @@ function drawChart() {
             var dummies = new google.visualization.PieChart(document.getElementById('dummies'));
             dummies.draw(data3, options3);
   
-                // Create the data table.
+                // PRODUCT UPDATES - DONUT CHART 2
           var data4 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     35],
@@ -107,7 +106,7 @@ function drawChart() {
           var options4 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
+            title: 'productdonut2',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -123,7 +122,7 @@ function drawChart() {
             var wel = new google.visualization.PieChart(document.getElementById('wel'));
             wel.draw(data4, options4);
   
-                // Create the data table.
+        //PRODUCT UPDATES - DONUT CHART 3
           var data5 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     20],
@@ -134,7 +133,7 @@ function drawChart() {
           var options5 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
+            title: 'productdonut3',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -150,7 +149,7 @@ function drawChart() {
             var wileyplus = new google.visualization.PieChart(document.getElementById('wileyplus'));
             wileyplus.draw(data5, options5);
   
-                // Create the data table.
+                // PRODUCT UPDATES - DONUT CHART 4
           var data6 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     20],
@@ -161,7 +160,7 @@ function drawChart() {
           var options6 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2', 
-            title: 'WileyPLUS',
+            title: 'productdonut4',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -199,7 +198,6 @@ function drawChart() {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
-        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -242,7 +240,6 @@ function drawChart() {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
-        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -285,7 +282,6 @@ function drawChart() {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
-        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -328,7 +324,6 @@ function drawChart() {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'bottom'},
-        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',

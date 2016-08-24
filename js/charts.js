@@ -1,31 +1,30 @@
+//load in packages for tree, line, and donut charts
 google.load('visualization', '1', {
     'packages': ['corechart','treemap', 'line']
 });
-
-
 
 google.setOnLoadCallback(drawChart);
 
 function drawChart() {
 
-                        // PROJECTS - TREEMAP  - clean up template names    
+	// PROJECTS - TREEMAP    
         var data = google.visualization.arrayToDataTable([ 
-          ['Location', 'Parent', 'Market trade volume (size)', 'Market increase/decrease (color)'],
-          ['Projects',    null, 0, 0],
-          ['Prototype',   'Projects',             0,                               0],
-          ['POC',    'Projects',             0,                               0],
-          ['Discovery',      'Projects',             0,                               0],
-          ['On Hold', 'Projects',             0,                               0],
-          ['Pilot',    'Projects',             0,                               0],
-          ['Prototype 1',    'Prototype',            11,                              5],
-          ['Prototype 2',       'Prototype',            52,                              10],
-          ['POC 1',    'POC',             42,                              100],
-          ['POC 2',   'POC',             31,                              90],
-          ['Discovery 1',     'Discovery',               36,                              55],
-          ['Discovery 2',     'Discovery',               20,                              50],
-          ['Discovery 3',     'Discovery',               40,                              63],
-          ['Pilot 1',     'Pilot',             21,                              50],
-          ['On Hold 1',     'On Hold',             21,                              5],          
+          ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],		
+          ['Projects', null, 0, 0],
+          ['Prototype',   'Projects', 0,0],
+          ['POC', 'Projects', 0, 0],
+          ['Discovery', 'Projects', 0, 0],
+          ['On Hold', 'Projects', 0, 0],
+          ['Pilot', 'Projects', 0, 0],
+          ['Prototype 1', 'Prototype', 11, 5],
+          ['Prototype 2', 'Prototype', 52, 10],
+          ['POC 1', 'POC', 42, 100],
+          ['POC 2', 'POC', 31, 90],
+          ['Discovery 1', 'Discovery', 36, 55],
+          ['Discovery 2', 'Discovery', 20, 50],
+          ['Discovery 3', 'Discovery', 40, 63],
+          ['Pilot 1', 'Pilot', 21, 50],
+          ['On Hold 1', 'On Hold', 21, 5],          
         ]);
             // Instantiate and draw our chart, passing in some options.
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
@@ -68,7 +67,7 @@ function drawChart() {
             ideas.draw(data2, options2);   
   
   
-              // DONUT CHART 1 FOR PRODUCT UPDATES
+              // DUMMIES DONUT CHART 1 FOR PRODUCT UPDATES
           var data3 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     33],
@@ -79,7 +78,7 @@ function drawChart() {
           var options3 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2',
-            title: 'productdonut1',
+            title: 'Dummies',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -95,7 +94,7 @@ function drawChart() {
             var dummies = new google.visualization.PieChart(document.getElementById('dummies'));
             dummies.draw(data3, options3);
   
-                // PRODUCT UPDATES - DONUT CHART 2
+                // PRODUCT UPDATES - WEL DONUT CHART 1
           var data4 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     35],
@@ -106,7 +105,7 @@ function drawChart() {
           var options4 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2',
-            title: 'productdonut2',
+            title: 'WEL',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -122,7 +121,7 @@ function drawChart() {
             var wel = new google.visualization.PieChart(document.getElementById('wel'));
             wel.draw(data4, options4);
   
-        //PRODUCT UPDATES - DONUT CHART 3
+        //PRODUCT UPDATES - WILEYPLUS DONUT CHART 3
           var data5 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     20],
@@ -133,7 +132,7 @@ function drawChart() {
           var options5 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2',
-            title: 'productdonut3',
+            title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -149,7 +148,7 @@ function drawChart() {
             var wileyplus = new google.visualization.PieChart(document.getElementById('wileyplus'));
             wileyplus.draw(data5, options5);
   
-                // PRODUCT UPDATES - DONUT CHART 4
+                // PRODUCT UPDATES - WPLS DONUT CHART 4
           var data6 = google.visualization.arrayToDataTable([
             ['Status', 'Value'],
             ['Delayed',     20],
@@ -160,7 +159,7 @@ function drawChart() {
           var options6 = {
             legend: {position: 'none'},
             backgroundColor: '#F2F2F2', 
-            title: 'productdonut4',
+            title: 'WPLS',
             titlePosition: 'none',
             pieHole: 0.55,
             'chartArea': {'width': '100%', 'height': '80%'},
@@ -176,7 +175,7 @@ function drawChart() {
             var wpls = new google.visualization.PieChart(document.getElementById('wpls'));
             wpls.draw(data6, options6);
 
-  //create first line chart
+  //create first line chart - DUMMIES
       var data7 = new google.visualization.DataTable();
       data7.addColumn('number', 'X');
       data7.addColumn('number', 'year 2017');
@@ -218,7 +217,7 @@ function drawChart() {
       line.draw(data7, options7);
   
   
- //create 2nd line chart
+ //create 2nd line chart - WEL
         var data8 = new google.visualization.DataTable();
       data8.addColumn('number', 'X');
       data8.addColumn('number', 'year 2017');
@@ -260,7 +259,7 @@ function drawChart() {
       line2.draw(data8, options8);
   
   
-  //create 3rd line chart
+  //create 3rd line chart - WILEYPLUS
         var data9 = new google.visualization.DataTable();
       data9.addColumn('number', 'X');
       data9.addColumn('number', 'year 2017');
@@ -302,7 +301,7 @@ function drawChart() {
       line3.draw(data9, options9);
   
   
-  //create 4th chart
+  //create 4th chart - WPLS
         var data10 = new google.visualization.DataTable();
       data10.addColumn('number', 'X');
       data10.addColumn('number', 'year 2017');

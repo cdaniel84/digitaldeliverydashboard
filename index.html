@@ -11,15 +11,19 @@
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
   <link rel="icon" type="image/png" href="images/favicon.png">
-<script type="text/javascript" src="https://www.google.com/jsapi"></script>
-<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
+
 google.load('visualization', '1', {
-    'packages': ['corechart']
+    'packages': ['corechart','treemap', 'line']
 });
-google.load('visualization', '1', {
-    'packages': ['treemap']
-});
+
+
+//google.load('visualization', '1', {
+  //  'packages': ['corechart']});
+//google.load('visualization', '1', {
+  //  'packages': ['treemap']});
 google.setOnLoadCallback(drawChart);
 function drawChart() {
 	// PROJECTS - TREEMAP    
@@ -179,6 +183,176 @@ function drawChart() {
             var chart6 = new google.visualization.PieChart(document.getElementById('donutchart5'));
             chart6.draw(data6, options6);
         
+		  //create first line chart - Dummies
+      var data7 = new google.visualization.DataTable();
+      data7.addColumn('number', 'X');
+      data7.addColumn('number', 'year 2017');
+      data7.addColumn('number', 'year 2016');
+//Edit Data point (x, y1, y2)
+      data7.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options7 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [0,100,200,300,400, 500],           
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line = new google.visualization.LineChart(document.getElementById('line'));
+      line.draw(data7, options7);
+  
+  
+ //create 2nd line chart - WEL
+        var data8 = new google.visualization.DataTable();
+      data8.addColumn('number', 'X');
+      data8.addColumn('number', 'year 2017');
+      data8.addColumn('number', 'year 2016');
+//Edit Data point (x, y1, y2)
+      data8.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options8 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [0,100,200,300,400, 500],           
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line2 = new google.visualization.LineChart(document.getElementById('line2'));
+      line2.draw(data8, options8);
+  
+  
+  //create 3rd line chart - WileyPLUS
+        var data9 = new google.visualization.DataTable();
+      data9.addColumn('number', 'X');
+      data9.addColumn('number', 'year 2017');
+      data9.addColumn('number', 'year 2016');
+//Edit Data point (x, y1, y2)
+      data9.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options9 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [0,100,200,300,400, 500],           
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line3 = new google.visualization.LineChart(document.getElementById('line3'));
+      line3.draw(data9, options9);
+  
+  
+  //create 4th chart - WPLS
+        var data10 = new google.visualization.DataTable();
+      data10.addColumn('number', 'X');
+      data10.addColumn('number', 'year 2017');
+      data10.addColumn('number', 'year 2016');
+//Edit Data point (x, y1, y2)
+      data10.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options10 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'bottom'},
+        //chartArea:{left:20,top:0,width:'50%',height:'75%'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [0,100,200,300,400, 500],           
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line4 = new google.visualization.LineChart(document.getElementById('line4'));
+      line4.draw(data10, options10);
 }
 </script>
 </head>
@@ -200,7 +374,37 @@ function drawChart() {
     <div class="headline"><h1>Year-to-date sales
    	    <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
     </div> 
-    <img src="https://i.imgsafe.org/205d00492f.jpg" alt="" />
+	
+    <!-- YTD Sales Image: 
+	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
+	-->
+	
+	<!-- Line Charts -->
+	
+	    <div style="font-size: 26px; margin-top:1%; margin-left: 10%"><font color="blue"><u><b>Dummies</b></u></font>
+     <div style="font-size: 26px; margin-left: 18%; display:inline-block"><font color="blue"><u><b>WEL</b></u></font></div>
+       <div style="font-size: 26px; margin-left: 18%; display:inline-block"><font color="blue"><u><b>WileyPLUS</b></u></font></div>
+         <div style="font-size: 26px; margin-left: 18%; display:inline-block"><font color="blue"><u><b>WPLS</b></u></font></div>
+      </div>   
+        
+  <div id="line" style="width:25%; height: 50%; display:inline-block"></div>  
+  <div id="line2" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div> 
+  <div id="line3" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div> 
+  <div id="line4" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div>   
+        
+        <div style="font-size: 30px; margin-left: 10%"><font color="#66CC66"><b>$300K</b></font>
+     <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>10K</b></font></div>
+       <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>44K</b></font></div>
+         <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>44K</b></font></div>
+      </div>       
+        
+        <div style="font-size: 30px; margin-top:-1%; margin-left: 10%"><font color="#FFCC33"><b>$250K</b></font>
+     <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b> &nbsp; 9K</b></font></div>
+       <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b>33K</b></font></div>
+         <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b>33K</b></font></div>
+      </div>   
+	
+	
     </div>
     </div>
   <div class="row">

@@ -55,10 +55,13 @@ function drawChart() {
           fontSize: 18
         });  
             // PROJECTS & IDEAS - DONUT CHART
+          // PROJECTS & IDEAS - DONUT CHART
           var data2 = google.visualization.arrayToDataTable([
             ['Status', 'none'],
-            ['Submitted',     10 /* Input custom y*/],
-            ['In Review',      6 /* Input custom y*/],
+            ['On Hold',     1 /* Input custom y*/],
+            ['Under Review',      4 /* Input custom y*/],
+            ['Approved',      7 /* Input custom y*/],
+            ['Not Approved',      2 /* Input custom y*/],			
           ]);
           var options2 = {
             legend: {position: 'bottom'},
@@ -71,12 +74,14 @@ function drawChart() {
             pieSliceText: 'value',
             fontSize: 14,
             slices: {
-            0: { color: '#66CC66' },
+            0: { color: '#3399CC' },
             1: { color: '#FFCC33' },
-            2: { color: '#CC3300'}}
+            2: { color: '#66CC66'},
+			3: { color: '#CC3300'}
+			}
           }; 
             var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
-            chart2.draw(data2, options2);   
+            chart2.draw(data2, options2);     
   
   
               // DUMMIES DONUT CHART 1 FOR PRODUCT UPDATES
@@ -363,7 +368,7 @@ function drawChart() {
 	</ul>
 <div class="row">
     <div class="twelve columns">
-    <div class="headline"><h1>Year-to-date Sales / Revenue
+    <div class="headline"><h1>Year-to-date sales
    	    <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
     </div> 
 	

@@ -140,6 +140,15 @@ span:nth-of-type(3) {
   content: "    >";
 }
 
+/*Product Update Info Cards*/
+
+.e4release {
+    background:#FFF;
+    width:125px;
+    float:left;
+    position:relative;
+    height:75px;
+}
 
 /* single tile row for screen size */
 

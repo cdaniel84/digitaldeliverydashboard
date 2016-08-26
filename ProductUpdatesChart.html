@@ -10,11 +10,7 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-<<<<<<< HEAD
-  <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
-=======
   <link rel="icon" type="image/png" href="images/favicon.png">
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
@@ -35,7 +31,6 @@ function drawChart() {
           ['Discovery', 'Projects',     0 /* Input custom x*/,  0 /* Input custom y*/],
           ['On Hold', 'Projects',       0 /* Input custom x*/,  0 /* Input custom y*/],
           ['Pilot', 'Projects',         0 /* Input custom x*/,  0 /* Input custom y*/],
-<<<<<<< HEAD
           ['Prototype 1', 'Prototype', 11 /* Input custom x*/,  5 /* Input custom y*/],
           ['Prototype 2', 'Prototype', 52 /* Input custom x*/, 10 /* Input custom y*/],
           ['POC 1', 'POC',             42 /* Input custom x*/,100 /* Input custom y*/],
@@ -45,18 +40,6 @@ function drawChart() {
           ['Discovery 3', 'Discovery', 40 /* Input custom x*/, 63 /* Input custom y*/],
           ['Pilot 1', 'Pilot',         21 /* Input custom x*/, 50 /* Input custom y*/],
           ['On Hold 1', 'On Hold',     21 /* Input custom x*/,  5 /* Input custom y*/],          
-=======
-		  ['Launch', 'Projects',        0                    ,  0                    ],
-		  ['Global Diagnostic Assessment', 'Launch', 22                    ,  5                    ],		  
-          ['DD Dashboard', 'Prototype', 52 /* Input custom x*/,  10 /* Input custom y*/],
-          ['Wiley Answers', 'Prototype', 52 /* Input custom x*/, 10 /* Input custom y*/],
-          ['AGU Data Science Courseware', 'Prototype', 52 /* Input custom x*/, 10 /* Input custom y*/],		  
-          ['Career Portal', 'POC',             42 /* Input custom x*/,100 /* Input custom y*/],
-          ['Wiley Problems', 'Discovery', 36 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 36 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Wiley Assessment Service', 'Pilot',         21 /* Input custom x*/, 50 /* Input custom y*/],
-          ['None', 'On Hold',     21 /* Input custom x*/,  5 /* Input custom y*/],          
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
         ]);
             // Instantiate and draw our chart, passing in some options.
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
@@ -69,24 +52,13 @@ function drawChart() {
           titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
           fontColor: 'black',
           fontFamily: 'Helvetica',
-<<<<<<< HEAD
           fontSize: 18
-=======
-          fontSize: 16
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
         });  
             // PROJECTS & IDEAS - DONUT CHART
           var data2 = google.visualization.arrayToDataTable([
             ['Status', 'none'],
-<<<<<<< HEAD
             ['Submitted',     10 /* Input custom y*/],
             ['In Review',      6 /* Input custom y*/],
-=======
-            ['On Hold',     1 /* Input custom y*/],
-            ['Under Review',      4 /* Input custom y*/],
-            ['Approved',      7 /* Input custom y*/],
-            ['Not Approved',      2 /* Input custom y*/],			
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
           ]);
           var options2 = {
             legend: {position: 'bottom'},
@@ -99,17 +71,9 @@ function drawChart() {
             pieSliceText: 'value',
             fontSize: 14,
             slices: {
-<<<<<<< HEAD
             0: { color: '#66CC66' },
             1: { color: '#FFCC33' },
             2: { color: '#CC3300'}}
-=======
-            0: { color: '#3399CC' },
-            1: { color: '#FFCC33' },
-            2: { color: '#66CC66'},
-			3: { color: '#CC3300'}
-			}
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
           }; 
             var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart2.draw(data2, options2);   
@@ -306,7 +270,6 @@ function drawChart() {
       data9.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data9.addRows([
-<<<<<<< HEAD
         [0,  100, 210],
         [.5, 150, 185],
         [1,  200, 160],
@@ -316,13 +279,6 @@ function drawChart() {
         [3,   180, 400],
         [3.5,   , 400],
         [4,  , 400],
-=======
-        [0,  14719037, 16554171],
-        [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
       ]);
 
       var options9 = {
@@ -336,11 +292,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         vAxis: {
-<<<<<<< HEAD
           ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],            
-=======
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],          
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -360,7 +312,6 @@ function drawChart() {
       data10.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data10.addRows([
-<<<<<<< HEAD
         [0,  100, 210],
         [.5, 150, 185],
         [1,  200, 160],
@@ -370,13 +321,6 @@ function drawChart() {
         [3,   180, 400],
         [3.5,   , 400],
         [4,  , 400],
-=======
-        [0,  14719037, 16554171],
-        [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
       ]);
 
       var options10 = {
@@ -390,11 +334,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         vAxis: {
-<<<<<<< HEAD
           ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
-=======
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],             
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -421,7 +361,7 @@ function drawChart() {
 		<li>Sample News Story #3</li>
 		<li>Sample News Story #4</li>
 	</ul>
-<div class="row">
+  <div class="row">
     <div class="twelve columns">
     <div class="headline"><h1>Year-to-date sales
    	    <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
@@ -433,25 +373,6 @@ function drawChart() {
 	
 	<!-- Line Charts -->
 	
-<<<<<<< HEAD
-	    
-<div class="lines">        
-<a href="#">Dummies</a>      
-  <div id="line"></div>
-  <div class="revenue">    
-        <p id="revA">$300k</p>
-    <div id="revborder">Ad Revenue</div>    
-        <p id="revB">$250k</p>
-        </div>
-</div>
-<div class="lines">
-<a href="#">WEL</a>        
-  <div id="line2"></div>
-<div class="revenue">
-    <p id="revA">10k</p>
-<div id="revborder">Conversions</div>
-    <p id="revB">9k</p>
-=======
 	    <div style="font-size: 26px; margin-top:1%; margin-left: 10%"><font color="blue"><u><b>Dummies</b></u></font>
      <div style="font-size: 26px; margin-left: 15%; display:inline-block"><font color="blue"><u><b>WEL</b></u></font></div>
        <div style="font-size: 26px; margin-left: 18%; display:inline-block"><font color="blue"><u><b>WileyPLUS</b></u></font></div>
@@ -477,120 +398,150 @@ function drawChart() {
 	
 	
     </div>
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
     </div>
-</div>
-<div class="lines">
-    <a href="#">WileyPLUS</a>
-  <div id="line3"></div>
-<div class="revenue">
-    <p id="revA">44k</p>
-    <div id="revborder">Validation</div>
-    <p id="revB">33k</p>
-    </div>    
-</div>    
-<div class="lines">
-<a href="#">WPLS</a>    
-  <div id="line4"></div>
-<div class="revenue">
-    <p id="revA">44k</p>
-<div id="revborder">Validation</div>
-    <p id="revB">33k</p>
-    </div>    
-</div>        
-        
-      </div>   
-	 
-    
- 
   <div class="row">
-    <div class="six columns" style="max-height:450px;">   
+    <div class="six columns">   
    	  <div class="headline"><h1>Product Updates
       <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
 	 
-<<<<<<< HEAD
-	    <p id="infolink"><a href="#">Dummies</a></p>
-    <div class="dummiesrelease">
-        <ul>
-        <li>Lockdown Browser</li>
-        <li>Printed Test Upgraded Functionality</li>
-        <li>Performance Updates</li>
-        </ul>
-        
-    <p>Oct<br> 22</p>
-    </div>
-    <p id="infolink"><a href="#">WileyPLUS</a></p>
-    <div class="e4release">
-        <ul>
-        <li>Lockdown Browser</li>
-        <li>Printed Test Upgraded Functionality</li>
-        <li>Performance Updates</li>
-        </ul>
-        
-    <p>Oct<br> 22</p>
-    </div>
-        
-    <p id="infolinkright"><a href="#">WEL</a></p>
-<div class="welrelease">
-        <ul>
-        <li>Lockdown Browser</li>
-        <li>Printed Test Upgraded Functionality</li>
-        <li>Performance Updates</li>
-        </ul>
-        
-    <p>Oct<br> 22</p>
-    </div>
-        
-    <p id="infolinkrightbottom"><a href="#">WPLS</a></p>
-<div class="wplsrelease">
-        <ul>
-        <li>Lockdown Browser</li>
-        <li>Printed Test Upgraded Functionality</li>
-        <li>Performance Updates</li>
-        </ul>
-        
-    <p>Oct<br> 22</p>
-    </div>        
-=======
 	  <!-- Product Updates Charts -->
+	  <!-- Header - date - risk, IN - top 3 user stories, Backlog -->
 	  
-	<div style="font-size: 22px; margin-top:10%; margin-left: 7%"><font color="blue"><u><b>Dummies</b></u></font>
-     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><u><b>WEL</b></u></font></div>
-     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><u><b>WileyPLUS</b></u></font></div>
-     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><u><b>WPLS</b></u></font></div>
-    </div>
-    
-    
-    <div class=intext style="margin-left: 3%; margin-top: 160px; z-index: 3">Jun 30
-      <div style="display:inline-block; margin-left: 65px">Jun 30</div>
-      <div style="display:inline-block; margin-left: 65px">Aug 25</div>      
-      <div style="display:inline-block; margin-left: 65px">Sep 10</div>
-        <div class=innertext style="margin-top: -10px">next release
-			  <div style="display:inline-block; margin-left: 65px">next release</div>
-			  <div style="display:inline-block; margin-left: 70px">next release </div>      
-			  <div style="display:inline-block; margin-left: 70px">next release</div>
-		</div>    
-    </div>
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>NEXT RELEASE</strong></td>
+		<td width="21%"><strong>DATE</strong></td>
+		<td width="12%"><strong>RISK</strong></td>
+    </tr>
+	
+		</tbody>
+</table>
+	
+					<button class="accordion"><div style="float: left">IN RELEASE</div>
+  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
+					<div class="panel">
+					<table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>	
+	
+	
+	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>DUMMIES</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>
+</tbody>
+</table>
+	
+						<button class="accordion"><div style="float: left">IN RELEASE</div>
+  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
+					<div class="panel">
+					<table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>	
 
-    <div id="donutchart2" style="width: 22%; height: 44%; margin-left:10px; display: inline-block; position: relative"></div>
-        <div id="donutchart3" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
-        <div id="donutchart4" style="width:22%; height: 44%; margin-left:10px; display: inline-block"></div>
-       <div id="donutchart5" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
-    <img src="https://i.imgsafe.org/5d8b819914.jpg" alt="" style="width: 50%; height: 10%; margin-left: 45%; margin-top: 20px"/>
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
+	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+	
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>WEL</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>	
+	</tbody>
+</table>
+	
+							<button class="accordion"><div style="float: left">IN RELEASE</div>
+  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
+						<div class="panel">
+						<table width="100%">
+						<tbody valign="middle">
+						  <tr>
+							<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
+						  </tr>
+						  </tbody>
+						</table>
+						</div>
+
+
+	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+	
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>WILEYPLUS</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>
+	</tbody>
+</table>
+
+							<button class="accordion"><div style="float: left">IN RELEASE</div>
+  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
+						<div class="panel">
+						<table width="100%">
+						<tbody valign="middle">
+						  <tr>
+							<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
+						  </tr>
+						  </tbody>
+						</table>
+						</div>
+
+						
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+	
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>WPLS</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>		
+</tbody>
+</table>
+
+
+
 
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
-</div>
 
-<<<<<<< HEAD
-      
-    <div class="six columns"><div class="headline"><h1>Projects &amp; Ideas
-   	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
-    </div>
-      
-<!-- Ideas and projects charts -->	
-=======
       <div class="headline"><h1>Reliability &amp; Usage
    	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
       </div>
@@ -645,8 +596,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
    	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
     </div>
       
-<!-- Ideas and projects charts -->	 <!-- add appproved not approved -->
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
+<!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
     <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
 
@@ -657,14 +607,8 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 <tbody valign="middle">
     <tr>
     <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
-<<<<<<< HEAD
     <td width="21%"><strong>DUE DATE</strong></td>
     <td width="12%"><strong>RISK</strong></td>
-=======
-    <td width="21%"><strong>CURRENT PHASE</strong></td>	
-    <td width="21%"><strong>PHASE COMPLETION</strong></td>
-    <td width="12%"><strong>STATUS</strong></td>
->>>>>>> afd84722c41b27e4aba68dedc87f1ca073f40ed1
     </tr>
 </tbody>
 </table>
@@ -769,61 +713,8 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 
         </div>
   </div>
-<div class="row">    
-<div class="twelve columns">    
-      <div class="headline"><h1>Reliability &amp; Usage
-   	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
-      </div>
-       <div class="lightbox" id="question">Information on what these are can be put here.</div>
-        <table width="100%">
-<tbody valign="middle">
-  <tr>
-    <td style="text-align:left;">&nbsp;</td>
-    <td>Dummies</td>
-    <td>WEL</td>
-    <td>WileyPlus</td>
-    <td>WPLS</td>
-  </tr>
-  <tr>
-    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF;">RELIABILITY</td>
-    </tr>
-  <tr>
-    <td style="text-align:left">Uptime</td>
-    <td>99.5%</td>
-    <td>99.5%</td>
-    <td>99.5%</td>
-    <td>99.5%</td>
-  </tr>
-  <tr>
-    <td style="text-align:left">Days Since Last Outage</td>
-    <td>128</td>
-    <td>128</td>
-    <td>136</td>
-    <td>256</td>
-  </tr>
-  <tr bgcolor="#3399CC">
-    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
-    </tr>
-  <tr>
-    <td style="text-align:left">Past 7 Days</td>
-    <td>102K</td>
-    <td>46K</td>
-    <td>126K</td>
-    <td>102K</td>
-  </tr>
-  <tr>
-    <td style="text-align:left">Since Start of FY</td>
-    <td>3M</td>
-    <td>412K</td>
-    <td>3M</td>
-    <td>3M</td>
-  </tr>
-  </tbody>
-</table>
-    </div>  
-    
+
 </div>
-</div>     
 
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

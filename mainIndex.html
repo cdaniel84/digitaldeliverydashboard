@@ -66,7 +66,7 @@ function drawChart() {
             title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.4,
-            'chartArea': {'width': '100%', 'height': '80%'},
+            chartArea:{left:20,top:0,width:'100%',height:'75%'},
             pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
             pieSliceText: 'value',
             fontSize: 14,
@@ -205,7 +205,7 @@ function drawChart() {
       var options10 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
-        legend: {position: 'bottom'},
+        legend: {position: 'none'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -251,12 +251,9 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     
     </div> 
 	
-    <!-- YTD Sales Image: 
-	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
-	-->
-	
 	<!-- Line Charts -->
 	
+
 	    
 <div class="lines">        
 <a href="#">Dummies</a>      
@@ -268,7 +265,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         </div>
 </div>
 <div class="lines">
-<a href="#">WEL</a>        
+<a href="#" style="margin-left: 40%">WEL</a>        
   <div id="line2"></div>
 <div class="revenue">
     <p id="revA">10k</p>
@@ -286,15 +283,22 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>    
 </div>    
 <div class="lines">
-<a href="#">WPLS</a>    
+<a href="#" style="margin-left: 35%">WPLS</a>  	   
   <div id="line4"></div>
 <div class="revenue">
     <p id="revA">44k</p>
 <div id="revborder">Validation</div>
     <p id="revB">33k</p>
-    </div>    
-</div>        
-        
+    </div>  	
+</div>     
+
+<!-- Images need resizing 
+
+   
+<img src="https://i.imgsafe.org/4868df27f6.jpg">  
+<img src="https://i.imgsafe.org/48693cd966.jpg">
+
+-->
       </div>   
 	 
     
@@ -436,9 +440,10 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
       
 <!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
+    <div id="chart_div" style="width: 50%; height: 88%; float:left; margin-left:5%; margin-top: 35px; margin-bottom: 20px"></div>
 
-    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 60%; margin-top: 40px"></div>
+	<div style="margin-left:74%; margin-top:3%; position: absolute"><font size="4"><b>Ideas<b></font></div>
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 55%; margin-top: 80px; margin-bottom: 20px"></div>
 	  
 	  
         <table width="100%" style="padding-bottom:0;margin-bottom:0;">

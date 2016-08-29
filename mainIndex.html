@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Digital Delivery Dashboard</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+  <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.load('visualization', '1', {
+    'packages': ['corechart','treemap', 'line']
+});
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+	// PROJECTS - TREEMAP    
+        var data = google.visualization.arrayToDataTable([ 
+          ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],
+          ['Projects', null,            					  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['POC', 'Projects',          						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Pilot', 'Projects',        					      0 /* Input custom x*/,  0 /* Input custom y*/],
+		  ['Launch', 'Projects',      						  0                    ,  0                    ],
+		  ['Global Diagnostic Assessment', 'Launch', 	     22                    ,  5                    ],		  
+          ['DD Dashboard', 'Prototype',					     22 /* Input custom x*/, 10 /* Input custom y*/],
+          ['Wiley Answers', 'Prototype', 					 22 /* Input custom x*/, 10 /* Input custom y*/],
+          ['AGU Data Science Courseware', 'Prototype',		 22 /* Input custom x*/, 10 /* Input custom y*/],		  
+          ['Career Portal', 'POC',            				 21 /* Input custom x*/,100 /* Input custom y*/],
+          ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Wiley Assessment Service', 'Pilot',        		 10 /* Input custom x*/, 50 /* Input custom y*/],
+          ['None', 'On Hold',    					    	 30 /* Input custom x*/,  5 /* Input custom y*/],          
+        ]);
+            // Instantiate and draw our chart, passing in some options.
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+        tree.draw(data, {
+          minColor: '#3399CC',
+          midColor: '#FFCC33',
+          maxColor: '#66CC66',
+          headerHeight: 40,
+          headerColor: '#f2f2f2',          
+          titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
+          fontColor: 'black',
+          fontFamily: 'Helvetica',
+          fontSize: 16
+        });  
+            // PROJECTS & IDEAS - DONUT CHART
+          var data2 = google.visualization.arrayToDataTable([
+            ['Status', 'none'],
+            ['On Hold',     1 /* Input custom y*/],
+            ['Under Review',      4 /* Input custom y*/],
+            ['Approved',      7 /* Input custom y*/],
+            ['Not Approved',      2 /* Input custom y*/],			
+          ]);
+          var options2 = {
+            legend: {position: 'bottom'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.4,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#3399CC' },
+            1: { color: '#FFCC33' },
+            2: { color: '#66CC66'},
+			3: { color: '#CC3300'}
+			}
+          }; 
+            var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart2.draw(data2, options2);   
+        
+		  //create first line chart - Dummies
+      var data7 = new google.visualization.DataTable();
+      data7.addColumn('number', 'X');
+      data7.addColumn('number', 'year 2017');
+      data7.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data7.addRows([
+        [0,  494670, 422920],
+        [1,  494670, 422920],
+        [2,  , 464020],
+        [3,   , 489895],
+        [4,  , 496895],
+      ]);
+      var options7 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},200000,400000,600000,800000],          
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+      };
+      var line = new google.visualization.LineChart(document.getElementById('line'));
+      line.draw(data7, options7);
+  
+  
+	//create 2nd line chart - WEL
+        var data8 = new google.visualization.DataTable();
+      data8.addColumn('number', 'X');
+      data8.addColumn('number', 'year 2017');
+      data8.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data8.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+      var options8 = {
+       colors:['gray','gray'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+      };
+      var line2 = new google.visualization.LineChart(document.getElementById('line2'));
+      line2.draw(data8, options8);
+  
+  
+	//create 3rd line chart - WileyPLUS
+        var data9 = new google.visualization.DataTable();
+      data9.addColumn('number', 'X');
+      data9.addColumn('number', 'year 2017');
+      data9.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data9.addRows([
+        [0,  14719037, 16554171],
+        [1,  14719037, 16554171],
+        [2,  , 18504590],
+        [3,   , 15892990],
+        [4,  , 4089835],
+      ]);
+      var options9 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],          
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+      };
+      var line3 = new google.visualization.LineChart(document.getElementById('line3'));
+      line3.draw(data9, options9);
+  
+  
+	//create 4th chart - WPLS
+        var data10 = new google.visualization.DataTable();
+      data10.addColumn('number', 'X');
+      data10.addColumn('number', 'year 2017');
+      data10.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data10.addRows([
+        [0,  14719037, 16554171],
+        [1,  14719037, 16554171],
+        [2,  , 18504590],
+        [3,   , 15892990],
+        [4,  , 4089835],
+      ]);
+      var options10 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'bottom'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],             
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+      };
+      var line4 = new google.visualization.LineChart(document.getElementById('line4'));
+      line4.draw(data10, options10);
+}
+</script>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- .container is main centered wrapper -->
+<div class="container">
+<img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
+<ul id="nt-example2">
+		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
+		<li>2 University Adoptions! Click <a href="#">here</a> for more information!</li>
+		<li>Sample News Story #3</li>
+		<li>Sample News Story #4</li>
+	</ul>
+<div class="row">
+    <div class="twelve columns">
+    <div class="headline"><h1>Year-to-date sales
+   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="lightbox" id="sales"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+<li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
+Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
+    
+    
+    </div> 
+	
+    <!-- YTD Sales Image: 
+	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
+	-->
+	
+	<!-- Line Charts -->
+	
+	    
+<div class="lines">        
+<a href="#">Dummies</a>      
+  <div id="line"></div>
+  <div class="revenue">    
+        <p id="revA">$300k</p>
+    <div id="revborder">Ad Revenue</div>    
+        <p id="revB">$250k</p>
+        </div>
+</div>
+<div class="lines">
+<a href="#">WEL</a>        
+  <div id="line2"></div>
+<div class="revenue">
+    <p id="revA">10k</p>
+<div id="revborder">Conversions</div>
+    <p id="revB">9k</p>
+    </div>
+</div>
+<div class="lines">
+    <a href="#">WileyPLUS</a>
+  <div id="line3"></div>
+<div class="revenue">
+    <p id="revA">44k</p>
+    <div id="revborder">Validation</div>
+    <p id="revB">33k</p>
+    </div>    
+</div>    
+<div class="lines">
+<a href="#">WPLS</a>    
+  <div id="line4"></div>
+<div class="revenue">
+    <p id="revA">44k</p>
+<div id="revborder">Validation</div>
+    <p id="revB">33k</p>
+    </div>    
+</div>        
+        
+      </div>   
+	 
+    
+ 
+  <div class="row">
+    <div class="six columns" style="max-height:450px;">   
+   	  <div class="headline"><h1>Product Updates
+      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+  
+  <div class="lightbox" id="productupdates"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+<li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
+Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4), contact <b>Franny Kelly,</b> Associate Director, Product Management, WileyPLUS, Custom & eTextbooks | (1) 201-748-7681 | <a href="mailto:fkelly@wiley.com">fkelly@wiley.com</a></li>
+<li>For WPLS, contact <b>Luke Curtin,</b> Senior Product Manager, ORION, WileyPLUS Learning Space, and SWAT | (1) 201-748-7799 | <a href="mailto:lcurtin@wiley.com">lcurtin@wiley.com</a></li></ul></div>
+
+      
+	 
+	    <p id="infolink"><a href="#">Dummies</a></p>
+    <div class="dummiesrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+    <p id="infolink"><a href="#">WileyPLUS</a></p>
+    <div class="e4release">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+        
+    <p id="infolinkright"><a href="#">WEL</a></p>
+<div class="welrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+        
+    <p id="infolinkrightbottom"><a href="#">WPLS</a></p>
+<div class="wplsrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>        
+
+	  <div class="lightbox" id="mylightbox">
+Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
+</div>
+   
+<div class="six columns">    
+      <div class="headline"><h1>Reliability &amp; Usage
+   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
+      </div>
+       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+          <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
+<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
+</ul></div>    
+		
+        <table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td style="text-align:left;">&nbsp;</td>
+    <td>Dummies</td>
+    <td>WEL</td>
+    <td>WileyPlus</td>
+    <td>WPLS</td>
+  </tr>
+  <tr>
+    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF;">RELIABILITY</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Uptime</td>
+    <td><font color="gray">99.5%</font></td>
+    <td><font color="gray">99.5%</font></td>
+    <td>99.17%</td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Days Since Last Outage</td>
+    <td><font color="gray">128</font></td>
+    <td><font color="gray">128</font></td>
+    <td>182</td>
+    <td>N/A</td>
+  </tr>
+  <tr bgcolor="#3399CC">
+    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Past 7 Days</td>
+    <td><font color="gray">102K</font></td>
+    <td>42K ?</td>
+    <td>361K</td>
+    <td>34K</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Since Start of FY</td>
+    <td><font color="gray">3M</font></td>
+    <td>543K ?</td>
+    <td>2M</td>
+    <td>204K</td>
+  </tr>
+  </tbody>
+</table>
+      <div style="margin-top: 140px"></div>
+    </div>  
+
+</div>
+</div>   
+      
+    <div class="twelve columns"><div class="headline"><h1>Projects &amp; Ideas
+   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
+ 
+For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
+<li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
+<li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
+</li></ul></div>   
+
+
+   </div>
+      
+<!-- Ideas and projects charts -->	
+	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
+    <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
+
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 60%; margin-top: 40px"></div>
+	  
+	  
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+    <tr>
+    <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
+    <td width="21%"><strong>CURRENT PHASE</strong></td>	
+    <td width="21%"><strong>PHASE COMPLETION</strong></td>
+    <td width="12%"><strong>STATUS</strong></td>
+    </tr>
+</tbody>
+</table>
+<button class="accordion">OPERATIONAL IMPROVEMENT</button>
+<div class="panel">
+<table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">WileyPLUS Onboarding, Training & Support</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td width="25%" style="width:21%;">12/31/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Digital Delivery Dashboard </a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>08/30/16</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Operationalizing Digital Delivery</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td>03/15/17</td>
+    <td><img src="images/circle_red.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="accordion">MAINTENANCE</button>
+<div class="panel">
+  <table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">NONE</a></td>
+    <td width="25%" style="width:21%;">Null</td>	
+    <td width="25%" style="width:21%;">Null</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="accordion">NEW PRODUCT</button>
+<div id="foo" class="panel">
+<table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td style="text-align:left"><a href="#">Global Diagnostic Assessment</a></td>
+    <td width="25%" style="width:21%;">MVP Launch</td>	
+    <td>09/30/16</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Wiley Assessment Service</a></td>
+    <td width="25%" style="width:21%;">Pilot</td>	
+    <td>12/15/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Career Portal</a></td>
+    <td width="25%" style="width:21%;">POC</td>	
+    <td>11/01/16</td>
+    <td><img src="images/circle_yellow.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Wiley Answers</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>09/15/16</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+   <tr>
+    <td style="text-align:left"><a href="#">Wiley Problems</a></td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+   <tr>
+    <td style="text-align:left"><a href="#">AGU Data Science Courseware</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>10/16/16</td>
+    <td><img src="images/circle_red.png"></td>
+  </tr> 
+   <tr>
+    <td style="text-align:left"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td><img src="images/circle_red.png"></td>
+  </tr>   
+  </tbody>
+</table>
+
+        </div>
+  </div>
+  
+
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="jquery.newsTicker.js"></script>
+  <script>
+    		$('a[href*=#]').click(function(e) {
+			    var href = $.attr(this, 'href');
+			    if (href != "#") {
+				    $('html, body').animate({
+				        scrollTop: $(href).offset().top - 81
+				    }, 500);
+				}
+				else {
+					$('html, body').animate({
+				        scrollTop: 0
+				    }, 500);
+				}
+			    return false;
+			});
+    		$(window).load(function(){
+	            $('code.language-javascript').mCustomScrollbar();
+	        });
+            var nt_example2 = $('#nt-example2').newsTicker({
+                row_height: 27,
+                max_rows: 1,
+                speed: 300,
+                duration: 6000,
+                prevButton: $('#nt-example2-prev'),
+                nextButton: $('#nt-example2-next'),
+                hasMoved: function() {
+                	$('#nt-example2-infos-container').fadeOut(200, function(){
+	                	$('#nt-example2-infos .infos-hour').text($('#nt-example2 li:first span').text());
+	                	$('#nt-example2-infos .infos-text').text($('#nt-example2 li:first').data('infos'));
+	                	$(this).fadeIn(400);
+	                });
+                },
+                pause: function() {
+                	$('#nt-example2 li i').removeClass('fa-play').addClass('fa-pause');
+                },
+                unpause: function() {
+                	$('#nt-example2 li i').removeClass('fa-pause').addClass('fa-play');
+                }
+            });
+            $('#nt-example2-infos').hover(function() {
+                nt_example2.newsTicker('pause');
+            }, function() {
+                nt_example2.newsTicker('unpause');
+            });
+            var state = 'stopped';
+            var speed;
+            var add;
+            var nt_example3 = $('#nt-example3').newsTicker({
+                row_height: 27,
+                max_rows: 1,
+                duration: 0,
+                speed: 10,
+                autostart: 0,
+                pauseOnHover: 0,
+                hasMoved: function() {
+                	if (speed > 700) {
+                		$('#nt-example3').newsTicker("stop");
+                		console.log('stop')
+                		$('#nt-example3-button').text("RESULT: " + $('#nt-example3 li:first').text().toUpperCase());
+                		setTimeout(function() {
+                			$('#nt-example3-button').text("START");
+                			state = 'stopped';
+                		},2500);
+                		
+                	}
+                	else if (state == 'stopping') {
+                		add = add * 1.4;
+                		speed = speed + add;
+                		console.log(speed)
+                		$('#nt-example3').newsTicker('updateOption', "duration", speed + 25);
+                		$('#nt-example3').newsTicker('updateOption', "speed", speed);
+                	}
+                }
+            });
+        </script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+<script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+</body>
+</html>

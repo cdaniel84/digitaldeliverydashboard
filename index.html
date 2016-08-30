@@ -33,17 +33,10 @@ function drawChart() {
           ['DD Dashboard', 'Prototype',					     22 /* Input custom x*/, 10 /* Input custom y*/],
           ['Wiley Answers', 'Prototype', 					 22 /* Input custom x*/, 10 /* Input custom y*/],
           ['AGU Data Science Courseware', 'Prototype',		 22 /* Input custom x*/, 10 /* Input custom y*/],		  
-<<<<<<< HEAD
-          ['Career Portal', 'POC',            				 10 /* Input custom x*/,100 /* Input custom y*/],
-          ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Wiley Assessment Service', 'Pilot',        		 21 /* Input custom x*/, 50 /* Input custom y*/],
-=======
           ['Career Portal', 'POC',            				 21 /* Input custom x*/,100 /* Input custom y*/],
           ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 55 /* Input custom y*/],
           ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 55 /* Input custom y*/],
           ['Wiley Assessment Service', 'Pilot',        		 10 /* Input custom x*/, 50 /* Input custom y*/],
->>>>>>> origin/master
           ['None', 'On Hold',    					    	 30 /* Input custom x*/,  5 /* Input custom y*/],          
         ]);
             // Instantiate and draw our chart, passing in some options.
@@ -73,7 +66,7 @@ function drawChart() {
             title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.4,
-            'chartArea': {'width': '100%', 'height': '80%'},
+            chartArea:{left:20,top:0,width:'100%',height:'75%'},
             pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
             pieSliceText: 'value',
             fontSize: 14,
@@ -212,7 +205,7 @@ function drawChart() {
       var options10 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
-        legend: {position: 'bottom'},
+        legend: {position: 'none'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -239,7 +232,6 @@ function drawChart() {
   <!-- .container is main centered wrapper -->
 <div class="container">
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
-<!--  news stories -->
 <ul id="nt-example2">
 		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
 		<li>2 University Adoptions! Click <a href="#">here</a> for more information!</li>
@@ -249,18 +241,20 @@ function drawChart() {
 <div class="row">
     <div class="twelve columns">
     <div class="headline"><h1>Year-to-date sales
-   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1>
     <div class="lightbox" id="sales"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
 Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
 </li>
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
-  	
-    <!-- YTD Sales Image: 
-	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
-	-->
+    
+    
+    </div> 
 	
 	<!-- Line Charts -->
+	
+
+	    
 <div class="lines">        
 <a href="#">Dummies</a>      
   <div id="line"></div>
@@ -271,7 +265,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         </div>
 </div>
 <div class="lines">
-<a href="#">WEL</a>        
+<a href="#" style="margin-left: 40%">WEL</a>        
   <div id="line2"></div>
 <div class="revenue">
     <p id="revA">10k</p>
@@ -289,17 +283,19 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>    
 </div>    
 <div class="lines">
-<a href="#">WPLS</a>    
+<a href="#" style="margin-left: 35%">WPLS</a>  	   
   <div id="line4"></div>
 <div class="revenue">
     <p id="revA">44k</p>
 <div id="revborder">Validation</div>
     <p id="revB">33k</p>
-    </div>    
-</div>        
-        
+    </div>  	
+</div>     
+<img src="https://i.imgsafe.org/4868df27f6.jpg"  width="125" height="65" alt="Legend" style="margin-top: 12%">
+<img src="https://i.imgsafe.org/48693cd966.jpg"  width="125" height="65" alt="Legend" style="margin-top: 8%">
+
       </div>   
-	 </div> 
+	 
     
  
   <div class="row">
@@ -362,130 +358,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
 </div>
-
-      
-    <div class="six columns"><div class="headline"><h1>Projects &amp; Ideas
-   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
-    <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
- 
-For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
-<li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
-<li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
-</li></ul></div>   
-
-
-   </div>
-      
-<!-- Ideas and projects charts -->	
-	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
-
-    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 60%; margin-top: 40px"></div>
-	  
-	  
-        <table width="100%" style="margin-top:3%;padding-bottom:0;margin-bottom:0;border-top:1px solid #3399cc;">
-<tbody valign="middle">
-    <tr>
-    <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
-    <td width="21%"><strong>CURRENT PHASE</strong></td>	
-    <td width="21%"><strong>PHASE COMPLETION</strong></td>
-    <td width="12%"><strong>STATUS</strong></td>
-    </tr>
-</tbody>
-</table>
-<button class="accordion active">OPERATIONAL IMPROVEMENT</button>
-<div class="panel show">
-<table width="100%">
-<tbody valign="middle">
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;"><a href="#">WileyPLUS Onboarding, Training & Support</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>	
-    <td width="25%" style="width:21%;">12/31/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Digital Delivery Dashboard </a></td>
-    <td width="25%" style="width:21%;">Prototype</td>	
-    <td>08/30/16</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Operationalizing Digital Delivery</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>	
-    <td>03/15/17</td>
-    <td><img src="images/circle_red.png"></td>
-  </tr>
-  </tbody>
-</table>
-</div>
-
-<button class="accordion">MAINTENANCE</button>
-<div class="panel">
-  <table width="100%">
-<tbody valign="middle">
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;"><a href="#">NONE</a></td>
-    <td width="25%" style="width:21%;">Null</td>	
-    <td width="25%" style="width:21%;">Null</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
-  </tr>
-  </tbody>
-</table>
-</div>
-
-<button class="accordion">NEW PRODUCT</button>
-<div id="foo" class="panel">
-<table width="100%">
-<tbody valign="middle">
-  <tr>
-    <td style="text-align:left"><a href="#">Global Diagnostic Assessment</a></td>
-    <td width="25%" style="width:21%;">MVP Launch</td>	
-    <td>09/30/16</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Wiley Assessment Service</a></td>
-    <td width="25%" style="width:21%;">Pilot</td>	
-    <td>12/15/17</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Career Portal</a></td>
-    <td width="25%" style="width:21%;">POC</td>	
-    <td>11/01/16</td>
-    <td><img src="images/circle_yellow.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Wiley Answers</a></td>
-    <td width="25%" style="width:21%;">Prototype</td>	
-    <td>09/15/16</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-   <tr>
-    <td style="text-align:left"><a href="#">Wiley Problems</a></td>
-    <td width="25%" style="width:21%;">Discovery</td>	
-    <td>11/01/16</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-   <tr>
-    <td style="text-align:left"><a href="#">AGU Data Science Courseware</a></td>
-    <td width="25%" style="width:21%;">Prototype</td>	
-    <td>10/16/16</td>
-    <td><img src="images/circle_red.png"></td>
-  </tr> 
-   <tr>
-    <td style="text-align:left"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
-    <td width="25%" style="width:21%;">Discovery</td>	
-    <td>11/01/16</td>
-    <td><img src="images/circle_red.png"></td>
-  </tr>   
-  </tbody>
-</table>
-
-        </div>
-  </div>
-<div class="row">    
-<div class="twelve columns">    
+   
+<div class="six columns">    
       <div class="headline"><h1>Reliability &amp; Usage
    	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
       </div>
@@ -541,10 +415,132 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
   </tr>
   </tbody>
 </table>
+      <div style="margin-top: 140px"></div>
     </div>  
-    </div>
+
 </div>
-</div>     
+</div>   
+      
+    <div class="twelve columns"><div class="headline"><h1>Projects &amp; Ideas
+   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
+ 
+For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
+<li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
+<li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
+</li></ul></div>   
+
+
+   </div>
+
+<!-- Ideas and projects charts -->	
+    <div id="chart_div" style="width: 50%; height: 88%; float:left; margin-left:5%; margin-top: 35px; margin-bottom: 20px"></div>
+
+	<div style="margin-left:74%; margin-top:3%; position: absolute"><font size="4"><b>Ideas<b></font></div>
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 55%; margin-top: 80px; margin-bottom: 20px"></div>
+	  
+        <table width="100%" style="margin-top:-1%;padding-bottom:0;margin-bottom:0;border-top:1px solid #3399cc;">
+<tbody valign="middle">
+    <tr>
+    <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
+    <td width="21%"><strong>CURRENT PHASE</strong></td>	
+    <td width="21%"><strong>PHASE COMPLETION</strong></td>
+    <td width="12%"><strong>STATUS</strong></td>
+    </tr>
+</tbody>
+</table>
+<button class="accordion active">OPERATIONAL IMPROVEMENT</button>
+<div class="panel show">
+<table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">WileyPLUS Onboarding, Training & Support</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td width="25%" style="width:21%;">12/31/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Digital Delivery Dashboard </a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>08/30/16</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Operationalizing Digital Delivery</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td>03/15/17</td>
+    <td><img src="images/circle_red.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="accordion">MAINTENANCE</button>
+<div class="panel">
+  <table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">NONE</a></td>
+    <td width="25%" style="width:21%;">Null</td>	
+    <td width="25%" style="width:21%;">Null</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="accordion">NEW PRODUCT</button>
+<div id="foo" class="panel">
+<table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Global Diagnostic Assessment</a></td>
+    <td width="25%" style="width:21%;">MVP Launch</td>	
+    <td>09/30/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Assessment Service</a></td>
+    <td width="25%" style="width:21%;">Pilot</td>	
+    <td>12/15/17</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Career Portal</a></td>
+    <td width="25%" style="width:21%;">POC</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>
+  </tr>
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Answers</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>09/15/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+   <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Problems</a></td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+   <tr>
+    <td style="text-align:left"><a href="#">AGU Data Science Courseware</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>10/16/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
+  </tr> 
+   <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
+  </tr>   
+  </tbody>
+</table>
+
+        </div>
+  </div>
+  
 
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

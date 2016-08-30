@@ -1,0 +1,866 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Digital Delivery Dashboard</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link href="css/main.css" rel="stylesheet">
+  <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+  <link rel="icon" type="image/png" href="images/favicon.png">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
+  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+
+google.load('visualization', '1', {
+    'packages': ['corechart','treemap', 'line']
+});
+
+
+google.setOnLoadCallback(drawChart);
+function drawChart() {
+	// PROJECTS - TREEMAP    
+        var data = google.visualization.arrayToDataTable([ 
+          ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],
+          ['Projects', null,            0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Prototype',   'Projects',   0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['POC', 'Projects',           0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Discovery', 'Projects',     0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['On Hold', 'Projects',       0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Pilot', 'Projects',         0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Prototype 1', 'Prototype', 11 /* Input custom x*/,  5 /* Input custom y*/],
+          ['Prototype 2', 'Prototype', 52 /* Input custom x*/, 10 /* Input custom y*/],
+          ['POC 1', 'POC',             42 /* Input custom x*/,100 /* Input custom y*/],
+          ['POC 2', 'POC',             31 /* Input custom x*/, 90 /* Input custom y*/],
+          ['Discovery 1', 'Discovery', 36 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Discovery 2', 'Discovery', 20 /* Input custom x*/, 50 /* Input custom y*/],
+          ['Discovery 3', 'Discovery', 40 /* Input custom x*/, 63 /* Input custom y*/],
+          ['Pilot 1', 'Pilot',         21 /* Input custom x*/, 50 /* Input custom y*/],
+          ['On Hold 1', 'On Hold',     21 /* Input custom x*/,  5 /* Input custom y*/],          
+        ]);
+            // Instantiate and draw our chart, passing in some options.
+        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
+        tree.draw(data, {
+          minColor: '#3399CC',
+          midColor: '#FFCC33',
+          maxColor: '#66CC66',
+          headerHeight: 40,
+          headerColor: '#f2f2f2',          
+          titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
+          fontColor: 'black',
+          fontFamily: 'Helvetica',
+          fontSize: 18
+        });  
+            // PROJECTS & IDEAS - DONUT CHART
+          var data2 = google.visualization.arrayToDataTable([
+            ['Status', 'none'],
+            ['Submitted',     10 /* Input custom y*/],
+            ['In Review',      6 /* Input custom y*/],
+          ]);
+          var options2 = {
+            legend: {position: 'bottom'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.4,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#66CC66' },
+            1: { color: '#FFCC33' },
+            2: { color: '#CC3300'}}
+          }; 
+            var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
+            chart2.draw(data2, options2);   
+  
+  
+              // DUMMIES DONUT CHART 1 FOR PRODUCT UPDATES
+          var data3 = google.visualization.arrayToDataTable([
+            ['Status', 'Value'],
+            ['Delayed',   33 /* Input custom y*/],
+            ['On Track',  33 /* Input custom y*/],
+            ['Descoped',  33 /* Input custom y*/],
+          ]);
+          var options3 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.45,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 1, bold: 'true'},
+            pieSliceText: 'none',
+            fontSize: 14,
+            slices: {
+            0: { color: 'darkgrey' },
+            1: { color: 'darkgrey' },
+            2: { color: 'darkgrey'}}
+          }; 
+            var chart3 = new google.visualization.PieChart(document.getElementById('donutchart2'));
+            chart3.draw(data3, options3);
+  
+                // PRODUCT UPDATES - WEL DONUT CHART 2
+          var data4 = google.visualization.arrayToDataTable([
+            ['Status', 'none'],
+            ['Delayed',     35 /* Input custom y*/],
+            ['On Track',    60 /* Input custom y*/],
+            ['Descoped',     5 /* Input custom y*/],
+          ]);
+          var options4 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.45,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'none',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+            var chart4 = new google.visualization.PieChart(document.getElementById('donutchart3'));
+            chart4.draw(data4, options4);
+  
+        //PRODUCT UPDATES - WILEYPLUS DONUT CHART 3
+          var data5 = google.visualization.arrayToDataTable([
+            ['Status', 'none'],
+            ['Delayed',     20 /* Input custom y*/],
+            ['On Track',    75 /* Input custom y*/],
+            ['Descoped',     5 /* Input custom y*/],
+          ]);
+          var options5 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.45,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'none',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+            var chart5 = new google.visualization.PieChart(document.getElementById('donutchart4'));
+            chart5.draw(data5, options5);
+  
+                // PRODUCT UPDATES - WPLS DONUT CHART 4
+          var data6 = google.visualization.arrayToDataTable([
+            ['Status', 'none'],
+            ['Delayed',     20 /* Input custom y*/],
+            ['On Track',    80 /* Input custom y*/],
+            ['Descoped',     0 /* Input custom y*/],
+          ]);
+          var options6 = {
+            legend: {position: 'none'},
+            backgroundColor: '#F2F2F2', 
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.45,
+            'chartArea': {'width': '100%', 'height': '80%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
+            pieSliceText: 'none',
+            fontSize: 14,
+            slices: {
+            0: { color: '#FFCC33' },
+            1: { color: '#66CC66' },
+            2: { color: '#CC3300'}}
+          }; 
+            var chart6 = new google.visualization.PieChart(document.getElementById('donutchart5'));
+            chart6.draw(data6, options6);
+        
+		  //create first line chart - Dummies
+      var data7 = new google.visualization.DataTable();
+      data7.addColumn('number', 'X');
+      data7.addColumn('number', 'year 2017');
+      data7.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data7.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options7 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line = new google.visualization.LineChart(document.getElementById('line'));
+      line.draw(data7, options7);
+  
+  
+	//create 2nd line chart - WEL
+        var data8 = new google.visualization.DataTable();
+      data8.addColumn('number', 'X');
+      data8.addColumn('number', 'year 2017');
+      data8.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data8.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options8 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line2 = new google.visualization.LineChart(document.getElementById('line2'));
+      line2.draw(data8, options8);
+  
+  
+	//create 3rd line chart - WileyPLUS
+        var data9 = new google.visualization.DataTable();
+      data9.addColumn('number', 'X');
+      data9.addColumn('number', 'year 2017');
+      data9.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data9.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options9 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'none'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],            
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line3 = new google.visualization.LineChart(document.getElementById('line3'));
+      line3.draw(data9, options9);
+  
+  
+	//create 4th chart - WPLS
+        var data10 = new google.visualization.DataTable();
+      data10.addColumn('number', 'X');
+      data10.addColumn('number', 'year 2017');
+      data10.addColumn('number', 'year 2016');
+	//Edit Data point (x, y1, y2)
+      data10.addRows([
+        [0,  100, 210],
+        [.5, 150, 185],
+        [1,  200, 160],
+        [1.5,  250,   130],
+        [2,  210, 210],
+        [2.5,  180, 300],
+        [3,   180, 400],
+        [3.5,   , 400],
+        [4,  , 400],
+      ]);
+
+      var options10 = {
+       colors:['#66CC66','#3399CC'],      
+        backgroundColor: '#F2F2F2',
+        legend: {position: 'bottom'},
+        hAxis: {
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        vAxis: {
+          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          title: '',
+          gridlines: {color: 'none'},
+          baselineColor: '#3399CC'
+        },
+        lineWidth: 5
+
+      };
+
+      var line4 = new google.visualization.LineChart(document.getElementById('line4'));
+      line4.draw(data10, options10);
+}
+</script>
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <!-- .container is main centered wrapper -->
+<div class="container">
+<img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
+<ul id="nt-example2">
+		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
+		<li>2 University Adoptions! Click <a href="#">here</a> for more information!</li>
+		<li>Sample News Story #3</li>
+		<li>Sample News Story #4</li>
+	</ul>
+  <div class="row">
+    <div class="twelve columns" style="margin-bottom:5px;">
+    <div class="headline"><h1>Year-to-date sales
+   	    <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    </div> 
+	
+    <!-- YTD Sales Image: 
+	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
+	-->
+	
+	<!-- Line Charts -->
+	
+	    <div style="font-size: 26px; margin-top:1%; margin-left: 10%"><font color="blue"><u><b>Dummies</b></u></font>
+     <div style="font-size: 26px; margin-left: 15%; display:inline-block"><font color="blue"><u><b>WEL</b></u></font></div>
+       <div style="font-size: 26px; margin-left: 18%; display:inline-block"><font color="blue"><u><b>WileyPLUS</b></u></font></div>
+         <div style="font-size: 26px; margin-left: 15%; display:inline-block"><font color="blue"><u><b>WPLS</b></u></font></div>
+      </div>   
+        
+  <div id="line" style="width:25%; height: 50%; display:inline-block"></div>  
+  <div id="line2" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div> 
+  <div id="line3" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div> 
+  <div id="line4" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div>   
+        
+        <div style="font-size: 30px; margin-left: 10%"><font color="#66CC66"><b>$300K</b></font>
+     <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>10K</b></font></div>
+       <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>44K</b></font></div>
+         <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>44K</b></font></div>
+      </div>       
+        
+        <div style="font-size: 30px; margin-top:-1%; margin-left: 10%"><font color="#FFCC33"><b>$250K</b></font>
+     <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b> &nbsp; 9K</b></font></div>
+       <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b>33K</b></font></div>
+         <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b>33K</b></font></div>
+      </div>   
+	
+	
+    </div>
+    </div>
+  <div class="row">
+    <div class="six columns">   
+   	  <div class="headline"><h1>Product Updates
+      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+	 
+	  <!-- Product Updates Charts -->
+	  <!-- Header - date - risk, IN - top 3 user stories, Backlog -->
+	  
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>NEXT RELEASE</strong></td>
+		<td width="21%"><strong>DUE DATE</strong></td>
+		<td width="12%"><strong>RISK</strong></td>
+    </tr>
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>DUMMIES</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>
+</tbody>
+</table>
+	
+					<button class="accordion">IN RELEASE</button>
+					<div class="panel">
+					<table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>
+
+					<button class="accordion">BACKLOG</button>
+					<div class="panel">
+					  <table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>
+	
+	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+	
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>WEL</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>	
+	</tbody>
+</table>
+	
+						<button class="accordion">IN RELEASE</button>
+					<div class="panel">
+					<table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>
+
+					<button class="accordion">BACKLOG</button>
+					<div class="panel">
+					  <table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>
+					
+	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+	
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>WILEYPLUS</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>
+	</tbody>
+</table>
+
+							<button class="accordion">IN RELEASE</button>
+						<div class="panel">
+						<table width="100%">
+						<tbody valign="middle">
+						  <tr>
+							<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#">ITEM 2</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#">ITEM 3</a></td>
+						  </tr>
+						  </tbody>
+						</table>
+						</div>
+
+						<button class="accordion">BACKLOG</button>
+						<div class="panel">
+						  <table width="100%">
+						<tbody valign="middle">
+						  <tr>
+							<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#">ITEM 2</a></td>
+						  </tr>
+						  <tr>
+							<td style="text-align:left"><a href="#">ITEM 3</a></td>
+						  </tr>
+						  </tbody>
+						</table>
+						</div>
+						
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+	
+    <tr>
+		<td width="46%" style="text-align:left;"><strong>WPLS</strong></td>
+		<td width="21%"><strong>OCT 22</strong></td>
+		<td width="12%"><img src="images/circle_green.png"></td>
+    </tr>		
+</tbody>
+</table>
+
+					<button class="accordion">IN RELEASE</button>
+					<div class="panel">
+					<table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>
+
+					<button class="accordion">BACKLOG</button>
+					<div class="panel">
+					  <table width="100%">
+					<tbody valign="middle">
+					  <tr>
+						<td width="38%" style="text-align:left;width:46%;"><a href="#">ITEM 1</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 2</a></td>
+					  </tr>
+					  <tr>
+						<td style="text-align:left"><a href="#">ITEM 3</a></td>
+					  </tr>
+					  </tbody>
+					</table>
+					</div>
+
+
+	  <div class="lightbox" id="mylightbox">
+Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
+
+      <div class="headline"><h1>Reliability &amp; Usage
+   	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
+      </div>
+       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+        <table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td style="text-align:left;">&nbsp;</td>
+    <td>Dummies</td>
+    <td>WEL</td>
+    <td>WileyPlus</td>
+    <td>WPLS</td>
+  </tr>
+  <tr>
+    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF;">RELIABILITY</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Uptime</td>
+    <td>99.5%</td>
+    <td>99.5%</td>
+    <td>99.5%</td>
+    <td>99.5%</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Days Since Last Outage</td>
+    <td>128</td>
+    <td>128</td>
+    <td>136</td>
+    <td>256</td>
+  </tr>
+  <tr bgcolor="#3399CC">
+    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Past 7 Days</td>
+    <td>102K</td>
+    <td>46K</td>
+    <td>126K</td>
+    <td>102K</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Since Start of FY</td>
+    <td>3M</td>
+    <td>412K</td>
+    <td>3M</td>
+    <td>3M</td>
+  </tr>
+  </tbody>
+</table>
+    </div>
+    <div class="six columns"><div class="headline"><h1>Projects &amp; Ideas
+   	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    </div>
+      
+<!-- Ideas and projects charts -->	
+	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
+    <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
+
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 60%; margin-top: 40px"></div>
+	  
+	  
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle">
+    <tr>
+    <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
+    <td width="21%"><strong>DUE DATE</strong></td>
+    <td width="12%"><strong>RISK</strong></td>
+    </tr>
+</tbody>
+</table>
+<button class="accordion">PROCESS</button>
+<div class="panel">
+<table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Operationalizing Digital Delivery</a></td>
+    <td width="25%" style="width:21%;">08/17</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
+    <td>09/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
+    <td>10/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Career Portal</a></td>
+    <td>11/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
+    <td>12/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="accordion">MAINTENANCE</button>
+<div class="panel">
+  <table width="100%">
+<tbody valign="middle">
+<tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Operationalizing Digital Delivery</a></td>
+    <td width="25%" style="width:21%;">08/17</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
+    <td>09/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
+    <td>10/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Career Portal</a></td>
+    <td>11/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
+    <td>12/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+<button class="accordion">NEW PRODUCT</button>
+<div id="foo" class="panel">
+<table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Operationalizing Digital Delivery</a></td>
+    <td width="25%" style="width:21%;">08/17</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
+    <td>09/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
+    <td>10/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Career Portal</a></td>
+    <td>11/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  <tr>
+    <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
+    <td>12/17</td>
+    <td><img src="images/circle_green.png"></td>
+  </tr>
+  </tbody>
+</table>
+</div>
+
+        </div>
+  </div>
+
+</div>
+
+    <!-- Placed at the end of the document so the pages load faster -->
+  <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+  <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+  <script src="jquery.newsTicker.js"></script>
+  <script>
+    		$('a[href*=#]').click(function(e) {
+			    var href = $.attr(this, 'href');
+			    if (href != "#") {
+				    $('html, body').animate({
+				        scrollTop: $(href).offset().top - 81
+				    }, 500);
+				}
+				else {
+					$('html, body').animate({
+				        scrollTop: 0
+				    }, 500);
+				}
+			    return false;
+			});
+    		$(window).load(function(){
+	            $('code.language-javascript').mCustomScrollbar();
+	        });
+            var nt_example2 = $('#nt-example2').newsTicker({
+                row_height: 27,
+                max_rows: 1,
+                speed: 300,
+                duration: 6000,
+                prevButton: $('#nt-example2-prev'),
+                nextButton: $('#nt-example2-next'),
+                hasMoved: function() {
+                	$('#nt-example2-infos-container').fadeOut(200, function(){
+	                	$('#nt-example2-infos .infos-hour').text($('#nt-example2 li:first span').text());
+	                	$('#nt-example2-infos .infos-text').text($('#nt-example2 li:first').data('infos'));
+	                	$(this).fadeIn(400);
+	                });
+                },
+                pause: function() {
+                	$('#nt-example2 li i').removeClass('fa-play').addClass('fa-pause');
+                },
+                unpause: function() {
+                	$('#nt-example2 li i').removeClass('fa-pause').addClass('fa-play');
+                }
+            });
+            $('#nt-example2-infos').hover(function() {
+                nt_example2.newsTicker('pause');
+            }, function() {
+                nt_example2.newsTicker('unpause');
+            });
+            var state = 'stopped';
+            var speed;
+            var add;
+            var nt_example3 = $('#nt-example3').newsTicker({
+                row_height: 27,
+                max_rows: 1,
+                duration: 0,
+                speed: 10,
+                autostart: 0,
+                pauseOnHover: 0,
+                hasMoved: function() {
+                	if (speed > 700) {
+                		$('#nt-example3').newsTicker("stop");
+                		console.log('stop')
+                		$('#nt-example3-button').text("RESULT: " + $('#nt-example3 li:first').text().toUpperCase());
+                		setTimeout(function() {
+                			$('#nt-example3-button').text("START");
+                			state = 'stopped';
+                		},2500);
+                		
+                	}
+                	else if (state == 'stopping') {
+                		add = add * 1.4;
+                		speed = speed + add;
+                		console.log(speed)
+                		$('#nt-example3').newsTicker('updateOption', "duration", speed + 25);
+                		$('#nt-example3').newsTicker('updateOption', "speed", speed);
+                	}
+                }
+            });
+        </script>
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+for (i = 0; i < acc.length; i++) {
+    acc[i].onclick = function(){
+        this.classList.toggle("active");
+        this.nextElementSibling.classList.toggle("show");
+  }
+}
+</script>
+<script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+
+</body>
+</html>

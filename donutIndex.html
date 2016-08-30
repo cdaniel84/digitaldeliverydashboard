@@ -25,21 +25,22 @@ function drawChart() {
 	// PROJECTS - TREEMAP    
         var data = google.visualization.arrayToDataTable([ 
           ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],
-          ['Projects', null,            0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Prototype',   'Projects',   0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['POC', 'Projects',           0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Discovery', 'Projects',     0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['On Hold', 'Projects',       0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Pilot', 'Projects',         0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Prototype 1', 'Prototype', 11 /* Input custom x*/,  5 /* Input custom y*/],
-          ['Prototype 2', 'Prototype', 52 /* Input custom x*/, 10 /* Input custom y*/],
-          ['POC 1', 'POC',             42 /* Input custom x*/,100 /* Input custom y*/],
-          ['POC 2', 'POC',             31 /* Input custom x*/, 90 /* Input custom y*/],
-          ['Discovery 1', 'Discovery', 36 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Discovery 2', 'Discovery', 20 /* Input custom x*/, 50 /* Input custom y*/],
-          ['Discovery 3', 'Discovery', 40 /* Input custom x*/, 63 /* Input custom y*/],
-          ['Pilot 1', 'Pilot',         21 /* Input custom x*/, 50 /* Input custom y*/],
-          ['On Hold 1', 'On Hold',     21 /* Input custom x*/,  5 /* Input custom y*/],          
+          ['Projects', null,            					  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['POC', 'Projects',          						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Pilot', 'Projects',        					      0 /* Input custom x*/,  0 /* Input custom y*/],
+		  ['Launch', 'Projects',      						  0                    ,  0                    ],
+		  ['Global Diagnostic Assessment', 'Launch', 	     22                    ,  5                    ],		  
+          ['DD Dashboard', 'Prototype',					     22 /* Input custom x*/, 10 /* Input custom y*/],
+          ['Wiley Answers', 'Prototype', 					 22 /* Input custom x*/, 10 /* Input custom y*/],
+          ['AGU Data Science Courseware', 'Prototype',		 22 /* Input custom x*/, 10 /* Input custom y*/],		  
+          ['Career Portal', 'POC',            				 21 /* Input custom x*/,100 /* Input custom y*/],
+          ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Wiley Assessment Service', 'Pilot',        		 10 /* Input custom x*/, 50 /* Input custom y*/],
+          ['None', 'On Hold',    					    	 30 /* Input custom x*/,  5 /* Input custom y*/],          
         ]);
             // Instantiate and draw our chart, passing in some options.
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
@@ -52,13 +53,15 @@ function drawChart() {
           titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
           fontColor: 'black',
           fontFamily: 'Helvetica',
-          fontSize: 18
+          fontSize: 16
         });  
             // PROJECTS & IDEAS - DONUT CHART
           var data2 = google.visualization.arrayToDataTable([
             ['Status', 'none'],
-            ['Submitted',     10 /* Input custom y*/],
-            ['In Review',      6 /* Input custom y*/],
+            ['On Hold',     1 /* Input custom y*/],
+            ['Under Review',      4 /* Input custom y*/],
+            ['Approved',      7 /* Input custom y*/],
+            ['Not Approved',      2 /* Input custom y*/],			
           ]);
           var options2 = {
             legend: {position: 'bottom'},
@@ -71,9 +74,11 @@ function drawChart() {
             pieSliceText: 'value',
             fontSize: 14,
             slices: {
-            0: { color: '#66CC66' },
+            0: { color: '#3399CC' },
             1: { color: '#FFCC33' },
-            2: { color: '#CC3300'}}
+            2: { color: '#66CC66'},
+			3: { color: '#CC3300'}
+			}
           }; 
             var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart2.draw(data2, options2);   
@@ -186,15 +191,11 @@ function drawChart() {
       data7.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data7.addRows([
-        [0,  100, 210],
-        [.5, 150, 185],
-        [1,  200, 160],
-        [1.5,  250,   130],
-        [2,  210, 210],
-        [2.5,  180, 300],
-        [3,   180, 400],
-        [3.5,   , 400],
-        [4,  , 400],
+        [0,  494670, 422920],
+        [1,  494670, 422920],
+        [2,  , 464020],
+        [3,   , 489895],
+        [4,  , 496895],
       ]);
 
       var options7 = {
@@ -208,7 +209,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          ticks: [{v:0, f:''},200000,400000,600000,800000],          
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -240,7 +241,7 @@ function drawChart() {
       ]);
 
       var options8 = {
-       colors:['#66CC66','#3399CC'],      
+       colors:['gray','gray'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
@@ -270,15 +271,11 @@ function drawChart() {
       data9.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data9.addRows([
-        [0,  100, 210],
-        [.5, 150, 185],
-        [1,  200, 160],
-        [1.5,  250,   130],
-        [2,  210, 210],
-        [2.5,  180, 300],
-        [3,   180, 400],
-        [3.5,   , 400],
-        [4,  , 400],
+        [0,  14719037, 16554171],
+        [1,  14719037, 16554171],
+        [2,  , 18504590],
+        [3,   , 15892990],
+        [4,  , 4089835],
       ]);
 
       var options9 = {
@@ -292,7 +289,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],            
+          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],          
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -312,15 +309,11 @@ function drawChart() {
       data10.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data10.addRows([
-        [0,  100, 210],
-        [.5, 150, 185],
-        [1,  200, 160],
-        [1.5,  250,   130],
-        [2,  210, 210],
-        [2.5,  180, 300],
-        [3,   180, 400],
-        [3.5,   , 400],
-        [4,  , 400],
+        [0,  14719037, 16554171],
+        [1,  14719037, 16554171],
+        [2,  , 18504590],
+        [3,   , 15892990],
+        [4,  , 4089835],
       ]);
 
       var options10 = {
@@ -334,7 +327,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],             
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -363,9 +356,16 @@ function drawChart() {
 	</ul>
   <div class="row">
     <div class="twelve columns">
-    <div class="headline"><h1>Year-to-date sales
-   	    <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
-    </div> 
+    <div class="headline"><h1>Year-to-date sales / Revenue
+   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="lightbox" id="sales"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+<li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
+Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>
+	
+	
+	</div> 
 	
     <!-- YTD Sales Image: 
 	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
@@ -402,149 +402,54 @@ function drawChart() {
   <div class="row">
     <div class="six columns">   
    	  <div class="headline"><h1>Product Updates
-      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+	 
+	 <div class="lightbox" id="productupdates"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+<li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
+Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4), contact <b>Franny Kelly,</b> Associate Director, Product Management, WileyPLUS, Custom & eTextbooks | (1) 201-748-7681 | <a href="mailto:fkelly@wiley.com">fkelly@wiley.com</a></li>
+<li>For WPLS, contact <b>Luke Curtin,</b> Senior Product Manager, ORION, WileyPLUS Learning Space, and SWAT | (1) 201-748-7799 | <a href="mailto:lcurtin@wiley.com">lcurtin@wiley.com</a></li></ul></div>
 	 
 	  <!-- Product Updates Charts -->
-	  <!-- Header - date - risk, IN - top 3 user stories, Backlog -->
 	  
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
-<tbody valign="middle">
-    <tr>
-		<td width="46%" style="text-align:left;"><strong>NEXT RELEASE</strong></td>
-		<td width="21%"><strong>DATE</strong></td>
-		<td width="12%"><strong>RISK</strong></td>
-    </tr>
-	
-		</tbody>
-</table>
-	
-					<button class="accordion"><div style="float: left">IN RELEASE</div>
-  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
-					<div class="panel">
-					<table width="100%">
-					<tbody valign="middle">
-					  <tr>
-						<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
-					  </tr>
-					  <tr>
-						<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
-					  </tr>
-					  <tr>
-						<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
-					  </tr>
-					  </tbody>
-					</table>
-					</div>	
-	
-	
-	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
-<tbody valign="middle">
-    <tr>
-		<td width="46%" style="text-align:left;"><strong>DUMMIES</strong></td>
-		<td width="21%"><strong>OCT 22</strong></td>
-		<td width="12%"><img src="images/circle_green.png"></td>
-    </tr>
-</tbody>
-</table>
-	
-						<button class="accordion"><div style="float: left">IN RELEASE</div>
-  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
-					<div class="panel">
-					<table width="100%">
-					<tbody valign="middle">
-					  <tr>
-						<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
-					  </tr>
-					  <tr>
-						<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
-					  </tr>
-					  <tr>
-						<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
-					  </tr>
-					  </tbody>
-					</table>
-					</div>	
+	<div style="font-size: 22px; margin-top:10%; margin-left: 7%"><font color="blue"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx"><u><b>Dummies</b></u></a></font>
+     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><a href=""><u><b>WEL</b></u></a></font></div>
+     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><a href="WileyPLUS (E4) : http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx"><u><b>WileyPLUS</b></u></a></font></div>
+     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1"><u><b>WPLS</b></u></a></font></div>
+    </div>
+    
+    
+    <div class=intext style="margin-left: 3%; margin-top: 160px; z-index: 3">Jun 30
+      <div style="display:inline-block; margin-left: 65px">Jun 30</div>
+      <div style="display:inline-block; margin-left: 65px">Aug 25</div>      
+      <div style="display:inline-block; margin-left: 65px">Sep 10</div>
+        <div class=innertext style="margin-top: -10px">next release
+			  <div style="display:inline-block; margin-left: 65px">next release</div>
+			  <div style="display:inline-block; margin-left: 70px">next release </div>      
+			  <div style="display:inline-block; margin-left: 70px">next release</div>
+		</div>    
+    </div>
 
-	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
-<tbody valign="middle">
-	
-    <tr>
-		<td width="46%" style="text-align:left;"><strong>WEL</strong></td>
-		<td width="21%"><strong>OCT 22</strong></td>
-		<td width="12%"><img src="images/circle_green.png"></td>
-    </tr>	
-	</tbody>
-</table>
-	
-							<button class="accordion"><div style="float: left">IN RELEASE</div>
-  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
-						<div class="panel">
-						<table width="100%">
-						<tbody valign="middle">
-						  <tr>
-							<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
-						  </tr>
-						  <tr>
-							<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
-						  </tr>
-						  <tr>
-							<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
-						  </tr>
-						  </tbody>
-						</table>
-						</div>
-
-
-	        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
-<tbody valign="middle">
-	
-    <tr>
-		<td width="46%" style="text-align:left;"><strong>WILEYPLUS</strong></td>
-		<td width="21%"><strong>OCT 22</strong></td>
-		<td width="12%"><img src="images/circle_green.png"></td>
-    </tr>
-	</tbody>
-</table>
-
-							<button class="accordion"><div style="float: left">IN RELEASE</div>
-  <div style="float: right">BACKLOG</div><div style="clear: both;"></div></button>
-						<div class="panel">
-						<table width="100%">
-						<tbody valign="middle">
-						  <tr>
-							<td width="38%" style="text-align:left;width:46%;"><a href="#" style="float:left">ITEM 1</a><a href="#" style="float:right">ITEM 1</a></td>
-						  </tr>
-						  <tr>
-							<td style="text-align:left"><a href="#" style="float:left">ITEM 2</a><a href="#" style="float:right">ITEM 2</a></td>
-						  </tr>
-						  <tr>
-							<td style="text-align:left"><a href="#" style="float:left">ITEM 3</a><a href="#" style="float:right">ITEM 3</a></td>
-						  </tr>
-						  </tbody>
-						</table>
-						</div>
-
-						
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
-<tbody valign="middle">
-	
-    <tr>
-		<td width="46%" style="text-align:left;"><strong>WPLS</strong></td>
-		<td width="21%"><strong>OCT 22</strong></td>
-		<td width="12%"><img src="images/circle_green.png"></td>
-    </tr>		
-</tbody>
-</table>
-
-
-
+    <div id="donutchart2" style="width: 22%; height: 44%; margin-left:10px; display: inline-block; position: relative"></div>
+        <div id="donutchart3" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
+        <div id="donutchart4" style="width:22%; height: 44%; margin-left:10px; display: inline-block"></div>
+       <div id="donutchart5" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
+    <img src="https://i.imgsafe.org/5d8b819914.jpg" alt="" style="width: 50%; height: 10%; margin-left: 45%; margin-top: 20px"/>
 
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
 
       <div class="headline"><h1>Reliability &amp; Usage
-   	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
-      </div>
+   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
+      <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
+<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
+</ul></div>
+	  
+	  
+	  </div>
        <div class="lightbox" id="question">Information on what these are can be put here.</div>
         <table width="100%">
 <tbody valign="middle">
@@ -560,43 +465,51 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     </tr>
   <tr>
     <td style="text-align:left">Uptime</td>
-    <td>99.5%</td>
-    <td>99.5%</td>
-    <td>99.5%</td>
-    <td>99.5%</td>
+    <td><font color="gray">99.5%</font></td>
+    <td><font color="gray">99.5%</font></td>
+    <td>99.17%</td>
+    <td>100%</td>
   </tr>
   <tr>
     <td style="text-align:left">Days Since Last Outage</td>
-    <td>128</td>
-    <td>128</td>
-    <td>136</td>
-    <td>256</td>
+    <td><font color="gray">128</font></td>
+    <td><font color="gray">128</font></td>
+    <td>182</td>
+    <td>N/A</td>
   </tr>
   <tr bgcolor="#3399CC">
     <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
     </tr>
   <tr>
     <td style="text-align:left">Past 7 Days</td>
-    <td>102K</td>
-    <td>46K</td>
-    <td>126K</td>
-    <td>102K</td>
+    <td><font color="gray">102K</font></td>
+    <td>42K ?</td>
+    <td>361K</td>
+    <td>34K</td>
   </tr>
   <tr>
     <td style="text-align:left">Since Start of FY</td>
-    <td>3M</td>
-    <td>412K</td>
-    <td>3M</td>
-    <td>3M</td>
+    <td><font color="gray">3M</font></td>
+    <td>543K ?</td>
+    <td>2M</td>
+    <td>204K</td>
   </tr>
   </tbody>
 </table>
     </div>
     <div class="six columns"><div class="headline"><h1>Projects &amp; Ideas
-   	      <img src="images/business-contact.png" data-featherlight="#mylightbox" alt="" style="float:right;padding-right:0.5em;"/></h1>
-    </div>
+   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
+ 
+For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
+<li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
+<li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
+</li></ul></div>
+	
+	
+	</div>
       
-<!-- Ideas and projects charts -->	
+<!-- Ideas and projects charts -->	 <!-- add appproved not approved -->
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
     <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
 
@@ -607,39 +520,33 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 <tbody valign="middle">
     <tr>
     <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
-    <td width="21%"><strong>DUE DATE</strong></td>
-    <td width="12%"><strong>RISK</strong></td>
+    <td width="21%"><strong>CURRENT PHASE</strong></td>	
+    <td width="21%"><strong>PHASE COMPLETION</strong></td>
+    <td width="12%"><strong>STATUS</strong></td>
     </tr>
 </tbody>
 </table>
-<button class="accordion">PROCESS</button>
+<button class="accordion">OPERATIONAL IMPROVEMENT</button>
 <div class="panel">
 <table width="100%">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;"><a href="#">Operationalizing Digital Delivery</a></td>
-    <td width="25%" style="width:21%;">08/17</td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">WileyPLUS Onboarding, Training & Support</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td width="25%" style="width:21%;">12/31/16</td>
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
-    <td>09/17</td>
+    <td style="text-align:left"><a href="#">Digital Delivery Dashboard </a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>08/30/16</td>
     <td><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
-    <td>10/17</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Career Portal</a></td>
-    <td>11/17</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
-    <td>12/17</td>
-    <td><img src="images/circle_green.png"></td>
+    <td style="text-align:left"><a href="#">Operationalizing Digital Delivery</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td>03/15/17</td>
+    <td><img src="images/circle_red.png"></td>
   </tr>
   </tbody>
 </table>
@@ -649,30 +556,11 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 <div class="panel">
   <table width="100%">
 <tbody valign="middle">
-<tr>
-    <td width="38%" style="text-align:left;width:46%;"><a href="#">Operationalizing Digital Delivery</a></td>
-    <td width="25%" style="width:21%;">08/17</td>
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">NONE</a></td>
+    <td width="25%" style="width:21%;">Null</td>	
+    <td width="25%" style="width:21%;">Null</td>
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
-    <td>09/17</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
-    <td>10/17</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Career Portal</a></td>
-    <td>11/17</td>
-    <td><img src="images/circle_green.png"></td>
-  </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
-    <td>12/17</td>
-    <td><img src="images/circle_green.png"></td>
   </tr>
   </tbody>
 </table>
@@ -683,30 +571,47 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
 <table width="100%">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;"><a href="#">Operationalizing Digital Delivery</a></td>
-    <td width="25%" style="width:21%;">08/17</td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Global Diagnostic Assessment</a></td>
+    <td width="25%" style="width:21%;">MVP Launch</td>	
+    <td>09/30/16</td>
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Project Framework Best Practices</a></td>
-    <td>09/17</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Assessment Service</a></td>
+    <td width="25%" style="width:21%;">Pilot</td>	
+    <td>12/15/17</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Digital Delivery Dashboard</a></td>
-    <td>10/17</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Career Portal</a></td>
+    <td width="25%" style="width:21%;">POC</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Career Portal</a></td>
-    <td>11/17</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Answers</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>09/15/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
-  <tr>
-    <td style="text-align:left"><a href="#">Unified DD Dropbox Account</a></td>
-    <td>12/17</td>
-    <td><img src="images/circle_green.png"></td>
+   <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Problems</a></td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
+   <tr>
+    <td style="text-align:left"><a href="#">AGU Data Science Courseware</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>10/16/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
+  </tr> 
+   <tr>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
+  </tr>   
   </tbody>
 </table>
 </div>

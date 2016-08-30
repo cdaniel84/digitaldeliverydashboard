@@ -10,16 +10,13 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script type="text/javascript">
-
 google.load('visualization', '1', {
     'packages': ['corechart','treemap', 'line']
 });
-
-
 google.setOnLoadCallback(drawChart);
 function drawChart() {
 	// PROJECTS - TREEMAP    
@@ -69,7 +66,7 @@ function drawChart() {
             title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.4,
-            'chartArea': {'width': '100%', 'height': '80%'},
+            chartArea:{left:20,top:0,width:'100%',height:'75%'},
             pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
             pieSliceText: 'value',
             fontSize: 14,
@@ -82,107 +79,6 @@ function drawChart() {
           }; 
             var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart2.draw(data2, options2);   
-  
-  
-              // DUMMIES DONUT CHART 1 FOR PRODUCT UPDATES
-          var data3 = google.visualization.arrayToDataTable([
-            ['Status', 'Value'],
-            ['Delayed',   33 /* Input custom y*/],
-            ['On Track',  33 /* Input custom y*/],
-            ['Descoped',  33 /* Input custom y*/],
-          ]);
-          var options3 = {
-            legend: {position: 'none'},
-            backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
-            titlePosition: 'none',
-            pieHole: 0.45,
-            'chartArea': {'width': '100%', 'height': '80%'},
-            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 1, bold: 'true'},
-            pieSliceText: 'none',
-            fontSize: 14,
-            slices: {
-            0: { color: 'darkgrey' },
-            1: { color: 'darkgrey' },
-            2: { color: 'darkgrey'}}
-          }; 
-            var chart3 = new google.visualization.PieChart(document.getElementById('donutchart2'));
-            chart3.draw(data3, options3);
-  
-                // PRODUCT UPDATES - WEL DONUT CHART 2
-          var data4 = google.visualization.arrayToDataTable([
-            ['Status', 'none'],
-            ['Delayed',     35 /* Input custom y*/],
-            ['On Track',    60 /* Input custom y*/],
-            ['Descoped',     5 /* Input custom y*/],
-          ]);
-          var options4 = {
-            legend: {position: 'none'},
-            backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
-            titlePosition: 'none',
-            pieHole: 0.45,
-            'chartArea': {'width': '100%', 'height': '80%'},
-            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
-            pieSliceText: 'none',
-            fontSize: 14,
-            slices: {
-            0: { color: '#FFCC33' },
-            1: { color: '#66CC66' },
-            2: { color: '#CC3300'}}
-          }; 
-            var chart4 = new google.visualization.PieChart(document.getElementById('donutchart3'));
-            chart4.draw(data4, options4);
-  
-        //PRODUCT UPDATES - WILEYPLUS DONUT CHART 3
-          var data5 = google.visualization.arrayToDataTable([
-            ['Status', 'none'],
-            ['Delayed',     20 /* Input custom y*/],
-            ['On Track',    75 /* Input custom y*/],
-            ['Descoped',     5 /* Input custom y*/],
-          ]);
-          var options5 = {
-            legend: {position: 'none'},
-            backgroundColor: '#F2F2F2',
-            title: 'WileyPLUS',
-            titlePosition: 'none',
-            pieHole: 0.45,
-            'chartArea': {'width': '100%', 'height': '80%'},
-            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
-            pieSliceText: 'none',
-            fontSize: 14,
-            slices: {
-            0: { color: '#FFCC33' },
-            1: { color: '#66CC66' },
-            2: { color: '#CC3300'}}
-          }; 
-            var chart5 = new google.visualization.PieChart(document.getElementById('donutchart4'));
-            chart5.draw(data5, options5);
-  
-                // PRODUCT UPDATES - WPLS DONUT CHART 4
-          var data6 = google.visualization.arrayToDataTable([
-            ['Status', 'none'],
-            ['Delayed',     20 /* Input custom y*/],
-            ['On Track',    80 /* Input custom y*/],
-            ['Descoped',     0 /* Input custom y*/],
-          ]);
-          var options6 = {
-            legend: {position: 'none'},
-            backgroundColor: '#F2F2F2', 
-            title: 'WileyPLUS',
-            titlePosition: 'none',
-            pieHole: 0.45,
-            'chartArea': {'width': '100%', 'height': '80%'},
-            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 16, bold: 'true'},
-            pieSliceText: 'none',
-            fontSize: 14,
-            slices: {
-            0: { color: '#FFCC33' },
-            1: { color: '#66CC66' },
-            2: { color: '#CC3300'}}
-          }; 
-            var chart6 = new google.visualization.PieChart(document.getElementById('donutchart5'));
-            chart6.draw(data6, options6);
         
 		  //create first line chart - Dummies
       var data7 = new google.visualization.DataTable();
@@ -197,7 +93,6 @@ function drawChart() {
         [3,   , 489895],
         [4,  , 496895],
       ]);
-
       var options7 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
@@ -215,9 +110,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         lineWidth: 5
-
       };
-
       var line = new google.visualization.LineChart(document.getElementById('line'));
       line.draw(data7, options7);
   
@@ -239,7 +132,6 @@ function drawChart() {
         [3.5,   , 400],
         [4,  , 400],
       ]);
-
       var options8 = {
        colors:['gray','gray'],      
         backgroundColor: '#F2F2F2',
@@ -257,9 +149,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         lineWidth: 5
-
       };
-
       var line2 = new google.visualization.LineChart(document.getElementById('line2'));
       line2.draw(data8, options8);
   
@@ -277,7 +167,6 @@ function drawChart() {
         [3,   , 15892990],
         [4,  , 4089835],
       ]);
-
       var options9 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
@@ -295,9 +184,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         lineWidth: 5
-
       };
-
       var line3 = new google.visualization.LineChart(document.getElementById('line3'));
       line3.draw(data9, options9);
   
@@ -315,11 +202,10 @@ function drawChart() {
         [3,   , 15892990],
         [4,  , 4089835],
       ]);
-
       var options10 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
-        legend: {position: 'bottom'},
+        legend: {position: 'none'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -333,9 +219,7 @@ function drawChart() {
           baselineColor: '#3399CC'
         },
         lineWidth: 5
-
       };
-
       var line4 = new google.visualization.LineChart(document.getElementById('line4'));
       line4.draw(data10, options10);
 }
@@ -354,103 +238,138 @@ function drawChart() {
 		<li>Sample News Story #3</li>
 		<li>Sample News Story #4</li>
 	</ul>
-  <div class="row">
+<div class="row">
     <div class="twelve columns">
-    <div class="headline"><h1>Year-to-date sales / Revenue
+    <div class="headline"><h1>Year-to-date sales
    	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1>
     <div class="lightbox" id="sales"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
 Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
 </li>
-<li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>
-	
-	
-	</div> 
-	
-    <!-- YTD Sales Image: 
-	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
-	-->
+<li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
+    
+    
+    </div> 
 	
 	<!-- Line Charts -->
 	
-	    <div style="font-size: 26px; margin-top:1%; margin-left: 10%"><font color="blue"><u><b>Dummies</b></u></font>
-     <div style="font-size: 26px; margin-left: 15%; display:inline-block"><font color="blue"><u><b>WEL</b></u></font></div>
-       <div style="font-size: 26px; margin-left: 18%; display:inline-block"><font color="blue"><u><b>WileyPLUS</b></u></font></div>
-         <div style="font-size: 26px; margin-left: 15%; display:inline-block"><font color="blue"><u><b>WPLS</b></u></font></div>
-      </div>   
-        
-  <div id="line" style="width:25%; height: 50%; display:inline-block"></div>  
-  <div id="line2" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div> 
-  <div id="line3" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div> 
-  <div id="line4" style="width:25%; height: 50%; margin-left: -25px; display:inline-block"></div>   
-        
-        <div style="font-size: 30px; margin-left: 10%"><font color="#66CC66"><b>$300K</b></font>
-     <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>10K</b></font></div>
-       <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>44K</b></font></div>
-         <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#66CC66"><b>44K</b></font></div>
-      </div>       
-        
-        <div style="font-size: 30px; margin-top:-1%; margin-left: 10%"><font color="#FFCC33"><b>$250K</b></font>
-     <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b> &nbsp; 9K</b></font></div>
-       <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b>33K</b></font></div>
-         <div style="font-size: 30px; margin-left: 20%; display:inline-block"><font color="#FFCC33"><b>33K</b></font></div>
-      </div>   
-	
-	
+
+	    
+<div class="lines">        
+<a href="#">Dummies</a>      
+  <div id="line"></div>
+  <div class="revenue">    
+        <p id="revA">$300k</p>
+    <div id="revborder">Ad Revenue</div>    
+        <p id="revB">$250k</p>
+        </div>
+</div>
+<div class="lines">
+<a href="#" style="margin-left: 40%">WEL</a>        
+  <div id="line2"></div>
+<div class="revenue">
+    <p id="revA">10k</p>
+<div id="revborder">Conversions</div>
+    <p id="revB">9k</p>
     </div>
-    </div>
+</div>
+<div class="lines">
+    <a href="#">WileyPLUS</a>
+  <div id="line3"></div>
+<div class="revenue">
+    <p id="revA">44k</p>
+    <div id="revborder">Validation</div>
+    <p id="revB">33k</p>
+    </div>    
+</div>    
+<div class="lines">
+<a href="#" style="margin-left: 35%">WPLS</a>  	   
+  <div id="line4"></div>
+<div class="revenue">
+    <p id="revA">44k</p>
+<div id="revborder">Validation</div>
+    <p id="revB">33k</p>
+    </div>  	
+</div>     
+<img src="https://i.imgsafe.org/4868df27f6.jpg"  width="125" height="65" alt="Legend" style="margin-top: 12%">
+<img src="https://i.imgsafe.org/48693cd966.jpg"  width="125" height="65" alt="Legend" style="margin-top: 8%">
+
+      </div>   
+	 
+    
+ 
   <div class="row">
-    <div class="six columns">   
+    <div class="six columns" style="max-height:450px;">   
    	  <div class="headline"><h1>Product Updates
       <img src="images/business-contact.png" data-featherlight="#productupdates" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
-	 
-	 <div class="lightbox" id="productupdates"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+  
+  <div class="lightbox" id="productupdates"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
 Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
 </li>
 <li>For WileyPLUS (E4), contact <b>Franny Kelly,</b> Associate Director, Product Management, WileyPLUS, Custom & eTextbooks | (1) 201-748-7681 | <a href="mailto:fkelly@wiley.com">fkelly@wiley.com</a></li>
 <li>For WPLS, contact <b>Luke Curtin,</b> Senior Product Manager, ORION, WileyPLUS Learning Space, and SWAT | (1) 201-748-7799 | <a href="mailto:lcurtin@wiley.com">lcurtin@wiley.com</a></li></ul></div>
-	 
-	  <!-- Product Updates Charts -->
-	  
-	<div style="font-size: 22px; margin-top:10%; margin-left: 7%"><font color="blue"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx"><u><b>Dummies</b></u></a></font>
-     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><a href=""><u><b>WEL</b></u></a></font></div>
-     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><a href="WileyPLUS (E4) : http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx"><u><b>WileyPLUS</b></u></a></font></div>
-     <div style="font-size: 22px; margin-left: 10%; display:inline-block"><font color="blue"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1"><u><b>WPLS</b></u></a></font></div>
-    </div>
-    
-    
-    <div class=intext style="margin-left: 3%; margin-top: 160px; z-index: 3">Jun 30
-      <div style="display:inline-block; margin-left: 65px">Jun 30</div>
-      <div style="display:inline-block; margin-left: 65px">Aug 25</div>      
-      <div style="display:inline-block; margin-left: 65px">Sep 10</div>
-        <div class=innertext style="margin-top: -10px">next release
-			  <div style="display:inline-block; margin-left: 65px">next release</div>
-			  <div style="display:inline-block; margin-left: 70px">next release </div>      
-			  <div style="display:inline-block; margin-left: 70px">next release</div>
-		</div>    
-    </div>
 
-    <div id="donutchart2" style="width: 22%; height: 44%; margin-left:10px; display: inline-block; position: relative"></div>
-        <div id="donutchart3" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
-        <div id="donutchart4" style="width:22%; height: 44%; margin-left:10px; display: inline-block"></div>
-       <div id="donutchart5" style="width: 22%; height: 44%; margin-left:10px; display: inline-block"></div>
-    <img src="https://i.imgsafe.org/5d8b819914.jpg" alt="" style="width: 50%; height: 10%; margin-left: 45%; margin-top: 20px"/>
+      
+	 
+	    <p id="infolink"><a href="#">Dummies</a></p>
+    <div class="dummiesrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+    <p id="infolink"><a href="#">WileyPLUS</a></p>
+    <div class="e4release">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+        
+    <p id="infolinkright"><a href="#">WEL</a></p>
+<div class="welrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+        
+    <p id="infolinkrightbottom"><a href="#">WPLS</a></p>
+<div class="wplsrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>        
 
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
-
+</div>
+   
+<div class="six columns">    
       <div class="headline"><h1>Reliability &amp; Usage
    	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
-      <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
+      </div>
+       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+          <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
 <li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
 </li>
 <li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
-</ul></div>
-	  
-	  
-	  </div>
-       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+</ul></div>    
+		
         <table width="100%">
 <tbody valign="middle">
   <tr>
@@ -496,27 +415,31 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
   </tr>
   </tbody>
 </table>
-    </div>
-    <div class="six columns"><div class="headline"><h1>Projects &amp; Ideas
+      <div style="margin-top: 140px"></div>
+    </div>  
+
+</div>
+</div>   
+      
+    <div class="twelve columns"><div class="headline"><h1>Projects &amp; Ideas
    	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
     <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
  
 For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
 <li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
 <li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
-</li></ul></div>
-	
-	
-	</div>
-      
-<!-- Ideas and projects charts -->	 <!-- add appproved not approved -->
-	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 60%; height: 88%; float:left; margin-left:10px; margin-top: 38px"></div>
+</li></ul></div>   
 
-    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 60%; margin-top: 40px"></div>
+
+   </div>
+
+<!-- Ideas and projects charts -->	
+    <div id="chart_div" style="width: 50%; height: 88%; float:left; margin-left:5%; margin-top: 35px; margin-bottom: 20px"></div>
+
+	<div style="margin-left:74%; margin-top:3%; position: absolute"><font size="4"><b>Ideas<b></font></div>
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 55%; margin-top: 80px; margin-bottom: 20px"></div>
 	  
-	  
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+        <table width="100%" style="margin-top:-1%;padding-bottom:0;margin-bottom:0;border-top:1px solid #3399cc;">
 <tbody valign="middle">
     <tr>
     <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
@@ -526,8 +449,8 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     </tr>
 </tbody>
 </table>
-<button class="accordion">OPERATIONAL IMPROVEMENT</button>
-<div class="panel">
+<button class="accordion active">OPERATIONAL IMPROVEMENT</button>
+<div class="panel show">
 <table width="100%">
 <tbody valign="middle">
   <tr>
@@ -571,55 +494,53 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%">
 <tbody valign="middle">
   <tr>
-    <td style="text-align:left"><a href="#">Global Diagnostic Assessment</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Global Diagnostic Assessment</a></td>
     <td width="25%" style="width:21%;">MVP Launch</td>	
     <td>09/30/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Wiley Assessment Service</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Assessment Service</a></td>
     <td width="25%" style="width:21%;">Pilot</td>	
     <td>12/15/17</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Career Portal</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Career Portal</a></td>
     <td width="25%" style="width:21%;">POC</td>	
     <td>11/01/16</td>
-    <td><img src="images/circle_yellow.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Wiley Answers</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Answers</a></td>
     <td width="25%" style="width:21%;">Prototype</td>	
     <td>09/15/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
    <tr>
-    <td style="text-align:left"><a href="#">Wiley Problems</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Problems</a></td>
     <td width="25%" style="width:21%;">Discovery</td>	
     <td>11/01/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
    <tr>
     <td style="text-align:left"><a href="#">AGU Data Science Courseware</a></td>
     <td width="25%" style="width:21%;">Prototype</td>	
     <td>10/16/16</td>
-    <td><img src="images/circle_red.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
   </tr> 
    <tr>
-    <td style="text-align:left"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
     <td width="25%" style="width:21%;">Discovery</td>	
     <td>11/01/16</td>
-    <td><img src="images/circle_red.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
   </tr>   
   </tbody>
 </table>
-</div>
 
         </div>
   </div>
-
-</div>
+  
 
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

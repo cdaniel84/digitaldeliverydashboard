@@ -56,10 +56,10 @@ function drawChart() {
             // PROJECTS & IDEAS - BUBBLE CHART
           var data2 = google.visualization.arrayToDataTable([
          ['ID', 'x', 'y', 'Status',     'Size'],
-        ['Approved',    78.6,              1.67,      'Approved',  7],
-        ['Not Approved',    79.24,              1.69,      'Not Approved',         4],
-        ['Under Review',    79.73,               1.66,      'Under Review',         2],
-        ['On Hold',    80.06,              1.68,      'On Hold',    1],
+        ['Approved',    78.48,              1.69,      'Approved',  7],
+        ['Not Approved',    79.28,              1.72,      'Not Approved',         4],
+        ['Under Review',    79.67,               1.66,      'Under Review',         2],
+        ['On Hold',    80.06,              1.7,      'On Hold',    1],
         ['',    80.66,              1.78,      '',    0],
       ]);
          var options2 = {
@@ -68,7 +68,7 @@ function drawChart() {
         headerHeight:40,
         hAxis: {title: ''},
         vAxis: {title: ''},
-        sizeAxis: {maxSize:50},
+        sizeAxis: {maxSize:70},
         hAxisviewWindowMode:'pretty',
         //tooltip: {trigger: 'none'},     
         bubble: {textStyle: {fontSize: 11}},
@@ -312,9 +312,11 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
       
 <!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 80%; height: 88%; float:left; margin-left:10%; margin-top: 10px"></div>
+    <div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div>
 
-    <div id="bubblechart" style="width: 80%; height: 100%; float:left; margin-left: 10%"></div>
+	<div style="position: relative"><font size="4"><center><b>Ideas<b></center></font></div>
+	
+    <div id="bubblechart" style="width: 80%; height: 100%; float:left; margin-left: 17%; margin-bottom:2%"></div>
 	  
 	  
         <table width="100%" style="padding-bottom:0;margin-bottom:0;">
@@ -440,7 +442,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div id="calendaricon">
         <img src="images/calendar_page_green.png" />
     </div>
-    <p id="releasedate">Oct<br>22</p>    
+    <p id="releasedate">Oct<br>22</p>  
+		<div style="position: absolute; inline-block; float: left; margin-top: 110px"><b>Next Release:</b></div>	
         <ul>
         <li>Lockdown Browser</li>
         <li>Printed Test Upgraded Functionality</li>
@@ -456,7 +459,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <div id="calendaricon">
         <img src="images/calendar_page_green.png" />
     </div>
-<p id="releasedate">Oct<br>22</p>          
+<p id="releasedate">Oct<br>22</p>   
+		<div style="position: absolute; inline-block; float: left; margin-top: 110px"><b>Next Release:</b></div>
         <ul>
         <li>Lockdown Browser</li>
         <li>Printed Test Upgraded Functionality</li>
@@ -469,7 +473,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div id="calendaricon">
         <img src="images/calendar_page_green.png" />
     </div>
-    <p id="releasedate">Oct<br>15</p>    
+    <p id="releasedate">Oct<br>15</p> 
+		<div style="position: absolute; inline-block; float: left; margin-top: 110px"><b>Next Release:</b></div>	
         <ul>
         <li>Style Change to Accounting Tables</li>
         <li>Hybris</li>
@@ -483,7 +488,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <div id="calendaricon">
         <img src="images/calendar_page_yellow.png" />
     </div>
-    <p id="releasedate">Dec<br>10</p>     
+    <p id="releasedate">Dec<br>10</p>  
+		<div style="position: absolute; inline-block; float: left; margin-top: 110px"><b>Next Release:</b></div>	
         <ul>
         <li>LWPQTI Export from SWAT</li>
         <li>Ability to update users role </li>

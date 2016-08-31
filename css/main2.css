@@ -1,0 +1,239 @@
+img{max-height:100%;max-width:100%}
+#nt-example2 {max-width: 100%;margin: auto;border:1px solid #000;margin-bottom:1.2em;}
+ul {-webkit-padding-start: 0 !important;}
+#nt-example2 li::before {content:"NEWS";color:#FFF;padding-right:1.3em;}
+#nt-example2 li {color: #000;background-image:linear-gradient(to right,#3399cc,#3399cc 85px,#ffffff 85px,#ffffff 85%,#ffffff 85%);position:static;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;height:27px;line-height: 30px;list-style: none;text-align: left;padding: 0 16px 0 16px;font-size:18px;}
+.headline {width:100%;height:40px;background:#3399CC;}
+.headline h1 {color:#FFFFFF; text-transform:uppercase; text-align:center; font: bold 1.3em/2.2em" Helvetica Neue", Helvetica, Arial, sans-serif;}
+.columns{background:#F2F2F2;}
+button.accordion{ background-color: #3399cc;color: #F2F2F2;cursor: pointer;padding: 10px;width: 100%;border: none;text-align: left;outline: none;font-size: 15px;transition: 0.4s;font-weight: bold;}
+button.accordion:before{content: '\02795';font-size: 13px;color: #FFFFFF !important;float: left;margin-right: 5px;}
+button.accordion.active:before{content: "\2796";color:#FFFFFF !important;}
+div.panel {padding: 0;background-color:#F2F2F2;max-height: 0;overflow: hidden;transition: 0.6s ease-in-out;opacity: 0;}
+div.panel.show {opacity: 1;max-height: 500px;}
+tbody tr:nth-of-type(2n) {background-color: #F2F2F2;}
+tbody {background-color: #F2F2F2;}
+th {background-color:#F2F2F2;font-weight:bold;color:#000;padding:7px;}
+td {padding:7px;text-align: center;}
+.tooltipHelp {display: inline;background-color: #daded4;padding: 1px 7px;border-radius: 10px;font-size: 15px; font-weight: 600;line-height: 18px;text-align: center;color: #272f37;cursor: pointer;}
+.tooltipHelp:hover,.tooltipHelp:focus,.tooltipHelp:active {text-decoration: none;color: #272f37;}
+.lightbox { display: none; }
+  .intext{
+    position: absolute;
+    /* simple hack to layer */
+    z-index: 1;
+    font-size: 25px;
+    margin-left: 55px;
+    margin-top: 70px;    
+  }
+  .innertext{
+    font-size:14px;
+    margin-left:2px;
+  }
+
+@media all{.featherlight{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;text-align:center;white-space:nowrap;cursor:pointer;background:#333;background:rgba(0,0,0,0)}.featherlight:last-of-type{background:rgba(0,0,0,.8)}.featherlight:before{content:'';display:inline-block;height:100%;vertical-align:middle;margin-right:-.25em}.featherlight .featherlight-content{position:relative;text-align:left;vertical-align:middle;display:inline-block;overflow:auto;padding:25px 25px 0;border-bottom:25px solid transparent;margin-left:5%;margin-right:5%;max-height:95%;background:#fff;cursor:auto;white-space:normal}.featherlight .featherlight-inner{display:block}.featherlight .featherlight-close-icon{position:absolute;z-index:9999;top:0;right:0;line-height:25px;width:25px;cursor:pointer;text-align:center;font-family:Arial,sans-serif;background:#fff;background:rgba(255,255,255,.3);color:#000}.featherlight .featherlight-image{width:100%}.featherlight-iframe .featherlight-content{border-bottom:0;padding:0}.featherlight iframe{border:0}.featherlight *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}}@media only screen and (max-width:1024px){.featherlight .featherlight-content{margin-left:10px;margin-right:10px;max-height:98%;padding:10px 10px 0;border-bottom:10px solid transparent}}
+
+/*YTD Sales Line Chart Design*/
+
+.lines {
+    width:22%;
+    float:left;
+    position:relative;
+    display:inline-block;
+    border-right:1px solid #3399CC;
+}
+
+.lines a {
+    font-size:30px;
+    font-weight:bold;
+    margin-left:25%;
+}
+
+/*Product Update info cars*/
+
+#infolink {
+    margin-left:10px;
+    font-weight:bold;
+}
+
+#infolinkright {
+    position: relative;
+    bottom: 392px;
+    left: 285px;
+    font-weight:bold;
+}
+
+#infolinkrightbottom {
+    position:relative;
+    font-weight:bold;
+    left: 285px;
+    bottom:243px;
+}
+
+.e4release {
+    width:225px;
+    height:155px;
+    background:white;
+    border:1px solid #3399CC;
+    margin-left:5px;
+    margin-top:-10px;
+}
+
+.e4release ul {
+    width:50%;
+    font-size:12px;
+}
+
+.e4release ul li {
+    list-style: square;
+    margin-left:25px;
+}
+
+.e4release p {
+    font-weight: bold;
+    color: #66CC66;
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+    left: 65px;
+    bottom: 150px;
+}
+
+.dummiesrelease {
+    width:225px;
+    height:155px;
+    background:white;
+    border:1px solid #3399CC;
+    margin-left:5px;
+    margin-top:-10px;
+}
+
+.dummiesrelease ul {
+    width:50%;
+    font-size:12px;
+}
+
+.dummiesrelease ul li {
+    list-style:square;
+    margin-left:25px;
+}
+
+.dummiesrelease p {
+    font-weight: bold;
+    color: #66CC66;
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+    left: 65px;
+    bottom: 150px;
+}
+
+.welrelease {
+    width:225px;
+    height:155px;
+    background:white;
+    border:1px solid #3399CC;
+    margin-left:5px;
+    margin-top:-10px;
+    position:relative;
+    float: right;
+    bottom: 392px;
+    right: 15px;
+}
+
+.welrelease ul {
+    width:50%;
+    font-size:12px;
+}
+
+.welrelease ul li {
+    list-style:square;
+    margin-left:25px;
+}
+
+.welrelease p {
+    font-weight: bold;
+    color: #66CC66;
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+    left: 65px;
+    bottom: 150px;
+}
+
+.wplsrelease {
+    width:225px;
+    height:155px;
+    background:white;
+    border:1px solid #3399CC;
+    margin-left:5px;
+    margin-top:-10px;
+    position:relative;
+    float: right;
+    bottom: 245px;
+    left: 217px;
+}
+
+.wplsrelease ul {
+    width:50%;
+    font-size:12px;
+}
+
+.wplsrelease ul li {
+    list-style:square;
+    margin-left:25px;
+}
+
+.wplsrelease p {
+    font-weight: bold;
+    color: #FFCC33;
+    font-size: 28px;
+    text-align: center;
+    position: relative;
+    left: 65px;
+    bottom: 150px;
+}
+
+/*Line Charts - Revenue Values*/
+
+.revenue {
+    float:left;
+    position:relative;
+    display:inline-block;
+    width:99%;
+    margin-left:1px;
+    text-align: center;
+}
+
+#revA {
+    font-weight:bold;
+    font-size:30px;
+    color:#66CC66;
+}
+
+#revB {
+    font-weight:bold;
+    font-size:30px;
+    color:#FFCC33;
+}
+
+#revborder {
+    color:white;
+    font-weight:bold;
+    font-size:20px;
+    width:100%;
+    background:#3399CC;
+    float:left;
+    position:relative;
+    text-align: center;
+}
+
+/*spacing adjustments*/
+
+.twelve.columns {
+    margin-bottom:1%;
+}
+
+.six.columns {
+    margin-bottom:1%;
+}

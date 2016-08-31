@@ -51,7 +51,7 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     float:left;
     position:relative;
     display:inline-block;
-    border-right:2px solid #3399CC;
+    border-right:1px solid #3399CC;
 }
 
 .lines a {
@@ -153,13 +153,28 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 
 /*spacing adjustments*/
 
-.rightcolumn {
-    float: right;
-}
-.twelve.columns {
+.six.columns {
     margin-bottom:1%;
 }
 
-.six.columns {
+.twelve.columns {
     margin-bottom:1%;
+}
+.rightcolumn {
+    float: right;
+}
+
+#legend {
+    float:right;
+    position:relative;
+    margin-right:3%;
+}
+
+.ideaslabel {
+    float: left;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
 }

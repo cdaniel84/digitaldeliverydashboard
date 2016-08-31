@@ -106,7 +106,7 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     top: -75px;
     left: 45px;
 }
-@media only screen and (max-device-width: 480px) {#releasedate {left: 9px;}}
+@media screen and (max-device-width: 480px) {#releasedate {left: 9px;}}
 #calendaricon {
     float:left;
     position:relative;

@@ -13,7 +13,6 @@
   <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>    
 <script type="text/javascript">
 google.load('visualization', '1', {
     'packages': ['corechart','treemap', 'line']
@@ -47,7 +46,7 @@ function drawChart() {
           midColor: '#FFCC33',
           maxColor: '#66CC66',
           headerHeight: 40,
-          headerColor: '#f2f2f2',
+          headerColor: '#f2f2f2',          
           titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
           fontColor: 'black',
           fontFamily: 'Helvetica',
@@ -55,32 +54,30 @@ function drawChart() {
         });  
             // PROJECTS & IDEAS - DONUT CHART
           var data2 = google.visualization.arrayToDataTable([
-         ['ID', 'x', 'y', 'Status',     'Size'],
-        ['Approved',    78.6,              1.67,      'Approved',  7],
-        ['Not Approved',    79.24,              1.69,      'Not Approved',         4],
-        ['Under Review',    79.73,               1.66,      'Under Review',         2],
-        ['On Hold',    80.26,              1.68,      'On Hold',    1],
-        ['',    80.66,              1.78,      '',    0],
-      ]);
-         var options2 = {
-        title: 'Ideas',
-        titlePosition:'top',
-        headerHeight:40,
-        hAxis: {title: ''},
-        vAxis: {title: ''},
-        sizeAxis: {maxSize:50},
-        hAxisviewWindowMode:'pretty',
-        tooltip: {trigger: 'none'},     
-        bubble: {textStyle: {fontSize: 11}},
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        chartAreabackgroundColor:{color:'#F2F2F2'},
-        colors: ['#66CC66','#CC3300','#FFCC33','#3399CC','#F2F2F2'],
-        chartArea:{left:0,width:'100%',height:'100%'},
-        hAxis: {gridlines: {color: '#333', count: 0}},
-        vAxis: {gridlines: {color: '#333', count: 0}}
-      };
-            var chart2 = new google.visualization.BubbleChart(document.getElementById('bubblechart'));
+            ['Status', 'none'],
+            ['On Hold',     1 /* Input custom y*/],
+            ['Under Review',      4 /* Input custom y*/],
+            ['Approved',      7 /* Input custom y*/],
+            ['Not Approved',      2 /* Input custom y*/],			
+          ]);
+          var options2 = {
+            legend: {position: 'bottom'},
+            backgroundColor: '#F2F2F2',
+            title: 'WileyPLUS',
+            titlePosition: 'none',
+            pieHole: 0.4,
+            chartArea:{left:20,top:0,width:'100%',height:'75%'},
+            pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
+            pieSliceText: 'value',
+            fontSize: 14,
+            slices: {
+            0: { color: '#3399CC' },
+            1: { color: '#FFCC33' },
+            2: { color: '#66CC66'},
+			3: { color: '#CC3300'}
+			}
+          }; 
+            var chart2 = new google.visualization.PieChart(document.getElementById('donutchart'));
             chart2.draw(data2, options2);   
         
 		  //create first line chart - Dummies
@@ -136,20 +133,20 @@ function drawChart() {
         [4,  , 400],
       ]);
       var options8 = {
-       colors:['#D4D4D4','#D4D4D4'],      
+       colors:['gray','gray'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
           gridlines: {color: 'none'},
-          baselineColor: '#D4D4D4'
+          baselineColor: '#3399CC'
         },
         vAxis: {
           ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
           title: '',
           gridlines: {color: 'none'},
-          baselineColor: '#D4D4D4'
+          baselineColor: '#3399CC'
         },
         lineWidth: 5
       };
@@ -235,26 +232,31 @@ function drawChart() {
   <!-- .container is main centered wrapper -->
 <div class="container">
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
-<!--  news stories -->
 <ul id="nt-example2">
 		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
-        <li>Dummies.com 2.0 has launched!!  Check out it's <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>
-        <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>
+		<li>2 University Adoptions! Click <a href="#">here</a> for more information!</li>
+		<li>Sample News Story #3</li>
+		<li>Sample News Story #4</li>
 	</ul>
 <div class="row">
     <div class="twelve columns">
-    <div class="headline"><h1>Year-to-date sales / Revenue
-   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
-    <div class="lightbox" id="sales"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+    <div class="headline"><h1>Year-to-date sales
+   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="lightbox" id="sales"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
 Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
 </li>
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
-  	
-
+    
+    
+    </div> 
+	
 	<!-- Line Charts -->
+	
+
+	    
 <div class="lines">        
-<a href="#">Dummies</a>      
+<a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a>      
   <div id="line"></div>
   <div class="revenue">    
         <p id="revA">$300k</p>
@@ -263,7 +265,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         </div>
 </div>
 <div class="lines">
-<a href="#">WEL</a>        
+<a href="#" style="margin-left: 40%">WEL</a>        
   <div id="line2"></div>
 <div class="revenue">
     <p id="revA">10k</p>
@@ -272,7 +274,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>
 </div>
 <div class="lines">
-    <a href="#">WileyPLUS</a>
+    <a href="WileyPLUS (E4) : http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a>
   <div id="line3"></div>
 <div class="revenue">
     <p id="revA">44k</p>
@@ -281,26 +283,147 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>    
 </div>    
 <div class="lines">
-<a href="#">WPLS</a>    
+<a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1" style="margin-left: 35%">WPLS</a>  	   
   <div id="line4"></div>
 <div class="revenue">
     <p id="revA">44k</p>
 <div id="revborder">Validation</div>
     <p id="revB">33k</p>
-    </div>    
-</div>       
-		<!-- line chart legend -->
-     <img src="https://s15.postimg.io/5omex6f0b/year_1.png"  width="85" height="45" alt="Legend" style="margin-top: 12%; margin-left: 1%">
-<img src="https://s11.postimg.io/evhnxppo3/year_2.png"  width="85" height="45" alt="Legend" style="margin-top: 5%; margin-left: 1%">    
+    </div>  	
+</div>     
+<img src="https://s15.postimg.io/5omex6f0b/year_1.png"  width="100" height="55" alt="Legend" style="margin-top: 12%; margin-left: 1%">
+<img src="https://s11.postimg.io/evhnxppo3/year_2.png"  width="100" height="55" alt="Legend" style="margin-top: 8%; margin-left: 1%">
+
       </div>   
-	 </div> 
+	 
     
  
   <div class="row">
-<div class="six columns">
-        <div class="headline"><h1>Projects &amp; Ideas
+    <div class="six columns" style="max-height:450px;">   
+   	  <div class="headline"><h1>Product Updates
+      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+  
+  <div class="lightbox" id="productupdates"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
+<li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
+Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4), contact <b>Franny Kelly,</b> Associate Director, Product Management, WileyPLUS, Custom & eTextbooks | (1) 201-748-7681 | <a href="mailto:fkelly@wiley.com">fkelly@wiley.com</a></li>
+<li>For WPLS, contact <b>Luke Curtin,</b> Senior Product Manager, ORION, WileyPLUS Learning Space, and SWAT | (1) 201-748-7799 | <a href="mailto:lcurtin@wiley.com">lcurtin@wiley.com</a></li></ul></div>
+
+      
+	 
+	    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
+    <div class="dummiesrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+    <p id="infolink"><a href="WileyPLUS (E4) : http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a></p>
+    <div class="e4release">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+        
+    <p id="infolinkright"><a href="#">WEL</a></p>
+<div class="welrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>
+        
+    <p id="infolinkrightbottom"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1">WPLS</a></p>
+<div class="wplsrelease">
+        <ul>
+        <li>Lockdown Browser</li>
+        <li>Printed Test Upgraded Functionality</li>
+        <li>Performance Updates</li>
+        </ul>
+        
+    <p>Oct<br> 22</p>
+    </div>        
+
+	  <div class="lightbox" id="mylightbox">
+Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
+</div>
+   
+<div class="six columns">    
+      <div class="headline"><h1>Reliability &amp; Usage
+   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
+      </div>
+       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+          <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
+<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
+</ul></div>    
+		
+        <table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td style="text-align:left;">&nbsp;</td>
+    <td>Dummies</td>
+    <td>WEL</td>
+    <td>WileyPlus</td>
+    <td>WPLS</td>
+  </tr>
+  <tr>
+    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF;">RELIABILITY</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Uptime</td>
+    <td><font color="gray">99.5%</font></td>
+    <td><font color="gray">99.5%</font></td>
+    <td>99.17%</td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Days Since Last Outage</td>
+    <td><font color="gray">128</font></td>
+    <td><font color="gray">128</font></td>
+    <td>182</td>
+    <td>N/A</td>
+  </tr>
+  <tr bgcolor="#3399CC">
+    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Past 7 Days</td>
+    <td><font color="gray">102K</font></td>
+    <td>42K ?</td>
+    <td>361K</td>
+    <td>34K</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Since Start of FY</td>
+    <td><font color="gray">3M</font></td>
+    <td>543K ?</td>
+    <td>2M</td>
+    <td>204K</td>
+  </tr>
+  </tbody>
+</table>
+      <div style="margin-top: 140px"></div>
+    </div>  
+
+</div>
+</div>   
+      
+    <div class="twelve columns"><div class="headline"><h1>Projects &amp; Ideas
    	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
-    <div class="lightbox" id="ideas"><b>For More Information</b><br><br><ul><li>
+    <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
  
 For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
 <li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
@@ -309,16 +432,15 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
 
    </div>
-      
-<!-- Ideas and projects charts -->	
-	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 80%; height: 88%; float:left; margin-left:10%; margin-top: 10px"></div>
 
-    <div id="bubblechart" style="width: 80%; height: 100%; float:left; margin-left: 10%"></div>
+<!-- Ideas and projects charts -->	
+    <div id="chart_div" style="width: 50%; height: 88%; float:left; margin-left:5%; margin-top: 35px; margin-bottom: 20px"></div>
+
+	<div style="margin-left:74%; margin-top:3%; position: absolute"><font size="4"><b>Ideas<b></font></div>
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 55%; margin-top: 80px; margin-bottom: 20px"></div>
 	  
-	  
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
-<tbody valign="middle" style="border-top: 1px solid #3399CC;">
+        <table width="100%" style="margin-top:-1%;padding-bottom:0;margin-bottom:0;border-top:1px solid #3399cc;">
+<tbody valign="middle">
     <tr>
     <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
     <td width="21%"><strong>CURRENT PHASE</strong></td>	
@@ -327,8 +449,8 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     </tr>
 </tbody>
 </table>
-<button class="accordion">OPERATIONAL IMPROVEMENT</button>
-<div class="panel">
+<button class="accordion active">OPERATIONAL IMPROVEMENT</button>
+<div class="panel show">
 <table width="100%">
 <tbody valign="middle">
   <tr>
@@ -372,192 +494,54 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%">
 <tbody valign="middle">
   <tr>
-    <td style="text-align:left"><a href="#">Global Diagnostic Assessment</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Global Diagnostic Assessment</a></td>
     <td width="25%" style="width:21%;">MVP Launch</td>	
     <td>09/30/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Wiley Assessment Service</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Assessment Service</a></td>
     <td width="25%" style="width:21%;">Pilot</td>	
     <td>12/15/17</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Career Portal</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Career Portal</a></td>
     <td width="25%" style="width:21%;">POC</td>	
     <td>11/01/16</td>
-    <td><img src="images/circle_yellow.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left"><a href="#">Wiley Answers</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Answers</a></td>
     <td width="25%" style="width:21%;">Prototype</td>	
     <td>09/15/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
    <tr>
-    <td style="text-align:left"><a href="#">Wiley Problems</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Problems</a></td>
     <td width="25%" style="width:21%;">Discovery</td>	
     <td>11/01/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
    <tr>
     <td style="text-align:left"><a href="#">AGU Data Science Courseware</a></td>
     <td width="25%" style="width:21%;">Prototype</td>	
     <td>10/16/16</td>
-    <td><img src="images/circle_red.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
   </tr> 
    <tr>
-    <td style="text-align:left"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
+    <td width="38%" style="text-align:left;width:46%;"><a href="#">Wiley Standalone Adaptive (ORION)</a></td>
     <td width="25%" style="width:21%;">Discovery</td>	
     <td>11/01/16</td>
-    <td><img src="images/circle_red.png"></td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
   </tr>   
   </tbody>
 </table>
-  
-    </div>
-	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+
         </div>
-<div class="six columns">   
-   	  <div class="headline"><h1>Product Updates
-      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+				<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+  </div>
   
-  <div class="lightbox" id="productupdates"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
-<li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
-Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
-</li>
-<li>For WileyPLUS (E4), contact <b>Franny Kelly,</b> Associate Director, Product Management, WileyPLUS, Custom & eTextbooks | (1) 201-748-7681 | <a href="mailto:fkelly@wiley.com">fkelly@wiley.com</a></li>
-<li>For WPLS, contact <b>Luke Curtin,</b> Senior Product Manager, ORION, WileyPLUS Learning Space, and SWAT | (1) 201-748-7799 | <a href="mailto:lcurtin@wiley.com">lcurtin@wiley.com</a></li></ul></div>
-
-      
-	 
-	    
-    <div class="release">
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
-    <div id="calendaricon">
-        <img src="images/calendar_page_green.png" />
-    </div>
-    <p id="releasedate">Oct<br>22</p>    
-        <ul>
-        <li>Lockdown Browser</li>
-        <li>Printed Test Upgraded Functionality</li>
-        <li>Performance Updates</li>
-        </ul>
-        
-        
-    </div>
-<div class="release">        
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a></p>
-    <div id="calendaricon">
-        <img src="images/calendar_page_green.png" />
-    </div>
-    <p id="releasedate">Oct<br>15</p>    
-        <ul>
-        <li>Style Change to Accounting Tables</li>
-        <li>Hybris</li>
-        <li>508-Compliance Phase 2</li>
-        </ul>
-        
-    </div>
-    
-    <div class="release">    
-    <p id="infolink"><a href="#">WEL</a></p>
-<div id="calendaricon">
-        <img src="images/calendar_page_green.png" />
-    </div>
-<p id="releasedate">Oct<br>22</p>          
-        <ul>
-        <li>Lockdown Browser</li>
-        <li>Printed Test Upgraded Functionality</li>
-        <li>Performance Updates</li>
-        </ul>
-    </div>
-   <div class="release">     
-    <p id="infolink"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1">WPLS</a></p>
-<div id="calendaricon">
-        <img src="images/calendar_page_yellow.png" />
-    </div>
-    <p id="releasedate">Dec<br>10</p>     
-        <ul>
-        <li>LWPQTI Export from SWAT</li>
-        <li>Ability to update users role </li>
-        <li>Student work completed on Learning Path question activities moves with them</li>
-        </ul>
-        
-    </div>
-    
-<div id="legend" style="float: right; margin-bottom: 1%; margin-right:2%">
-<img src="https://s17.postimg.org/h0naov8cf/key_2.png" height="20" width="220"/>    
-    </div>
-	  <div class="lightbox" id="mylightbox">
-Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
-</div>          
-      
- 
-    
-    
-
-    
-<div class="six columns rightcolumn">    
-      <div class="headline"><h1>Reliability &amp; Usage
-   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
-      </div>
-       <div class="lightbox" id="question">Information on what these are can be put here.</div>
-          <div class="lightbox" id="reliability"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
-<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
-</li>
-<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
-</ul></div>    
-		
-        <table width="100%">
-<tbody valign="middle">
-  <tr>
-    <td style="text-align:left;">&nbsp;</td>
-    <td>Dummies</td>
-    <td>WEL</td>
-    <td>WileyPlus</td>
-    <td>WPLS</td>
-  </tr>
-  <tr>
-    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF; font-weight:bold;">RELIABILITY</td>
-    </tr>
-  <tr>
-    <td style="text-align:left">Uptime</td>
-    <td><font color="gray">99.5%</font></td>
-    <td><font color="gray">99.5%</font></td>
-    <td>99.17%</td>
-    <td>100%</td>
-  </tr>
-  <tr>
-    <td style="text-align:left">Days Since Last Outage</td>
-    <td><font color="gray">128</font></td>
-    <td><font color="gray">128</font></td>
-    <td>182</td>
-    <td>N/A</td>
-  </tr>
-  <tr bgcolor="#3399CC">
-    <td colspan="5" style="text-align:left;color:#FFFFFF; font-weight:bold;">UNIQUE VISITORS</td>
-    </tr>
-  <tr>
-    <td style="text-align:left">Past 7 Days</td>
-    <td><font color="gray">102K</font></td>
-    <td>42K ?</td>
-    <td>361K</td>
-    <td>34K</td>
-  </tr>
-  <tr>
-    <td style="text-align:left">Since Start of FY</td>
-    <td><font color="gray">3M</font></td>
-    <td>543K ?</td>
-    <td>2M</td>
-    <td>204K</td>
-  </tr>
-  </tbody>
-</table>
-    </div>
-</div>
-    
 
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -66,7 +68,7 @@ function drawChart() {
             title: 'WileyPLUS',
             titlePosition: 'none',
             pieHole: 0.4,
-            'chartArea': {'width': '100%', 'height': '80%'},
+            chartArea:{left:20,top:0,width:'100%',height:'75%'},
             pieSliceTextStyle: {color: 'black', fontName: 'Helvetica', fontSize: 20, bold: 'true'},
             pieSliceText: 'value',
             fontSize: 14,
@@ -205,7 +207,7 @@ function drawChart() {
       var options10 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
-        legend: {position: 'bottom'},
+        legend: {position: 'none'},
         hAxis: {
           ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
@@ -232,7 +234,6 @@ function drawChart() {
   <!-- .container is main centered wrapper -->
 <div class="container">
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
-<!--  news stories -->
 <ul id="nt-example2">
 		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
 		<li>2 University Adoptions! Click <a href="#">here</a> for more information!</li>
@@ -242,18 +243,20 @@ function drawChart() {
 <div class="row">
     <div class="twelve columns">
     <div class="headline"><h1>Year-to-date sales
-   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1></div> 
+   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="" style="float:right;padding-right:0.5em;"/></h1>
     <div class="lightbox" id="sales"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
 Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
 </li>
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
-  	
-    <!-- YTD Sales Image: 
-	<img src="https://i.imgsafe.org/205d00492f.jpg" alt="" /> 
-	-->
+    
+    
+    </div> 
 	
 	<!-- Line Charts -->
+	
+
+	    
 <div class="lines">        
 <a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a>      
   <div id="line"></div>
@@ -264,7 +267,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         </div>
 </div>
 <div class="lines">
-<a href="#">WEL</a>        
+<a href="#" style="margin-left: 40%">WEL</a>        
   <div id="line2"></div>
 <div class="revenue">
     <p id="revA">10k</p>
@@ -282,18 +285,19 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>    
 </div>    
 <div class="lines">
-<a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1">WPLS</a>    
+<a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1" style="margin-left: 35%">WPLS</a>  	   
   <div id="line4"></div>
 <div class="revenue">
     <p id="revA">44k</p>
 <div id="revborder">Validation</div>
     <p id="revB">33k</p>
-    </div>    
-</div>        
-        <img src="https://s15.postimg.io/5omex6f0b/year_1.png"  width="100" height="55" alt="Legend" style="margin-top: 12%; margin-left: 1%">
-		<img src="https://s11.postimg.io/evhnxppo3/year_2.png"  width="100" height="55" alt="Legend" style="margin-top: 8%; margin-left: 1%">
+    </div>  	
+</div>     
+<img src="https://s15.postimg.io/5omex6f0b/year_1.png"  width="100" height="55" alt="Legend" style="margin-top: 12%; margin-left: 1%">
+<img src="https://s11.postimg.io/evhnxppo3/year_2.png"  width="100" height="55" alt="Legend" style="margin-top: 8%; margin-left: 1%">
+
       </div>   
-	 </div> 
+	 
     
  
   <div class="row">
@@ -310,7 +314,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 
       
 	 
-	    <p id="infolink"><a href="#">Dummies</a></p>
+	    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
     <div class="dummiesrelease">
         <ul>
         <li>Lockdown Browser</li>
@@ -356,9 +360,70 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
 </div>
+   
+<div class="six columns">    
+      <div class="headline"><h1>Reliability &amp; Usage
+   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
+      </div>
+       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+          <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
+<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
+</ul></div>    
+		
+        <table width="100%">
+<tbody valign="middle">
+  <tr>
+    <td style="text-align:left;">&nbsp;</td>
+    <td>Dummies</td>
+    <td>WEL</td>
+    <td>WileyPlus</td>
+    <td>WPLS</td>
+  </tr>
+  <tr>
+    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF;">RELIABILITY</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Uptime</td>
+    <td><font color="gray">99.5%</font></td>
+    <td><font color="gray">99.5%</font></td>
+    <td>99.17%</td>
+    <td>100%</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Days Since Last Outage</td>
+    <td><font color="gray">128</font></td>
+    <td><font color="gray">128</font></td>
+    <td>182</td>
+    <td>N/A</td>
+  </tr>
+  <tr bgcolor="#3399CC">
+    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
+    </tr>
+  <tr>
+    <td style="text-align:left">Past 7 Days</td>
+    <td><font color="gray">102K</font></td>
+    <td>42K ?</td>
+    <td>361K</td>
+    <td>34K</td>
+  </tr>
+  <tr>
+    <td style="text-align:left">Since Start of FY</td>
+    <td><font color="gray">3M</font></td>
+    <td>543K ?</td>
+    <td>2M</td>
+    <td>204K</td>
+  </tr>
+  </tbody>
+</table>
+      <div style="margin-top: 140px"></div>
+    </div>  
 
+</div>
+</div>   
       
-    <div class="six columns"><div class="headline"><h1>Projects &amp; Ideas
+    <div class="twelve columns"><div class="headline"><h1>Projects &amp; Ideas
    	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="" style="float:right;padding-right:0.5em;"/></h1>
     <div class="lightbox" id="ideas"><b>For More Information</b></br></br><ul><li>
  
@@ -369,15 +434,14 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
 
    </div>
-      
-<!-- Ideas and projects charts -->	
-	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 90%; height: 88%; float:left; margin-left:5%; margin-top: 10px; display: inline-block"></div>
 
-    <div id="donutchart" style="width: 100%; height: 65%; display: inline-block"></div>
+<!-- Ideas and projects charts -->	
+    <div id="chart_div" style="width: 50%; height: 88%; float:left; margin-left:5%; margin-top: 35px; margin-bottom: 20px"></div>
+
+	<div style="margin-left:74%; margin-top:3%; position: absolute"><font size="4"><b>Ideas<b></font></div>
+    <div id="donutchart" style="width: 40%; height: 65%; margin-left: 55%; margin-top: 80px; margin-bottom: 20px"></div>
 	  
-	  
-        <table width="100%" style="margin-top:3%;padding-bottom:0;margin-bottom:0;border-top:1px solid #3399cc;">
+        <table width="100%" style="margin-top:-1%;padding-bottom:0;margin-bottom:0;border-top:1px solid #3399cc;">
 <tbody valign="middle">
     <tr>
     <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
@@ -475,72 +539,13 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
   </tr>   
   </tbody>
 </table>
-       </div>
-		<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
-  </div>
-<div class="row">    
-<div class="six columns" style="position: absolute; margin-top: 37%">    
-      <div class="headline"><h1>Reliability &amp; Usage
-   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="" style="float:right;padding-right:0.5em;"/></h1>
-      </div>
-       <div class="lightbox" id="question">Information on what these are can be put here.</div>
-          <div class="lightbox" id="reliability"><b>For More Information</b></br></br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
-<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">pschiller@wiley.com</a>
-</li>
-<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
-</ul></div>    
-		
-        <table width="100%">
-<tbody valign="middle">
-  <tr>
-    <td style="text-align:left;">&nbsp;</td>
-    <td>Dummies</td>
-    <td>WEL</td>
-    <td>WileyPlus</td>
-    <td>WPLS</td>
-  </tr>
-  <tr>
-    <td colspan="5" bgcolor="#3399CC" style="text-align:left;color:#FFFFFF;">RELIABILITY</td>
-    </tr>
-  <tr>
-    <td style="text-align:left">Uptime</td>
-    <td><font color="gray">99.5%</font></td>
-    <td><font color="gray">99.5%</font></td>
-    <td>99.17%</td>
-    <td>100%</td>
-  </tr>
-  <tr>
-    <td style="text-align:left">Days Since Last Outage</td>
-    <td><font color="gray">128</font></td>
-    <td><font color="gray">128</font></td>
-    <td>182</td>
-    <td>N/A</td>
-  </tr>
-  <tr bgcolor="#3399CC">
-    <td colspan="5" style="text-align:left;color:#FFFFFF;">UNIQUE VISITORS</td>
-    </tr>
-  <tr>
-    <td style="text-align:left">Past 7 Days</td>
-    <td><font color="gray">102K</font></td>
-    <td>42K ?</td>
-    <td>361K</td>
-    <td>34K</td>
-  </tr>
-  <tr>
-    <td style="text-align:left">Since Start of FY</td>
-    <td><font color="gray">3M</font></td>
-    <td>543K ?</td>
-    <td>2M</td>
-    <td>204K</td>
-  </tr>
-  </tbody>
-</table>
-    </div> 
-    </div>
-</div>
-</div>     
 
-    <!-- Placed at the end of the document so the pages load faster  https://s12.postimg.org/5kqulz00d/key_1.png -->
+        </div>
+				<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+  </div>
+  
+
+    <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
 

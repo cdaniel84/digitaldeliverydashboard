@@ -168,6 +168,18 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     float:right;
     position:relative;
     margin-right:3%;
+<<<<<<< HEAD
+=======
+}
+
+.ideaslabel {
+    float: left;
+    position: relative;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+    width: 100%;
+>>>>>>> origin/master
 }
 
 .ideaslabel {

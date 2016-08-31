@@ -156,3 +156,10 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 .rightcolumn {
     float: right;
 }
+.twelve.columns {
+    margin-bottom:1%;
+}
+
+.six.columns {
+    margin-bottom:1%;
+}

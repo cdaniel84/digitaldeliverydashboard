@@ -127,14 +127,14 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 #revA {
     font-weight:bold;
     font-size:30px;
-    color:#66CC66;
+    color:#FFCC33;
     margin-bottom: -5px;
 }
 
 #revB {
     font-weight:bold;
     font-size:30px;
-    color:#FFCC33;
+    color:#66CC66;
 }
 
 #revborder {

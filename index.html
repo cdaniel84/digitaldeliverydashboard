@@ -135,15 +135,11 @@ function initChart() {
       data8.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data8.addRows([
-        [0,  100, 210],
-        [.5, 150, 185],
-        [1,  200, 160],
-        [1.5,  250,   130],
-        [2,  210, 210],
-        [2.5,  180, 300],
-        [3,   180, 400],
-        [3.5,   , 400],
-        [4,  , 400],
+        [0,  494670, 422920],
+        [1,  494670, 422920],
+        [2,  , 464020],
+        [3,   , 489895],
+        [4,  , 496895],
       ]);
       var options8 = {
        colors:['#D4D4D4','#D4D4D4'],      
@@ -156,7 +152,7 @@ function initChart() {
           baselineColor: '#D4D4D4'
         },
         vAxis: {
-          ticks: [{v:0, f:''},100,200,300,400, {v:500, f:''}],             
+          ticks: [{v:0, f:''},200000,400000,600000,800000],             
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#D4D4D4'
@@ -248,7 +244,7 @@ function initChart() {
 <!--  news stories -->
 <ul id="nt-example2">
 		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
-        <li>Dummies.com 2.0 has launched!!  Check out it's <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>
+        <li>Dummies.com 2.0 has launched!!  Check out its <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>
         <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>
 	</ul>
 <div class="row">
@@ -270,7 +266,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
   <div class="revenue">    
         <p id="revA">$1.87M</p>    <!-- year 2016 -->
     <div id="revborder">Ad Revenue</div>    
-        <p id="revB">$723K</p> <!-- year 2017 -->
+        <p id="revB">$599K</p> <!-- year 2017 -->
         </div>
 </div>
 <div class="lines">
@@ -280,7 +276,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
   <div class="revenue">
     <p id="revA">10K ?</p>   <!-- year 2016 -->
 <div id="revborder">Conversions</div>
-    <p id="revB">9K ?</p>   <!-- year 2017 -->
+    <p id="revB">6M</p>   <!-- year 2017 -->
     </div>
 </div>
 <div class="lines">
@@ -569,14 +565,14 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     </tr>
   <tr>
     <td style="text-align:left">Past 7 Days</td>
-    <td><font color="gray">102K</font></td>
+    <td>2.5M</td>
     <td>35K* / 18K**</td>
     <td>361K</td>
     <td>34K</td>
   </tr>
   <tr>
     <td style="text-align:left">Since Start of FY</td>
-    <td><font color="gray">3M</font></td>
+    <td>54M</td>
     <td>524K* / 186K**</td>
     <td>2M</td>
     <td>204K</td>
@@ -679,11 +675,11 @@ for (i = 0; i < acc.length; i++) {
 </script>
 <script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
     
-      <!-- Tip Content -->
+      <!-- Tip Content/joy ride -->
     <ol id="joyRideTipContent">
       <li data-id="nt-example2" data-text="Next" class="custom">
-        <h2>News Ticker</h2>
-        <p>An interactive news feed that provides updates for all of exciting news happening in Wiley!</p>
+        <h2>Welcome</h2>
+        <p>This is the prototype for the Digital Delivery Dashboard</p>
       </li>
       <li data-id="line" data-button="Next" data-options="tipLocation:right;tipAnimation:fade">
         <h2>Interactive Sales Charts</h2>

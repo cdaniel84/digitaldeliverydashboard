@@ -131,7 +131,7 @@ function initChart() {
       data8.addColumn('number', 'year 2017');
       data8.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
-      data8.addRows([
+     data8.addRows([
         [0,  6000000, 3480000],
         [1,  6000000,3480000],
         [2,  , 3490000],
@@ -152,7 +152,7 @@ function initChart() {
           ticks: [{v:0, f:''}, 2000000,4000000,6000000,8000000],             
           title: '',
           gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
+          baselineColor: '#D4D4D4'
         },
         lineWidth: 5
       };
@@ -247,7 +247,7 @@ function initChart() {
 <div class="row">
     <div class="twelve columns">
     <div class="headline"><h1>Year-to-date sales / Revenue
-   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="Have quetions?" title="Have quetions?" style="float:right;padding-right:0.5em;"/></h1></div> 
+   	    <img src="images/business-contact.png" data-featherlight="#sales" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
     <div class="lightbox" id="sales"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
 Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.com">pschiller@wiley.com</a>
@@ -258,8 +258,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	<!-- Line Charts -->
 <div class="lines">        
 <a href="http://www.wiley.com/college/dddash/sales/dummies.pdf">Dummies</a>      
-  	<!-- chart_wrap: temporary responsive tag -->
-  <div id="chart_wrap"><div id="line"></div></div>
+<div id="line"></div>
   <div class="revenue">    
         <p id="revA">$1.87M</p>    <!-- year 2016 -->
     <div id="revborder">Ad Revenue</div>    
@@ -268,8 +267,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </div>
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/wel.pdf">WEL</a>        
-  	<!-- chart_wrap: temporary responsive tag -->
-  <div id="chart_wrap"><div id="line2"></div></div>
+  	<div id="line2"></div>
   <div class="revenue">
     <p id="revA">10K ?</p>   <!-- year 2016 -->
 <div id="revborder">Conversions</div>
@@ -279,7 +277,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <div class="lines">
     <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WileyPLUS</a>
   	<!-- chart_wrap: temporary responsive tag -->
-  <div id="chart_wrap"><div id="line3"></div></div>
+  <div id="line3"></div>
   <div class="revenue">
     <p id="revA">523K</p>   <!-- year 2016 -->
     <div id="revborder">Validations</div>
@@ -288,8 +286,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </div>    
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WPLS</a>    
-  	<!-- chart_wrap: temporary responsive tag -->
-  <div id="chart_wrap"><div id="line4"></div></div>
+  	<div id="line4"></div>
 <div class="revenue">
     <p id="revA">20K</p>   <!-- year 2016 -->
 <div id="revborder">Validations</div>
@@ -319,14 +316,10 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
       
 <!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-	<!-- chart_wrap: temporary responsive tag -->
-	<div id="chart_wrap2"><div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div></div>
+	<div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div>
 
     <div class="ideaslabel">Ideas</div>
-	
-	<!-- chart_wrap: temporary responsive tag -->
-	
-	<div id="chart_wrap3"><div id="bubblechart" style="width: 100%; height: 100%; margin-left: 20%; margin-top: 10%; margin-bottom:2%"></div></div>
+	<div id="bubblechart" style="width: 100%; height: 100%; float:left; position:relative; margin-bottom:2%"></div>
 	  
 	  
         <table width="100%" style="padding-bottom:0;margin-bottom:0;margin-top:280px">
@@ -435,7 +428,7 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     </div>
 <div class="six columns">   
    	  <div class="headline"><h1>Product Updates
-      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="Have quetions?" title="Have quetions?" style="float:right;padding-right:0.5em;"/></h1></div> 
+      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
   
   <div class="lightbox" id="productupdates"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
@@ -522,7 +515,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     
 <div class="six columns rightcolumn">    
       <div class="headline"><h1>Reliability &amp; Usage
-   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="Have quetions?" title="Have quetions?" style="float:right;padding-right:0.5em;"/></h1>
+   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
       </div>
        <div class="lightbox" id="question">Information on what these are can be put here.</div>
           <div class="lightbox" id="reliability"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
@@ -580,6 +573,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <div style="float: left; margin-left: 2%; margin-bottom: 2%">** app.efficientlearning.com</div>
     </div>
 </div>
+    </div>
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
@@ -674,7 +668,7 @@ for (i = 0; i < acc.length; i++) {
     
       <!-- Tip Content/joy ride -->
     <ol id="joyRideTipContent">
-      <li "data-options="tipLocation:modal" data-text="Next" class="custom">
+      <li data-options="tipLocation:modal" data-text="Next" class="custom">
         <h2>Welcome</h2>
         <p>This is the prototype for the Digital Delivery Dashboard</p>
       </li>

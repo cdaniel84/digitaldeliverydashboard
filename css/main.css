@@ -50,6 +50,29 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 
 /*YTD Sales Line Chart Design*/
 
+/* chart_wrap: temporary responsive tag */
+#chart_wrap {
+    position: relative;
+    padding-bottom: 72%;
+    height: 0;
+    overflow:hidden;
+}
+
+#chart_wrap2 {
+    position: relative;
+    padding-bottom: 32%;
+    height: 0;
+    overflow:hidden;
+}
+
+#chart_wrap3 {
+    position: absolute;
+    padding-bottom: 30%;
+    height: 0;
+    overflow:hidden;
+	width:40%;
+}
+
 .lines {
     width:22%;
     float:left;

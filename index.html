@@ -22,8 +22,14 @@
 google.load('visualization', '1', {
     'packages': ['corechart','treemap', 'line']
 });
-google.setOnLoadCallback(drawChart);
-function drawChart() {
+
+google.setOnLoadCallback(initChart);
+
+$(window).on("throttledresize", function (event) {
+    initChart();
+});
+
+function initChart() {
 	// PROJECTS - TREEMAP    
         var data = google.visualization.arrayToDataTable([ 
           ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],
@@ -259,7 +265,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	<!-- Line Charts -->
 <div class="lines">        
 <a href="http://www.wiley.com/college/dddash/sales/dummies.pdf">Dummies</a>      
-  <div id="line"></div>
+  	<!-- chart_wrap: temporary responsive tag -->
+  <div id="chart_wrap"><div id="line"></div></div>
   <div class="revenue">    
         <p id="revA">$1.87M</p>    <!-- year 2016 -->
     <div id="revborder">Ad Revenue</div>    
@@ -268,8 +275,9 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </div>
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/wel.pdf">WEL</a>        
-  <div id="line2"></div>
-<div class="revenue">
+  	<!-- chart_wrap: temporary responsive tag -->
+  <div id="chart_wrap"><div id="line2"></div></div>
+  <div class="revenue">
     <p id="revA">10K ?</p>   <!-- year 2016 -->
 <div id="revborder">Conversions</div>
     <p id="revB">9K ?</p>   <!-- year 2017 -->
@@ -277,8 +285,9 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </div>
 <div class="lines">
     <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WileyPLUS</a>
-  <div id="line3"></div>
-<div class="revenue">
+  	<!-- chart_wrap: temporary responsive tag -->
+  <div id="chart_wrap"><div id="line3"></div></div>
+  <div class="revenue">
     <p id="revA">523K</p>   <!-- year 2016 -->
     <div id="revborder">Validations</div>
     <p id="revB">120K</p>    <!-- year 2017 -->
@@ -286,7 +295,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </div>    
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WPLS</a>    
-  <div id="line4"></div>
+  	<!-- chart_wrap: temporary responsive tag -->
+  <div id="chart_wrap"><div id="line4"></div></div>
 <div class="revenue">
     <p id="revA">20K</p>   <!-- year 2016 -->
 <div id="revborder">Validations</div>
@@ -316,14 +326,17 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
       
 <!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-    <div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div>
+	<!-- chart_wrap: temporary responsive tag -->
+	<div id="chart_wrap2"><div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div></div>
 
     <div class="ideaslabel">Ideas</div>
 	
-    <div id="bubblechart" style="width: 80%; height: 100%; float:left; margin-left: 17%; margin-top: 20px; margin-bottom:2%"></div>
+	<!-- chart_wrap: temporary responsive tag -->
+	
+	<div id="chart_wrap3"><div id="bubblechart" style="width: 100%; height: 100%; margin-left: 20%; margin-top: 10%; margin-bottom:2%"></div></div>
 	  
 	  
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;">
+        <table width="100%" style="padding-bottom:0;margin-bottom:0;margin-top:280px">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">
     <tr>
     <td width="46%" style="text-align:left;"><strong>NAME</strong></td>

@@ -10,6 +10,10 @@
   <link rel="stylesheet" href="css/skeleton.css">
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+ <!-- Attach JoyRide CSS -->
+    <link rel="stylesheet" href="joyride-2.1.css">
+    <link rel="stylesheet" href="mobile.css">    
+    
   <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -571,8 +575,6 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <div style="float: left; margin-left: 2%; margin-bottom: 2%">** app.efficientlearning.com</div>
     </div>
 </div>
-    
-
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
@@ -664,7 +666,54 @@ for (i = 0; i < acc.length; i++) {
 }
 </script>
 <script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
-
+    
+      <!-- Tip Content -->
+    <ol id="joyRideTipContent">
+      <li data-id="nt-example2" data-text="Next" class="custom">
+        <h2>News Ticker</h2>
+        <p>An interactive news feed that provides updates for all of exciting news happening in Wiley!</p>
+      </li>
+      <li data-id="line" data-button="Next" data-options="tipLocation:right;tipAnimation:fade">
+        <h2>Interactive Sales Charts</h2>
+        <p>Hover your mouse over the graph to get real data.</p>
+      </li>
+      <li data-id="chart_div" data-button="Next" data-options="tipLocation:top">
+        <h2>Treemap</h2>
+        <p>Click an item to delve deeper into the tree map. Right click on your mouse to return back.</p>
+      </li>
+      <li data-id="bubblechart" data-options="tipLocation:top" data-button="Next">
+        <h2>Stop #4</h2>
+        <p>It works as a modal too!</p>
+      </li>
+      <li data-class="accordion" data-button="Next" data-options="tipLocation:right">
+        <h2>Expanding and Collapsing Lists</h2>
+        <p>Click on the plus/minus icons to expand and collapse these lists.</p>
+      </li>
+      <li data-id="line3" data-button="Close">
+        <h2>Stop #5</h2>
+        <p>Now what are you waiting for? Add this to your projects and get the most out of your apps!</p>
+      </li>
+    </ol>    
+    
+  <!-- Run the plugin -->
+    <script type="text/javascript" src="jquery-1.10.1.js"></script>
+    <script type="text/javascript" src="jquery.cookie.js"></script>
+    <script type="text/javascript" src="modernizr.mq.js"></script>
+    <script type="text/javascript" src="jquery.joyride-2.1.js"></script>
+    <script>
+      $(window).load(function() {
+        $('#joyRideTipContent').joyride({
+          autoStart : true,
+          postStepCallback : function (index, tip) {
+          if (index == 2) {
+            $(this).joyride('set_li', false, 1);
+          }
+        },
+        modal:true,
+        expose: true
+        });
+      });
+    </script>
 
 </body>
 </html>

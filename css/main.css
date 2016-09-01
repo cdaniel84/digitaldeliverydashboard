@@ -118,9 +118,9 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 
 .release p {
     font-weight: bold;
-    color: #66CC66;
     text-align: center;
     position: relative;
+    line-height: 28px;
 }
 
 #releasedate {

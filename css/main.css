@@ -109,7 +109,7 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     text-align:left;
     float: left;
     position: relative;
-    font-weight: bold;
+    font-weight: normal;
 }
 
 .release ul li {

@@ -22,13 +22,10 @@
 google.load('visualization', '1', {
     'packages': ['corechart','treemap', 'line']
 });
-
 google.setOnLoadCallback(initChart);
-
 $(window).on("throttledresize", function (event) {
     initChart();
 });
-
 function initChart() {
 	// PROJECTS - TREEMAP    
         var data = google.visualization.arrayToDataTable([ 
@@ -452,9 +449,9 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	    
     <div class="release">
     <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
-    <div id="calendaricon-yellow">
-    <p><font color="lightgray">Jan<br>01</font></p>      </div>
-
+    <div id="calendaricon-green">
+    <p><font color="gray">Jan<br>01</font></p>      </div>
+<font color="gray">
 		<b>Next Release:</b>
 	
         <ul>
@@ -462,13 +459,13 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         <li>Item 2</li>
         <li>Item 3</li>
         </ul>
-        
+        </font>
         
     </div>
     
     <div class="release">
     <p id="infolink"><a href="https://wileydpm.aha.io/published/1b0c871e4956be554462b5cac2899699?page=1">WEL</a></p>
-    <div id="calendaricon-green">
+    <div id="calendaricon-yellow">
     <p>Sep<br>09</p>      </div>
 
 		<b>Next Release:</b>
@@ -722,6 +719,5 @@ for (i = 0; i < acc.length; i++) {
         });
       });
     </script>
-
 </body>
 </html>

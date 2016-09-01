@@ -174,10 +174,12 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 }
 
 .ideaslabel {
-    float: left;
-    position: relative;
-    text-align: center;
+    position: absolute;
     font-weight: bold;
-    font-size: 16px;
+    font-size: 18px;
     width: 100%;
+	margin-top: 17%;
+	margin-left: 23%;
+	z-index: 2;
+	
 }

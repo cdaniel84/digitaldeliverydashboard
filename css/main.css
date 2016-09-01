@@ -129,14 +129,31 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     font-size: 28px;
     color: #000;
     float: left;
-    position: relative;
-    top: -75px;
     left: 45px;
 }
-#calendaricon {
+
+#calendaricon-green {
     float:left;
-    position:relative;
     width:100%;
+    background:url(http://www.wiley.com/college/dddash/images/calendar_page_green.png) no-repeat center;
+    position:relative;
+    width: 100%;
+    height: 105px;
+}
+#calendaricon-yellow {
+    float:left;
+    width:100%;
+    background:url(http://www.wiley.com/college/dddash/images/calendar_page_yellow.png) no-repeat center;
+    position:relative;
+    width: 100%;
+    height: 105px;
+}
+#calendaricon-yellow p, #calendaricon-green p{
+    top: 20px;
+    left: 73px;
+    position: absolute;
+    font-size: 24px;
+    width: 100%;
 }
 
 /*Line Charts - Revenue Values*/

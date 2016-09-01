@@ -55,7 +55,7 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     float:left;
     position:relative;
     display:inline-block;
-    border-right:1px solid #3399CC;
+    border-right:2px solid #3399CC;
 }
 
 .lines a {

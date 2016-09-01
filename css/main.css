@@ -55,7 +55,7 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
     float:left;
     position:relative;
     display:inline-block;
-    border-right:2px solid #3399CC;
+    border-right:1px solid #3399CC;
 }
 
 .lines a {
@@ -174,12 +174,12 @@ td {padding:7px;text-align: center;}				.lightbox { display: none; }
 }
 
 .ideaslabel {
-    position: absolute;
+    float: left;
+    position: relative;
+    text-align: center;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 18px;	      
     width: 100%;
-	margin-top: 17%;
-	margin-left: 23%;
-	z-index: 2;
-	
+    margin-top: 5%;
+    z-index: 2;
 }

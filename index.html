@@ -135,14 +135,14 @@ function initChart() {
       data8.addColumn('number', 'year 2016');
 	//Edit Data point (x, y1, y2)
       data8.addRows([
-        [0,  494670, 422920],
-        [1,  494670, 422920],
-        [2,  , 464020],
-        [3,   , 489895],
-        [4,  , 496895],
+        [0,  3840000, 422920],
+        [1,  3840000, 422920],
+        [2,  3490000, 464020],
+        [3,   4650000, 489895],
+        [4,  4580000, 496895],
       ]);
       var options8 = {
-       colors:['#D4D4D4','#D4D4D4'],      
+       colors:['#66CC66','#3399CC'],     
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
@@ -507,7 +507,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         <ul>
         <li>LWPQTI Export from SWAT</li>
         <li>Ability to update users role </li>
-        <li>Student work completed on Learning Path question activities moves with them</li>
+        <li>Learning Path question activities move with students</li>
         </ul>
     </div>
     
@@ -677,13 +677,13 @@ for (i = 0; i < acc.length; i++) {
     
       <!-- Tip Content/joy ride -->
     <ol id="joyRideTipContent">
-      <li data-id="nt-example2" data-text="Next" class="custom">
+      <li "data-options="tipLocation:modal" data-text="Next" class="custom">
         <h2>Welcome</h2>
         <p>This is the prototype for the Digital Delivery Dashboard</p>
       </li>
       <li data-id="line" data-button="Next" data-options="tipLocation:right;tipAnimation:fade">
         <h2>Interactive Sales Charts</h2>
-        <p>Hover your mouse over the graph to get real data.</p>
+        <p>After this tour, hover your mouse over the graph to get real data.</p>
       </li>
       <li data-id="chart_div" data-button="Next" data-options="tipLocation:top">
         <h2>Treemap</h2>

@@ -29,23 +29,23 @@ $(window).on("throttledresize", function (event) {
 function initChart() {
 	// PROJECTS - TREEMAP    
         var data = google.visualization.arrayToDataTable([ 
-          ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],
-          ['Projects', null,            					  0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['POC', 'Projects',          						  0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  0 /* Input custom y*/],
-          ['Pilot', 'Projects',        					      0 /* Input custom x*/,  0 /* Input custom y*/],
-		  ['Launch', 'Projects',      						  0                    ,  0                    ],
-		  ['Global Diagnostic Assessment', 'Launch', 	     22                    ,  5                    ],		  
-          ['DD Dashboard', 'Prototype',					     22 /* Input custom x*/, 10 /* Input custom y*/],
-          ['Wiley Answers', 'Prototype', 					 22 /* Input custom x*/, 10 /* Input custom y*/],
-          ['AGU Data Science Courseware', 'Prototype',		 22 /* Input custom x*/, 10 /* Input custom y*/],		  
-          ['Career Portal', 'POC',            				 21 /* Input custom x*/,100 /* Input custom y*/],
-          ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 55 /* Input custom y*/],
-          ['Wiley Assessment Service', 'Pilot',        		 10 /* Input custom x*/, 50 /* Input custom y*/],
-          ['None', 'On Hold',    					    	 30 /* Input custom x*/,  5 /* Input custom y*/],          
+          ['Child', 'Parent', 								  'Volume (size)', 	      	'Status (color)'     ],
+          ['Projects', null,            					  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
+          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  	 0 /* Input custom y*/],   	/* Layer 1: Projects is the parent */ 
+          ['POC', 'Projects',          						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
+          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
+          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
+          ['Pilot', 'Projects',        					      0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
+		  ['Launch', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
+		  ['Global Diagnostic Assessment', 'Launch', 	     22 /* Input custom x*/,  	 5 /* Input custom y*/],	/* Layer 2: Launch is the parent */			  
+          ['DD Dashboard', 'Prototype',					     22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
+          ['Wiley Answers', 'Prototype', 					 22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
+          ['AGU Data Science Courseware', 'Prototype',		 22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */			  
+          ['Career Portal', 'POC',            				 21 /* Input custom x*/,   100 /* Input custom y*/],	/* Layer 2: POC is the parent */	
+          ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
+          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
+          ['Wiley Assessment Service', 'Pilot',        		 10 /* Input custom x*/, 	50 /* Input custom y*/],	/* Layer 2: Pilot is the parent */	
+          ['None', 'On Hold',    					    	 30 /* Input custom x*/,  	 5 /* Input custom y*/], 	/* Layer 2: On Hold is the parent */	         
         ]);
             // Instantiate and draw our chart, passing in some options.
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
@@ -62,12 +62,12 @@ function initChart() {
         });  
             // PROJECTS & IDEAS - BUBBLE CHART
           var data2 = google.visualization.arrayToDataTable([
-         ['ID', 'x', 'y', 'Status',     'Size'],
-        ['Approved: 7',        78.35,              1.69,      'Approved',      70],
-        ['Not Approved: 2',    79.2,              1.72,      'Not Approved',  30],
-        ['Under Review: 4',    79.79,              1.66,      'Under Review',  40],
-        ['On Hold: 1',         80.21,              1.71,      'On Hold',        10],
-        ['',                80.66,              1.78,      '',              0],
+        ['ID',                  'x',                'y',      'Status',       'Size'    /* INPUT */ 	       ],
+        ['Approved: 7',        78.35,              1.69,      'Approved',       70 		/* approved   x   10 */],
+        ['Not Approved: 2',    79.2,               1.72,      'Not Approved',   30 		/* not approved x 10 */],
+        ['Under Review: 4',    79.79,              1.66,      'Under Review',   40 		/* under review x 10 */],
+        ['On Hold: 1',         80.21,              1.71,      'On Hold',        10 		/* on hold    x   10 */],
+        ['',                   80.66,              1.78,      '',                0 		/* placeholder       */],
       ]);
          var options2 = {
         title: 'Ideas',
@@ -95,7 +95,9 @@ function initChart() {
       data7.addColumn('number', 'X');
       data7.addColumn('number', 'year 2017');
       data7.addColumn('number', 'year 2016');
-	//Edit Data point (x, y1, y2)
+	//INPUT Data point (x, y1, y2)
+	//x1 = year 2017
+	//x2 = year 2016
       data7.addRows([
         [0,  494670, 422920],
         [1,  494670, 422920],
@@ -130,7 +132,9 @@ function initChart() {
       data8.addColumn('number', 'X');
       data8.addColumn('number', 'year 2017');
       data8.addColumn('number', 'year 2016');
-	//Edit Data point (x, y1, y2)
+	//INPUT Data point (x, y1, y2)
+	//x1 = year 2017
+	//x2 = year 2016	
       data8.addRows([
         [0,  6000000, 3480000],
         [1,  6000000,3480000],
@@ -165,7 +169,9 @@ function initChart() {
       data9.addColumn('number', 'X');
       data9.addColumn('number', 'year 2017');
       data9.addColumn('number', 'year 2016');
-	//Edit Data point (x, y1, y2)
+	//INPUT Data point (x, y1, y2)
+	//x1 = year 2017
+	//x2 = year 2016	
       data9.addRows([
         [0,  14719037, 16554171],
         [1,  14719037, 16554171],
@@ -200,7 +206,9 @@ function initChart() {
       data10.addColumn('number', 'X');
       data10.addColumn('number', 'year 2017');
       data10.addColumn('number', 'year 2016');
-	//Edit Data point (x, y1, y2)
+	//INPUT Data point (x, y1, y2)
+	//x1 = year 2017
+	//x2 = year 2016	
       data10.addRows([
         [0,  14719037, 16554171],
         [1,  14719037, 16554171],
@@ -240,9 +248,9 @@ function initChart() {
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
 <!--  news stories -->
 <ul id="nt-example2">
-		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
-        <li>Dummies.com 2.0 has launched!!  Check out its <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>
-        <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>
+		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>																								<!--  INPUT NEWS HEADLINE -->	
+        <li>Dummies.com 2.0 has launched!!  Check out its <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>											<!--  INPUT NEWS HEADLINE -->
+        <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>		<!--  INPUT NEWS HEADLINE -->
 	</ul>
 <div class="row">
     <div class="twelve columns">
@@ -337,22 +345,22 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>
-    <td width="25%" style="width:21%;">Process Improvement</td>	
-    <td width="25%" style="width:21%;">12/31/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>		    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->						   
+    <td width="25%" style="width:21%;">Process Improvement</td>							   						<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">12/31/16</td>						 									<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->									
   </tr>
   <tr>
-    <td style="text-align:left">Digital Delivery Dashboard</td>
-    <td width="25%" style="width:21%;">Prototype</td>	
-    <td>08/30/16</td>
-    <td><img src="images/circle_green.png"></td>
+    <td style="text-align:left">Digital Delivery Dashboard</td>		    										<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+    <td width="25%" style="width:21%;">Prototype</td>		   													<!--  INPUT CURRENT PHASE  -->
+    <td>08/30/16</td>										   													<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_green.png"></td>			   													<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->	
   </tr>
   <tr>
-    <td style="text-align:left">Operationalizing Digital Delivery</td>
-    <td width="25%" style="width:21%;">Process Improvement</td>	
-    <td>03/15/17</td>
-    <td><img src="images/circle_red.png"></td>
+    <td style="text-align:left">Operationalizing Digital Delivery</td> 											<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+    <td width="25%" style="width:21%;">Process Improvement</td>													<!--  INPUT CURRENT PHASE  -->
+    <td>03/15/17</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_red.png"></td>																	<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->	
   </tr>
   </tbody>
 </table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
@@ -364,10 +372,10 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">NONE</td>
-    <td width="25%" style="width:21%;">Null</td>	
-    <td width="25%" style="width:21%;">Null</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">NONE</td>	 											<!--  INPUT NAME OF 'MAINTENANCE' -->	
+    <td width="25%" style="width:21%;">Null</td>																<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">Null</td>																<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>
   </tbody>
 </table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
@@ -379,46 +387,46 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>
-    <td width="25%" style="width:21%;">MVP Launch</td>	
-    <td>09/30/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>	 					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">MVP Launch</td>															<!--  INPUT CURRENT PHASE  -->
+    <td>09/30/16</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>
-    <td width="25%" style="width:21%;">Pilot</td>	
-    <td>12/15/17</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>							<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">Pilot</td>																<!--  INPUT CURRENT PHASE  -->
+    <td>12/15/17</td> 																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>
-    <td width="25%" style="width:21%;">POC</td>	
-    <td>11/01/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>										<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">POC</td>																	<!--  INPUT CURRENT PHASE  -->
+    <td>11/01/16</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>								<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>
-    <td width="25%" style="width:21%;">Prototype</td>	
-    <td>09/15/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>										<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">Prototype</td>															<!--  INPUT CURRENT PHASE  -->
+    <td>09/15/16</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>
-    <td width="25%" style="width:21%;">Discovery</td>	
-    <td>11/01/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>										<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">Discovery</td>															<!--  INPUT CURRENT PHASE  -->
+    <td>11/01/16</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>
    <tr>
-    <td style="text-align:left">AGU Data Science Courseware</td>
-    <td width="25%" style="width:21%;">Prototype</td>	
-    <td>10/16/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
+    <td style="text-align:left">AGU Data Science Courseware</td>												<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">Prototype</td>															<!--  INPUT CURRENT PHASE  -->
+    <td>10/16/16</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr> 
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>
-    <td width="25%" style="width:21%;">Discovery</td>	
-    <td>11/01/16</td>
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
+    <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="25%" style="width:21%;">Discovery</td>															<!--  INPUT CURRENT PHASE  -->
+    <td>11/01/16</td>																							<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
   </tr>    
   </tbody>
 </table>
@@ -443,14 +451,13 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div class="release">
     <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
     <div id="calendaricon-grey">
-    <p><font color="gray">Jan<br>01</font></p>      </div>
+    <p><font color="gray">Jan<br>01</font></p> </div>	  <!--  INPUT DATE  -->
 <font color="gray">
-		<b>Next Release:</b>
-	
+		<b>Next Release:</b> 
         <ul>
-        <li>Item 1</li>
-        <li>Item 2</li>
-        <li>Item 3</li>
+        <li>Item 1</li>									  <!--  INPUT ITEMS  -->
+        <li>Item 2</li>									  <!--  INPUT ITEMS  -->	
+        <li>Item 3</li>									  <!--  INPUT ITEMS  -->
         </ul>
         </font>
         
@@ -459,14 +466,14 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div class="release">
     <p id="infolink"><a href="https://wileydpm.aha.io/published/1b0c871e4956be554462b5cac2899699?page=1">WEL</a></p>
     <div id="calendaricon-yellow">
-    <p>Sep<br>09</p>      </div>
+    <p>Sep<br>09</p>      </div>		        <!--  INPUT DATE  -->
 
 		<b>Next Release:</b>
 	
         <ul>
-        <li>Platinum PMP Bundle</li>
-        <li>Gold PMP Bundle</li>
-        <li>PMP Marketing Launch</li>
+        <li>Platinum PMP Bundle</li>			<!--  INPUT ITEMS  -->
+        <li>Gold PMP Bundle</li>				<!--  INPUT ITEMS  -->
+        <li>PMP Marketing Launch</li>			<!--  INPUT ITEMS  -->
         </ul>
         
         
@@ -476,28 +483,28 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div class="release">    
     <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a></p>
 <div id="calendaricon-green">
-       <p>Oct<br>15</p> 
+       <p>Oct<br>15</p> 									<!--  INPUT DATE  -->
     </div>
   
 		<b>Next Release:</b>
         <ul>
-        <li>Style Change to Accounting Tables</li>
-        <li>Hybris</li>
-        <li>508-Compliance Phase 2</li>
+        <li>Style Change to Accounting Tables</li>			<!--  INPUT ITEMS  -->
+        <li>Hybris</li>										<!--  INPUT ITEMS  -->
+        <li>508-Compliance Phase 2</li>						<!--  INPUT ITEMS  -->
         </ul>
     </div>
     
         <div class="release">    
     <p id="infolink"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1">WPLS</a></p>
 <div id="calendaricon-green">
-        <img src="images/calendar_page_green.png" /><p>Dec<br>10</p>   
+        <img src="images/calendar_page_green.png" /><p>Dec<br>10</p>			<!--  INPUT DATE  -->		   
     </div>
 
 		<b>Next Release:</b>
         <ul>
-        <li>LWPQTI Export from SWAT</li>
-        <li>Ability to update users role </li>
-        <li>Learning Path question activities move with students</li>
+        <li>LWPQTI Export from SWAT</li>										<!--  INPUT ITEMS  -->
+        <li>Ability to update users role </li>									<!--  INPUT ITEMS  -->
+        <li>Learning Path question activities move with students</li>			<!--  INPUT ITEMS  -->
         </ul>
     </div>
     
@@ -538,34 +545,34 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     </tr>
   <tr>
     <td style="text-align:left">Uptime</td>
-    <td><font color="gray">99.5%</font></td>
-    <td><font color="gray">99.5%</font></td>
-    <td>99.17%</td>
-    <td>100%</td>
+    <td><font color="gray">99.5%</font></td>						<!--  INPUT 'UPTIME' FOR DUMMIES   -->
+    <td><font color="gray">99.5%</font></td>						<!--  INPUT 'UPTIME' FOR WEL       -->
+    <td>99.17%</td>													<!--  INPUT 'UPTIME' FOR WileyPLUS -->
+    <td>100%</td>													<!--  INPUT 'UPTIME' FOR WPLS      -->
   </tr>
   <tr>
     <td style="text-align:left">Days Since Last Outage</td>
-    <td><font color="gray">128</font></td>
-    <td><font color="gray">128</font></td>
-    <td>182</td>
-    <td>N/A</td>
+    <td><font color="gray">128</font></td>						    <!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR DUMMIES    -->
+    <td><font color="gray">128</font></td>						    <!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR WEL        -->
+    <td>182</td>						   							<!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR WileyPLUS  -->
+    <td>N/A</td>						    						<!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR WPLS       -->
   </tr>
   <tr bgcolor="#3399CC">
     <td colspan="5" style="text-align:left;color:#FFFFFF; font-weight:bold;">UNIQUE VISITORS</td>
     </tr>
   <tr>
     <td style="text-align:left">Past 7 Days</td>
-    <td>2.5M</td>
-    <td>35K* / 18K**</td>
-    <td>361K</td>
-    <td>34K</td>
+    <td>2.5M</td>						   						    <!--  INPUT 'PAST 7 DAYS' FOR DUMMIES    -->
+    <td>35K* / 18K**</td>						   				    <!--  INPUT 'PAST 7 DAYS' FOR WEL        -->
+    <td>361K</td>						   						    <!--  INPUT 'PAST 7 DAYS' FOR WileyPLUS  -->
+    <td>34K</td>						   						    <!--  INPUT 'PAST 7 DAYS' FOR WPLS       -->
   </tr>
   <tr>
     <td style="text-align:left">Since Start of FY</td>
-    <td>54M</td>
-    <td>524K* / 186K**</td>
-    <td>2M</td>
-    <td>204K</td>
+    <td>54M</td>						   						    <!--  INPUT 'SINCE START OF FY' FOR DUMMIES  -->
+    <td>524K* / 186K**</td>						   				    <!--  INPUT 'SINCE START OF FY' FOR WEL  -->
+    <td>2M</td>							   						    <!--  INPUT 'SINCE START OF FY' FOR WileyPLUS  -->
+    <td>204K</td>						   						    <!--  INPUT 'SINCE START OF FY' FOR WPLS  -->
   </tr>
   </tbody>
 </table>

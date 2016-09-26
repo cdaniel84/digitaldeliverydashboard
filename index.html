@@ -28,7 +28,7 @@ $(window).on("throttledresize", function (event) {
 });
 function initChart() {
 	// PROJECTS - TREEMAP    
-        var data = google.visualization.arrayToDataTable([ 
+        var data = google.visualization.arrayToDataTable([ 		    /* 0 (small) - 100 (large) */    /* min-blue, mid-yellow, max-green*/
           ['Child', 'Parent', 							  'Volume (size)'	 	 'Status (color)'     ],
           ['Projects', null,            					  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
           ['Prototype',   'Projects',  						  0 /* Input custom x*/,  	 0 /* Input custom y*/],   	/* Layer 1: Projects is the parent */ 
@@ -90,14 +90,13 @@ function initChart() {
             var chart2 = new google.visualization.BubbleChart(document.getElementById('bubblechart'));
             chart2.draw(data2, options2);   
         
-		  //create first line chart - Dummies
+//create first line chart - Dummies
       var data7 = new google.visualization.DataTable();
       data7.addColumn('number', 'X');
       data7.addColumn('number', 'year 2017');
       data7.addColumn('number', 'year 2016');
-	//INPUT Data point (x, y1, y2)
-	//x1 = year 2017
-	//x2 = year 2016
+
+//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016
       data7.addRows([
         [0,  494670, 422920],
         [1,  494670, 422920],
@@ -110,13 +109,13 @@ function initChart() {
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],     /* X-axis range */  
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},200000,400000,600000,800000],          
+          ticks: [{v:0, f:''},200000,400000,600000,800000],     /* Y-axis range */          
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -127,14 +126,13 @@ function initChart() {
       line.draw(data7, options7);
   
   
-	//create 2nd line chart - WEL
+//create 2nd line chart - WEL
         var data8 = new google.visualization.DataTable();
       data8.addColumn('number', 'X');
       data8.addColumn('number', 'year 2017');
       data8.addColumn('number', 'year 2016');
-	//INPUT Data point (x, y1, y2)
-	//x1 = year 2017
-	//x2 = year 2016	
+
+//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
       data8.addRows([
         [0,  6000000, 3480000],
         [1,  6000000,3480000],
@@ -147,13 +145,13 @@ function initChart() {
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''}, 2000000,4000000,6000000,8000000],             
+          ticks: [{v:0, f:''}, 2000000,4000000,6000000,8000000],      /* Y-axis range */            
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -164,14 +162,13 @@ function initChart() {
       line2.draw(data8, options8);
   
   
-	//create 3rd line chart - WileyPLUS
+//create 3rd line chart - WileyPLUS
         var data9 = new google.visualization.DataTable();
       data9.addColumn('number', 'X');
       data9.addColumn('number', 'year 2017');
       data9.addColumn('number', 'year 2016');
-	//INPUT Data point (x, y1, y2)
-	//x1 = year 2017
-	//x2 = year 2016	
+
+//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
       data9.addRows([
         [0,  14719037, 16554171],
         [1,  14719037, 16554171],
@@ -184,13 +181,13 @@ function initChart() {
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],          
+          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],     /* Y-axis range */          
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -201,14 +198,13 @@ function initChart() {
       line3.draw(data9, options9);
   
   
-	//create 4th chart - WPLS
+//create 4th chart - WPLS
         var data10 = new google.visualization.DataTable();
       data10.addColumn('number', 'X');
       data10.addColumn('number', 'year 2017');
       data10.addColumn('number', 'year 2016');
-	//INPUT Data point (x, y1, y2)
-	//x1 = year 2017
-	//x2 = year 2016	
+
+//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
       data10.addRows([
         [0,  14719037, 16554171],
         [1,  14719037, 16554171],
@@ -221,13 +217,13 @@ function initChart() {
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],      /* X-axis range */ 
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],             
+          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],     /* Y-axis range */        
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -268,36 +264,36 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <a href="http://www.wiley.com/college/dddash/sales/dummies.pdf">Dummies</a>      
   	<div id="line"></div>
   <div class="revenue">    
-        <p id="revA">$1.87M</p>    <!-- year 2016 -->
+        <p id="revA">$1.87M</p>    <!-- Input Revenue for year 2016 -->
     <div id="revborder">Ad Revenue</div>    
-        <p id="revB">$599K</p> <!-- year 2017 -->
+        <p id="revB">$599K</p>     <!-- Input Revenue for year 2017 -->
         </div>
 </div>
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/wel.pdf">WEL</a>        
   <div id="line2"></div>
   <div class="revenue">
-    <p id="revA">10K ?</p>   <!-- year 2016 -->
+    <p id="revA">10K ?</p>   <!-- Input Revenue for year 2016 -->
 <div id="revborder">Conversions</div>
-    <p id="revB"> 9K ?</p>   <!-- year 2017 -->
+    <p id="revB"> 9K ?</p>   <!-- Input Revenue for year 2017 -->
     </div>
 </div>
 <div class="lines">
     <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WileyPLUS</a>
   	<div id="line3"></div>
   <div class="revenue">
-    <p id="revA">523K</p>   <!-- year 2016 -->
+    <p id="revA">523K</p>    <!-- Input Revenue for year 2016 -->
     <div id="revborder">Validations</div>
-    <p id="revB">120K</p>    <!-- year 2017 -->
+    <p id="revB">120K</p>    <!-- Input Revenue for year 2017 -->
     </div>    
 </div>    
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WPLS</a>    
   	<div id="line4"></div>
 <div class="revenue">
-    <p id="revA">20K</p>   <!-- year 2016 -->
+    <p id="revA">20K</p>   <!-- Input Revenue for year 2016 -->
 <div id="revborder">Validations</div>
-    <p id="revB">8K</p>   <!-- year 2017 -->
+    <p id="revB">8K</p>    <!-- Input Revenue for year 2017 -->
     </div>    
 </div>       
 		<!-- line chart legend -->
@@ -348,19 +344,19 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>		<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->						   
     <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
     <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->									
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
   </tr>
   <tr>
     <td style="text-align:left">Digital Delivery Dashboard</td>		    					<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
     <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
     <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->	
+    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   <tr>
     <td style="text-align:left">Operationalizing Digital Delivery</td> 						<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
     <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
     <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->	
+    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
   </tr>
   </tbody>
 </table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
@@ -375,7 +371,7 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
     <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
     <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   </tbody>
 </table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
@@ -390,43 +386,43 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>	 		<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">MVP Launch</td>								<!--  INPUT CURRENT PHASE  -->
     <td>09/30/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   <tr>
     <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>				<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Pilot</td>								<!--  INPUT CURRENT PHASE  -->
     <td>12/15/17</td> 												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   <tr>
     <td width="38%" style="text-align:left;width:46%;">Career Portal</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">POC</td>									<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>				<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>				<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   <tr>
     <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
     <td>09/15/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
    <tr>
     <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
    <tr>
     <td style="text-align:left">AGU Data Science Courseware</td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
     <td>10/16/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr> 
    <tr>
     <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>			<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS images/circle_green.png, images/circle_yellow.png, images/circle_red.png -->
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>    
   </tbody>
 </table>

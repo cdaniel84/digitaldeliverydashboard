@@ -28,24 +28,24 @@ $(window).on("throttledresize", function (event) {
 });
 function initChart() {
 	// PROJECTS - TREEMAP    
-        var data = google.visualization.arrayToDataTable([ 		    /* 0 (small) - 100 (large) */    /* min-blue, mid-yellow, max-green*/
-          ['Child', 'Parent', 							  'Volume (size)'	 	 'Status (color)'     ],
-          ['Projects', null,            					  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  	 0 /* Input custom y*/],   	/* Layer 1: Projects is the parent */ 
-          ['POC', 'Projects',          						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Pilot', 'Projects',        					          0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-	  ['Launch', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-	  ['Global Diagnostic Assessment', 'Launch', 	     			22 /* Input custom x*/,  	 5 /* Input custom y*/],	/* Layer 2: Launch is the parent */			  
-          ['DD Dashboard', 'Prototype',					     	22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
-          ['Wiley Answers', 'Prototype', 					22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
-          ['AGU Data Science Courseware', 'Prototype',		 		22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */			  
-          ['Career Portal', 'POC',            				 	21 /* Input custom x*/,        100 /* Input custom y*/],	/* Layer 2: POC is the parent */	
-          ['Wiley Problems', 'Discovery', 					25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
-          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 			25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
-          ['Wiley Assessment Service', 'Pilot',        		 		10 /* Input custom x*/, 	50 /* Input custom y*/],	/* Layer 2: Pilot is the parent */	
-          ['None', 'On Hold',    					    	30 /* Input custom x*/,  	 5 /* Input custom y*/], 	/* Layer 2: On Hold is the parent */	         
+        var data = google.visualization.arrayToDataTable([ 
+          ['ProjectType', 'Parent', 'Volume (size)', 'Status (color)'],
+          ['Projects', null,            					  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['POC', 'Projects',          						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  0 /* Input custom y*/],
+          ['Pilot', 'Projects',        					      0 /* Input custom x*/,  0 /* Input custom y*/],
+		  ['Launch', 'Projects',      						  0                    ,  0                    ],
+		  ['Global Diagnostic Assessment', 'Launch', 	     22                    ,  5                    ],		  
+          ['DD Dashboard', 'Prototype',					     22 /* Input custom x*/, 10 /* Input custom y*/],
+          ['Wiley Answers', 'Prototype', 					 22 /* Input custom x*/, 10 /* Input custom y*/],
+          ['AGU Data Science Courseware', 'Prototype',		 22 /* Input custom x*/, 10 /* Input custom y*/],		  
+          ['Career Portal', 'POC',            				 21 /* Input custom x*/,100 /* Input custom y*/],
+          ['Wiley Problems', 'Discovery', 					 25 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 25 /* Input custom x*/, 55 /* Input custom y*/],
+          ['Wiley Assessment Service', 'Pilot',        		 10 /* Input custom x*/, 50 /* Input custom y*/],
+          ['None', 'On Hold',    					    	 30 /* Input custom x*/,  5 /* Input custom y*/],          
         ]);
             // Instantiate and draw our chart, passing in some options.
         tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
@@ -62,12 +62,12 @@ function initChart() {
         });  
             // PROJECTS & IDEAS - BUBBLE CHART
           var data2 = google.visualization.arrayToDataTable([
-        ['ID',                  'x',                'y',      'Status',       'Size'    	/* INPUT */ 	       ],
-        ['Approved: 7',        78.35,              1.69,      'Approved',       70 		/* approved   x   10 */],
-        ['Not Approved: 2',    79.2,               1.72,      'Not Approved',   30 		/* not approved x 10 */],
-        ['Under Review: 4',    79.79,              1.66,      'Under Review',   40 		/* under review x 10 */],
-        ['On Hold: 1',         80.21,              1.71,      'On Hold',        10 		/* on hold    x   10 */],
-        ['',                   80.66,              1.78,      '',                0 		/* placeholder       */],
+         ['ID', 'x', 'y', 'Status',     'Size'],
+        ['Approved: 7',        78.35,              1.69,      'Approved',      70],
+        ['Not Approved: 2',    79.2,              1.72,      'Not Approved',  30],
+        ['Under Review: 4',    79.79,              1.66,      'Under Review',  40],
+        ['On Hold: 1',         80.21,              1.71,      'On Hold',        10],
+        ['',                80.66,              1.78,      '',              0],
       ]);
          var options2 = {
         title: 'Ideas',
@@ -90,32 +90,31 @@ function initChart() {
             var chart2 = new google.visualization.BubbleChart(document.getElementById('bubblechart'));
             chart2.draw(data2, options2);   
         
-//create first line chart - Dummies
+		  //create first line chart - Dummies
       var data7 = new google.visualization.DataTable();
       data7.addColumn('number', 'X');
       data7.addColumn('number', 'year 2017');
       data7.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016
+	//Edit Data point (x, y1, y2)
       data7.addRows([
         [0,  494670, 422920],
         [1,  494670, 422920],
-        [2,  , 464020],
-        [3,   , 489895],
-        [4,  , 496895],
+        [2,  , 886940],
+        [3,   , 1385835],
+        [4,   , 1882720],
       ]);
       var options7 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],     /* X-axis range */  
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},200000,400000,600000,800000],     /* Y-axis range */          
+          ticks: [{v:0, f:''},100000,500000,1000000,1500000,2000000],          
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -126,32 +125,31 @@ function initChart() {
       line.draw(data7, options7);
   
   
-//create 2nd line chart - WEL
+	//create 2nd line chart - WEL
         var data8 = new google.visualization.DataTable();
       data8.addColumn('number', 'X');
       data8.addColumn('number', 'year 2017');
       data8.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
+	//Edit Data point (x, y1, y2)
       data8.addRows([
         [0,  6000000, 3480000],
         [1,  6000000,3480000],
-        [2,  , 3490000],
-        [3,   , 4650000],
-        [4,  , 4580000],
+        [2,  , 6970000],
+        [3,   , 11620000],
+        [4,  , 16200000],
       ]);
       var options8 = {
        colors:['#66CC66','#3399CC'],     
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''}, 2000000,4000000,6000000,8000000],      /* Y-axis range */            
+          ticks: [{v:0, f:''}, 1000000, 5000000,10000000,15000000,20000000],             
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -162,32 +160,31 @@ function initChart() {
       line2.draw(data8, options8);
   
   
-//create 3rd line chart - WileyPLUS
+	//create 3rd line chart - WileyPLUS
         var data9 = new google.visualization.DataTable();
       data9.addColumn('number', 'X');
       data9.addColumn('number', 'year 2017');
       data9.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
+	//Edit Data point (x, y1, y2)
       data9.addRows([
         [0,  14719037, 16554171],
         [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
+        [2,  , 35058761],
+        [3,   , 50951751],
+        [4,  , 55041586],
       ]);
       var options9 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],     /* Y-axis range */          
+          ticks: [{v:0, f:''},1000000,20000000,40000000,60000000, {v:500, f:''}],          
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -198,32 +195,31 @@ function initChart() {
       line3.draw(data9, options9);
   
   
-//create 4th chart - WPLS
+	//create 4th chart - WPLS
         var data10 = new google.visualization.DataTable();
       data10.addColumn('number', 'X');
       data10.addColumn('number', 'year 2017');
       data10.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
+	//Edit Data point (x, y1, y2)
       data10.addRows([
         [0,  14719037, 16554171],
         [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
+        [2,  , 35058761],
+        [3,   , 50951751],
+        [4,  , 55041586],
       ]);
       var options10 = {
        colors:['#66CC66','#3399CC'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],      /* X-axis range */ 
+          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],  
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
         },
         vAxis: {
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],     /* Y-axis range */        
+          ticks: [{v:0, f:''},1000000,20000000,40000000,60000000, {v:500, f:''}],             
           title: '',
           gridlines: {color: 'none'},
           baselineColor: '#3399CC'
@@ -244,9 +240,9 @@ function initChart() {
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
 <!--  news stories -->
 <ul id="nt-example2">
-		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>																								<!--  INPUT NEWS HEADLINE -->	
-        <li>Dummies.com 2.0 has launched!!  Check out its <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>							<!--  INPUT NEWS HEADLINE -->
-        <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>		<!--  INPUT NEWS HEADLINE -->
+		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>
+        <li>Dummies.com 2.0 has launched!!  Check out its <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>
+        <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>
 	</ul>
 <div class="row">
     <div class="twelve columns">
@@ -264,36 +260,36 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <a href="http://www.wiley.com/college/dddash/sales/dummies.pdf">Dummies</a>      
   	<div id="line"></div>
   <div class="revenue">    
-        <p id="revA">$1.87M</p>    <!-- Input Revenue for year 2016 -->
+        <p id="revA">$1.87M</p>    <!-- year 2016 -->
     <div id="revborder">Ad Revenue</div>    
-        <p id="revB">$599K</p>     <!-- Input Revenue for year 2017 -->
+        <p id="revB">$599K</p> <!-- year 2017 -->
         </div>
 </div>
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/wel.pdf">WEL</a>        
   <div id="line2"></div>
   <div class="revenue">
-    <p id="revA">1.58%</p>   <!-- Input Revenue for year 2016 -->
+    <p id="revA">1.58%</p>   <!-- year 2016 -->
 <div id="revborder">Conversions</div>
-    <p id="revB">1.55%</p>   <!-- Input Revenue for year 2017 -->
+    <p id="revB">1.55%</p>   <!-- year 2017 -->
     </div>
 </div>
 <div class="lines">
     <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WileyPLUS</a>
   	<div id="line3"></div>
   <div class="revenue">
-    <p id="revA">523K</p>    <!-- Input Revenue for year 2016 -->
+    <p id="revA">523K</p>   <!-- year 2016 -->
     <div id="revborder">Validations</div>
-    <p id="revB">120K</p>    <!-- Input Revenue for year 2017 -->
+    <p id="revB">120K</p>    <!-- year 2017 -->
     </div>    
 </div>    
 <div class="lines">
 <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WPLS</a>    
   	<div id="line4"></div>
 <div class="revenue">
-    <p id="revA">20K</p>   <!-- Input Revenue for year 2016 -->
+    <p id="revA">20K</p>   <!-- year 2016 -->
 <div id="revborder">Validations</div>
-    <p id="revB">8K</p>    <!-- Input Revenue for year 2017 -->
+    <p id="revB">8K</p>   <!-- year 2017 -->
     </div>    
 </div>       
 		<!-- line chart legend -->
@@ -341,22 +337,22 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>		<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->						   
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
+    <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td width="25%" style="width:21%;">12/31/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left">Digital Delivery Dashboard</td>		    					<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-    <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
-    <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td style="text-align:left">Digital Delivery Dashboard</td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>08/30/16</td>
+    <td><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td style="text-align:left">Operationalizing Digital Delivery</td> 						<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
+    <td style="text-align:left">Operationalizing Digital Delivery</td>
+    <td width="25%" style="width:21%;">Process Improvement</td>	
+    <td>03/15/17</td>
+    <td><img src="images/circle_red.png"></td>
   </tr>
   </tbody>
 </table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
@@ -368,10 +364,10 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
-    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">NONE</td>
+    <td width="25%" style="width:21%;">Null</td>	
+    <td width="25%" style="width:21%;">Null</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   </tbody>
 </table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
@@ -383,46 +379,46 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>	 		<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">MVP Launch</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>09/30/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>
+    <td width="25%" style="width:21%;">MVP Launch</td>	
+    <td>09/30/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>				<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Pilot</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>12/15/17</td> 												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>
+    <td width="25%" style="width:21%;">Pilot</td>	
+    <td>12/15/17</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">POC</td>									<!--  INPUT CURRENT PHASE  -->
-    <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>				<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>
+    <td width="25%" style="width:21%;">POC</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>
   </tr>
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>09/15/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>09/15/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>
   </tr>
    <tr>
-    <td style="text-align:left">AGU Data Science Courseware</td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>10/16/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td style="text-align:left">AGU Data Science Courseware</td>
+    <td width="25%" style="width:21%;">Prototype</td>	
+    <td>10/16/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
   </tr> 
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>			<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>
+    <td width="25%" style="width:21%;">Discovery</td>	
+    <td>11/01/16</td>
+    <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>
   </tr>    
   </tbody>
 </table>
@@ -447,13 +443,14 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div class="release">
     <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
     <div id="calendaricon-grey">
-    <p><font color="gray">Jan<br>01</font></p> </div>	<!--  INPUT DATE  -->
+    <p><font color="gray">Jan<br>01</font></p>      </div>
 <font color="gray">
-		<b>Next Release:</b> 
+		<b>Next Release:</b>
+	
         <ul>
-        <li>Item 1</li>					<!--  INPUT ITEMS  -->
-        <li>Item 2</li>					<!--  INPUT ITEMS  -->	
-        <li>Item 3</li>					<!--  INPUT ITEMS  -->
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
         </ul>
         </font>
         
@@ -461,15 +458,15 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     
     <div class="release">
     <p id="infolink"><a href="https://wileydpm.aha.io/published/1b0c871e4956be554462b5cac2899699?page=1">WEL</a></p>
-    <div id="calendaricon-yellow">
-    <p>Sep<br>09</p>      </div>		        <!--  INPUT DATE  -->
+    <div id="calendaricon-green">
+    <p>Sep<br>14</p>      </div>
 
 		<b>Next Release:</b>
 	
         <ul>
-        <li>Platinum PMP Bundle</li>			<!--  INPUT ITEMS  -->
-        <li>Gold PMP Bundle</li>			<!--  INPUT ITEMS  -->
-        <li>PMP Marketing Launch</li>			<!--  INPUT ITEMS  -->
+        <li>9/14 CPA v8.5 release</li>
+        <li>9/20 FRM Part I Course release (Silver & Self-Study)</li>
+        <li>Mid Sept.: CFA Phase 1 release</li>
         </ul>
         
         
@@ -479,28 +476,28 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     <div class="release">    
     <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a></p>
 <div id="calendaricon-green">
-       <p>Oct<br>15</p> 				<!--  INPUT DATE  -->
+       <p>Oct<br>15</p> 
     </div>
   
 		<b>Next Release:</b>
         <ul>
-        <li>Style Change to Accounting Tables</li>	<!--  INPUT ITEMS  -->
-        <li>Hybris</li>					<!--  INPUT ITEMS  -->
-        <li>508-Compliance Phase 2</li>			<!--  INPUT ITEMS  -->
+        <li>Style Change to Accounting Tables</li>
+        <li>Hybris</li>
+        <li>508-Compliance Phase 2</li>
         </ul>
     </div>
     
         <div class="release">    
     <p id="infolink"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1">WPLS</a></p>
 <div id="calendaricon-green">
-        <img src="images/calendar_page_green.png" /><p>Dec<br>10</p>	<!--  INPUT DATE  -->		   
+        <img src="images/calendar_page_green.png" /><p>Dec<br>10</p>   
     </div>
 
 		<b>Next Release:</b>
         <ul>
-        <li>LWPQTI Export from SWAT</li>				<!--  INPUT ITEMS  -->
-        <li>Ability to update users role </li>				<!--  INPUT ITEMS  -->
-        <li>Learning Path question activities move with students</li>	<!--  INPUT ITEMS  -->
+        <li>LWPQTI Export from SWAT</li>
+        <li>Ability to update users role </li>
+        <li>Learning Path question activities move with students</li>
         </ul>
     </div>
     
@@ -541,34 +538,34 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     </tr>
   <tr>
     <td style="text-align:left">Uptime</td>
-    <td><font color="gray">99.5%</font></td>						<!--  INPUT 'UPTIME' FOR DUMMIES   -->
-    <td><font color="gray">99.5%</font></td>						<!--  INPUT 'UPTIME' FOR WEL       -->
-    <td>99.17%</td>									<!--  INPUT 'UPTIME' FOR WileyPLUS -->
-    <td>100%</td>									<!--  INPUT 'UPTIME' FOR WPLS      -->
+    <td><font color="gray">99.5%</font></td>
+    <td><font color="gray">99.5%</font></td>
+    <td>99.8%</td>
+    <td>100%</td>
   </tr>
   <tr>
     <td style="text-align:left">Days Since Last Outage</td>
-    <td><font color="gray">128</font></td>						<!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR DUMMIES    -->
-    <td><font color="gray">128</font></td>						<!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR WEL        -->
-    <td>182</td>						   			<!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR WileyPLUS  -->
-    <td>N/A</td>						    			<!--  INPUT 'DAYS SINCE LAST OUTAGE' FOR WPLS       -->
+    <td><font color="gray">128</font></td>
+    <td><font color="gray">128</font></td>
+    <td>182</td>
+    <td>N/A</td>
   </tr>
   <tr bgcolor="#3399CC">
     <td colspan="5" style="text-align:left;color:#FFFFFF; font-weight:bold;">UNIQUE VISITORS</td>
     </tr>
   <tr>
     <td style="text-align:left">Past 7 Days</td>
-    <td>2.5M</td>						 			<!--  INPUT 'PAST 7 DAYS' FOR DUMMIES    -->
-    <td>35K* / 18K**</td>						   		<!--  INPUT 'PAST 7 DAYS' FOR WEL        -->
-    <td>361K</td>						   			<!--  INPUT 'PAST 7 DAYS' FOR WileyPLUS  -->
-    <td>34K</td>						   			<!--  INPUT 'PAST 7 DAYS' FOR WPLS       -->
+    <td>2.5M</td>
+    <td>35K* / 18K**</td>
+    <td>361K</td>
+    <td>34K</td>
   </tr>
   <tr>
     <td style="text-align:left">Since Start of FY</td>
-    <td>54M</td>						   			<!--  INPUT 'SINCE START OF FY' FOR DUMMIES  -->
-    <td>524K* / 186K**</td>						   		<!--  INPUT 'SINCE START OF FY' FOR WEL  -->
-    <td>2M</td>							   			<!--  INPUT 'SINCE START OF FY' FOR WileyPLUS  -->
-    <td>204K</td>						   			<!--  INPUT 'SINCE START OF FY' FOR WPLS  -->
+    <td>54M</td>
+    <td>524K* / 186K**</td>
+    <td>2M</td>
+    <td>204K</td>
   </tr>
   </tbody>
 </table>
@@ -576,6 +573,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <div style="float: left; margin-left: 2%; margin-bottom: 2%">** app.efficientlearning.com</div>
     </div>
 </div>
+    </div>    
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
@@ -670,7 +668,7 @@ for (i = 0; i < acc.length; i++) {
     
       <!-- Tip Content/joy ride -->
     <ol id="joyRideTipContent">
-      <li "data-options="tipLocation:modal" data-text="Next" class="custom">
+      <li data-options="tipLocation:modal" data-text="Next" class="custom">
         <h2>Welcome</h2>
         <p>This is the prototype for the Digital Delivery Dashboard</p>
       </li>
@@ -717,4 +715,3 @@ for (i = 0; i < acc.length; i++) {
     </script>
 </body>
 </html>
-

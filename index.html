@@ -20,45 +20,14 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>    
 <script type="text/javascript">
 google.load('visualization', '1', {
-    'packages': ['corechart','treemap', 'line']
+    'packages': ['corechart', 'line']
 });
 google.setOnLoadCallback(initChart);
 $(window).on("throttledresize", function (event) {
     initChart();
 });
 function initChart() {
-        var data = google.visualization.arrayToDataTable([ 		    /* 0 (small) - 100 (large) */    /* min-blue, mid-yellow, max-green*/
-          ['Child', 'Parent', 							  'Volume (size)',	 	 'Status (color)'     ],
-          ['Projects', null,            					  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  	 0 /* Input custom y*/],   	/* Layer 1: Projects is the parent */ 
-          ['POC', 'Projects',          						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Pilot', 'Projects',        					          0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-	  ['Launch', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-	  ['Global Diagnostic Assessment', 'Launch', 	     			22 /* Input custom x*/,  	 5 /* Input custom y*/],	/* Layer 2: Launch is the parent */			  
-          ['DD Dashboard', 'Prototype',					     	22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
-          ['Wiley Answers', 'Prototype', 					22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
-          ['AGU Data Science Courseware', 'Prototype',		 		22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */			  
-          ['Career Portal', 'POC',            				 	21 /* Input custom x*/,        100 /* Input custom y*/],	/* Layer 2: POC is the parent */	
-          ['Wiley Problems', 'Discovery', 					25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
-          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 			25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
-          ['Wiley Assessment Service', 'Pilot',        		 		10 /* Input custom x*/, 	50 /* Input custom y*/],	/* Layer 2: Pilot is the parent */	
-          ['None', 'On Hold',    					    	30 /* Input custom x*/,  	 5 /* Input custom y*/], 	/* Layer 2: On Hold is the parent */         
-        ]);
-            // Instantiate and draw our chart, passing in some options.
-        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
-        tree.draw(data, {
-          minColor: '#3399CC',
-          midColor: '#FFCC33',
-          maxColor: '#66CC66',
-          headerHeight: 40,
-          headerColor: '#f2f2f2',
-          titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
-          fontColor: 'black',
-          fontFamily: 'Helvetica',
-          fontSize: 16
-        });  
+ 
             // PROJECTS & IDEAS - BUBBLE CHART
           var data2 = google.visualization.arrayToDataTable([
         ['ID',                  'x',                'y',      'Status',       'Size'    	/* INPUT */ 	       ],
@@ -77,11 +46,11 @@ function initChart() {
         sizeAxis: {maxSize:75},
         hAxisviewWindowMode:'pretty',
         tooltip: {trigger: 'none'},     
-        bubble: {textStyle: {fontSize: 11}, textStyle: {auraColor: 'none', bold: true, fontSize: 10}},
+        bubble: {textStyle: {fontSize: 11}, textStyle: {auraColor: 'none', bold: true, fontSize: 10, color: 'blue',}},
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         chartAreabackgroundColor:{color:'#F2F2F2'},
-        colors: ['#66CC66','#CC3300','#FFCC33','#3399CC','#F2F2F2'],
+        colors: ['#66b3ff','#66b3ff','#66b3ff','#66b3ff','#66b3ff'],
         chartArea:{left:0,width:'100%',height:'100%'},
         hAxis: {gridlines: {color: '#333', count: 0}},
         vAxis: {gridlines: {color: '#333', count: 0}}
@@ -318,11 +287,12 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
       
 <!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-	<div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div>
 
-    <div class="ideaslabel">Ideas</div>
+
+    <div class="ideaslabel" style="margin-left: -80px"><font color="#66b3ff">IDEAS</font></div>
 	
-<div id="bubblechart" style="width: 100%; height: 100%; float:left; position:relative;  margin-bottom:2%"></div>
+	
+<div id="bubblechart" style="width: 85%; height: 100%; float:left; position:relative;  margin-bottom:2%; margin-left: 0px"></div>
 	  
 	  
         <table width="100%" style="padding-bottom:0;margin-bottom:0;margin-top:280px">
@@ -339,26 +309,51 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <div class="panel show">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
+
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>		<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->						   
+    <td width="38%" style="text-align:left;width:46%;">
+	<a href="#" class="tooltip">
+		WileyPLUS Onboarding, Training & Support
+		<span>
+			<strong>WileyPLUS Onboarding, Training & Support</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
     <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
     <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
   </tr>
+  
   <tr>
-    <td style="text-align:left">Digital Delivery Dashboard</td>		    					<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Digital Delivery Dashboard</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
     <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
     <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
     <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td style="text-align:left">Operationalizing Digital Delivery</td> 						<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Operationalizing Digital Delivery 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Operationalizing Digital Delivery</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
     <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
     <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
   </tr>
+  
   </tbody>
-</table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+</table>	<img src="https://s22.postimg.org/fwtfqwq69/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
 </div>
 
@@ -366,14 +361,16 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <div class="panel">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
+
   <tr>
     <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
     <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
     <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   </tbody>
-</table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+</table>	<img src="https://s22.postimg.org/fwtfqwq69/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
 </div>
 
@@ -381,51 +378,59 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <div id="foo" class="panel">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
+
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>	 		<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Global Diagnostic Assessment</a></td>	 		<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">MVP Launch</td>								<!--  INPUT CURRENT PHASE  -->
     <td>09/30/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>				<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Assessment Service</a></td>				<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Pilot</td>								<!--  INPUT CURRENT PHASE  -->
     <td>12/15/17</td> 												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Career Portal</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">POC</td>									<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>				<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Answers</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
     <td>09/15/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Problems</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
    <tr>
-    <td style="text-align:left">AGU Data Science Courseware</td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td style="text-align:left"><a href="">AGU Data Science Courseware</a></td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
     <td>10/16/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr> 
+  
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>			<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Standalone Adaptive (ORION)</a></td>			<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>    
+  </tr>  
+  
   </tbody>
 </table>
-  	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+  	<img src="https://s22.postimg.org/fwtfqwq69/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
     </div>
     </div>
@@ -677,9 +682,9 @@ for (i = 0; i < acc.length; i++) {
         <h2>Interactive Sales Charts</h2>
         <p>After this tour, hover your mouse over the graph to get real data.</p>
       </li>
-      <li data-id="chart_div" data-button="Next" data-options="tipLocation:top">
-        <h2>Treemap</h2>
-        <p>Click an item to delve deeper into the tree map. Right click on your mouse to return back.</p>
+      <li data-id="calendaricon-grey" data-button="Next" data-options="tipLocation:top">
+        <h2>Product Updates</h2>
+        <p>Check out upcoming releases and product updates.</p>
       </li>
       <li data-id="bubblechart" data-options="tipLocation:top" data-button="Next">
         <h2>Stop #4</h2>

@@ -87,16 +87,15 @@ td {padding:0px;text-align: center;}				.lightbox { display: none; }
 
 	.containers {
 	  position: absolute;
-	  left: calc(10%);
+	  left: calc(0%);
 	  width: 1352px;
-	  margin: 20px 0;
+	  margin: 0px 0;
 	  padding: 30px;
-	  border: 1px dashed #646c71;
 	}
-
+	
 	.side {
 		float: left;
-		width: 219px;
+		width: 200px;
 	  padding-right: 30px;
 	}
 
@@ -174,7 +173,7 @@ td {padding:0px;text-align: center;}				.lightbox { display: none; }
 	.main {
 		float: left;
 		width: 721px;
-	    padding-left: 30px;
+	    padding-left: 10px;
 		border-left: 1px dashed #646c71;
 	}
 
@@ -705,3 +704,4 @@ td {padding:0px;text-align: center;}				.lightbox { display: none; }
 	
 
 }
+

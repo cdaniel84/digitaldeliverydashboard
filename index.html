@@ -7,12 +7,10 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/skeleton.css">  
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
- <!-- Attach JoyRide CSS -->
-    <link rel="stylesheet" href="joyride-2.1.css">
-    <link rel="stylesheet" href="mobile.css">    
+ 
     
   <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
@@ -20,46 +18,15 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>    
 <script type="text/javascript">
 google.load('visualization', '1', {
-    'packages': ['corechart','treemap', 'line']
+    'packages': ['corechart', 'line']
 });
 google.setOnLoadCallback(initChart);
 $(window).on("throttledresize", function (event) {
     initChart();
 });
 function initChart() {
-        var data = google.visualization.arrayToDataTable([ 		    /* 0 (small) - 100 (large) */    /* min-blue, mid-yellow, max-green*/
-          ['Child', 'Parent', 							  'Volume (size)',	 	 'Status (color)'     ],
-          ['Projects', null,            					  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Prototype',   'Projects',  						  0 /* Input custom x*/,  	 0 /* Input custom y*/],   	/* Layer 1: Projects is the parent */ 
-          ['POC', 'Projects',          						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Discovery', 'Projects',    					  	  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['On Hold', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-          ['Pilot', 'Projects',        					          0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-	  ['Launch', 'Projects',      						  0 /* Input custom x*/,  	 0 /* Input custom y*/],	/* Layer 1: Projects is the parent */
-	  ['Global Diagnostic Assessment', 'Launch', 	     			22 /* Input custom x*/,  	 5 /* Input custom y*/],	/* Layer 2: Launch is the parent */			  
-          ['DD Dashboard', 'Prototype',					     	22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
-          ['Wiley Answers', 'Prototype', 					22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */	
-          ['AGU Data Science Courseware', 'Prototype',		 		22 /* Input custom x*/, 	10 /* Input custom y*/],	/* Layer 2: Prototype is the parent */			  
-          ['Career Portal', 'POC',            				 	21 /* Input custom x*/,        100 /* Input custom y*/],	/* Layer 2: POC is the parent */	
-          ['Wiley Problems', 'Discovery', 					25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
-          ['Wiley Standalone Adaptive (ORION)', 'Discovery', 			25 /* Input custom x*/, 	55 /* Input custom y*/],	/* Layer 2: Discovery is the parent */	
-          ['Wiley Assessment Service', 'Pilot',        		 		10 /* Input custom x*/, 	50 /* Input custom y*/],	/* Layer 2: Pilot is the parent */	
-          ['None', 'On Hold',    					    	30 /* Input custom x*/,  	 5 /* Input custom y*/], 	/* Layer 2: On Hold is the parent */         
-        ]);
-            // Instantiate and draw our chart, passing in some options.
-        tree = new google.visualization.TreeMap(document.getElementById('chart_div'));
-        tree.draw(data, {
-          minColor: '#3399CC',
-          midColor: '#FFCC33',
-          maxColor: '#66CC66',
-          headerHeight: 40,
-          headerColor: '#f2f2f2',
-          titleTextStyle: {color: '#3399CC', fontName: 'Helvetica', fontSize: 18},
-          fontColor: 'black',
-          fontFamily: 'Helvetica',
-          fontSize: 16
-        });  
-            // PROJECTS & IDEAS - BUBBLE CHART
+    
+// PROJECTS & IDEAS - BUBBLE CHART
           var data2 = google.visualization.arrayToDataTable([
         ['ID',                  'x',                'y',      'Status',       'Size'    	/* INPUT */ 	       ],
         ['Approved: 7',        78.35,              1.69,      'Approved',       70 		/* approved   x   10 */],
@@ -77,11 +44,11 @@ function initChart() {
         sizeAxis: {maxSize:75},
         hAxisviewWindowMode:'pretty',
         tooltip: {trigger: 'none'},     
-        bubble: {textStyle: {fontSize: 11}, textStyle: {auraColor: 'none', bold: true, fontSize: 10}},
+        bubble: {textStyle: {fontSize: 11}, textStyle: {auraColor: 'none', bold: true, fontSize: 10, color: 'blue',}},
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         chartAreabackgroundColor:{color:'#F2F2F2'},
-        colors: ['#66CC66','#CC3300','#FFCC33','#3399CC','#F2F2F2'],
+        colors: ['#66b3ff','#66b3ff','#66b3ff','#66b3ff','#66b3ff'],
         chartArea:{left:0,width:'100%',height:'100%'},
         hAxis: {gridlines: {color: '#333', count: 0}},
         vAxis: {gridlines: {color: '#333', count: 0}}
@@ -104,7 +71,7 @@ function initChart() {
         [4,  , 496895],
       ]);
       var options7 = {
-       colors:['#66CC66','#3399CC'],      
+       colors:['#66CC66','#FFCC33'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
@@ -140,7 +107,7 @@ function initChart() {
         [4,  , 4580000],
       ]);
       var options8 = {
-       colors:['#66CC66','#3399CC'],     
+       colors:['#66CC66','#FFCC33'],     
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
@@ -176,7 +143,7 @@ function initChart() {
         [4,  , 4089835],
       ]);
       var options9 = {
-       colors:['#66CC66','#3399CC'],      
+       colors:['#66CC66','#FFCC33'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
@@ -212,7 +179,7 @@ function initChart() {
         [4,  , 4089835],
       ]);
       var options10 = {
-       colors:['#66CC66','#3399CC'],      
+       colors:['#66CC66','#FFCC33'],      
         backgroundColor: '#F2F2F2',
         legend: {position: 'none'},
         hAxis: {
@@ -241,6 +208,7 @@ function initChart() {
   <!-- .container is main centered wrapper -->
 <div class="container">
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
+<button id="joyridebutton">Take a tour</button>
 <!--  news stories -->
 <ul id="nt-example2">
 		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>																								<!--  INPUT NEWS HEADLINE -->	
@@ -260,7 +228,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 
 	<!-- Line Charts -->
 <div class="lines">        
-<a href="http://www.wiley.com/college/dddash/sales/dummies.pdf">Dummies</a>      
+<a href="http://www.wiley.com/college/dddash/sales/dummies.pdf" rel="nofollow">Dummies</a>      
   	<div id="line"></div>
   <div class="revenue">    
         <p id="revA">$1.87M</p>    <!-- Input Revenue for year 2016 -->
@@ -269,7 +237,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
         </div>
 </div>
 <div class="lines">
-<a href="http://www.wiley.com/college/dddash/sales/wel.pdf">WEL</a>        
+<a href="http://www.wiley.com/college/dddash/sales/wel.pdf" rel="nofollow">WEL</a>        
   <div id="line2"></div>
   <div class="revenue">
     <p id="revA">1.58%</p>   <!-- Input Revenue for year 2016 -->
@@ -278,7 +246,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>
 </div>
 <div class="lines">
-    <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WileyPLUS</a>
+    <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx" rel="nofollow">WileyPLUS</a>
   	<div id="line3"></div>
   <div class="revenue">
     <p id="revA">523K</p>    <!-- Input Revenue for year 2016 -->
@@ -287,7 +255,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>    
 </div>    
 <div class="lines">
-<a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WPLS</a>    
+<a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx" rel="nofollow">WPLS</a>    
   	<div id="line4"></div>
 <div class="revenue">
     <p id="revA">20K</p>   <!-- Input Revenue for year 2016 -->
@@ -318,11 +286,12 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
       
 <!-- Ideas and projects charts -->	
 	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-	<div id="chart_div" style="width: 95%; height: 88%; float:left; margin-left:3%; margin-top: 10px"></div>
 
-    <div class="ideaslabel">Ideas</div>
+
+    <div class="ideaslabel" style="margin-left: -80px"><font color="#66b3ff">IDEAS</font></div>
 	
-<div id="bubblechart" style="width: 100%; height: 100%; float:left; position:relative;  margin-bottom:2%"></div>
+	
+<div id="bubblechart" style="width: 85%; height: 100%; float:left; position:relative;  margin-bottom:2%; margin-left: 0px"></div>
 	  
 	  
         <table width="100%" style="padding-bottom:0;margin-bottom:0;margin-top:280px">
@@ -339,26 +308,51 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <div class="panel show">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
+
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">WileyPLUS Onboarding, Training & Support</td>		<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->						   
+    <td width="38%" style="text-align:left;width:46%;">
+	<a href="#" class="tooltip">
+		WileyPLUS Onboarding, Training & Support
+		<span>
+			<strong>WileyPLUS Onboarding, Training & Support</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
     <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
     <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
   </tr>
+  
   <tr>
-    <td style="text-align:left">Digital Delivery Dashboard</td>		    					<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Digital Delivery Dashboard</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
     <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
     <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
     <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td style="text-align:left">Operationalizing Digital Delivery</td> 						<!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Operationalizing Digital Delivery 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Operationalizing Digital Delivery</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
     <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
     <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
   </tr>
+  
   </tbody>
-</table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
 </div>
 
@@ -366,14 +360,16 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <div class="panel">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
+
   <tr>
     <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
     <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
     <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   </tbody>
-</table>	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
 </div>
 
@@ -381,51 +377,73 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <div id="foo" class="panel">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
+
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Global Diagnostic Assessment</td>	 		<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;">
+		<a href="#" class="tooltip">
+		Global Diagnostic Assesssment 					                    <!--  INPUT NAME OF 'NEW PRODUCT' -->	
+		<span>
+			<strong>Global Diagnostic Assesssment</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>	
     <td width="25%" style="width:21%;">MVP Launch</td>								<!--  INPUT CURRENT PHASE  -->
     <td>09/30/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Assessment Service</td>				<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;">
+		<a href="#" class="tooltip">
+		Wiley Assessment Service					                    <!--  INPUT NAME OF 'NEW PRODUCT' -->	
+		<span>
+			<strong>Wiley Assessment Service</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>		
     <td width="25%" style="width:21%;">Pilot</td>								<!--  INPUT CURRENT PHASE  -->
     <td>12/15/17</td> 												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Career Portal</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">POC</td>									<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"></td>				<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Answers</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
     <td>09/15/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Problems</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Problems</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
+  
    <tr>
-    <td style="text-align:left">AGU Data Science Courseware</td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td style="text-align:left"><a href="">AGU Data Science Courseware</a></td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
     <td>10/16/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr> 
+  
    <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Standalone Adaptive (ORION)</td>			<!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="">Wiley Standalone Adaptive (ORION)</a></td>			<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
     <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_red.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>    
+  </tr>  
+  
   </tbody>
 </table>
-  	<img src="https://s12.postimg.org/5kqulz00d/key_1.png"  width="220" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+  	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
     </div>
     </div>
@@ -444,7 +462,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	 
 	    
     <div class="release">
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
+    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx" rel="nofollow">Dummies</a></p>
     <div id="calendaricon-grey">
     <p><font color="gray">Jan<br>01</font></p> </div>	<!--  INPUT DATE  -->
 <font color="gray">
@@ -476,7 +494,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     
     
     <div class="release">    
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a></p>
+    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx" rel="nofollow">WileyPLUS</a></p>
 <div id="calendaricon-green">
        <p>Oct<br>15</p> 				<!--  INPUT DATE  -->
     </div>
@@ -575,6 +593,7 @@ Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">som
     <div style="float: left; margin-left: 2%; margin-bottom: 2%">** app.efficientlearning.com</div>
     </div>
 </div>
+    </div>    
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
@@ -667,52 +686,23 @@ for (i = 0; i < acc.length; i++) {
 </script>
 <script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
     
-      <!-- Tip Content/joy ride -->
-    <ol id="joyRideTipContent">
-      <li "data-options="tipLocation:modal" data-text="Next" class="custom">
-        <h2>Welcome</h2>
-        <p>This is the prototype for the Digital Delivery Dashboard</p>
-      </li>
-      <li data-id="line" data-button="Next" data-options="tipLocation:right;tipAnimation:fade">
-        <h2>Interactive Sales Charts</h2>
-        <p>After this tour, hover your mouse over the graph to get real data.</p>
-      </li>
-      <li data-id="chart_div" data-button="Next" data-options="tipLocation:top">
-        <h2>Treemap</h2>
-        <p>Click an item to delve deeper into the tree map. Right click on your mouse to return back.</p>
-      </li>
-      <li data-id="bubblechart" data-options="tipLocation:top" data-button="Next">
-        <h2>Stop #4</h2>
-        <p>It works as a modal too!</p>
-      </li>
-      <li data-class="accordion" data-button="Next" data-options="tipLocation:right">
-        <h2>Expanding and Collapsing Lists</h2>
-        <p>Click on the plus/minus icons to expand and collapse these lists.</p>
-      </li>
-      <li data-button="Close" data-options="tipLocation:modal">
-        <h2>Feedback</h2>
-        <p>Please share with us what else you would like this Walk Through to explain.</p>
-      </li>
-    </ol>    
+<!--Hopscotch-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/hopscotch.js"></script>
+<script src="js/hopscotch.min.js"></script>
+<script src="js/dash_tour.js"></script>    
+
     
-  <!-- Run the plugin -->
-    <script type="text/javascript" src="jquery-1.10.1.js"></script>
-    <script type="text/javascript" src="jquery.cookie.js"></script>
-    <script type="text/javascript" src="modernizr.mq.js"></script>
-    <script type="text/javascript" src="jquery.joyride-2.1.js"></script>
-    <script>
-      $(window).load(function() {
-        $('#joyRideTipContent').joyride({
-          autoStart : true,
-          postStepCallback : function (index, tip) {
-          if (index == 2) {
-            $(this).joyride('set_li', false, 1);
-          }
-        },
-        modal:true,
-        expose: true
-        });
-      });
-    </script>
+<!--Google Analytics -->    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77684155-1', 'auto');
+  ga('send', 'pageview');
+
+</script>    
 </body>
 </html>

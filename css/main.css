@@ -7,13 +7,19 @@ ul {-webkit-padding-start: 0 !important;}
 #nt-example2 li::before {content:"NEWS";color:#FFF;padding-right:1.3em;}
 #nt-example2 li {color: #000;background-image:linear-gradient(to right,#3399cc,#3399cc 85px,#ffffff 85px,#ffffff 85%,#ffffff 85%);position:static;white-space: nowrap;overflow: hidden;text-overflow: ellipsis;height:27px;line-height: 30px;list-style: none;text-align: left;padding: 0 16px 0 16px;font-size:18px;}
 .headline {width:100%;height:40px;background:#3399CC;}
-.headline h1 {color:#FFFFFF; text-transform:uppercase; text-align:center; font-weight: bold;font-size:19.5px;line-height:42.9px;font-family: 'Open Sans', sans-serif;}
+.headline h1 {color:#FFFFFF; text-transform:uppercase; text-align:left; font-weight: bold;font-size:19.5px;line-height:42.9px;font-family: 'Open Sans', sans-serif;}
+h2.blue {color:#3399CC; text-transform:uppercase; text-align:center; font-weight: bold;font-size:19.5px;line-height:42.9px;font-family: 'Open Sans', sans-serif;}
+.headline h1 img {max-width:100%;max-height:100%;float:right;margin-right: 0.3em;}
+.update-date{color:#FFFFFF;font-size:0.8em;padding-left:5px;padding-top:11px;width:39%;float:left;}
 .columns{background:#F2F2F2;}
+body > div.container > div:nth-child(5) > div:nth-child(1) > table > tbody > tr {font-size:14px;letter-spacing: -0.5px;}
+.dark-grey-box{width:75%;color:#FFFFFF;background:#808184;padding:2px;margin-right:5px;}p.dark-grey-box{text-align:center;color:#FFFFFF;}
+.light-grey-box{width:15%;color:#FFFFFF;background:#BBBDBF;padding:2px;}
 button.accordion {
     background-color: #3399cc;
     color: #F2F2F2;
     cursor: pointer;
-    padding: 10px;
+    padding: 3px;
     width: 100%;
     border: none;
     text-align: left;
@@ -828,15 +834,20 @@ a.tooltip {outline:none; }
     text-align: left;
     font-weight: bold;
     margin-left: 1%;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 42.9px;
     font-family: 'Open Sans', sans-serif;
 }    
     .headline h1 img {
         float: right;
-        padding-right: 12% !important;
     }
-    
+	
+    .update-date {
+    font-size: 0.7em;
+    padding-top: 4px;
+		    width: 27%;
+	}
+	
     #chart_div {
     width: 95%;
     height: 88%;

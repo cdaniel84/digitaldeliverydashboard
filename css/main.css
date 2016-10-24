@@ -13,8 +13,10 @@ h2.blue {color:#3399CC; text-transform:uppercase; text-align:center; font-weight
 .update-date{color:#FFFFFF;font-size:0.8em;padding-left:5px;padding-top:11px;width:39%;float:left;}
 .columns{background:#F2F2F2;}
 body > div.container > div:nth-child(5) > div:nth-child(1) > table > tbody > tr {font-size:14px;letter-spacing: -0.5px;}
-.dark-grey-box{width:80%;color:#FFFFFF;background:#808184;padding:2px;margin-right:5px;float:left;}p.dark-grey-box{text-align:center;color:#FFFFFF;}
-.light-grey-box{width:10%;color:#000000;background:#BBBDBF;padding:2px;float:left;}
+.light-grey-box{width:13%;color:#000000;background:#BBBDBF;padding:1px;float:left;}
+.dark-grey-box{width:75%;color:#FFFFFF;background:#808184;padding:2px;margin-right:5px;float:left;font-size:13px;}
+.idea-table {width:95%;margin-bottom:0;margin-left:16px;}
+.idea-table img{max-height: 90%;max-width: 100%;}
 h2.blue img{height:17px;}
 button.accordion {
     background-color: #3399cc;
@@ -54,10 +56,11 @@ div.panel.show {
 tbody tr:nth-of-type(2n) {background-color: #F2F2F2;}
 tbody {background-color: #F2F2F2;}
 th {background-color:#F2F2F2;font-weight:bold;color:#000;padding:7px;}
-td {padding:0px;text-align: center;}				.lightbox { display: none; }
+td {padding:0;text-align: center;}.lightbox { display: none; }
 
 @media all{.featherlight{display:none;position:fixed;top:0;right:0;bottom:0;left:0;z-index:2147483647;text-align:center;white-space:nowrap;cursor:pointer;background:#333;background:rgba(0,0,0,0)}.featherlight:last-of-type{background:rgba(0,0,0,.8)}.featherlight:before{content:'';display:inline-block;height:100%;vertical-align:middle;margin-right:-.25em}.featherlight .featherlight-content{position:relative;text-align:left;vertical-align:middle;display:inline-block;overflow:auto;padding:25px 25px 0;border-bottom:25px solid transparent;margin-left:5%;margin-right:5%;max-height:95%;background:#fff;cursor:auto;white-space:normal}.featherlight .featherlight-inner{display:block}.featherlight .featherlight-close-icon{position:absolute;z-index:9999;top:0;right:0;line-height:25px;width:25px;cursor:pointer;text-align:center;font-family: 'Open Sans', sans-serif;background:#fff;background:rgba(255,255,255,.3);color:#000}.featherlight .featherlight-image{width:100%}.featherlight-iframe .featherlight-content{border-bottom:0;padding:0}.featherlight iframe{border:0}.featherlight *{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}}@media only screen and (max-width:1024px){.featherlight .featherlight-content{margin-left:10px;margin-right:10px;max-height:98%;padding:10px 10px 0;border-bottom:10px solid transparent}}
 @media screen and (max-device-width: 480px) {#releasedate {left: 9px !important;}th {padding:0;}td {padding:0;font-size:13px}.headline h1{bold 1.0em/2.5em" Helvetica Neue", Helvetica, Arial, sans-serif;}.lines{width:100% !important;float:none !important;}}
+
 #bubblechart > div > div:nth-child(1) > div > svg > g:nth-child(3) > g:nth-child(2) > g > circle:nth-child(9){display:none !important;}
 
 /*Joyride Button*/
@@ -807,7 +810,9 @@ a.tooltip {outline:none; }
     margin-top: 5%;
     z-index: 2;
 }
-
+@media only screen and (max-width: 875px){
+	.idea-table {width:100%;margin-left:0;}.idea-table img{max-height: 50%;max-width: 100%;}
+}
 /*Media Query - Smartphone layout */
 
 @media only screen and (max-width: 500px){

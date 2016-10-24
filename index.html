@@ -11,7 +11,8 @@
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
   <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" />
-    
+   <!--icons-->
+<link href="http://ionicons.com/css/ionicons.min.css?v=2.0.1" rel="stylesheet" type="text/css"> 
   <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -217,7 +218,7 @@ function initChart() {
 	</ul>
 <div class="row">
     <div class="six columns">
-    <div class="headline"><h1>Year-to-date sales / Revenue
+    <div class="headline"><div class="update-date">UPDATED: OCT.17</div><h1>Year-to-date sales / Revenue
    	    <img src="images/business-contact.png" data-featherlight="#sales" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
     <div class="lightbox" id="sales"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
@@ -226,8 +227,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
   	
 <div class="containers" style="background-color: #f2f2f2; width: 100%">
- <h1 class="chtitle">Unique Visitors</h1> 
-  <div class="main">
+ <h1 class="chtitle">Sales</h1> 
+  <div class="main_sale">
     <ul>
       <li class="active">
         <article tabindex="0" data-metric="dummies">
@@ -428,7 +429,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
       </li>      
     </ul>
   </div>
-   <div class="side">
+   <div class="side_sale">
     <h1></h1>
     <div class="stats">
       <ul data-metric="dummies">
@@ -536,7 +537,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
       
     
 <div class="six columns rightcolumn">    
-      <div class="headline"><h1>Reliability &amp; Usage
+      <div class="headline"><div class="update-date">UPDATED: OCT.17</div><h1>Reliability &amp; Usage
    	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
       </div>
        <div class="lightbox" id="question">Information on what these are can be put here.</div>
@@ -858,8 +859,9 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
  
   <div class="row">
 <div class="six columns">
-        <div class="headline"><h1>Projects &amp; Ideas
-   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
+        
+	<div class="headline"><div class="update-date">UPDATED: OCT.17</div><h1> Ideas &amp; Projects
+   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="Have questions?" title="Have questions?"/></h1>
     <div class="lightbox" id="ideas"><b>For More Information</b><br><br><ul><li>
  
 For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
@@ -870,97 +872,42 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
    </div>
       
-<!-- Ideas and projects charts -->	
-	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-
-
-    <div class="ideaslabel" style="margin-left: -80px"><font color="#66b3ff">IDEAS</font></div>
+	<h2 class="blue">IDEAS <i class="ion-information-circled" data-pack="default" data-featherlight="#ideas-info" data-tags="help, more, tooltip"></i></h2>
+    <div class="lightbox" id="ideas-info">Ideas are reviewed by the Global Strategy Team and scored based on various criteria. Ideas and their initial scoring are presented to the Product Council for consideration. The Product Council determines which ideas should be moved forward as a project for further discovery.</div>   
 	
+<table class="idea-table">
+<tbody valign="middle">
+  <tr style="border:none !important;">
+    <td style="padding-left: 5px;border:none !important;vertical-align:top;"><div class="dark-grey-box">APPROVED</div><div class="light-grey-box">7</div></td>	 					<!--  APPROVED NUMBER OF IDEAS -->	
+    <td style="padding-left: 5px;;border:none !important;vertical-align: top;"><div class="dark-grey-box">UNDER REVIEW</div><div class="light-grey-box">4</div></td>								<!--  UNDER REVIEW NUMBER OF IDEAS  -->
+      <td width="35%" rowspan="2" style="border:none !important;"><a href="https://docs.google.com/forms/d/e/1FAIpQLSeLrD3Znu14Ml-WCMqS124NBNM1Y3a44FSmHTNiCuwc5lFifQ/viewform" target="_blank"><img src="images/submit your idea.png" alt="Submit Your Idea"></a></td>								<!--  SUBMIT YOUR IDEA GRAPHIC -->
+  </tr>
+	<tr style="border:none !important;">
+    <td style="padding-left: 5px;border:none !important;vertical-align: middle;"><div class="dark-grey-box">NOT APPROVED</div><div class="light-grey-box">2</div></td>	 					<!--  NOT APPROVED NUMBER OF IDEAS -->	
+    <td style="padding-left: 5px;border:none !important;vertical-align: middle;"><div class="dark-grey-box">ON HOLD</div><div class="light-grey-box">1</div></td>								<!--  ON HOLD NUMBER OF IDEAS -->
+  </tr>
+  
+  </tbody>
+</table>
 	
-<div id="bubblechart" style="width: 85%; height: 100%; float:left; position:relative;  margin-bottom:2%; margin-left: 0px"></div>
+<hr style="margin-top: 3rem;border-width: 0;border-top: 1px solid #3399CC;margin-bottom:0;">	
+	<h2 class="blue">PROJECTS <i class="ion-information-circled" data-pack="default" data-featherlight="#projects-info" data-tags="help, more, tooltip"></i></h2>
+    <div class="lightbox" id="projects-info">Approved projects generally move through the following phases: discovery, proof of concept, prototype, pilot, launch.</div>   
+	<center><img src="images/projects.png" alt="Projects" style="margin-bottom:10px;"></center>
 	  
-	  
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;margin-top:280px">
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">
     <tr>
-    <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
+    <td width="46%" style="text-align:left;width:46%;"><strong>NAME</strong></td>
     <td width="21%"><strong>CURRENT PHASE</strong></td>	
     <td width="21%"><strong>PHASE COMPLETION</strong></td>
     <td width="12%"><strong>STATUS</strong></td>
     </tr>
 </tbody>
 </table>
-<button class="accordion active">OPERATIONAL IMPROVEMENT</button>
+
+<button class="accordion active">NEW PRODUCTS IDEATION</button>
 <div class="panel show">
-<table width="100%" style="margin-bottom:0;">
-<tbody valign="middle">
-
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;">
-	<a href="#" class="tooltip">
-		WileyPLUS Onboarding, Training & Support
-		<span>
-			<strong>WileyPLUS Onboarding, Training & Support</strong><br />
-			Brief description about this project.
-		</span>
-	</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
-  </tr>
-  
-  <tr>
-    <td style="text-align:left">
-		<a href="#" class="tooltip">
-		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-		<span>
-			<strong>Digital Delivery Dashboard</strong><br />
-			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-		</span>
-	</a></td>
-    <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
-    <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-  <tr>
-    <td style="text-align:left">
-		<a href="#" class="tooltip">
-		Operationalizing Digital Delivery 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-		<span>
-			<strong>Operationalizing Digital Delivery</strong><br />
-			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-		</span>
-	</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
-  </tr>
-  
-  </tbody>
-</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
-
-</div>
-
-<button class="accordion">MAINTENANCE</button>
-<div class="panel">
-<table width="100%" style="margin-bottom:0;">
-<tbody valign="middle">
-
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
-    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-  </tbody>
-</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
-
-</div>
-
-<button class="accordion">NEW PRODUCT</button>
-<div id="foo" class="panel">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
 
@@ -1032,9 +979,78 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
   	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
     </div>
+	
+<button class="accordion">OPERATIONAL AND TECHNOLOGY IMPROVEMENT</button>
+<div id="foo" class="panel">	<table width="100%" style="margin-bottom:0;">
+<tbody valign="middle">
+
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;">
+	<a href="#" class="tooltip">
+		WileyPLUS Onboarding, Training & Support
+		<span>
+			<strong>WileyPLUS Onboarding, Training & Support</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
+  </tr>
+  
+  <tr>
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Digital Delivery Dashboard</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
+    <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+  </tr>
+  
+  <tr>
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Operationalizing Digital Delivery 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Operationalizing Digital Delivery</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
+    <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
+  </tr>
+  
+  </tbody>
+</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+
+</div>
+
+<button class="accordion">MAINTENANCE</button>
+<div class="panel">
+<table width="100%" style="margin-bottom:0;">
+<tbody valign="middle">
+
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
+    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+  </tr>
+  
+  </tbody>
+</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+
+</div>
+
     </div>
 <div class="six columns">   
-   	  <div class="headline"><h1>Product Updates
+   	  <div class="headline"><div class="update-date">UPDATED: OCT.17</div><h1>Product Updates
       <img src="images/business-contact.png" data-featherlight="#productupdates" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
   
   <div class="lightbox" id="productupdates"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
@@ -1045,67 +1061,71 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <li>For WPLS, contact <b>Luke Curtin,</b> Senior Product Manager, ORION, WileyPLUS Learning Space, and SWAT | (1) 201-748-7799 | <a href="mailto:lcurtin@wiley.com">lcurtin@wiley.com</a></li></ul></div>
 
       
-	 
-	    
-    <div class="release">
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx" rel="nofollow">Dummies</a></p>
-    <div id="calendaricon-grey">
-    <p><font color="gray">Jan<br>01</font></p> </div>	<!--  INPUT DATE  -->
-<font color="gray">
-		<b>Next Release:</b> 
-        <ul>
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle" style="border-top: 1px solid #3399CC;">
+<tr width="100%">
+<td class="header">Next Release</td>
+<td class="header">Release Details:</td>
+</tr>
+</tbody></table>
+<div id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx" rel="nofollow">Dummies <i class="ion-map" data-pack="default" data-tags="gps, navigation, pin"></i></a></div>
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle" style="border-top: 1px solid #3399CC;">    
+<tr>
+<td id="calendaricon-grey"><p class="daterelease">Jan<br>01</p></td> <!--  INPUT DATE  -->
+<td><ul class="releaseitems">
         <li>Item 1</li>					<!--  INPUT ITEMS  -->
         <li>Item 2</li>					<!--  INPUT ITEMS  -->	
         <li>Item 3</li>					<!--  INPUT ITEMS  -->
-        </ul>
-        </font>
-        
-    </div>
+        </ul></td>    
+</tr>    
+    </tbody>
+    </table> 
     
-    <div class="release">
-    <p id="infolink"><a href="https://wileydpm.aha.io/published/1b0c871e4956be554462b5cac2899699?page=1">WEL</a></p>
-    <div id="calendaricon-yellow">
-    <p>Sep<br>09</p>      </div>		        <!--  INPUT DATE  -->
-
-		<b>Next Release:</b>
-	
-        <ul>
+<div id="infolink"><a href="https://wileydpm.aha.io/published/1b0c871e4956be554462b5cac2899699?page=2" target="_blank">WEL <i class="ion-map" data-pack="default" data-tags="gps, navigation, pin"></i></a></div>
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle" style="border-top: 1px solid #3399CC;">
+<tr>
+<td id="calendaricon-yellow"><p class="daterelease">Sep<br>09</p></td> <!--  INPUT DATE  -->
+<td> <ul class="releaseitems">
         <li>Platinum PMP Bundle</li>			<!--  INPUT ITEMS  -->
         <li>Gold PMP Bundle</li>			<!--  INPUT ITEMS  -->
         <li>PMP Marketing Launch</li>			<!--  INPUT ITEMS  -->
-        </ul>
-        
-        
-    </div>
-    
-    
-    <div class="release">    
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx" rel="nofollow">WileyPLUS</a></p>
-<div id="calendaricon-green">
-       <p>Oct<br>15</p> 				<!--  INPUT DATE  -->
-    </div>
-  
-		<b>Next Release:</b>
-        <ul>
+        </ul>     </td>    
+</tr>    
+    </tbody>
+    </table>
+<div id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx" rel="nofollow">WileyPLUS <i class="ion-map" data-pack="default" data-tags="gps, navigation, pin"></i></a></div>
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle" style="border-top: 1px solid #3399CC;">
+<tr>
+<td id="calendaricon-green"><p class="daterelease">Oct<br>15</p></td>     				<!--  INPUT DATE  -->
+<td> <ul class="releaseitems">
         <li>Style Change to Accounting Tables</li>	<!--  INPUT ITEMS  -->
         <li>Hybris</li>					<!--  INPUT ITEMS  -->
         <li>508-Compliance Phase 2</li>			<!--  INPUT ITEMS  -->
-        </ul>
-    </div>
-    
-        <div class="release">    
-    <p id="infolink"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=1">WPLS</a></p>
-<div id="calendaricon-green">
-        <img src="images/calendar_page_green.png" /><p>Dec<br>10</p>	<!--  INPUT DATE  -->		   
-    </div>
+        </ul> </td>
+</tr>    
+</tbody>
+</table>
 
-		<b>Next Release:</b>
-        <ul>
+<div id="infolink"><a href="https://wileydpm.aha.io/published/6d52b31855e7f66cd0d015d8ecd0b5df?page=2" target="_blank">WPLS <i class="ion-map" data-pack="default" data-tags="gps, navigation, pin"></i></a></div>
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
+<tbody valign="middle" style="border-top: 1px solid #3399CC;">
+<tr>
+<td id="calendaricon-green"><p class="daterelease">Dec<br>10</p></td>   <!--  INPUT DATE  -->
+<td>
+        <ul class="releaseitems">
         <li>LWPQTI Export from SWAT</li>				<!--  INPUT ITEMS  -->
         <li>Ability to update users role </li>				<!--  INPUT ITEMS  -->
         <li>Learning Path question activities move with students</li>	<!--  INPUT ITEMS  -->
-        </ul>
-    </div>
+        </ul>  </td>    
+</tr>
+</tbody>
+</table>	   
+    
+
+		   
     
 <div id="legend" style="float: right; margin-bottom: 1%; margin-right:2%">
 <img src="https://s12.postimg.org/5kqulz00d/key_1.png" height="20" width="220"/>    
@@ -1113,14 +1133,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
 </div>          
-      
- 
+        
     
-    
-
-    
-
-</div>    
 </div> 
 
        
@@ -1220,7 +1234,48 @@ for (i = 0; i < acc.length; i++) {
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 <script src="js/hopscotch.js"></script>
 <script src="js/hopscotch.min.js"></script>
-<script src="js/dash_tour.js"></script>    
+<script src="js/dash_tour.js"></script>
+    
+<!--Sales Chart -->
+<!--Reliability Chart -->
+<script>
+function selectMetric(e) {
+  e.preventDefault();
+  var metric = $(e.currentTarget).attr('data-metric');
+  var metricSelector = '[data-metric="' + metric + '"]';
+
+  // set selected link
+  $('.side_sale .selected').removeClass('selected');
+  $('.side_sale .links a' + metricSelector).addClass('selected');
+
+  // show proper stats
+  $('.side_sale .stats ul').hide();
+  $('.side_sale .stats ul' + metricSelector).show();
+
+  // activate proper graph
+  var $wrapper = $('.main_sale article' + metricSelector).parent();
+  var isActive = $wrapper.hasClass('active');
+  if (!isActive) {
+    $wrapper
+      .addClass('active')
+      .siblings().removeClass('active');
+  }
+}
+
+function checkKey(e) {
+  if (e.keyCode === 13) {
+    // hit enter
+    selectMetric(e);
+  }
+}
+
+$('.side_sale .links a').on('click', selectMetric);
+$('.main_sale article').on({
+  'click': selectMetric,
+  'keyup': checkKey
+});
+    
+</script>     
 
 <!--Reliability Chart -->
 <script>

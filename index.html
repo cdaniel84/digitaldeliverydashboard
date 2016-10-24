@@ -7,239 +7,16 @@
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/skeleton.css">  
   <link href="css/main.css" rel="stylesheet">
   <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
- <!-- Attach JoyRide CSS -->
-    <link rel="stylesheet" href="joyride-2.1.css">
-    <link rel="stylesheet" href="mobile.css">    
+  <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" />
     
   <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
 <script type="text/javascript" src="https://www.google.com/jsapi"></script> 
   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>    
 <script type="text/javascript">
-google.load('visualization', '1', {
-    'packages': ['corechart', 'line']
-});
-google.setOnLoadCallback(initChart);
-$(window).on("throttledresize", function (event) {
-    initChart();
-});
-function initChart() {
- 
-            // PROJECTS & IDEAS - BUBBLE CHART
-          var data2 = google.visualization.arrayToDataTable([
-        ['ID',                  'x',                'y',      'Status',       'Size'    	/* INPUT */ 	       ],
-        ['Approved: 7',        78.35,              1.69,      'Approved',       70 		/* approved   x   10 */],
-        ['Not Approved: 2',    79.2,               1.72,      'Not Approved',   30 		/* not approved x 10 */],
-        ['Under Review: 4',    79.79,              1.66,      'Under Review',   40 		/* under review x 10 */],
-        ['On Hold: 1',         80.21,              1.71,      'On Hold',        10 		/* on hold    x   10 */],
-        ['',                   80.66,              1.78,      '',                0 		/* placeholder       */],
-      ]);
-         var options2 = {
-        title: 'Ideas',
-        titlePosition:'top',
-        headerHeight:40,
-        hAxis: {title: ''},
-        vAxis: {title: ''},
-        sizeAxis: {maxSize:75},
-        hAxisviewWindowMode:'pretty',
-        tooltip: {trigger: 'none'},     
-        bubble: {textStyle: {fontSize: 11}, textStyle: {auraColor: 'none', bold: true, fontSize: 10, color: 'blue',}},
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        chartAreabackgroundColor:{color:'#F2F2F2'},
-        colors: ['#66b3ff','#66b3ff','#66b3ff','#66b3ff','#66b3ff'],
-        chartArea:{left:0,width:'100%',height:'100%'},
-        hAxis: {gridlines: {color: '#333', count: 0}},
-        vAxis: {gridlines: {color: '#333', count: 0}}
-      };
-            var chart2 = new google.visualization.BubbleChart(document.getElementById('bubblechart'));
-            chart2.draw(data2, options2);   
-        
-//create first line chart - Dummies
-      var data7 = new google.visualization.DataTable();
-      data7.addColumn('number', 'X');
-      data7.addColumn('number', 'year 2017');
-      data7.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016
-      data7.addRows([
-        [0,  494670, 422920],
-        [1,  494670, 422920],
-        [2,  , 464020],
-        [3,   , 489895],
-        [4,  , 496895],
-      ]);
-      var options7 = {
-       colors:['#66CC66','#3399CC'],      
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],     /* X-axis range */  
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''},{v:200000, f:'200K'},{v:400000, f:'400K'},{v:600000, f:'600K'},{v:800000, f:'800K'}],     /* Y-axis range */          
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line = new google.visualization.LineChart(document.getElementById('line'));
-      line.draw(data7, options7);
-  
-  
-//create 2nd line chart - WEL
-        var data8 = new google.visualization.DataTable();
-      data8.addColumn('number', 'X');
-      data8.addColumn('number', 'year 2017');
-      data8.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
-      data8.addRows([
-        [0,  6000000, 3480000],
-        [1,  6000000,3480000],
-        [2,  , 3490000],
-        [3,   , 4650000],
-        [4,  , 4580000],
-      ]);
-      var options8 = {
-       colors:['#66CC66','#3399CC'],     
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''}, {v:2000000, f:'2M'},{v:4000000, f:'4M'},{v:6000000, f:'6M'},{v:8000000, f:'8M'}],      /* Y-axis range */            
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line2 = new google.visualization.LineChart(document.getElementById('line2'));
-      line2.draw(data8, options8);
-  
-  
-//create 3rd line chart - WileyPLUS
-        var data9 = new google.visualization.DataTable();
-      data9.addColumn('number', 'X');
-      data9.addColumn('number', 'year 2017');
-      data9.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
-      data9.addRows([
-        [0,  14719037, 16554171],
-        [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
-      ]);
-      var options9 = {
-       colors:['#66CC66','#3399CC'],      
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''},{v:5000000, f:'5M'},{v:10000000, f:'10M'},{v:15000000, f:'15M'},{v:20000000, f:'20M'}],     /* Y-axis range */          
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line3 = new google.visualization.LineChart(document.getElementById('line3'));
-      line3.draw(data9, options9);
-  
-  
-//create 4th chart - WPLS
-        var data10 = new google.visualization.DataTable();
-      data10.addColumn('number', 'X');
-      data10.addColumn('number', 'year 2017');
-      data10.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
-      data10.addRows([
-        [0,  14719037, 16554171],
-        [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
-      ]);
-      var options10 = {
-       colors:['#66CC66','#3399CC'],      
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],      /* X-axis range */ 
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''},{v:5000000, f:'5M'},{v:10000000, f:'10M'},{v:15000000, f:'15M'},{v:20000000, f:'20M'}],     /* Y-axis range */        
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line4 = new google.visualization.LineChart(document.getElementById('line4'));
-      line4.draw(data10, options10);
-	  
-	  
-	  //Reliability and Usage
-		  function selectMetric(e) {
-	  e.preventDefault();
-	  var metric = $(e.currentTarget).attr('data-metric');
-	  var metricSelector = '[data-metric="' + metric + '"]';
-
-	  // set selected link
-	  $('.side .selected').removeClass('selected');
-	  $('.side .links a' + metricSelector).addClass('selected');
-
-	  // show proper stats
-	  $('.side .stats ul').hide();
-	  $('.side .stats ul' + metricSelector).show();
-
-	  // activate proper graph
-	  var $wrapper = $('.main article' + metricSelector).parent();
-	  var isActive = $wrapper.hasClass('active');
-	  if (!isActive) {
-		$wrapper
-		  .addClass('active')
-		  .siblings().removeClass('active');
-	  }
-	}
-
-	function checkKey(e) {
-	  if (e.keyCode === 13) {
-		// hit enter
-		selectMetric(e);
-	  }
-	}
-
-	$('.side .links a').on('click', selectMetric);
-	$('.main article').on({
-	  'click': selectMetric,
-	  'keyup': checkKey
-	});
-
-}
 </script>
 </head>
 <body>
@@ -249,6 +26,7 @@ function initChart() {
   <!-- .container is main centered wrapper -->
 <div class="container">
 <img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley" style="padding:15px;">
+<button id="joyridebutton">Take a tour</button>
 <!--  news stories -->
 <ul id="nt-example2">
 		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>																								<!--  INPUT NEWS HEADLINE -->	
@@ -256,8 +34,8 @@ function initChart() {
         <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>		<!--  INPUT NEWS HEADLINE -->
 	</ul>
 <div class="row">
-    <div class="twelve columns">
-    <div class="headline"><h1>Year-to-date sales / Revenue
+    <div class="six columns">
+    <div class="headline"><h1 style="text-align: center;">Year-to-date sales / Revenue
    	    <img src="images/business-contact.png" data-featherlight="#sales" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
     <div class="lightbox" id="sales"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
@@ -265,55 +43,642 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </li>
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
   	
+<div class="containers" style="background-color: #f2f2f2; width: 100%">
+ <h1 class="chtitle">YTD Sales/Revenue</h1> 
+  <div class="main">
+    <ul>
+      <li class="active">
+        <article tabindex="0" data-metric="dummies">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data dummies">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>              
+            </div>
+          </div>
+          <h1>Dummies</h1>
+        </article>
+      </li>
+      <li>
+        <article tabindex="0" data-metric="WEL">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data WEL">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>                
+            </div>
+          </div>
+          <h1>WEL</h1>
+        </article>
+      </li>
+      <li>
+        <article tabindex="0" data-metric="WileyPLUS">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data WileyPLUS">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42K</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48K</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26K</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>                
+            </div>
+          </div>
+          <h1>WileyPLUS</h1>
+        </article>
+      </li>
+      
+      <li>
+        <article tabindex="0" data-metric="WPLS">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data WPLS">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>              
+            </div>
+          </div>
+          <h1>WPLS</h1>
+        </article>
+      </li>      
+    </ul>
+  </div>
+   <div class="side">
+    <h1></h1>
+    <div class="stats">
+      <ul data-metric="dummies">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">54M</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">2.5M</div>
+        </li>       
+      </ul>
+      <ul data-metric="WEL">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD</div>
+          <div class="val">524K*/186K**</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">35K*/18K**</div>
+        </li>        
+      </ul>
+      <ul data-metric="WileyPLUS">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">2M</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">361K</div>
+        </li>  
+      </ul>
 
-	<!-- Line Charts -->
-<div class="lines">        
-<a href="http://www.wiley.com/college/dddash/sales/dummies.pdf">Dummies</a>      
-  	<div id="line"></div>
-  <div class="revenue">    
-        <p id="revA">$1.87M</p>    <!-- Input Revenue for year 2016 -->
-    <div id="revborder">Ad Revenue</div>    
-        <p id="revB">$599K</p>     <!-- Input Revenue for year 2017 -->
-        </div>
-</div>
-<div class="lines">
-<a href="http://www.wiley.com/college/dddash/sales/wel.pdf">WEL</a>        
-  <div id="line2"></div>
-  <div class="revenue">
-    <p id="revA">1.58%</p>   <!-- Input Revenue for year 2016 -->
-<div id="revborder">Conversions</div>
-    <p id="revB">1.55%</p>   <!-- Input Revenue for year 2017 -->
+      <ul data-metric="WPLS">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">204K</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">34K</div>
+        </li>  
+      </ul>      
     </div>
+
+        <div class="stats">
+      <ul data-metric="dummies">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">99.5%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">128 Days</div>
+        </li>  
+        </ul>
+      <ul data-metric="WEL">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">99.5%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">128 Days</div>
+        </li> 
+        <br>
+        <li>
+          <div><font size="1px"><strong>* www.efficientlearning.com</strong></font></div>
+          <div><font size="1px"><strong>** app.efficientlearning.com</strong></font></div>
+        </li>         
+        </ul>
+       <ul data-metric="WileyPLUS">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">99.17%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">182 Days</div>
+        </li>
+        </ul>
+      <ul data-metric="WPLS">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">100%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">N/A</div>
+        </li>           
+      </ul>
+      </div>
+  </div>
 </div>
-<div class="lines">
-    <a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WileyPLUS</a>
-  	<div id="line3"></div>
-  <div class="revenue">
-    <p id="revA">523K</p>    <!-- Input Revenue for year 2016 -->
-    <div id="revborder">Validations</div>
-    <p id="revB">120K</p>    <!-- Input Revenue for year 2017 -->
-    </div>    
-</div>    
-<div class="lines">
-<a href="http://www.wiley.com/college/dddash/sales/e4_global_sales.xlsx">WPLS</a>    
-  	<div id="line4"></div>
-<div class="revenue">
-    <p id="revA">20K</p>   <!-- Input Revenue for year 2016 -->
-<div id="revborder">Validations</div>
-    <p id="revB">8K</p>    <!-- Input Revenue for year 2017 -->
-    </div>    
-</div>       
-		<!-- line chart legend -->
-     <img src="https://s15.postimg.io/5omex6f0b/year_1.png"  width="85" height="45" alt="Legend" style="margin-top: 12%; margin-left: 1%">
-<img src="https://s11.postimg.io/evhnxppo3/year_2.png"  width="85" height="45" alt="Legend" style="margin-top: 5%; margin-left: 1%">    
-      </div>   
-	 </div> 
+    </div>
+	
+      
     
+<div class="six columns rightcolumn">    
+      <div class="headline"><h1 style="text-align: center;">Reliability &amp; Usage
+   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
+      </div>
+       <div class="lightbox" id="question">Information on what these are can be put here.</div>
+          <div class="lightbox" id="reliability"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
+<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">ntimmons@wiley.com</a>
+</li>
+<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
+</ul></div>    
+		
+        <div class="containers" style="background-color: #f2f2f2; width: 100%">
+ <h1 class="chtitle">Unique Visitors</h1> 
+  <div class="main">
+    <ul>
+      <li class="active">
+        <article tabindex="0" data-metric="dummies">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data dummies">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>              
+            </div>
+          </div>
+          <h1>Dummies</h1>
+        </article>
+      </li>
+      <li>
+        <article tabindex="0" data-metric="WEL">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data WEL">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>                
+            </div>
+          </div>
+          <h1>WEL</h1>
+        </article>
+      </li>
+      <li>
+        <article tabindex="0" data-metric="WileyPLUS">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data WileyPLUS">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42K</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48K</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26K</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>                
+            </div>
+          </div>
+          <h1>WileyPLUS</h1>
+        </article>
+      </li>
+      
+      <li>
+        <article tabindex="0" data-metric="WPLS">
+          <div class="area">
+            <div class="linez">
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+              <div></div>
+            </div>
+            <div class="data WPLS">
+              <dq>
+                <dt></dt>
+                <dd>28</dd>
+              </dq>                  
+              <dl>
+                <dt>Q1</dt>
+                <dd>42</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>48</dd>
+              </dq>              
+              <dl>
+                <dt>Q2</dt>
+                <dd>26</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>42</dd>
+              </dq>                  
+              <dl>
+                <dt>Q3</dt>
+                <dd>64</dd>
+              </dl>
+              <dq>
+                <dt></dt>
+                <dd>80</dd>
+              </dq>                  
+              <dl>
+                <dt>Q4</dt>
+                <dd>62</dd>
+              </dl>              
+            </div>
+          </div>
+          <h1>WPLS</h1>
+        </article>
+      </li>      
+    </ul>
+  </div>
+   <div class="side">
+    <h1></h1>
+    <div class="stats">
+      <ul data-metric="dummies">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">54M</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">2.5M</div>
+        </li>       
+      </ul>
+      <ul data-metric="WEL">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD</div>
+          <div class="val">524K*/186K**</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">35K*/18K**</div>
+        </li>        
+      </ul>
+      <ul data-metric="WileyPLUS">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">2M</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">361K</div>
+        </li>  
+      </ul>
+
+      <ul data-metric="WPLS">
+    <h1>Unique Visitors</h1>         
+        <li>
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">204K</div>
+        </li>
+        <li>
+          <div class="key">Past 7 days</div>
+          <div class="val">34K</div>
+        </li>  
+      </ul>      
+    </div>
+
+        <div class="stats">
+      <ul data-metric="dummies">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">99.5%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">128 Days</div>
+        </li>  
+        </ul>
+      <ul data-metric="WEL">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">99.5%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">128 Days</div>
+        </li> 
+        <br>
+        <li>
+          <div><font size="1px"><strong>* www.efficientlearning.com</strong></font></div>
+          <div><font size="1px"><strong>** app.efficientlearning.com</strong></font></div>
+        </li>         
+        </ul>
+       <ul data-metric="WileyPLUS">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">99.17%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">182 Days</div>
+        </li>
+        </ul>
+      <ul data-metric="WPLS">      
+    <h1>Reliability</h1>      
+        <li>
+          <div class="key">Uptime</div>
+          <div class="val">100%</div>
+        </li>   
+        <li>
+          <div class="key">Last Outage</div>
+          <div class="val">N/A</div>
+        </li>           
+      </ul>
+      </div>
+  </div>
+</div>
+    </div>    
+    
+	 </div> 
  
   <div class="row">
 <div class="six columns">
-        <div class="headline"><h1>Projects &amp; Ideas
-   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
+    <div class="update-date">UPDATED: OCT.17</div>    
+	<div class="headline"><h1> Ideas &amp; Projects
+   	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="Have questions?" title="Have questions?"/></h1>
     <div class="lightbox" id="ideas"><b>For More Information</b><br><br><ul><li>
  
 For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
@@ -324,97 +689,52 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
    </div>
       
-<!-- Ideas and projects charts -->	
-	<hr width=48% style="position: absolute; display: block; height: 1px; border: 0; margin-top: 19%; padding: 0;">
-
-
-    <div class="ideaslabel" style="margin-left: -80px"><font color="#66b3ff">IDEAS</font></div>
+	<h2 class="blue">IDEAS <img src="images/info_icon.png" data-featherlight="#ideas-info" alt="More Information" title="More Information"/></h2>
+    <div class="lightbox" id="ideas-info"><b>For More Information</b><br><br><ul><li>
+ 
+For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
+<li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
+<li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
+</li></ul></div>   
 	
+<table class="idea-table">
+<tbody valign="middle">
+  <tr style="border:none !important;">
+    <td style="padding-left: 5px;border:none !important;vertical-align:top;"><div class="dark-grey-box">APPROVED</div><div class="light-grey-box">7</div></td>	 					<!--  APPROVED NUMBER OF IDEAS -->	
+    <td style="padding-left: 5px;;border:none !important;vertical-align: top;"><div class="dark-grey-box">UNDER REVIEW</div><div class="light-grey-box">4</div></td>								<!--  UNDER REVIEW NUMBER OF IDEAS  -->
+	  <td rowspan="2" style="border:none !important;"><img src="images/submit your idea.png" alt="Submit Your Idea"></td>								<!--  SUBMIT YOUR IDEA GRAPHIC -->
+  </tr>
+	<tr style="border:none !important;">
+    <td style="padding-left: 5px;border:none !important;vertical-align: middle;"><div class="dark-grey-box">NOT APPROVED</div><div class="light-grey-box">2</div></td>	 					<!--  NOT APPROVED NUMBER OF IDEAS -->	
+    <td style="padding-left: 5px;border:none !important;vertical-align: middle;"><div class="dark-grey-box">ON HOLD</div><div class="light-grey-box">1</div></td>								<!--  ON HOLD NUMBER OF IDEAS -->
+  </tr>
+  
+  </tbody>
+</table>
 	
-<div id="bubblechart" style="width: 85%; height: 100%; float:left; position:relative;  margin-bottom:2%; margin-left: 0px"></div>
+<hr style="margin-top: 3rem;border-width: 0;border-top: 1px solid #3399CC;margin-bottom:0;">	
+	<h2 class="blue">PROJECTS <img src="images/info_icon.png" data-featherlight="#projects-info" alt="More Information" title="More Information"/></h2>
+    <div class="lightbox" id="projects-info"><b>For More Information</b><br><br><ul><li>
+ 
+For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product and Solutions Manager | (1) 317-572-3299 |  <a href="mailto:ndunlevy@wiley.com">ndunlevy@wiley.com</a></li>
+<li><b>Hiral Lai,</b> Associate Director of Solutions Delivery  | (1) 201-748-7826 | <a href="mailto:hlai@wiley.com">hlai@wiley.com</a></li>
+<li><b>Nancy Gerome,</b> Vice President, Digital Product Strategy  | (1) 201-748-7687 | <a href="mailto:ngerome@wiley.com">ngerome@wiley.com</a>
+</li></ul></div>   
+	<center><img src="images/projects.png" alt="Projects" style="margin-bottom:10px;"></center>
 	  
-	  
-        <table width="100%" style="padding-bottom:0;margin-bottom:0;margin-top:280px">
+<table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">
     <tr>
-    <td width="46%" style="text-align:left;"><strong>NAME</strong></td>
+    <td width="46%" style="text-align:left;width:46%;"><strong>NAME</strong></td>
     <td width="21%"><strong>CURRENT PHASE</strong></td>	
     <td width="21%"><strong>PHASE COMPLETION</strong></td>
     <td width="12%"><strong>STATUS</strong></td>
     </tr>
 </tbody>
 </table>
-<button class="accordion active">OPERATIONAL IMPROVEMENT</button>
+
+<button class="accordion active">NEW PRODUCTS IDEATION</button>
 <div class="panel show">
-<table width="100%" style="margin-bottom:0;">
-<tbody valign="middle">
-
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;">
-	<a href="#" class="tooltip">
-		WileyPLUS Onboarding, Training & Support
-		<span>
-			<strong>WileyPLUS Onboarding, Training & Support</strong><br />
-			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-		</span>
-	</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
-  </tr>
-  
-  <tr>
-    <td style="text-align:left">
-		<a href="#" class="tooltip">
-		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-		<span>
-			<strong>Digital Delivery Dashboard</strong><br />
-			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-		</span>
-	</a></td>
-    <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
-    <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-  <tr>
-    <td style="text-align:left">
-		<a href="#" class="tooltip">
-		Operationalizing Digital Delivery 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-		<span>
-			<strong>Operationalizing Digital Delivery</strong><br />
-			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-		</span>
-	</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
-  </tr>
-  
-  </tbody>
-</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
-
-</div>
-
-<button class="accordion">MAINTENANCE</button>
-<div class="panel">
-<table width="100%" style="margin-bottom:0;">
-<tbody valign="middle">
-
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
-    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-  </tbody>
-</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
-
-</div>
-
-<button class="accordion">NEW PRODUCT</button>
-<div id="foo" class="panel">
 <table width="100%" style="margin-bottom:0;">
 <tbody valign="middle">
 
@@ -486,10 +806,80 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
   	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
 
     </div>
+	
+<button class="accordion">OPERATIONAL AND TECHNOLOGY IMPROVEMENT</button>
+<div id="foo" class="panel">	<table width="100%" style="margin-bottom:0;">
+<tbody valign="middle">
+
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;">
+	<a href="#" class="tooltip">
+		WileyPLUS Onboarding, Training & Support
+		<span>
+			<strong>WileyPLUS Onboarding, Training & Support</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
+  </tr>
+  
+  <tr>
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Digital Delivery Dashboard</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
+    <td width="25%" style="width:21%;">Prototype</td>		   						<!--  INPUT CURRENT PHASE  -->
+    <td>08/30/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+  </tr>
+  
+  <tr>
+    <td style="text-align:left">
+		<a href="#" class="tooltip">
+		Operationalizing Digital Delivery 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		<span>
+			<strong>Operationalizing Digital Delivery</strong><br />
+			is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+		</span>
+	</a></td>
+    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
+    <td>03/15/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_red.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
+  </tr>
+  
+  </tbody>
+</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+
+</div>
+
+<button class="accordion">MAINTENANCE</button>
+<div class="panel">
+<table width="100%" style="margin-bottom:0;">
+<tbody valign="middle">
+
+  <tr>
+    <td width="38%" style="text-align:left;width:46%;">NONE</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
+    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">Null</td>								<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+  </tr>
+  
+  </tbody>
+</table>	<img src="https://s10.postimg.org/ogothlkzt/key_3.png"  width="450" height="20" alt="Legend" style="margin-top: 1%; margin-left: 1%; margin-right:1%; margin-bottom:1%; float: right">
+
+</div>
+
     </div>
 <div class="six columns">   
-   	  <div class="headline"><h1>Product Updates
-      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
+   	  <div class="update-date">UPDATED: OCT.17</div>    
+	<div class="headline"><h1>Product Updates
+      <img src="images/business-contact.png" data-featherlight="#productupdates" alt="Have questions?" title="Have questions?"/></h1></div> 
   
   <div class="lightbox" id="productupdates"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
@@ -502,7 +892,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 	 
 	    
     <div class="release">
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx">Dummies</a></p>
+    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/dummies_roadmap.xlsx" rel="nofollow">Dummies</a></p>
     <div id="calendaricon-grey">
     <p><font color="gray">Jan<br>01</font></p> </div>	<!--  INPUT DATE  -->
 <font color="gray">
@@ -534,7 +924,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     
     
     <div class="release">    
-    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx">WileyPLUS</a></p>
+    <p id="infolink"><a href="http://www.wiley.com/college/dddash/products/wpe4_roadmap.xlsx" rel="nofollow">WileyPLUS</a></p>
 <div id="calendaricon-green">
        <p>Oct<br>15</p> 				<!--  INPUT DATE  -->
     </div>
@@ -566,396 +956,14 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
     </div>
 	  <div class="lightbox" id="mylightbox">
 Please Contact XYZ<br />317-645-7777<br /><a href="mailto:someone@wiley.com">someone@wiley.com</a></div>
-</div>          
-      
- 
-    
-    
+</div>             
 
     
-<div class="twelve columns">    
-      <div class="headline"><h1>Reliability &amp; Usage
-   	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
-      </div>
-       <div class="lightbox" id="question">Information on what these are can be put here.</div>
-          <div class="lightbox" id="reliability"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Nancy Bane,</b> Senior Web Production Manager | (1) 317-572-3305 |  <a href="mailto:nbane@wiley.com">nbane@wiley.com</a></li>
-<li>For WEL, contact <b>Nikki Timmons,</b> Web Production Specialist, Wiley Efficient Learning | (1) 317-572-3369 | <a href="mailto:ntimmons@wiley.com">ntimmons@wiley.com</a>
-</li>
-<li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
-</ul></div>    
-		
-<div class="containers" style="background-color: #f2f2f2; width: 100%">
-  <div class="side">
-    <h1></h1>
-    <div class="stats">
-      <ul data-metric="dummies">
-    <h1>Unique Visitors</h1>         
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">54M</div>
-        </li>
-        <li>
-          <div class="key">Past 7 days</div>
-          <div class="val">2.5M</div>
-        </li>       
-      </ul>
-      <ul data-metric="WEL">
-    <h1>Unique Visitors</h1>         
-        <li>
-          <div class="key">FY17 YTD</div>
-          <div class="val">524K*/186K**</div>
-        </li>
-        <li>
-          <div class="key">Past 7 days</div>
-          <div class="val">35K*/18K**</div>
-        </li>        
-      </ul>
-      <ul data-metric="WileyPLUS">
-    <h1>Unique Visitors</h1>         
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">2M</div>
-        </li>
-        <li>
-          <div class="key">Past 7 days</div>
-          <div class="val">361K</div>
-        </li>  
-      </ul>
 
-      <ul data-metric="WPLS">
-    <h1>Unique Visitors</h1>         
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">204K</div>
-        </li>
-        <li>
-          <div class="key">Past 7 days</div>
-          <div class="val">34K</div>
-        </li>  
-      </ul>      
-    </div>
+</div>    
+</div> 
 
-        <div class="stats">
-      <ul data-metric="dummies">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">99.5%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage (days)</div>
-          <div class="val">128</div>
-        </li>  
-        </ul>
-      <ul data-metric="WEL">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">99.5%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage (days)</div>
-          <div class="val">128</div>
-        </li> 
-        <br></br>
-        <li>
-          <div><font size="2"><strong>* www.efficientlearning.com</font></strong></div>
-          <div><font size="2"><strong>** app.efficientlearning.com</font></strong></div>
-        </li>         
-        </ul>
-       <ul data-metric="WileyPLUS">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">99.17%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage (days)</div>
-          <div class="val">182</div>
-        </li>
-        </ul>
-      <ul data-metric="WPLS">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">100%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage (days)</div>
-          <div class="val">N/A</div>
-        </li>           
-      </ul>
-      </div>
-  </div>
-  <div class="main">
-    <ul>
-      <li class="active">
-        <article tabindex="0" data-metric="dummies">
-          <div class="area">
-            <div class="lines">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data dummies">
-              <dl>
-                <dt>Sep</dt>
-                <dd>36</dd>
-              </dl>
-              <dl>
-                <dt>Oct</dt>
-                <dd>44</dd>
-              </dl>
-              <dl>
-                <dt>Nov</dt>
-                <dd>52</dd>
-              </dl>
-              <dl>
-                <dt>Dec</dt>
-                <dd>32</dd>
-              </dl>
-              <dl>
-                <dt>Jan</dt>
-                <dd>44</dd>
-              </dl>
-              <dl>
-                <dt>Feb</dt>
-                <dd>68</dd>
-              </dl>
-              <dl>
-                <dt>Mar</dt>
-                <dd>80</dd>
-              </dl>
-              <dl>
-                <dt>Apr</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>May</dt>
-                <dd>56</dd>
-              </dl>
-              <dl>
-                <dt>Jun</dt>
-                <dd>46</dd>
-              </dl>
-              <dl>
-                <dt>Jul</dt>
-                <dd>60</dd>
-              </dl>
-              <dl>
-                <dt>Aug</dt>
-                <dd>64</dd>
-              </dl>              
-            </div>
-          </div>
-          <h1>Unique Visitors: Dummies</h1>
-        </article>
-      </li>
-      <li>
-        <article tabindex="0" data-metric="WEL">
-          <div class="area">
-            <div class="lines">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WEL">
-              <dl>
-                <dt>Sep</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>Oct</dt>
-                <dd>56</dd>
-              </dl>
-              <dl>
-                <dt>Nov</dt>
-                <dd>64</dd>
-              </dl>
-              <dl>
-                <dt>Dec</dt>
-                <dd>48</dd>
-              </dl>
-              <dl>
-                <dt>Jan</dt>
-                <dd>64</dd>
-              </dl>
-              <dl>
-                <dt>Feb</dt>
-                <dd>80</dd>
-              </dl>
-              <dl>
-                <dt>Mar</dt>
-                <dd>84</dd>
-              </dl>
-               <dl>
-                <dt>Apr</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>May</dt>
-                <dd>56</dd>
-              </dl>
-              <dl>
-                <dt>June</dt>
-                <dd>46</dd>
-              </dl>
-              <dl>
-                <dt>July</dt>
-                <dd>60</dd>
-              </dl>
-              <dl>
-                <dt>Aug</dt>
-                <dd>64</dd>
-              </dl>               
-            </div>
-          </div>
-          <h1>Unique Visitors: WEL</h1>
-        </article>
-      </li>
-      <li>
-        <article tabindex="0" data-metric="WileyPLUS">
-          <div class="area">
-            <div class="lines">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WileyPLUS">
-              <dl>
-                <dt>Sep</dt>
-                <dd>76</dd>
-              </dl>
-              <dl>
-                <dt>Oct</dt>
-                <dd>88</dd>
-              </dl>
-              <dl>
-                <dt>Nov</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>Dec</dt>
-                <dd>68</dd>
-              </dl>
-              <dl>
-                <dt>Jan</dt>
-                <dd>52</dd>
-              </dl>
-              <dl>
-                <dt>Feb</dt>
-                <dd>60</dd>
-              </dl>
-              <dl>
-                <dt>Mar</dt>
-                <dd>40</dd>
-              </dl>
-              <dl>
-                <dt>Apr</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>May</dt>
-                <dd>56</dd>
-              </dl>
-              <dl>
-                <dt>June</dt>
-                <dd>46</dd>
-              </dl>
-              <dl>
-                <dt>July</dt>
-                <dd>60</dd>
-              </dl>
-              <dl>
-                <dt>Aug</dt>
-                <dd>64</dd>
-              </dl>                
-            </div>
-          </div>
-          <h1>Unique Visitors: WileyPLUS</h1>
-        </article>
-      </li>
-      
-      <li>
-        <article tabindex="0" data-metric="WPLS">
-          <div class="area">
-            <div class="lines">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WPLS">
-              <dl>
-                <dt>Sep</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>Oct</dt>
-                <dd>56</dd>
-              </dl>
-              <dl>
-                <dt>Nov</dt>
-                <dd>64</dd>
-              </dl>
-              <dl>
-                <dt>Dec</dt>
-                <dd>48</dd>
-              </dl>
-              <dl>
-                <dt>Jan</dt>
-                <dd>64</dd>
-              </dl>
-              <dl>
-                <dt>Feb</dt>
-                <dd>80</dd>
-              </dl>
-              <dl>
-                <dt>Mar</dt>
-                <dd>84</dd>
-              </dl>
-              <dl>
-                <dt>Apr</dt>
-                <dd>72</dd>
-              </dl>
-              <dl>
-                <dt>May</dt>
-                <dd>56</dd>
-              </dl>
-              <dl>
-                <dt>June</dt>
-                <dd>46</dd>
-              </dl>
-              <dl>
-                <dt>July</dt>
-                <dd>60</dd>
-              </dl>
-              <dl>
-                <dt>Aug</dt>
-                <dd>64</dd>
-              </dl>               
-            </div>
-          </div>
-          <h1>Unique Visitors: WPLS</h1>
-        </article>
-      </li>      
-    </ul>
-  </div>
-</div>
-		
-    </div>
-</div>
+       
     <!-- Placed at the end of the document so the pages load faster -->
   <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
   <script src="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
@@ -1048,52 +1056,62 @@ for (i = 0; i < acc.length; i++) {
 </script>
 <script src="js/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
     
-      <!-- Tip Content/joy ride -->
-    <ol id="joyRideTipContent">
-      <li "data-options="tipLocation:modal" data-text="Next" class="custom">
-        <h2>Welcome</h2>
-        <p>This is the prototype for the Digital Delivery Dashboard</p>
-      </li>
-      <li data-id="line" data-button="Next" data-options="tipLocation:right;tipAnimation:fade">
-        <h2>Interactive Sales Charts</h2>
-        <p>After this tour, hover your mouse over the graph to get real data.</p>
-      </li>
-      <li data-id="calendaricon-grey" data-button="Next" data-options="tipLocation:top">
-        <h2>Product Updates</h2>
-        <p>Check out upcoming releases and product updates.</p>
-      </li>
-      <li data-id="bubblechart" data-options="tipLocation:top" data-button="Next">
-        <h2>Stop #4</h2>
-        <p>It works as a modal too!</p>
-      </li>
-      <li data-class="accordion" data-button="Next" data-options="tipLocation:right">
-        <h2>Expanding and Collapsing Lists</h2>
-        <p>Click on the plus/minus icons to expand and collapse these lists.</p>
-      </li>
-      <li data-button="Close" data-options="tipLocation:modal">
-        <h2>Feedback</h2>
-        <p>Please share with us what else you would like this Walk Through to explain.</p>
-      </li>
-    </ol>    
+<!--Hopscotch-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script src="js/hopscotch.js"></script>
+<script src="js/hopscotch.min.js"></script>
+<script src="js/dash_tour.js"></script>    
+
+<!--Reliability Chart -->
+<script>
+function selectMetric(e) {
+  e.preventDefault();
+  var metric = $(e.currentTarget).attr('data-metric');
+  var metricSelector = '[data-metric="' + metric + '"]';
+
+  // set selected link
+  $('.side .selected').removeClass('selected');
+  $('.side .links a' + metricSelector).addClass('selected');
+
+  // show proper stats
+  $('.side .stats ul').hide();
+  $('.side .stats ul' + metricSelector).show();
+
+  // activate proper graph
+  var $wrapper = $('.main article' + metricSelector).parent();
+  var isActive = $wrapper.hasClass('active');
+  if (!isActive) {
+    $wrapper
+      .addClass('active')
+      .siblings().removeClass('active');
+  }
+}
+
+function checkKey(e) {
+  if (e.keyCode === 13) {
+    // hit enter
+    selectMetric(e);
+  }
+}
+
+$('.side .links a').on('click', selectMetric);
+$('.main article').on({
+  'click': selectMetric,
+  'keyup': checkKey
+});
     
-  <!-- Run the plugin -->
-    <script type="text/javascript" src="jquery-1.10.1.js"></script>
-    <script type="text/javascript" src="jquery.cookie.js"></script>
-    <script type="text/javascript" src="modernizr.mq.js"></script>
-    <script type="text/javascript" src="jquery.joyride-2.1.js"></script>
-    <script>
-      $(window).load(function() {
-        $('#joyRideTipContent').joyride({
-          autoStart : true,
-          postStepCallback : function (index, tip) {
-          if (index == 2) {
-            $(this).joyride('set_li', false, 1);
-          }
-        },
-        modal:true,
-        expose: true
-        });
-      });
-    </script>
+</script>    
+        
+<!--Google Analytics -->    
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-77684155-1', 'auto');
+  ga('send', 'pageview');
+
+</script>    
 </body>
 </html>

@@ -12,7 +12,7 @@ ul {-webkit-padding-start: 0 !important;}
 .columns{background:#F2F2F2;}
 .update-date{color:#FFFFFF;font-size:0.8em;margin-left:1%; margin-right:-10%;padding-top:11px;float:left; position:relative;}
 /*Projects & Ideas Table*/
-h2.blue {color:#3399CC; text-transform:uppercase; text-align:center; font-weight: bold;font-size:19.5px;line-height:42.9px;font-family: 'Open Sans', sans-serif;margin: 1rem;}
+h2.blue {color:#3399CC; text-transform:uppercase; text-align:center; font-weight: bold;font-size:18px;line-height:42.9px;font-family: 'Open Sans', sans-serif;margin: 1rem;}
 h2.blue img{height:17px;}
 body > div.container > div:nth-child(5) > div:nth-child(1) > table > tbody > tr {font-size:14px;letter-spacing: -0.5px;}
 .light-grey-box{width:13%;color:#000000;background:#BBBDBF;padding:1px;float:left;}
@@ -22,6 +22,45 @@ body > div.container > div:nth-child(5) > div:nth-child(1) > table > tbody > tr 
 
 center img {
     width:95%;
+}
+
+.banner {
+    width:100%;
+    float:left;
+    position:relative;
+}
+
+.banner img {
+    float:left;
+    position:relative;
+    padding:0;
+    margin-top:2%;
+    margin-right:-10%;
+}
+
+.banner h1 {
+    font-size:22px;
+    font-weight:bold;
+    text-align: center;
+    color:#3399CC;
+    margin-top:2%;
+    margin-left:-5%;
+}
+
+/*Walkthrough Button*/
+
+#joyridebutton {
+    -webkit-appearance: button;
+    cursor: inherit;
+    float: right;
+    position:relative;
+    margin-right: 5px;
+    background-color: #3399CC;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    margin-top:-4%;
 }
 
 i {
@@ -78,20 +117,7 @@ td {padding:0px;text-align: center;}				.lightbox { display: none; }
 @media screen and (max-device-width: 480px) {#releasedate {left: 9px !important;}th {padding:0;}td {padding:0;font-size:13px}.headline h1{bold 1.0em/2.5em" Helvetica Neue", Helvetica, Arial, sans-serif;}.lines{width:100% !important;float:none !important;}}
 #bubblechart > div > div:nth-child(1) > div > svg > g:nth-child(3) > g:nth-child(2) > g > circle:nth-child(9){display:none !important;}
 
-/*Joyride Button*/
 
-#joyridebutton {
-    -webkit-appearance: button;
-    cursor: inherit;
-    float: right;
-    margin-top: 20px;
-    margin-right: 5px;
-    background-color: #3399CC;
-    color: #fff;
-    font-weight: bold;
-    border: none;
-    border-radius: 5px;
-}
 
 /*Hopscotch CSS */
 
@@ -725,6 +751,7 @@ td #calendaricon-yellow p, td #calendaricon-green p, td #calendaricon-grey p{
     font-weight: bold;
     font-size: 18px;
     text-align: center;
+    text-transform: uppercase;
 }
 
 .daterelease {
@@ -854,10 +881,12 @@ a.tooltip {outline:none; }
 .chtitle{
      width:100%;
      text-align:center;
-     color:black;
+     color: #3399cc;
      font-family: 'Open Sans', sans-serif;
-     font-size:25pt;
+     font-size:18px;
+     font-weight:bold;
      margin-top:3%;
+     text-transform: uppercase;
    }
 
 	.containers {
@@ -982,22 +1011,23 @@ a.tooltip {outline:none; }
 		left: 50%;
 		color: #384248;
 		font: 6em/1 'FontAwesome';
-		transform: translate(15%, -40%);
+		transform: translate(-75%, -40%);
 	}
 
-	.main article {
-		position: absolute;
-		top: 50%;
-		left: 90%;
-		width: 600px;
-		height: 480px;
-		outline: 4px solid #646c71;
-		background-color: #fff;
-		cursor: pointer;
-		transform: translate(-50%, -48%) scale(.20);
-		transition: transform .8s;
-	  color: white;
-	}
+.main article {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    width: 500px;
+    height: 450px;
+    border: 1px solid #646c71;
+    background-color: #fff;
+    cursor: pointer;
+    transform: translate(-60%, -48%) scale(.20);
+    transition: transform .8s;
+    color: white;
+    padding-top: 3%;
+}
 
 	.main article:focus {
 		outline-color: #fff;
@@ -1007,7 +1037,7 @@ a.tooltip {outline:none; }
 		position: relative;
 		width: 535px;
 		height: 300px;
-		margin: 32px 64px 48px;
+        margin: 32px 40px 48px;
 		font-size: 1.1em;
 	}
 
@@ -1019,8 +1049,7 @@ a.tooltip {outline:none; }
 		left: 0;
 		right: 0;
 	    color: black;
-		width: 95%;
-		
+		width: 85%;	
 	}
 
 	.main .linez div {
@@ -1037,7 +1066,7 @@ a.tooltip {outline:none; }
 		display: block;
 		position: absolute;
 		top: -10px;
-		left: -50px;
+		left: -40px;
 		width: 40px;
 		padding-right: 8px;
 		text-align: right;
@@ -1050,7 +1079,8 @@ a.tooltip {outline:none; }
 		bottom: 0;
 		left: 0;
 		right: 0;
-	  color: black;
+	   color: black;
+       margin-left: -15px;
 	}
 
 	.main dl {
@@ -1060,7 +1090,7 @@ a.tooltip {outline:none; }
 		height: 300px;
 		margin: 0;
 		text-align: center;
-		margin-top:5px;
+        margin-top:5px;
 	}
 
 	dq{
@@ -1400,21 +1430,22 @@ a.tooltip {outline:none; }
 		left: 50%;
 		color: #384248;
 		font: 6em/1 'FontAwesome';
-		transform: translate(15%, -40%);
+		transform: translate(-75%, -40%);
 	}
 
 .main_sale article {
-		position: absolute;
-		top: 50%;
-		left: 90%;
-		width: 600px;
-		height: 480px;
-		outline: 4px solid #646c71;
-		background-color: #fff;
-		cursor: pointer;
-		transform: translate(-50%, -48%) scale(.20);
-		transition: transform .8s;
-	  color: white;
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    width: 500px;
+    height: 450px;
+    border: 1px solid #646c71;
+    background-color: #fff;
+    cursor: pointer;
+    transform: translate(-60%, -48%) scale(.20);
+    transition: transform .8s;
+    color: white;
+    padding-top: 3%;
 }
 
 	.main_sale article:focus {
@@ -1425,7 +1456,7 @@ a.tooltip {outline:none; }
 		position: relative;
 		width: 535px;
 		height: 300px;
-		margin: 32px 64px 48px;
+        margin: 32px 40px 48px;
 		font-size: 1.1em;
 	}
 
@@ -1437,7 +1468,7 @@ a.tooltip {outline:none; }
 		left: 0;
 		right: 0;
 	    color: black;
-		width: 95%;
+		width: 85%;	
 	}
 
 	.main_sale .linez div {
@@ -1454,7 +1485,7 @@ a.tooltip {outline:none; }
 		display: block;
 		position: absolute;
 		top: -10px;
-		left: -50px;
+		left: -40px;
 		width: 40px;
 		padding-right: 8px;
 		text-align: right;
@@ -1468,6 +1499,7 @@ a.tooltip {outline:none; }
 		left: 0;
 		right: 0;
 	   color: black;
+       margin-left: -15px;
 	}
 
 	.main_sale dl {
@@ -1650,12 +1682,18 @@ a.tooltip {outline:none; }
 		text-align: center;
 		text-transform: none;
 		letter-spacing: .05em;
-		font-size: 2.8em;
-		font-weight: normal;
+		font-size: 25px;
+		font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
 		transform: translateY(-16px);
 		transition: transform .8s;
-	  color: black;
+	    color: black;
 	}
+
+.main_sale article h1 img {
+    width:15%;
+    float:right;
+}
 
 	/* Chrome/Safari/iOS fix: Bumping up the z-index from the start of
 	   the expand animation until the end of the shrink animation

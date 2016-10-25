@@ -982,23 +982,22 @@ a.tooltip {outline:none; }
 		left: 50%;
 		color: #384248;
 		font: 6em/1 'FontAwesome';
-		transform: translate(-75%, -40%);
+		transform: translate(15%, -40%);
 	}
 
-.main article {
-    position: absolute;
-    top: 50%;
-    left: 90%;
-    width: 500px;
-    height: 450px;
-    outline: 4px solid #646c71;
-    background-color: #fff;
-    cursor: pointer;
-    transform: translate(-60%, -48%) scale(.20);
-    transition: transform .8s;
-    color: white;
-    padding-top: 3%;
-}
+	.main article {
+		position: absolute;
+		top: 50%;
+		left: 90%;
+		width: 600px;
+		height: 480px;
+		outline: 4px solid #646c71;
+		background-color: #fff;
+		cursor: pointer;
+		transform: translate(-50%, -48%) scale(.20);
+		transition: transform .8s;
+	  color: white;
+	}
 
 	.main article:focus {
 		outline-color: #fff;
@@ -1008,7 +1007,7 @@ a.tooltip {outline:none; }
 		position: relative;
 		width: 535px;
 		height: 300px;
-        margin: 32px 40px 48px;
+		margin: 32px 64px 48px;
 		font-size: 1.1em;
 	}
 
@@ -1020,7 +1019,8 @@ a.tooltip {outline:none; }
 		left: 0;
 		right: 0;
 	    color: black;
-		width: 85%;	
+		width: 95%;
+		
 	}
 
 	.main .linez div {
@@ -1037,7 +1037,7 @@ a.tooltip {outline:none; }
 		display: block;
 		position: absolute;
 		top: -10px;
-		left: -40px;
+		left: -50px;
 		width: 40px;
 		padding-right: 8px;
 		text-align: right;
@@ -1050,8 +1050,7 @@ a.tooltip {outline:none; }
 		bottom: 0;
 		left: 0;
 		right: 0;
-	   color: black;
-       margin-left: -15px;
+	  color: black;
 	}
 
 	.main dl {
@@ -1061,7 +1060,7 @@ a.tooltip {outline:none; }
 		height: 300px;
 		margin: 0;
 		text-align: center;
-        margin-top:5px;
+		margin-top:5px;
 	}
 
 	dq{
@@ -1401,22 +1400,21 @@ a.tooltip {outline:none; }
 		left: 50%;
 		color: #384248;
 		font: 6em/1 'FontAwesome';
-		transform: translate(-75%, -40%);
+		transform: translate(15%, -40%);
 	}
 
 .main_sale article {
-    position: absolute;
-    top: 50%;
-    left: 90%;
-    width: 500px;
-    height: 450px;
-    outline: 4px solid #646c71;
-    background-color: #fff;
-    cursor: pointer;
-    transform: translate(-60%, -48%) scale(.20);
-    transition: transform .8s;
-    color: white;
-    padding-top: 3%;
+		position: absolute;
+		top: 50%;
+		left: 90%;
+		width: 600px;
+		height: 480px;
+		outline: 4px solid #646c71;
+		background-color: #fff;
+		cursor: pointer;
+		transform: translate(-50%, -48%) scale(.20);
+		transition: transform .8s;
+	  color: white;
 }
 
 	.main_sale article:focus {
@@ -1427,7 +1425,7 @@ a.tooltip {outline:none; }
 		position: relative;
 		width: 535px;
 		height: 300px;
-        margin: 32px 40px 48px;
+		margin: 32px 64px 48px;
 		font-size: 1.1em;
 	}
 
@@ -1439,7 +1437,7 @@ a.tooltip {outline:none; }
 		left: 0;
 		right: 0;
 	    color: black;
-		width: 85%;	
+		width: 95%;
 	}
 
 	.main_sale .linez div {
@@ -1456,7 +1454,7 @@ a.tooltip {outline:none; }
 		display: block;
 		position: absolute;
 		top: -10px;
-		left: -40px;
+		left: -50px;
 		width: 40px;
 		padding-right: 8px;
 		text-align: right;
@@ -1470,7 +1468,6 @@ a.tooltip {outline:none; }
 		left: 0;
 		right: 0;
 	   color: black;
-       margin-left: -15px;
 	}
 
 	.main_sale dl {

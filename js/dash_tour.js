@@ -7,11 +7,11 @@ var tour = {
   id: 'hello-hopscotch',
   steps: [
     {
-      target: '.lines',
+      target: '.main_sale',
       title: 'Interactive Sales Charts',
-      content: 'Hover over the graph with your mouse to get real data.',
-      placement: 'right',
-      width:220,
+      content: 'Click on these thumbnails to switch between product charts.',
+      placement: 'top',
+      width:250,
       arrowOffset: 60
     },
 
@@ -20,16 +20,25 @@ var tour = {
       placement: 'top',
       title: 'Expanding and Collapsing Lists',
       content: 'Click on the plus/minus icon to expand and collapse the list.',
+      width:350,    
       arrowOffset: 125
     },
+    {
+      target:'.ion-map',
+      placement:'top',
+      title:'Product Roadmaps',
+      content:'Click on these icons to explore each product\s roadmap.',
+      width:250,
+      arrowOffset: 125,
+      xOffset: -135
+    },  
     { 
-      target: 'nt-example2',
-      placement: 'bottom',
-      title: 'Feedback',
-      content:'Please share with us what else you would like this Walk Through to explain.',
-      arrowOffset:80
+      target: '.headline img',
+      placement: 'left',
+      title: 'Have Questions?',
+      content:'If you have any questions regarding the data you are seeing, click this icon for a list of names you can contact.'
     }
-  
+      
   ],
   showPrevButton: true,
   scrollTopMargin: 100

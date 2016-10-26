@@ -7,7 +7,7 @@ var tour = {
   id: 'hello-hopscotch',
   steps: [
     {
-      target: '.main_sale',
+      target: '.active',
       title: 'Interactive Sales Charts',
       content: 'Click on these thumbnails to switch between product charts.',
       placement: 'top',

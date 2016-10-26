@@ -108,6 +108,7 @@ div.panel.show {
     opacity: 1;
     max-height: 500px;
 }
+
 tbody tr:nth-of-type(2n) {background-color: #F2F2F2;}
 tbody {background-color: #F2F2F2;}
 th {background-color:#F2F2F2;font-weight:bold;color:#000;padding:7px;}
@@ -719,21 +720,21 @@ div.hopscotch-bubble .hopscotch-actions {
 
 #calendaricon-grey {
     float:none;
-    width:45%;
+    width:35%;
     background:url(http://www.wiley.com/college/dddash/images/calendar_page_grey.png) no-repeat center;
     position:relative;
     height: 105px;
 }
 #calendaricon-green {
     float:none;
-    width:45%;
+    width:35%;
     background:url(http://www.wiley.com/college/dddash/images/calendar_page_green.png) no-repeat center;
     position:relative;
     height: 105px;
 }
 #calendaricon-yellow {
     float:none;
-    width:45%;
+    width:35%;
     background:url(http://www.wiley.com/college/dddash/images/calendar_page_yellow.png) no-repeat center;
     position:relative;
     height: 105px;
@@ -770,6 +771,12 @@ td #calendaricon-yellow p, td #calendaricon-green p, td #calendaricon-grey p{
     margin-bottom: 0 !important;
     line-height: 15px;
     text-align: left;
+}
+
+.releaseitems li {
+    list-style:square;
+    margin-left:5%;
+    width:100%;
 }
 
 /* Tooltip container */
@@ -892,7 +899,7 @@ a.tooltip {outline:none; }
 	.containers {
 	  position: relative;
 	  width: 100%;
-	  margin: 0px 0;
+	  margin-top:1%;
 	  padding: 0px;
 	}
 
@@ -1264,10 +1271,12 @@ a.tooltip {outline:none; }
 		text-transform: none;
 		letter-spacing: .05em;
 		font-size: 2.8em;
-		font-weight: normal;
+		font-size: 25px;
+		font-weight: bold;
+        font-family: 'Open Sans', sans-serif;
 		transform: translateY(-16px);
 		transition: transform .8s;
-	  color: black;
+	    color: black;
 	}
 
 	/* Chrome/Safari/iOS fix: Bumping up the z-index from the start of
@@ -1754,7 +1763,6 @@ a.tooltip {outline:none; }
 #legend {
     float:right;
     position:relative;
-    margin-right:3%;
 }
 
 .ideaslabel {

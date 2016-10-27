@@ -65,7 +65,7 @@ center img {
 
 i {
     color:#808184; 
-    font-size:18px; 
+    font-size:15px; 
     margin-left:1%;"
 }
 
@@ -118,6 +118,9 @@ td {padding:0px;text-align: center;}				.lightbox { display: none; }
 @media screen and (max-device-width: 480px) {#releasedate {left: 9px !important;}th {padding:0;}td {padding:0;font-size:13px}.headline h1{bold 1.0em/2.5em" Helvetica Neue", Helvetica, Arial, sans-serif;}.lines{width:100% !important;float:none !important;}}
 #bubblechart > div > div:nth-child(1) > div > svg > g:nth-child(3) > g:nth-child(2) > g > circle:nth-child(9){display:none !important;}
 
+td strong {
+    color:#3399CC;
+}
 
 
 /*Hopscotch CSS */
@@ -781,8 +784,9 @@ td #calendaricon-yellow p, td #calendaricon-green p, td #calendaricon-grey p{
 
 .releaseitems li {
     list-style:square;
-    margin-left:5%;
-    width:100%;
+    margin-left:2%;
+    width:95%;
+    float:left;
 }
 
 /* Tooltip container */

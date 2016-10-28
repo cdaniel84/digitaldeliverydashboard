@@ -1281,7 +1281,7 @@ a.tooltip {outline:none; }
 		text-transform: none;
 		letter-spacing: .05em;
 		font-size: 2.8em;
-		font-size: 18px;
+		font-size: 50px;
 		font-weight: bold;
         font-family: 'Open Sans', sans-serif;
 		transform: translateY(-16px);
@@ -1329,7 +1329,16 @@ a.tooltip {outline:none; }
 
 	.main .active article h1 {
 		transform: translateY(0);
+        font-size:18px;
 	}
+
+.main .active article h1 span {
+    display:inline-block;
+}
+
+.main article h1 span {
+    display:none;
+}
 
 /*Sales Chart CSS*/
 
@@ -1693,7 +1702,7 @@ a.tooltip {outline:none; }
 		text-align: center;
 		text-transform: none;
 		letter-spacing: .05em;
-		font-size: 18px;
+		font-size: 50px;
 		font-weight: bold;
         font-family: 'Open Sans', sans-serif;
 		transform: translateY(-16px);
@@ -1746,8 +1755,19 @@ a.tooltip {outline:none; }
 
 	.main_sale .active article h1 {
 		transform: translateY(0);
+        font-size:18px;
 	}
+
+.main_sale .active article h1 span {
+    display:inline-block;
+}
+
+    .main_sale article h1 span {
+	   display:none;
+}
 	
+
+
 
 /*spacing adjustments*/
 

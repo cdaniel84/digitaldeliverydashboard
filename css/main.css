@@ -1059,7 +1059,7 @@ a.tooltip {outline:none; }
 	}
 
 	.main .linez {
-		counter-reset: y-axis 120;
+		counter-reset: y-axis 24;
 		position: absolute;
 		top: 0;
 		bottom: 0;
@@ -1078,7 +1078,7 @@ a.tooltip {outline:none; }
 	}
 
 	.main .linez div::before {
-		counter-increment: y-axis -20;
+		counter-increment: y-axis -4;
 		content: counter(y-axis);
 		display: block;
 		position: absolute;
@@ -1222,18 +1222,14 @@ a.tooltip {outline:none; }
 		transition: opacity .8s;
 	}
 
-.main .dummies :nth-child(1) dd { height: 56px; }
+	.main .dummies :nth-child(1) dd { height: 56px; }
     .main .dummies :nth-child(2) dd { height: 59px; }
     .main .dummies :nth-child(3) dd { height: 130px; }
     .main .dummies :nth-child(4) dd { height: 120px; }
     .main .dummies :nth-child(5) dd { height: 200px; }
     .main .dummies :nth-child(6) dd { height: 204px; }
-    .main .dummies :nth-child(7) dd { height: 300px; }
+    .main .dummies :nth-child(7) dd { height: 280px; }
     .main .dummies :nth-child(8) dd { height: 200px; }
-    .main .dummies :nth-child(9) dd { height: 160px; }
-    .main .dummies :nth-child(10) dd { height: 140px; }
-    .main .dummies :nth-child(11) dd { height: 180px; }
-    .main .dummies :nth-child(12) dd { height: 200px; }
 
     .main .WEL :nth-child(1) dd { height: 40px; }
     .main .WEL :nth-child(2) dd { height: 60px; }
@@ -1241,12 +1237,8 @@ a.tooltip {outline:none; }
     .main .WEL :nth-child(4) dd { height: 120px; }
     .main .WEL :nth-child(5) dd { height: 160px; }
     .main .WEL :nth-child(6) dd { height: 240px; }
-    .main .WEL :nth-child(7) dd { height: 200px; }
+    .main .WEL :nth-child(7) dd { height: 234px; }
     .main .WEL :nth-child(8) dd { height: 200px; }
-    .main .WEL :nth-child(9) dd { height: 160px; }
-    .main .WEL :nth-child(10) dd { height: 140px; }
-    .main .WEL :nth-child(11) dd { height: 180px; }
-    .main .WEL :nth-child(12) dd { height: 200px; }
 
     .main .WileyPLUS :nth-child(1) dd { height: 20px; }
     .main .WileyPLUS :nth-child(2) dd { height: 30px; }
@@ -1254,25 +1246,17 @@ a.tooltip {outline:none; }
     .main .WileyPLUS :nth-child(4) dd { height: 80px; }
     .main .WileyPLUS :nth-child(5) dd { height: 120px; }
     .main .WileyPLUS :nth-child(6) dd { height: 180px; }
-    .main .WileyPLUS :nth-child(7) dd { height: 30px; }
+    .main .WileyPLUS :nth-child(7) dd { height: 176px; }
     .main .WileyPLUS :nth-child(8) dd { height: 200px; }
-    .main .WileyPLUS :nth-child(9) dd { height: 160px; }
-    .main .WileyPLUS :nth-child(10) dd { height: 140px; }
-    .main .WileyPLUS :nth-child(11) dd { height: 180px; }
-    .main .WileyPLUS :nth-child(12) dd { height: 200px; }
 
-    .main .WPLS :nth-child(1) dd { height: 20px; }
-    .main .WPLS :nth-child(2) dd { height: 264px; }
-    .main .WPLS :nth-child(3) dd { height: 280px; }
-    .main .WPLS :nth-child(4) dd { height: 60px; }
-    .main .WPLS :nth-child(5) dd { height: 61px; }
+    .main .WPLS :nth-child(1) dd { height: 22px; }
+    .main .WPLS :nth-child(2) dd { height: 220px; }
+    .main .WPLS :nth-child(3) dd { height: 190px; }
+    .main .WPLS :nth-child(4) dd { height: 72px; }
+    .main .WPLS :nth-child(5) dd { height: 76px; }
     .main .WPLS :nth-child(6) dd { height: 180px; }
-    .main .WPLS :nth-child(7) dd { height: 120px; }
+    .main .WPLS :nth-child(7) dd { height: 125px; }
     .main .WPLS :nth-child(8) dd { height: 200px; }
-    .main .WPLS :nth-child(9) dd { height: 160px; }
-    .main .WPLS :nth-child(10) dd { height: 140px; }
-    .main .WPLS :nth-child(11) dd { height: 180px; }
-    .main .WPLS :nth-child(12) dd { height: 200px; }
 
 	.main article h1 {
 		height: 50px;
@@ -1663,14 +1647,14 @@ a.tooltip {outline:none; }
     .main_sale .dummies :nth-child(8) dd { height: -1px; }
 
 
-    .main_sale .WEL :nth-child(1) dd { height: 45px; }
-    .main_sale .WEL :nth-child(2) dd { height: 75px; }
-    .main_sale .WEL :nth-child(3) dd { height: 100px; }
-    .main_sale .WEL :nth-child(4) dd { height: 125px; }
-    .main_sale .WEL :nth-child(5) dd { height: 150px; }
-    .main_sale .WEL :nth-child(6) dd { height: 240px; }
-    .main_sale .WEL :nth-child(7) dd { height: 235px; }
-    .main_sale .WEL :nth-child(8) dd { height: 200px; }
+    .main_sale .WEL :nth-child(1) dd { height: 20px; }
+    .main_sale .WEL :nth-child(2) dd { height: 25px; }
+    .main_sale .WEL :nth-child(3) dd { height: 32px; }
+    .main_sale .WEL :nth-child(4) dd { height: 42px; }
+    .main_sale .WEL :nth-child(5) dd { height: 67px; }
+    .main_sale .WEL :nth-child(6) dd { height: 75px; }
+    .main_sale .WEL :nth-child(7) dd { height: 95px; }
+    .main_sale .WEL :nth-child(8) dd { height: 75px; }
 
 
     .main_sale .WileyPLUS :nth-child(1) dd { height: 100px; }
@@ -1682,19 +1666,6 @@ a.tooltip {outline:none; }
     .main_sale .WileyPLUS :nth-child(7) dd { height: 320px; }
     .main_sale .WileyPLUS :nth-child(8) dd { height: 200px; }
 
-
-    .main_sale .WPLS :nth-child(1) dd { height: 228px; }
-    .main_sale .WPLS :nth-child(2) dd { height: 264px; }
-    .main_sale .WPLS :nth-child(3) dd { height: 216px; }
-    .main_sale .WPLS :nth-child(4) dd { height: 204px; }
-    .main_sale .WPLS :nth-child(5) dd { height: 156px; }
-    .main_sale .WPLS :nth-child(6) dd { height: 180px; }
-    .main_sale .WPLS :nth-child(7) dd { height: 120px; }
-    .main_sale .WPLS :nth-child(8) dd { height: 200px; }
-    .main_sale .WPLS :nth-child(9) dd { height: 160px; }
-    .main_sale .WPLS :nth-child(10) dd { height: 140px; }
-    .main_sale .WPLS :nth-child(11) dd { height: 180px; }
-    .main_sale .WPLS :nth-child(12) dd { height: 200px; }
 
 	.main_sale article h1 {
 		height: 50px;

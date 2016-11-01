@@ -1250,8 +1250,8 @@ a.tooltip {outline:none; }
     .main .WileyPLUS :nth-child(8) dd { height: 200px; }
 
     .main .WPLS :nth-child(1) dd { height: 22px; }
-    .main .WPLS :nth-child(2) dd { height: 220px; }
-    .main .WPLS :nth-child(3) dd { height: 190px; }
+    .main .WPLS :nth-child(2) dd { height: 19px; }
+    .main .WPLS :nth-child(3) dd { height: 38px; }
     .main .WPLS :nth-child(4) dd { height: 72px; }
     .main .WPLS :nth-child(5) dd { height: 76px; }
     .main .WPLS :nth-child(6) dd { height: 180px; }

@@ -1003,7 +1003,7 @@ a.tooltip {outline:none; }
 	}
 
 	.main ul {
-		width: 100%;
+		width: 920px;
 		height: 112px;
 		margin: 486px 0 0;
 		padding: 0;
@@ -1014,7 +1014,7 @@ a.tooltip {outline:none; }
 		float: left;
 		position: relative;
 		z-index: 1;
-		width: 21%;
+		width: 130px;
 		height: 100%;
 		transition: z-index;
 		transition-delay: .8s;
@@ -1034,9 +1034,9 @@ a.tooltip {outline:none; }
 .main article {
     position: absolute;
     top: 50%;
-    left: 80%;
-    width: 450%;
-    height: 400%;
+    left: 90%;
+    width: 600px;
+    height: 450px;
     outline: 4px solid #646c71;
     background-color: #fff;
     cursor: pointer;
@@ -1052,8 +1052,8 @@ a.tooltip {outline:none; }
 
 	.main .area {
 		position: relative;
-		width: 85%;
-		height: 66.7%;
+		width: 535px;
+		height: 300px;
         margin: 32px 64px 48px;
 		font-size: 1.1em;
 	}
@@ -1103,7 +1103,7 @@ a.tooltip {outline:none; }
 	.main dl {
 		float: left;
 		position: relative;
-		width: 15%;
+		width: 65px;
 		height: 300px;
 		margin: 0;
 		text-align: center;
@@ -1417,7 +1417,7 @@ a.tooltip {outline:none; }
 	}
 
 	.main_sale ul {
-		width: 100%;
+		width: 920px;
 		height: 112px;
 		margin: 486px 0 0;
 		padding: 0;
@@ -1428,7 +1428,7 @@ a.tooltip {outline:none; }
 		float: left;
 		position: relative;
 		z-index: 1;
-		width: 21%;
+		width: 130px;
 		height: 100%;
 		transition: z-index;
 		transition-delay: .8s;
@@ -1449,8 +1449,8 @@ a.tooltip {outline:none; }
     position: absolute;
     top: 50%;
     left: 90%;
-    width: 450%;
-    height: 400%;
+    width: 600px;
+    height: 450px;
     outline: 4px solid #646c71;
     background-color: #fff;
     cursor: pointer;
@@ -1466,8 +1466,8 @@ a.tooltip {outline:none; }
 
 	.main_sale .area {
 		position: relative;
-		width: 85%;
-		height: 66.7%;
+		width: 535px;
+		height: 300px;
         margin: 32px 64px 48px;
 		font-size: 1.1em;
 	}
@@ -1518,7 +1518,7 @@ a.tooltip {outline:none; }
 	.main_sale dl {
 		float: left;
 		position: relative;
-		width: 15%;
+		width: 65px;
 		height: 300px;
 		margin: 0;
 		text-align: center;
@@ -1695,7 +1695,7 @@ a.tooltip {outline:none; }
 	}
 
 	.main_sale li:nth-child(1).active article {
-		transform: translate(-124px, -542px) scale(1);
+		transform: translate(-114px, -542px) scale(1);
 	}
 	.main_sale li:nth-child(2).active article {
 		transform: translate(-244px, -542px) scale(1);
@@ -1771,7 +1771,7 @@ a.tooltip {outline:none; }
 
 /*Media Query - Smartphone layout */
 
-@media all and (max-width: 500px){
+@media only screen and (max-width: 500px){
     body {
         width:100%;
         float:left;
@@ -1823,65 +1823,4 @@ a.tooltip {outline:none; }
     margin-left: 5% !important;
     margin-bottom: 2%;
     }
-	.main .area {
-	margin: 28px 45px 48px;}
-}
-
-@media only screen and (max-width:1600px){
-
-.main li:nth-child(1).active article {
-		transform: translate(-91px, -542px) scale(1);
-	}
-.main_sale li:nth-child(1).active article {
-		transform: translate(-99px, -542px) scale(1);
-	}
-}
-
-@media only screen and (max-width:1235px){
-
-.main li:nth-child(1).active article {
-		transform: translate(-78px, -542px) scale(1);
-	}
-.main_sale li:nth-child(1).active article {
-		transform: translate(-83px, -542px) scale(1);
-	}
-}
-
-@media only screen and (max-width:1060px){
-
-.main li:nth-child(1).active article {
-		transform: translate(-67px, -542px) scale(1);
-	}
-.main_sale li:nth-child(1).active article {
-		transform: translate(-76px, -542px) scale(1);
-	}
-	dq {
-    float: left;
-    position: relative;
-		width: 29px;}
-}
-
-@media only screen and (max-width:960px){
-
-.main li:nth-child(1).active article {
-		transform: translate(-67px, -542px) scale(1);
-	}
-.main_sale li:nth-child(1).active article {
-		transform: translate(-76px, -542px) scale(1);
-	}
-	dq {
-    float: left;
-    position: relative;
-		width: 19px;}
-}
-@media only screen and (max-width:620px){
-
-.main li:nth-child(1).active article {
-		transform: translate(-50px, -542px) scale(1);
-	}
-.main_sale li:nth-child(1).active article {
-		transform: translate(-54px, -542px) scale(1);
-	}
-.main .area, .main_sale .area {
-	margin: 28px 45px 48px;}
 }

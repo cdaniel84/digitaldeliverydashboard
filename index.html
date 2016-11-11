@@ -6,202 +6,22 @@
   <meta name="description" content="">
   <meta name="author" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/skeleton.css">  
-  <link href="css/main.css" rel="stylesheet">
-  <link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
-  <link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" />
+<link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">    
+<link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="css/skeleton.css">  
+<link href="css/main.css" rel="stylesheet">
+<link href="//cdn.rawgit.com/noelboss/featherlight/1.5.0/release/featherlight.min.css" type="text/css" rel="stylesheet" />
+<link href="http://fontawesome.io/assets/font-awesome/css/font-awesome.css" type="text/css" rel="stylesheet" />
 <link href="css/tipped.css" type="text/css" rel="stylesheet" />    
    <!--icons-->
-<link href="http://ionicons.com/css/ionicons.min.css?v=2.0.1" rel="stylesheet" type="text/css"> 
-  <link rel="icon" href="http://media.wiley.com/spa_assets/R16B089RC1/site/wiley2/pvo/images/favicon.ico">
-<script type="text/javascript" src="https://www.google.com/jsapi"></script> 
-  <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.2.2/Chart.js"></script>    
-<script type="text/javascript">
-google.load('visualization', '1', {
-    'packages': ['corechart', 'line']
-});
-google.setOnLoadCallback(initChart);
-$(window).on("throttledresize", function (event) {
-    initChart();
-});
-function initChart() {
-    
-// PROJECTS & IDEAS - BUBBLE CHART
-          var data2 = google.visualization.arrayToDataTable([
-        ['ID',                  'x',                'y',      'Status',       'Size'    	/* INPUT */ 	       ],
-        ['Approved: 7',        78.35,              1.69,      'Approved',       70 		/* approved   x   10 */],
-        ['Not Approved: 2',    79.2,               1.72,      'Not Approved',   30 		/* not approved x 10 */],
-        ['Under Review: 4',    79.79,              1.66,      'Under Review',   40 		/* under review x 10 */],
-        ['On Hold: 1',         80.21,              1.71,      'On Hold',        10 		/* on hold    x   10 */],
-        ['',                   80.66,              1.78,      '',                0 		/* placeholder       */],
-      ]);
-         var options2 = {
-        title: 'Ideas',
-        titlePosition:'top',
-        headerHeight:40,
-        hAxis: {title: ''},
-        vAxis: {title: ''},
-        sizeAxis: {maxSize:75},
-        hAxisviewWindowMode:'pretty',
-        tooltip: {trigger: 'none'},     
-        bubble: {textStyle: {fontSize: 11}, textStyle: {auraColor: 'none', bold: true, fontSize: 10, color: 'blue',}},
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        chartAreabackgroundColor:{color:'#F2F2F2'},
-        colors: ['#66b3ff','#66b3ff','#66b3ff','#66b3ff','#66b3ff'],
-        chartArea:{left:0,width:'100%',height:'100%'},
-        hAxis: {gridlines: {color: '#333', count: 0}},
-        vAxis: {gridlines: {color: '#333', count: 0}}
-      };
-            var chart2 = new google.visualization.BubbleChart(document.getElementById('bubblechart'));
-            chart2.draw(data2, options2);   
-        
-//create first line chart - Dummies
-      var data7 = new google.visualization.DataTable();
-      data7.addColumn('number', 'X');
-      data7.addColumn('number', 'year 2017');
-      data7.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016
-      data7.addRows([
-        [0,  494670, 422920],
-        [1,  494670, 422920],
-        [2,  , 464020],
-        [3,   , 489895],
-        [4,  , 496895],
-      ]);
-      var options7 = {
-       colors:['#66CC66','#FFCC33'],      
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],     /* X-axis range */  
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''},200000,400000,600000,800000],     /* Y-axis range */          
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line = new google.visualization.LineChart(document.getElementById('line'));
-      line.draw(data7, options7);
-  
-  
-//create 2nd line chart - WEL
-        var data8 = new google.visualization.DataTable();
-      data8.addColumn('number', 'X');
-      data8.addColumn('number', 'year 2017');
-      data8.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
-      data8.addRows([
-        [0,  6000000, 3480000],
-        [1,  6000000,3480000],
-        [2,  , 3490000],
-        [3,   , 4650000],
-        [4,  , 4580000],
-      ]);
-      var options8 = {
-       colors:['#66CC66','#FFCC33'],     
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''}, 2000000,4000000,6000000,8000000],      /* Y-axis range */            
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line2 = new google.visualization.LineChart(document.getElementById('line2'));
-      line2.draw(data8, options8);
-  
-  
-//create 3rd line chart - WileyPLUS
-        var data9 = new google.visualization.DataTable();
-      data9.addColumn('number', 'X');
-      data9.addColumn('number', 'year 2017');
-      data9.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
-      data9.addRows([
-        [0,  14719037, 16554171],
-        [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
-      ]);
-      var options9 = {
-       colors:['#66CC66','#FFCC33'],      
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],       /* X-axis range */
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],     /* Y-axis range */          
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line3 = new google.visualization.LineChart(document.getElementById('line3'));
-      line3.draw(data9, options9);
-  
-  
-//create 4th chart - WPLS
-        var data10 = new google.visualization.DataTable();
-      data10.addColumn('number', 'X');
-      data10.addColumn('number', 'year 2017');
-      data10.addColumn('number', 'year 2016');
-
-//INPUT Data point (x, y1, y2); y1 = year 2017, y2 = year 2016	
-      data10.addRows([
-        [0,  14719037, 16554171],
-        [1,  14719037, 16554171],
-        [2,  , 18504590],
-        [3,   , 15892990],
-        [4,  , 4089835],
-      ]);
-      var options10 = {
-       colors:['#66CC66','#FFCC33'],      
-        backgroundColor: '#F2F2F2',
-        legend: {position: 'none'},
-        hAxis: {
-          ticks: [{v:1, f:'Q1'}, {v:2, f:'Q2'}, {v:3, f:'Q3'}, {v:4, f:'Q4'}],      /* X-axis range */ 
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        vAxis: {
-          ticks: [{v:0, f:''},5000000,10000000,15000000,20000000, {v:500, f:''}],     /* Y-axis range */        
-          title: '',
-          gridlines: {color: 'none'},
-          baselineColor: '#3399CC'
-        },
-        lineWidth: 5
-      };
-      var line4 = new google.visualization.LineChart(document.getElementById('line4'));
-      line4.draw(data10, options10);
-}
-</script>
+<link href="http://ionicons.com/css/ionicons.min.css?v=2.0.1" rel="stylesheet" type="text/css">
+<!--Unslider CSS-->
+<link href="css/unslider.css" rel="stylesheet" type="text/css">
+<link href="css/unslider-dots.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>    
+<script src="js/chart.js"></script>
+<script src="js/Chart.bundle.js"></script>    
 </head>
 <body>
 
@@ -229,323 +49,85 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </li>
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
   	
-<div class="containers" style="background-color: #f2f2f2; width: 100%">
- <!--<h1 class="chtitle">Sales/Ad Revenue</h1> -->
-  <div class="main_sale">
+<div class="barchart">
+<span class="dummies_button">Dummies</span>
+<span class="wel_button">WEL</span>
+<span class="wp_button">WP/WPLS</span>    
+<div class="my-slider">
     <ul>
-      <li class="active">
-        <article tabindex="0" data-metric="dummies">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data dummies">
-              <dq>
-                <dt></dt>
-                <dd>422K</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>495K</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>887K</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>720K</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>1.4M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--Q3FY17 amount<dd></dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>1.9M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--Q4FY17 amount<dd></dd>-->
-              </dl>  
-
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
-
-            </div>
-          </div>
-          <h1>Dummies<span>: Ad Revenue</span><span  class="simple-tooltip" title="US Dollars in thousands unless otherwise indicated."><i class="ion-information-circled" data-pack="default"></i></span></h1>
-          
-          
-        </article>
-      </li>
-      <li>
-        <article tabindex="0" data-metric="WEL">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WEL">
-              <dq>
-                <dt></dt>
-                <dd>3.5M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>4.4M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>7M</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>8.9M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>11M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--<dd>64</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>16M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--<dd>62</dd>-->
-              </dl>  
-
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
-
-            </div>
-          </div>
-          <h1>WEL<span>: Sales</span><span  class="simple-tooltip" title="US Dollars in millions unless otherwise indicated."><i class="ion-information-circled" data-pack="default"></i></span></h1>
-        </article>
-      </li>
-      <li>
-        <article tabindex="0" data-metric="WileyPLUS">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WileyPLUS">
-              <dq>
-                <dt></dt>
-                <dd>17M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>15M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>35M</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>33M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>51M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--<dd>64</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>55M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--<dd>62</dd>-->
-              </dl>  
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
-
-            </div>
-          </div>
-          <h1>WileyPLUS/WPLS<span>: Sales</span><span  class="simple-tooltip" title="US Dollars in millions unless otherwise indicated."><i class="ion-information-circled" data-pack="default"></i></span></h1>
-        </article>
-      </li>
-      
-     <!-- <li>
-        <article tabindex="0" data-metric="WPLS">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WPLS">
-              <dq>
-                <dt></dt>
-                <dd>28</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>42</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>48</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>26</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>42</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <dd>64</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>80</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <dd>62</dd>
-              </dl>   
-
-				<img src="https://i.imgsafe.org/f813eda333.jpg" alt="" style="width:85px;height:60px;margin-left:80%;margin-top:10%">
-			  
-            </div>
-          </div>
-          <h1>WPLS</h1>
-        </article>
-      </li>   -->   
-    </ul>
-  </div>
-   <div class="side_sale">
-    <h1></h1>
-    <div class="stats">
-      <ul data-metric="dummies">
-    <h1>Ad Revenue <span  class="simple-tooltip" title="Revenue from ads viewed on the dummies.com site (not sales of 'Dummies' products)."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
-        <li>
+    <!--Dummies Sales/Revenue-->    
+        <li><canvas id="canvas"></canvas>
+<div class="side">
+    <h1>Ad Revenue <span class="simple-tooltip" title="Revenue from ads viewed on the dummies.com site (not sales of 'Dummies' products)."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
+        
           <div class="key">FY16 Total</div>
-          <div class="val">$1.87M</div>
-        </li>
-        <li>
+          <div class="val">$1.87M</div> <!--Enter Data-->
+        
           <div class="key">FY17 YTD</div>
-          <div class="val">$720K</div>
-        </li>     
-      </ul>
-      <ul data-metric="WEL">
-    <h1>Conversions<span  class="simple-tooltip" title="The percentage of free trial users who convert to purchasers."><i class="ion-information-circled" data-pack="default" style="font-size:15px;"></i></span></h1>         
-        <li>
-          <div class="key">FY16 Total</div>
-          <div class="val">1.58%</div>
-        </li>
-        <li>
-          <div>&nbsp;</div>
-          <div></div>
-        </li>  
-      </ul>
-      <ul data-metric="WileyPLUS">
-    <h1>Validations<span  class="simple-tooltip" title="Number of students who registered for WileyPLUS or WPLS courses (as opposed to units sold)."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
-        <li>
-          <div class="key">FY16 Total</div>
-          <div class="val">543K</div>
-        </li>
-        <li>
-          <div>&nbsp;</div>
-          <div></div>
-        </li>   
-      </ul>
-
-      <!--<ul data-metric="WPLS">
-    <h1>Validations<span  class="simple-tooltip" title="US Dollars in thousands unless otherwise indicated."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
-        <li>
-          <div class="key">FY16 YTD Total</div>
-          <div class="val">$20K</div>
-        </li>
-        <li>
-          <div>&nbsp;</div>
-          <div></div>
-        </li>  
-      </ul>  -->    
-    </div>
-
-        <div class="stats">
-      <ul data-metric="dummies">      
+          <div class="val">$720K</div> <!--Enter Data-->
+<div id="footnote"><font size="1px"><strong>*US Dollars in millions unless otherwise indicated.</strong></font></div>
+            </div>
+    <div class="side">      
     <h1>AD REVENUE GOAL</h1>      
-        <li>
+        
           <div class="key">FY16 Total</div>
-          <div class="val">TBD</div>
-        </li>   
-        <li>
+          <div class="val">TBD</div> <!--Enter Data-->
+        
           <div class="key">FY17 YTD</div>
-          <div class="val">$1.08M</div>
-        </li>   
-        </ul>
-      <ul data-metric="WEL">      
-    <h1>&nbsp;</h1>      
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">1.55%</div>
-        </li>   
-        <li>
+          <div class="val">$1.08M</div> <!--Enter Data-->
+          
+        </div>                  
+</li>
+<!--WEL Sales/Revenue -->        
+<li><canvas id="canvasWELSales"></canvas>
+<div class="side">
+    <h1>Conversions<span class="simple-tooltip" title="The percentage of free trial users who convert to purchasers."><i class="ion-information-circled" data-pack="default" style="font-size:15px;"></i></span></h1>         
+          <div class="key">FY16 Total</div>
+          <div class="val">1.58%</div> <!--Enter Data-->
+        
+          <div>&nbsp;</div>
           <div></div>
-          <div></div>
-        </li>           
-        </ul>
-       <ul data-metric="WileyPLUS">      
-    <h1>&nbsp;</h1>      
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">328K</div>
-        </li>   
-        <li>
-          <div></div>
-          <div></div>
-        </li> 
-        </ul>
-      <ul data-metric="WPLS">      
-    <h1>&nbsp;</h1>      
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">$8K</div>
-        </li>   
-        <li>
-          <div></div>
-          <div></div>
-        </li> 
-      </ul>
+<div id="footnote"><font size="1px"><strong>*US Dollars in millions unless otherwise indicated.</strong></font></div>         
       </div>
-  </div>
+<div class="side">      
+    <h1>&nbsp;</h1>      
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">1.55%</div> <!--Enter Data-->
+        
+          <div></div>
+          <div></div>
+            
+        </div>            
+</li>
+<li><canvas id="canvasWPSales"></canvas>
+ <div class="side">
+    <h1>Validations<span class="simple-tooltip" title="Number of students who registered for WileyPLUS or WPLS courses (as opposed to units sold)."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
+        
+          <div class="key">FY16 Total</div>
+          <div class="val">543K</div> <!--Enter Data-->
+        
+          <div>&nbsp;</div>
+          <div></div>
+ <div id="footnote"><font size="1px"><strong>*US Dollars in millions unless otherwise indicated.</strong></font></div>                   
+      </div>       
+ <div class="side">      
+    <h1>&nbsp;</h1>      
+        
+          <div class="key">FY17 YTD Total</div>
+          <div class="val">328K</div> <!--Enter Data-->
+        
+          <div></div>
+          <div></div>
+         
+        </div>       
+</li>        
+</ul>        
+</div>
     </div>
+    <script>
+        
+    
+    </script>
 	
     </div>   
        
@@ -560,325 +142,105 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </li>
 <li>For WileyPLUS (E4) and WPLS, contact <b>Edward Winkleman,</b> Manager, Digital Delivery Product Operations | (1) 201-748-6821 | <a href="mailto:ewinklem@wiley.com">ewinklem@wiley.com</a></li>
 </ul></div>    
-		
-        <div class="containers" style="background-color: #f2f2f2; width: 100%">
- <!--<h1 class="chtitle">Unique Visitors</h1> -->
-  <div class="main">
-    <ul>
-      <li class="active">
-        <article tabindex="0" data-metric="dummies">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data dummies">
-              <dq>
-                <dt></dt>
-                <dd>42M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>46M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>89M</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>81M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>137M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--<dd>64</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>189M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--<dd>62</dd>-->
-              </dl>              
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
 
-            </div>
-          </div>
-          <h1>Dummies<span>: Unique Visitors</span></h1>
-        </article>
-      </li>
-      <li>
-        <article tabindex="0" data-metric="WEL">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WEL">
-              <dq>
-                <dt></dt>
-                <dd>370K</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>429K</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>733K</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>820K</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>1.1M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--<dd>64</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>1.6M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--<dd>62</dd>-->
-              </dl>                
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
-
-            </div>
-          </div>
-          <h1>WEL<span>: Unique Visitors</span></h1>
-        </article>
-      </li>
-      <li>
-        <article tabindex="0" data-metric="WileyPLUS">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WileyPLUS">
-              <dq>
-                <dt></dt>
-                <dd>1.5M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>1.6M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>5.3M</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <dd>4.7M</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>8.7M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--<dd>64</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>12M</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--<dd>62</dd>-->
-              </dl>                
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
-
-            </div>
-          </div>
-          <h1>WileyPLUS<span>: Unique Visitors</span></h1>
-        </article>
-      </li>
-      
-      <li>
-        <article tabindex="0" data-metric="WPLS">
-          <div class="area">
-            <div class="linez">
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-              <div></div>
-            </div>
-            <div class="data WPLS">
-              <dq>
-                <dt></dt>
-                <dd>185K</dd>
-              </dq>                  
-              <dl>
-                <dt>Q1</dt>
-                <dd>153K</dd>
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>313K</dd>
-              </dq>              
-              <dl>
-                <dt>Q2</dt>
-                <!--<dd>56K</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>589K</dd>
-              </dq>                  
-              <dl>
-                <dt>Q3</dt>
-                <!--<dd>64</dd>-->
-              </dl>
-              <dq>
-                <dt></dt>
-                <dd>864K</dd>
-              </dq>                  
-              <dl>
-                <dt>Q4</dt>
-                <!--<dd>62</dd>-->
-              </dl>              
-				<img src="images/sales_chart_legend.jpg" alt="" style="width:145px;height:20px;margin-top:15%">		  
-			  
-
-            </div>
-          </div>
-          <h1>WPLS<span>: Unique Visitors</span></h1>
-        </article>
-      </li>      
-    </ul>
-  </div>
-   <div class="side">
-    <h1></h1>
-    <div class="stats">
-      <ul data-metric="dummies">
+ <div class="barchart">
+<span class="dummies_visitor_button">Dummies</span>
+<span class="wel_visitor_button">WEL</span>
+<span class="wp_visitor_button">WileyPLUS</span>
+<span class="wpls_visitor_button">WPLS</span>     
+    <div class="my-slider"> 
+     <ul>
+         
+    <!--Dummies Unique Visitors-->     
+        <li><canvas id="canvas1"></canvas>
+    <div class="side">
     <h1>Unique Visitors</h1>         
-        <li>
           <div class="key">FY17 YTD Total</div>
-          <div class="val">54M</div>
-        </li>
-        <li>
+          <div class="val">54M</div> <!--Enter Data-->
+        
           <div class="key">Past 7 days</div>
-          <div class="val">2.5M</div>
-        </li>       
-      </ul>
-      <ul data-metric="WEL">
+          <div class="val">2.5M</div> <!--Enter Data-->        
+            </div>
+    <div class="side">    
+    <h1>Reliability</h1>      
+          <div class="key">Uptime</div>
+          <div class="val">99.17%</div> <!--Enter Data-->
+        
+          <div class="key">Last Outage</div>
+          <div class="val">20 Days</div> <!--Enter Data-->
+            </div>       
+         </li>
+    <!--WEL Unique Visitors-->     
+         <li><canvas id="canvasWEL"></canvas>
+        <div class="side">
     <h1>Unique Visitors</h1>         
-        <li>
           <div class="key">FY17 YTD</div>
-          <div class="val">524K*/186K**</div>
-        </li>
-        <li>
+          <div class="val">524K*/186K**</div> <!--Enter Data-->
+       
           <div class="key">Past 7 days</div>
-          <div class="val">35K*/18K**</div>
-        </li>
-        <div><font size="1px"><strong>* www.efficientlearning.com</strong></font></div>        
-      </ul>
-      <ul data-metric="WileyPLUS">
+          <div class="val">35K*/18K**</div> <!--Enter Data-->
+        <div id="footnote"><font size="1px"><strong>* www.efficientlearning.com</strong></font></div>        
+             </div>
+    <div class="side">    
+    <h1>Reliability</h1>      
+          <div class="key">Uptime</div>
+          <div class="val">99.5%</div> <!--Enter Data-->
+       
+          <div class="key">Last Outage</div>
+          <div class="val">128 Days</div> <!--Enter Data-->
+       
+         <div id="footnote"><font size="1px"><strong>** app.efficientlearning.com</strong></font></div>
+        </div>        
+         </li>
+    <!--WileyPLUS Unique Visitors-->
+        <li><canvas id="canvasE4"></canvas>
+   
+   <div class="side">
     <h1>Unique Visitors</h1>         
-        <li>
           <div class="key">FY17 YTD Total</div>
-          <div class="val">4.5M</div>
-        </li>
-        <li>
+          <div class="val">4.5M</div> <!--Enter Data-->
+        
           <div class="key">Past 7 days</div>
-          <div class="val">521K</div>
-        </li>  
-        <div><font size="1px"><strong><a href="reliability/wileyplus_kpi.pdf"><font size="2"> WileyPLUS "Customer Pain Index (CPI)"</font></a></strong></font></div>
-      </ul>
-
-      <ul data-metric="WPLS">
+          <div class="val">521K</div> <!--Enter Data-->
+         
+        <div id="footnote"><font size="1px"><strong><a href="reliability/wileyplus_kpi.pdf"><font size="2"> WileyPLUS "Customer Pain Index (CPI)"</font></a></strong></font></div>
+   
+       </div>
+<div class="side">     
+    <h1>Reliability</h1>      
+          <div class="key">Uptime</div>
+          <div class="val">99.17%</div> <!--Enter Data-->
+       
+          <div class="key">Last Outage</div>
+          <div class="val">20 Days</div> <!--Enter Data-->
+            </div>            
+         </li>
+<!--WileyPLUS Learning Space Unique Visitors-->         
+    <li><canvas id="canvasWPLS"></canvas>
+   <div class="side">
     <h1>Unique Visitors</h1>         
-        <li>
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">204K</div>
-        </li>
-        <li>
+        
+          <div class="key">FY17 YTD Total</div> 
+          <div class="val">204K</div> <!--Enter Data-->
+       
           <div class="key">Past 7 days</div>
-          <div class="val">34K</div>
-        </li>  
-      </ul>      
+          <div class="val">34K</div> <!--Enter Data-->
+    </div>        
+   <div class="side">    
+    <h1>Reliability</h1>      
+        
+          <div class="key">Uptime</div>
+          <div class="val">100%</div> <!--Enter Data-->
+       
+          <div class="key">Last Outage</div>
+          <div class="val">N/A</div> <!--Enter Data-->
+  </div>   
+    </li>     
+        </ul>
+    </div>    
     </div>
 
-        <div class="stats">
-      <ul data-metric="dummies">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">99.5%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage</div>
-          <div class="val">128 Days</div>
-        </li>  
-        </ul>
-      <ul data-metric="WEL">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">99.5%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage</div>
-          <div class="val">128 Days</div>
-        </li> 
-         <li>
-         <div><font size="1px"><strong>** app.efficientlearning.com</strong></font></div>
-        </li>         
-        </ul>
-       <ul data-metric="WileyPLUS">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">99.17%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage</div>
-          <div class="val">20 Days</div>
-        </li>
-        </ul>
-      <ul data-metric="WPLS">      
-    <h1>Reliability</h1>      
-        <li>
-          <div class="key">Uptime</div>
-          <div class="val">100%</div>
-        </li>   
-        <li>
-          <div class="key">Last Outage</div>
-          <div class="val">N/A</div>
-        </li>           
-      </ul>
-      </div>
-  </div>
-</div>
+    
     </div>    
     
 	 
@@ -1264,86 +626,297 @@ for (i = 0; i < acc.length; i++) {
   });
 </script>    
 
-<!--Sales Chart -->
+
+<!--Charts JS -->    
 <script>
-function selectMetric(e) {
-  e.preventDefault();
-  var metric = $(e.currentTarget).attr('data-metric');
-  var metricSelector = '[data-metric="' + metric + '"]';
-
-  // set selected link
-  $('.side_sale .selected').removeClass('selected');
-  $('.side_sale .links a' + metricSelector).addClass('selected');
-
-  // show proper stats
-  $('.side_sale .stats ul').hide();
-  $('.side_sale .stats ul' + metricSelector).show();
-
-  // activate proper graph
-  var $wrapper = $('.main_sale article' + metricSelector).parent();
-  var isActive = $wrapper.hasClass('active');
-  if (!isActive) {
-    $wrapper
-      .addClass('active')
-      .siblings().removeClass('active');
-  }
-}
-
-function checkKey(e) {
-  if (e.keyCode === 13) {
-    // hit enter
-    selectMetric(e);
-  }
-}
-
-$('.side_sale .links a').on('click', selectMetric);
-$('.main_sale article').on({
-  'click': selectMetric,
-  'keyup': checkKey
-});
+window.onload = function() {
+    //Dummies Sales Canvas
+    var ctx = document.getElementById("canvas").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataSalesDummies,
+                options: {
+                    title:{
+                        display:true,
+                        text:"Dummies: Year to Date Sales/Revenue"
+                    },
+                    responsive: true,
+                    legend: {
+                        position:'top',
+                    }                 
+                }
+            });
     
-</script>     
-
-<!--Reliability Chart -->
-<script>
-function selectMetric(e) {
-  e.preventDefault();
-  var metric = $(e.currentTarget).attr('data-metric');
-  var metricSelector = '[data-metric="' + metric + '"]';
-
-  // set selected link
-  $('.side .selected').removeClass('selected');
-  $('.side .links a' + metricSelector).addClass('selected');
-
-  // show proper stats
-  $('.side .stats ul').hide();
-  $('.side .stats ul' + metricSelector).show();
-
-  // activate proper graph
-  var $wrapper = $('.main article' + metricSelector).parent();
-  var isActive = $wrapper.hasClass('active');
-  if (!isActive) {
-    $wrapper
-      .addClass('active')
-      .siblings().removeClass('active');
-  }
-}
-
-function checkKey(e) {
-  if (e.keyCode === 13) {
-    // hit enter
-    selectMetric(e);
-  }
-}
-
-$('.side .links a').on('click', selectMetric);
-$('.main article').on({
-  'click': selectMetric,
-  'keyup': checkKey
-});
+    //WEL Sales Canvas
+    var ctx = document.getElementById("canvasWELSales").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataSalesWEL,
+                options: {
+                    title:{
+                        display:true,
+                        text:"WEL: Year to Date Sales/Revenue"
+                    },
+                    responsive: true,
+                    legend: {
+                        position:'top',
+                    }                 
+                }
+            });
     
-</script>    
-        
+//E4 and WPLS Sales    
+        var ctx = document.getElementById("canvasWPSales").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataSalesWP,
+                options: {
+                    title:{
+                        display:true,
+                        text:"WileyPLUS and Learning Space: Year to Date Sales/Revenue"
+                    },
+                    responsive: true,
+                    legend: {
+                        position:'top',
+                    }                 
+                }
+            });
+    
+            var ctx = document.getElementById("canvas1").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataVisitorsDummies,
+                options: {
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each bar to be 2px wide and green
+                    elements: {
+                        rectangle: {
+                            borderWidth: 2,
+                            //borderColor: 'rgb(0, 255, 0)',
+                            borderSkipped: 'bottom'
+                        }
+                    },
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'Dummies: Unique Visitors'
+                    }
+                }
+            });
+    
+            var ctx = document.getElementById("canvasWEL").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataVisitorsWEL,
+                options: {
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each bar to be 2px wide and green
+                    elements: {
+                        rectangle: {
+                            borderWidth: 2,
+                            //borderColor: 'rgb(0, 255, 0)',
+                            borderSkipped: 'bottom'
+                        }
+                    },
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'WEL: Unique Visitors'
+                    }
+                }
+            });
+    
+        var ctx = document.getElementById("canvasE4").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataVisitorsE4,
+                options: {
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each bar to be 2px wide and green
+                    elements: {
+                        rectangle: {
+                            borderWidth: 2,
+                            //borderColor: 'rgb(0, 255, 0)',
+                            borderSkipped: 'bottom'
+                        }
+                    },
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'WileyPLUS: Unique Visitors'
+                    }
+                }
+            });
+    
+        var ctx = document.getElementById("canvasWPLS").getContext("2d");
+            window.myBar = new Chart(ctx, {
+                type: 'bar',
+                data: barChartDataVisitorsWPLS,
+                options: {
+                    // Elements options apply to all of the options unless overridden in a dataset
+                    // In this case, we are setting the border of each bar to be 2px wide and green
+                    elements: {
+                        rectangle: {
+                            borderWidth: 2,
+                            //borderColor: 'rgb(0, 255, 0)',
+                            borderSkipped: 'bottom'
+                        }
+                    },
+                    responsive: true,
+                    legend: {
+                        position: 'top',
+                    },
+                    title: {
+                        display: true,
+                        text: 'WileyPLUS Learning Space: Unique Visitors'
+                    }
+                }
+            });
+
+        };
+
+
+    
+    //Dummies YTD Sales        
+        var barChartDataSalesDummies = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [{
+                label: '2016 Goal',
+                backgroundColor: "#d1d2d4",
+                data: ['0', '0']
+            }, {
+                label: '2016 Actual',
+                backgroundColor: "#66CC66",
+                data: ['422920', '464020' , '489895', '496895']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['494670', '225227']
+            }]
+
+        };
+    
+    
+    //WEL YTD Sales
+      var barChartDataSalesWEL = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [{
+                label: '2016 Goal',
+                backgroundColor: "#d1d2d4",
+                data: ['0', '0']
+            }, {
+                label: '2016 Actual',
+                backgroundColor: "#66CC66",
+                data: ['3480000', '3490000' , '4650000', '4580000']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['4434113', '4450253']
+            }]
+
+        };
+    
+    //E4 and WPLS Sales
+    var barChartDataSalesWP = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [{
+                label: '2016 Goal',
+                backgroundColor: "#d1d2d4",
+                data: ['0', '0']
+            }, {
+                label: '2016 Actual',
+                backgroundColor: "#66CC66",
+                data: ['16554171', '18540590' , '15892990', '4089835']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['14719037', '17934041']
+            }]
+
+        };
+    
+
+    
+    //Dummies Unique Visitors
+    
+        var barChartDataVisitorsDummies = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [ {
+                label: '2016',
+                backgroundColor: "#66CC66",
+                data: ['42806436', '47149590','47704587','51685966']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['46661089', '34050650', '0']
+            }]
+
+        };
+    //WEL Unique Visitors
+        var barChartDataVisitorsWEL = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [ {
+                label: '2016',
+                backgroundColor: "#66CC66",
+                data: ['42806436', '47149590','47704587','51685966']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['46661089', '34050650', '0']
+            }]
+
+        };
+    
+    //WileyPLUS Unique Visitors
+       var barChartDataVisitorsE4 = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [ {
+                label: '2016',
+                backgroundColor: "#66CC66",
+                data: ['1495540', '3824650','3328349','3313169']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['1515326', '3138112', '0']
+            }]
+
+        };
+    //WileyPLUS Learning Space Unique Visitors
+        var barChartDataVisitorsWPLS = {
+            labels: ["Q1", "Q2", "Q3", "Q4"],
+            datasets: [ {
+                label: '2016',
+                backgroundColor: "#66CC66",
+                data: ['185390', '128094','275028','275316']
+            }, {
+                label: '2017 YTD',
+                backgroundColor: "#FFCC33",
+                data: ['153143', '0']
+            }]
+
+        };   
+    
+      
+    
+
+</script>  
+
+<!--Unslider-->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src="js/unslider.js"></script>    
+ <script>
+		jQuery(document).ready(function($) {
+			$('.my-slider').unslider();
+		});
+	</script>   
 <!--Google Analytics -->    
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

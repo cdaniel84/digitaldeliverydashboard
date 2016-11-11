@@ -7,9 +7,9 @@ var tour = {
   id: 'hello-hopscotch',
   steps: [
     {
-      target: '.active',
+      target: '.wel_button',
       title: 'Interactive Sales Charts',
-      content: 'Click on these thumbnails to switch between product charts.',
+      content: 'Click on these buttons to switch between product charts.',
       placement: 'top',
       width:250,
       arrowOffset: 60
@@ -20,7 +20,7 @@ var tour = {
       placement: 'top',
       title: 'Expanding and Collapsing Lists',
       content: 'Click on the plus/minus icon to expand and collapse the list.',
-      width:350,    
+      width:300,    
       arrowOffset: 125
     },
     {
@@ -76,8 +76,8 @@ init = function() {
         title: 'Welcome to the Digital Delivery Dashboard',
         content: 'Press this "Take a Tour" button for a complete walkthrough of this web page.',
         yOffset: 0,
-        xOffset: -50,  
-        arrowOffset: 80,
+        xOffset:-100,  
+        arrowOffset:120,
         width: 200
       });
     }, 100);

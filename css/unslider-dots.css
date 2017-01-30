@@ -12,7 +12,7 @@
  *   hardware-accelerated goodness.
  */
 .unslider-nav ol {
-  list-style: none;
+  list-style: disc;
   text-align: center;
 }
 .unslider-nav ol li {
@@ -27,7 +27,7 @@
   /*border: 2px solid #fff;*/
   cursor: pointer;
   margin-top:1%;
-  opacity:0;
+  /*opacity:0;*/
   z-index: 1;
 }
 .unslider-nav ol li.unslider-active {

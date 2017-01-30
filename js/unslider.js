@@ -236,6 +236,7 @@
 			//  Build our click navigation item-by-item
 			self.$slides.each(function(key) {
 				//  If we've already set a label, let's use that
+                
 				//  instead of generating one
 				var label = this.getAttribute('data-nav') || key + 1;
 

@@ -7,12 +7,13 @@ var tour = {
   id: 'hello-hopscotch',
   steps: [
     {
-      target: '.wel_button',
+      target: '[data-slide="1"]',
       title: 'Interactive Sales Charts',
       content: 'Click on these buttons to switch between product charts.',
       placement: 'top',
       width:250,
-      arrowOffset: 60
+      arrowOffset: 60,
+      xOffset: -50
     },
 
     {

@@ -633,6 +633,62 @@ canvas {
     padding:2%;
 }
 
+#barchart_dummies {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_wel {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_e4_wpls {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_dummies_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_wel_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_e4_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_wpls_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
 /*Sales Buttons*/
 .dummies_button {
     float: left;

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,7 +27,7 @@
 <body>
 
   <!-- Primary Page Layout
-  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“â€“ -->
   <!-- .container is main centered wrapper -->
 <div class="container">
 <div class="banner"><img src="http://media.wiley.com/spa_assets/R16B088RC2/site/wiley2/cvo/images/wiley-wordmark.png" alt="Wiley">
@@ -35,13 +36,14 @@
     </div>    
 <!--  news stories -->
 <ul id="nt-example2">
-		<li>The Digital Delivery Dashboard is now live! Please bookmark this site. </li>																								<!--  INPUT NEWS HEADLINE -->	
-        <li>Dummies.com 2.0 has launched!!  Check out its <a href="http://www.dummies.com" target="_blank">great new look and feel.</a></li>							<!--  INPUT NEWS HEADLINE -->
-        <li>Wiley to acquire Atypon! Learn more <a href="http://portal.wiley.com/sites/news/Pages/GLOBAL-AUG-18-2016-Wiley-to-acquire-Atypon.aspx" target="_blank">here.</a></li>		<!--  INPUT NEWS HEADLINE -->
-	</ul>
+		<li>WEL: Acquired new $Million partner in China.</li>
+        <li>WEL: Shifts Hosting to Amazon.</li>	
+        <li>Sales/Marketing: Rolls out WileyPLUS Instructor Academy.</li>
+        <li>Product Management: Spinning up WileyPLUS Next-Gen program.</li>
+</ul>
 <div class="row">
     <div class="six columns">
-    <div class="headline"><div class="update-date">UPDATED: Oct. 27</div><h1>Year-to-date sales / Revenue
+    <div class="headline"><div class="update-date">UPDATED: May 15</div><h1>Year-to-date sales / Revenue
    	    <img src="images/business-contact.png" data-featherlight="#sales" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
     <div class="lightbox" id="sales"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
 <li>For WEL, contact <b>Pete Schiller,</b> Director, Product Management
@@ -50,36 +52,45 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <li>For WileyPLUS (E4) or WPLS, contact <b>Amanda Clinton</b>, Customer Engagement Coordinator | (1) 201-748-5966 | <a href="mailto:aclinton@wiley.com">aclinton@wiley.com</a></li></ul></div>    
   	
 <div class="barchart">
+<!--   
 <span class="dummies_button">Dummies</span>
 <span class="wel_button">WEL</span>
 <span class="wp_button">WP/WPLS</span>    
+-->
 <div class="my-slider">
+<style>
+    .embed-edit-link {
+        display: none !important;
+    }    
+</style>    
     <ul>
     <!--Dummies Sales/Revenue-->    
-        <li><canvas id="canvas"></canvas>
+        <li><!--<canvas id="canvas" title="Dummies"></canvas>-->
+    <iframe width="100%" height="300" frameborder="0" scrolling="no" src="https://plot.ly/~mrcanalytics/81.embed?share_key=cXIMZuS88ZtsQrhw5LR75d"></iframe>           
 <div class="side">
     <h1>Ad Revenue <span class="simple-tooltip" title="Revenue from ads viewed on the dummies.com site (not sales of 'Dummies' products)."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
         
           <div class="key">FY16 Total</div>
-          <div class="val">$1.87M</div> <!--Enter Data-->
+          <div class="val">$1.8M</div> <!--Enter Data-->
         
           <div class="key">FY17 YTD</div>
-          <div class="val">$720K</div> <!--Enter Data-->
+          <div class="val">$1.4M</div> <!--Enter Data-->
 <div id="footnote"><font size="1px"><strong>*US Dollars in millions unless otherwise indicated.</strong></font></div>
             </div>
     <div class="side">      
     <h1>AD REVENUE GOAL</h1>      
         
           <div class="key">FY16 Total</div>
-          <div class="val">TBD</div> <!--Enter Data-->
+          <div class="val">---</div> <!--Enter Data-->
         
           <div class="key">FY17 YTD</div>
-          <div class="val">$1.08M</div> <!--Enter Data-->
+          <div class="val">$2M</div> <!--Enter Data-->
           
         </div>                  
 </li>
 <!--WEL Sales/Revenue -->        
-<li><canvas id="canvasWELSales"></canvas>
+<li><!--<canvas id="canvasWELSales" title="WEL"></canvas>-->
+   <iframe width="100%" height="300" frameborder="0" scrolling="no" src="https://plot.ly/~mrcanalytics/73.embed?share_key=BEs614v1kFmrmhxoJIAmRM"></iframe>
 <div class="side">
     <h1>Conversions<span class="simple-tooltip" title="The percentage of free trial users who convert to purchasers."><i class="ion-information-circled" data-pack="default" style="font-size:15px;"></i></span></h1>         
           <div class="key">FY16 Total</div>
@@ -99,12 +110,13 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
             
         </div>            
 </li>
-<li><canvas id="canvasWPSales"></canvas>
+<li><!--<canvas id="canvasWPSales" title="E4/WPLS"></canvas>-->
+ <iframe width="100%" height="300" frameborder="0" scrolling="no" src="https://plot.ly/~mrcanalytics/71.embed?share_key=b19lcZMX4eBClobykSnDG6"></iframe> 
  <div class="side">
     <h1>Validations<span class="simple-tooltip" title="Number of students who registered for WileyPLUS or WPLS courses (as opposed to units sold)."><i class="ion-information-circled" data-pack="default"></i></span></h1>         
         
           <div class="key">FY16 Total</div>
-          <div class="val">543K</div> <!--Enter Data-->
+          <div class="val">542K</div> <!--Enter Data-->
         
           <div>&nbsp;</div>
           <div></div>
@@ -113,8 +125,8 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
  <div class="side">      
     <h1>&nbsp;</h1>      
         
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">328K</div> <!--Enter Data-->
+          <div class="key">FY17 Total</div>
+          <div class="val">557K</div> <!--Enter Data-->
         
           <div></div>
           <div></div>
@@ -133,7 +145,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
        
     
 <div class="six columns rightcolumn">    
-      <div class="headline"><div class="update-date">UPDATED: Oct. 27</div><h1>Reliability &amp; Usage
+      <div class="headline"><div class="update-date">UPDATED: May 15</div><h1>Reliability &amp; Usage
    	      <img src="images/business-contact.png" data-featherlight="#reliability" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1>
       </div>
        <div class="lightbox" id="question">Information on what these are can be put here.</div>
@@ -144,22 +156,25 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 </ul></div>    
 
  <div class="barchart">
+<!--     
 <span class="dummies_visitor_button">Dummies</span>
 <span class="wel_visitor_button">WEL</span>
 <span class="wp_visitor_button">WileyPLUS</span>
 <span class="wpls_visitor_button">WPLS</span>     
+-->
     <div class="my-slider"> 
      <ul>
          
     <!--Dummies Unique Visitors-->     
-        <li><canvas id="canvas1"></canvas>
+        <li><!--<canvas id="canvas1"></canvas>-->
+    <div id="barchart_dummies_visitors"></div>        
     <div class="side">
     <h1>Unique Visitors</h1>         
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">54M</div> <!--Enter Data-->
+          <div class="key">FY17 Total</div>
+          <div class="val">92M</div> <!--Enter Data-->
         
           <div class="key">Past 7 days</div>
-          <div class="val">2.5M</div> <!--Enter Data-->        
+          <div class="val">2.8M</div> <!--Enter Data-->        
             </div>
     <div class="side">    
     <h1>Reliability</h1>      
@@ -167,18 +182,19 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
           <div class="val">99.17%</div> <!--Enter Data-->
         
           <div class="key">Last Outage</div>
-          <div class="val">20 Days</div> <!--Enter Data-->
+          <div class="val">04/13/17</div> <!--Enter Data-->
             </div>       
          </li>
     <!--WEL Unique Visitors-->     
-         <li><canvas id="canvasWEL"></canvas>
+         <li><!--<canvas id="canvasWEL"></canvas> -->
+        <div id="barchart_wel_visitors"></div>     
         <div class="side">
     <h1>Unique Visitors</h1>         
-          <div class="key">FY17 YTD</div>
-          <div class="val">524K*/186K**</div> <!--Enter Data-->
+          <div class="key">FY17 Total</div>
+          <div class="val">1.3M*/431K**</div> <!--Enter Data-->
        
           <div class="key">Past 7 days</div>
-          <div class="val">35K*/18K**</div> <!--Enter Data-->
+          <div class="val">35K*/16K**</div> <!--Enter Data-->
         <div id="footnote"><font size="1px"><strong>* www.efficientlearning.com</strong></font></div>        
              </div>
     <div class="side">    
@@ -187,21 +203,21 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
           <div class="val">99.5%</div> <!--Enter Data-->
        
           <div class="key">Last Outage</div>
-          <div class="val">128 Days</div> <!--Enter Data-->
+          <div class="val">03/13/17</div> <!--Enter Data-->
        
          <div id="footnote"><font size="1px"><strong>** app.efficientlearning.com</strong></font></div>
         </div>        
          </li>
     <!--WileyPLUS Unique Visitors-->
-        <li><canvas id="canvasE4"></canvas>
-   
+        <li><!--<canvas id="canvasE4"></canvas> -->
+   <div id="barchart_e4_visitors"></div>
    <div class="side">
     <h1>Unique Visitors</h1>         
-          <div class="key">FY17 YTD Total</div>
-          <div class="val">4.5M</div> <!--Enter Data-->
+          <div class="key">FY17 Total</div>
+          <div class="val">9M</div> <!--Enter Data-->
         
           <div class="key">Past 7 days</div>
-          <div class="val">521K</div> <!--Enter Data-->
+          <div class="val">360K</div> <!--Enter Data-->
          
         <div id="footnote"><font size="1px"><strong><a href="reliability/wileyplus_kpi.pdf"><font size="2"> WileyPLUS "Customer Pain Index (CPI)"</font></a></strong></font></div>
    
@@ -209,22 +225,23 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <div class="side">     
     <h1>Reliability</h1>      
           <div class="key">Uptime</div>
-          <div class="val">99.17%</div> <!--Enter Data-->
+          <div class="val">99.50%</div> <!--Enter Data-->
        
           <div class="key">Last Outage</div>
-          <div class="val">20 Days</div> <!--Enter Data-->
+          <div class="val">02/12/17</div> <!--Enter Data-->
             </div>            
          </li>
 <!--WileyPLUS Learning Space Unique Visitors-->         
-    <li><canvas id="canvasWPLS"></canvas>
+    <li><!--<canvas id="canvasWPLS"></canvas>-->
+    <div id="barchart_wpls_visitors"></div>    
    <div class="side">
     <h1>Unique Visitors</h1>         
         
-          <div class="key">FY17 YTD Total</div> 
-          <div class="val">204K</div> <!--Enter Data-->
+          <div class="key">FY17 Total</div> 
+          <div class="val">1M</div> <!--Enter Data-->
        
           <div class="key">Past 7 days</div>
-          <div class="val">34K</div> <!--Enter Data-->
+          <div class="val">46K</div> <!--Enter Data-->
     </div>        
    <div class="side">    
     <h1>Reliability</h1>      
@@ -248,7 +265,7 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
   <div class="row">
 <div class="six columns">
         
-	<div class="headline"><div class="update-date">UPDATED: Oct. 27</div><h1> Ideas &amp; Projects
+	<div class="headline"><div class="update-date">UPDATED: May 15</div><h1> Ideas &amp; Projects
    	      <img src="images/business-contact.png" data-featherlight="#ideas" alt="Have questions?" title="Have questions?"/></h1>
     <div class="lightbox" id="ideas"><b>For More Information</b><br><br><ul><li>
  
@@ -300,44 +317,28 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 <tbody valign="middle">
 
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">
-		
-		Global Diagnostic Assesssment 					                    <!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="http://www.wiley.com/college/dddash/projects/gda_dashboard.pdf">Global Diagnostic Assesssment</a> 					                    <!--  INPUT NAME OF 'NEW PRODUCT' -->	
 		
 	</td>	
-    <td width="25%" style="width:21%;">MVP Launch</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>01/01/17</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png"  title="PUC Contract has not been signed yet and is dependent on Wiley  meeting specific customer demands."></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="25%" style="width:21%;">Completed</td>								<!--  INPUT CURRENT PHASE  -->
+    <td>Completed</td>												<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   
 
-  
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;">Career Portal</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">POC</td>									<!--  INPUT CURRENT PHASE  -->
-    <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_gray.png" title="Project was stopped due to direction provided by Wiley ELT."></td>				<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-  <tr>
-    <td width="38%" style="text-align:left;width:46%;">Wiley Answers</td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>12/15/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_yellow.png" title="Initial Pilot will not include machine learning search as originally desired but instead will cover matching only technology."></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-   <tr>
+   
+     <tr>
     <td width="38%" style="text-align:left;width:46%;"><a href="http://www.wiley.com/college/dddash/projects/wileyproblems.pdf">Wiley Problems</a></td>					<!--  INPUT NAME OF 'NEW PRODUCT' -->	
     <td width="25%" style="width:21%;">Discovery</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>11/01/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
+    <td>On Hold</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_blue.png" title="Project has been put on hold given a number of other projects already under way that may address this need."></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   
    <tr> 
     <td style="text-align:left"><a href="http://www.wiley.com/college/dddash/projects/agudatascience.pdf">AGU Data Science Courseware</a></td>						<!--  INPUT NAME OF 'NEW PRODUCT' -->	
-    <td width="25%" style="width:21%;">Prototype</td>								<!--  INPUT CURRENT PHASE  -->
-    <td>11/15/16</td>												<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_red.png" title="AGU has been unresponsive to providing learning objectives or any firm commitments to dates."></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="25%" style="width:21%;">Stopped</td>								<!--  INPUT CURRENT PHASE  -->
+    <td>Stopped</td>												<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><img src="images/circle_gray.png" title="AGU has been unresponsive to providing learning objectives or any firm commitments to dates."></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr> 
   
    <tr>
@@ -345,7 +346,7 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
     <td width="25%" style="width:21%;">Not started</td>								<!--  INPUT CURRENT PHASE  -->
     <td>TBD</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td width="12%" style="width:12%;"><img src="images/circle_blue.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>  
+  </tr> 
   
   </tbody>
 </table>
@@ -359,9 +360,7 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
 
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">
-		
-		Wiley Assessment Service					                    <!--  INPUT NAME OF 'NEW PRODUCT' -->	
+    <td width="38%" style="text-align:left;width:46%;"><a href="http://www.wiley.com/college/dddash/projects/was_dashboard.pdf">Wiley Assessment Service</a>					                    <!--  INPUT NAME OF 'NEW PRODUCT' -->	
 		
 	</td>		
     <td width="25%" style="width:21%;">Limited Field Trial</td>								<!--  INPUT CURRENT PHASE  -->
@@ -370,35 +369,27 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
   </tr>
 
   <tr>
-    <td width="38%" style="text-align:left;width:46%;">
-	<a href="http://www.wiley.com/college/dddash/projects/wpots.pdf" >
-		WileyPLUS Onboarding, Training & Support
+    <td style="text-align:left">
 		
-	</a></td>
-    <td width="25%" style="width:21%;">Process Improvement</td>							<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">12/31/16</td>						 		<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->								
+		Digital Delivery Dashboard		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
+		
+	</td>
+    <td width="25%" style="width:21%;">Completed</td>		   						<!--  INPUT CURRENT PHASE  -->
+    <td>Completed</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
+    <td></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   
   <tr>
-    <td style="text-align:left">
-		
-		Digital Delivery Dashboard<br>[ You're on it :-) ]		    					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-		
-	</td>
-    <td width="25%" style="width:21%;">Soft Launch</td>		   						<!--  INPUT CURRENT PHASE  -->
-    <td>11/01/16</td>										   		<!--  INPUT PHASE COMPLETION DATE -->
-    <td><img src="images/circle_green.png"></td>			   					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
-  </tr>
-  
-  <tr>
-    <td style="text-align:left">
-		
-		Atypon Project for K&L 					                    <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' -->	
-		
-	</td>
+    <td style="text-align:left">K&L WOL to Literatum Migration <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' --></td>
     <td width="25%" style="width:21%;">Execution</td>							<!--  INPUT CURRENT PHASE  -->
     <td>01/01/18</td>												<!--  INPUT PHASE COMPLETION DATE -->
+    <td><img src="images/circle_yellow.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
+  </tr>
+  
+  <tr>
+    <td style="text-align:left">Digital Content Strategy <!--  INPUT NAME OF 'OPERATIONAL IMPROVEMENT' --></td>
+    <td width="25%" style="width:21%;">Planning</td>							<!--  INPUT CURRENT PHASE  -->
+    <td>TBD</td>												<!--  INPUT PHASE COMPLETION DATE -->
     <td><img src="images/circle_green.png"></td>									<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->	
   </tr>
   
@@ -414,9 +405,9 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
   <tr>
     <td width="38%" style="text-align:left;width:46%;"><a href="http://www.wiley.com/college/dddash/projects/dc_migration.pdf">Data Center Move</a> <br>(WileyPLUS servers to Texas)</td>	 					<!--  INPUT NAME OF 'MAINTENANCE' -->	
-    <td width="25%" style="width:21%;">Cutover</td>								<!--  INPUT CURRENT PHASE  -->
-    <td width="25%" style="width:21%;">12/26/16</td>								<!--  INPUT PHASE COMPLETION DATE -->
-    <td width="12%" style="width:12%;"><img src="images/circle_green.png"></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
+    <td width="25%" style="width:21%;">Completed</td>								<!--  INPUT CURRENT PHASE  -->
+    <td width="25%" style="width:21%;">Completed</td>								<!--  INPUT PHASE COMPLETION DATE -->
+    <td width="12%" style="width:12%;"><!--<img src="images/circle_green.png">--></td>					<!--  INPUT STATUS green = images/circle_green.png, yellow = images/circle_yellow.png, red = images/circle_red.png -->
   </tr>
   
   </tbody>
@@ -426,7 +417,7 @@ For projects or ideas under review, contact <b>Nathaneal Dunlevy,</b> Product an
 
     </div>
 <div class="six columns">   
-   	  <div class="headline"><div class="update-date">UPDATED: Oct. 27</div><h1>Product Updates
+   	  <div class="headline"><div class="update-date">UPDATED: May 15</div><h1>Product Updates
       <img src="images/business-contact.png" data-featherlight="#productupdates" alt="Have questions?" title="Have questions?" style="float:right;padding-right:0.5em;"/></h1></div> 
   
   <div class="lightbox" id="productupdates"><b>For More Information</b><br><br><ul><li>For Dummies, contact <b>Seta Frantz,</b> Director, Product Development & Interactive Services | (1) 317-572-3077 |  <a href="mailto:skfrantz@wiley.com">skfrantz@wiley.com</a></li>
@@ -448,11 +439,12 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">    
 <tr>
-<td id="calendaricon-grey"><p class="daterelease">Jan<br>01</p></td> <!--  INPUT DATE  -->
+<td id="calendaricon-green"><p class="daterelease">June<br>30</p></td> <!--  INPUT DATE  -->
 <td><ul class="releaseitems">
-        <li>First Item</li>                                                                    <!--  INPUT ITEMS  -->
-        <li>Second Item</li>                                                                              <!--  INPUT ITEMS  -->    
-        <li>Third Item</li>                                                                  <!--  INPUT ITEMS  -->
+        <li>AMP - Accelerated Mobile Pages </li>                                                                    <!--  INPUT ITEMS  -->
+        <!--<li>Integrated content calendar</li>  -->                                                                            <!--  INPUT ITEMS  -->    
+        
+                                                                         <!--  INPUT ITEMS  -->
         </ul></td>    
 </tr>    
     </tbody>
@@ -462,10 +454,11 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">
 <tr>
-<td id="calendaricon-green"><p class="daterelease">Nov<br>02</p></td> <!--  INPUT DATE  -->
+<td id="calendaricon-green"><p class="daterelease">May<br>31</p></td> <!--  INPUT DATE  -->
 <td> <ul class="releaseitems">
-        <li>2016 FRM Part 2 Master Release</li>                                      <!--  INPUT ITEMS  -->
-        <li>Curriculum Development</li>                                    <!--  INPUT ITEMS  -->
+        <li>2017 CMA Course v8.5 Release</li>  
+        <li>2017 CMA Learning System v8.5</li>
+        <!--  INPUT ITEMS  -->
         <!--  <li>PMP Marketing Launch</li>                                               INPUT ITEMS  -->
         </ul>     </td>    
 </tr>    
@@ -475,13 +468,16 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">
 <tr>
-<td id="calendaricon-green"><p class="daterelease">Nov<br>12</p></td>                                                      <!--  INPUT DATE  -->
+<td id="calendaricon-green"><p class="daterelease">June<br>24</p></td>                                                      <!--  INPUT DATE  -->
 <td> <ul class="releaseitems">
-        <li>LIS production patching and mitigation of vulnerabilities</li>       <!--  INPUT ITEMS  -->
-    <li>Oracle Upgrade 12C on remaining DB’s; WT,WX,BB</li>
-    <h4>Impacts:</h4>
+        <li>VitalSource Integration</li>       <!--  INPUT ITEMS  -->
+    	<li>Respondus LockDown Browser for Integrations</li>
+        <li>Inline Assessments in the WPE4 ebook</li>
+        <li>Bulk assignment </li>
+        <li>IP Restriction for Secure Tests</li>
+    <!--<h4>Impacts:</h4>
     <li>WX DB affects students accessing WP through integrations.</li>
-    <li>Standalone users are not impacted.</li>                                                                               <!--  INPUT ITEMS  -->
+    <li>Standalone users are not impacted.</li> -->                                                                              <!--  INPUT ITEMS  -->
         <!--  <li>508-Compliance Phase 2</li>                                             INPUT ITEMS  -->
         </ul> </td>
 </tr>    
@@ -493,12 +489,10 @@ Wiley Efficient Learning | (1) 551-235-2241 | <a href="mailto:pschiller@wiley.co
 <table width="100%" style="padding-bottom:0;margin-bottom:0;">
 <tbody valign="middle" style="border-top: 1px solid #3399CC;">
 <tr>
-<td id="calendaricon-green"><p class="daterelease">Dec<br>10</p></td>   <!--  INPUT DATE  -->
+<td id="calendaricon-green"><p class="daterelease">TBD<br>TBD</p></td>   <!--  INPUT DATE  -->
 <td>
         <ul class="releaseitems">
-        <li>LWPQTI Export from SWAT</li>				<!--  INPUT ITEMS  -->
-        <li>Ability to update users role </li>				<!--  INPUT ITEMS  -->
-        <li>Learning Path question activities move with students</li>	<!--  INPUT ITEMS  -->
+        <li>TBD</li>	<!--  INPUT ITEMS  -->
         </ul>  </td>    
 </tr>
 </tbody>
@@ -626,10 +620,149 @@ for (i = 0; i < acc.length; i++) {
   });
 </script>    
 
+<!--Google Charts-->
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+          
+      
+    //Dummies Unique Visitors Chart
+          
+        var data = google.visualization.arrayToDataTable([
+          ['Month','2016', '2017'], //1st word in quotations is 'X' value, subsequent quoted words are 'Y' values.
+          ['May', 14000000, 16000000],
+          ['Jun', 13000000, 14000000],
+          ['Jul', 13000000, 12000000],
+          ['Aug', 14000000, 13000000],
+          ['Sep', 15000000, 8000000],
+          ['Oct', 15000000, 12000000],
+          ['Nov', 14000000, 13000000],
+          ['Dec', 14000000, 12000000],
+          ['Jan', 15000000, 13000000],
+          ['Feb', 15000000, 12000000],
+          ['Mar', 16000000, 14000000],
+          ['Apr', 16000000, 12517584]
+        ]);
 
-<!--Charts JS -->    
+        var options = {
+          chart: {
+            title: 'DUMMIES',
+            subtitle: 'Unique Visitors',
+            fontWeight:'bold',  
+          }, 
+          colors:['#66CC66','#FFCC33'],
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_dummies_visitors'));
+
+        chart.draw(data, options);  
+          
+    //WEL Unique Visitors Chart
+          
+        var data = google.visualization.arrayToDataTable([
+          ['Month', '2016', '2017'], //1st word in quotations is 'X' value, subsequent quoted words are 'Y' values.
+          ['May', 131000, 176000 ],
+          ['Jun', 130000, 151000 ],
+          ['Jul', 148000, 150000 ],
+          ['Aug', 143000, 158000 ],
+          ['Sep', 137000, 142000 ],
+          ['Oct', 135000, 164000 ],
+          ['Nov', 145000, 154000 ],
+          ['Dec', 138000, 138000 ],
+          ['Jan', 172000, 159000],
+          ['Feb', 170000, 143537],
+          ['Mar', 168000, 143040],
+          ['Apr', 161000, 151131]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'WEL',
+            subtitle: 'Unique Visitors',
+            fontWeight:'bold',  
+          }, 
+          colors:['#66CC66','#FFCC33'],
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_wel_visitors'));
+
+        chart.draw(data, options);        
+
+    //WileyPLUS Unique Visitors Chart
+          
+        var data = google.visualization.arrayToDataTable([
+          ['Month', '2016', '2017'], //1st word in quotations is 'X' value, subsequent quoted words are 'Y' values.
+          ['May', 736752, 823260 ],
+          ['Jun', 504151, 514448 ],
+          ['Jul', 443235, 363955 ],
+          ['Aug', 983184, 903924],
+          ['Sep', 1917334, 1659690],
+          ['Oct', 1623435, 1462418],
+          ['Nov', 1492604, 1172722],
+          ['Dec', 1009352, 827964],
+          ['Jan', 1283709, 1062629],
+          ['Feb', 1527167, 1278880],
+          ['Mar', 1334392, 1189918],
+          ['Apr', 1208114, 1022891]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'WileyPLUS',
+            subtitle: 'Unique Visitors',
+            fontWeight:'bold',  
+          }, 
+          colors:['#66CC66','#FFCC33'],
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_e4_visitors'));
+
+        chart.draw(data, options);           
+          
+    //WileyPLUS Learning Space Unique Visitors Chart
+          
+        var data = google.visualization.arrayToDataTable([
+          ['Month', '2016', '2017'], //1st word in quotations is 'X' value, subsequent quoted words are 'Y' values.
+          ['May', 0, 71591 ],
+          ['Jun', 0, 55162 ],
+          ['Jul', 0, 43581 ],
+          ['Aug', 0, 89641],
+          ['Sep', 0, 231794],
+          ['Oct', 84902, 198824],
+          ['Nov', 116823, 158386],
+          ['Dec', 89078, 106381],
+          ['Jan', 97541, 129318],
+          ['Feb', 132251, 160621],
+          ['Mar', 109291, 157245],
+          ['Apr', 101728, 130132]
+        ]);
+
+        var options = {
+          chart: {
+            title: 'WileyPLUS Learning Space',
+            subtitle: 'Unique Visitors',
+            fontWeight:'bold',  
+          }, 
+          colors:['#66CC66','#FFCC33'],
+          bars: 'vertical' // Required for Material Bar Charts.
+        };
+
+        var chart = new google.charts.Bar(document.getElementById('barchart_wpls_visitors'));
+
+        chart.draw(data, options);    
+          
+      }
+    </script>  
+
+<!--Charts JS   
 <script>
-window.onload = function() {
+window.onload = function() {  
+    
     //Dummies Sales Canvas
     var ctx = document.getElementById("canvas").getContext("2d");
             window.myBar = new Chart(ctx, {
@@ -680,7 +813,7 @@ window.onload = function() {
                     }                 
                 }
             });
-    
+//Dummies Visitors Initial Setup    
             var ctx = document.getElementById("canvas1").getContext("2d");
             window.myBar = new Chart(ctx, {
                 type: 'bar',
@@ -701,11 +834,11 @@ window.onload = function() {
                     },
                     title: {
                         display: true,
-                        text: 'Dummies: Unique Visitors'
+                        text: 'Dummies: Mar 7ors'
                     }
                 }
             });
-    
+//WEL Visitors Initial Setup    
             var ctx = document.getElementById("canvasWEL").getContext("2d");
             window.myBar = new Chart(ctx, {
                 type: 'bar',
@@ -726,11 +859,11 @@ window.onload = function() {
                     },
                     title: {
                         display: true,
-                        text: 'WEL: Unique Visitors'
+                        text: 'WEL: Mar 7ors'
                     }
                 }
             });
-    
+//WileyPLUS Visitors Initial Setup    
         var ctx = document.getElementById("canvasE4").getContext("2d");
             window.myBar = new Chart(ctx, {
                 type: 'bar',
@@ -755,7 +888,7 @@ window.onload = function() {
                     }
                 }
             });
-    
+//WileyPLUS Learning Space Visitors Initial Setup    
         var ctx = document.getElementById("canvasWPLS").getContext("2d");
             window.myBar = new Chart(ctx, {
                 type: 'bar',
@@ -787,19 +920,15 @@ window.onload = function() {
     
     //Dummies YTD Sales        
         var barChartDataSalesDummies = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
+            labels: ["Q1","Q2","Q3","Q4"],
             datasets: [{
-                label: '2016 Goal',
-                backgroundColor: "#d1d2d4",
-                data: ['0', '0']
-            }, {
                 label: '2016 Actual',
                 backgroundColor: "#66CC66",
-                data: ['422920', '464020' , '489895', '496895']
+                data: ['422920', '886940' , '1376835', '1873730']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['494670', '225227']
+                data: ['494670', '719897', '0']
             }]
 
         };
@@ -807,38 +936,30 @@ window.onload = function() {
     
     //WEL YTD Sales
       var barChartDataSalesWEL = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
+            labels: ["Q1","Q2","Q3","Q4"],
             datasets: [{
-                label: '2016 Goal',
-                backgroundColor: "#d1d2d4",
-                data: ['0', '0']
-            }, {
                 label: '2016 Actual',
                 backgroundColor: "#66CC66",
-                data: ['3480000', '3490000' , '4650000', '4580000']
+                data: ['3480000', '6970000' , '11620000', '16200000']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['4434113', '4450253']
+                data: ['4434113', '8884366','0']
             }]
 
         };
     
     //E4 and WPLS Sales
     var barChartDataSalesWP = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
-            datasets: [{
-                label: '2016 Goal',
-                backgroundColor: "#d1d2d4",
-                data: ['0', '0']
-            }, {
+            labels: ["Q1","Q2","Q3","Q4"],
+            datasets: [ {
                 label: '2016 Actual',
                 backgroundColor: "#66CC66",
-                data: ['16554171', '18540590' , '15892990', '4089835']
+                data: ['16554171', '35094761' , '50987751', '55077586']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['14719037', '17934041']
+                data: ['14719037', '17934041','0']
             }]
 
         };
@@ -848,58 +969,58 @@ window.onload = function() {
     //Dummies Unique Visitors
     
         var barChartDataVisitorsDummies = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
+            labels: ["Q1","Q2","Q3","Q4"],
             datasets: [ {
                 label: '2016',
                 backgroundColor: "#66CC66",
-                data: ['42806436', '47149590','47704587','51685966']
+                data: ['42806436', '89956026','137660613','189346579']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['46661089', '34050650', '0']
+                data: ['46661089', '80711739', '0']
             }]
 
         };
     //WEL Unique Visitors
         var barChartDataVisitorsWEL = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
+            labels: ["Q1","Q2","Q3","Q4"],
             datasets: [ {
                 label: '2016',
                 backgroundColor: "#66CC66",
-                data: ['42806436', '47149590','47704587','51685966']
+                data: ['363958', '732794','1142348','1589680']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['46661089', '34050650', '0']
+                data: ['428575', '819709', '0']
             }]
 
         };
     
     //WileyPLUS Unique Visitors
        var barChartDataVisitorsE4 = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
+            labels: ["Q1","Q2","Q3","Q4"],
             datasets: [ {
                 label: '2016',
                 backgroundColor: "#66CC66",
-                data: ['1495540', '3824650','3328349','3313169']
+                data: ['1495540', '5320190','8648539','11961708']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['1515326', '3138112', '0']
+                data: ['1515326', '4653438', '0']
             }]
 
         };
     //WileyPLUS Learning Space Unique Visitors
         var barChartDataVisitorsWPLS = {
-            labels: ["Q1", "Q2", "Q3", "Q4"],
+            labels: ["Q1","Q2","Q3","Q4"],
             datasets: [ {
                 label: '2016',
                 backgroundColor: "#66CC66",
-                data: ['185390', '128094','275028','275316']
+                data: ['185390', '313484','588512','863828']
             }, {
                 label: '2017 YTD',
                 backgroundColor: "#FFCC33",
-                data: ['153143', '0']
+                data: ['153143','557499','0']
             }]
 
         };   
@@ -907,7 +1028,7 @@ window.onload = function() {
       
     
 
-</script>  
+</script> --> 
 
 <!--Unslider-->
 <script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
@@ -915,8 +1036,10 @@ window.onload = function() {
  <script>
 		jQuery(document).ready(function($) {
 			$('.my-slider').unslider();
+            $('.unslider-nav li').write('Dummies');
 		});
 	</script>   
+    
 <!--Google Analytics -->    
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

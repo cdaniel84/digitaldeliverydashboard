@@ -633,15 +633,71 @@ canvas {
     padding:2%;
 }
 
+#barchart_dummies {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_wel {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_e4_wpls {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_dummies_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_wel_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_e4_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
+#barchart_wpls_visitors {
+	width: 100%; 
+    height: 300px; 
+    border-bottom:2px solid #3399CC; 
+    margin-bottom:1%;
+    margin-right:1%;
+}
+
 /*Sales Buttons*/
 .dummies_button {
     float: left;
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color:#4e4b5c;
+    /*background: #4e4b5c;*/
+    top: 43.5%;
     left: 175px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -657,9 +713,9 @@ canvas {
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color:#4e4b5c;
+    /*background: #4e4b5c;*/
+    top: 43.5%;
     left: 260px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -675,9 +731,9 @@ canvas {
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color:#4e4b5c;
+    /*background: #4e4b5c;*/
+    top: 43.5%;
     left: 345px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -694,9 +750,8 @@ canvas {
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color:#4e4b5c;
+    top: 43.5%;
     right: 390px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -712,9 +767,8 @@ canvas {
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color:#4e4b5c;
+    top: 43.5%;
     right: 310px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -730,9 +784,8 @@ canvas {
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color: #4e4b5c;
+    top: 43.5%;
     right: 225px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -748,9 +801,8 @@ canvas {
     position: absolute;
     font-size: 13px;
     font-weight: bold;
-    color:white;
-    background: #4e4b5c;
-    top: 550px;
+    color: #4e4b5c;
+    top: 43.5%;
     right: 140px;
     font-family: 'Open Sans',sans-serif;
     z-index: 0;
@@ -1198,19 +1250,24 @@ a.tooltip {outline:none; }
     
     .banner h1 {
         font-size: 19px;
-        float: right;
+        float: left;
         text-align: center;
         margin-left: 0;
-        margin-right:1%;
-        line-height: 1.5;
+        margin-right:0%;
         color: #4E4B5C;
         height: 40px;
+        width:100%;
+        margin-top:2%;
     }
     
+    
     #joyridebutton {
-        margin-top: -7%;
+        margin-top: -5%;
         font-size:13px;
-        margin-right: 35%;
+        float:left;
+        position:relative;
+        margin-left:40%;
+        margin-bottom:2%
 }
     
     .lines {
@@ -1252,6 +1309,7 @@ a.tooltip {outline:none; }
     margin-left: 5% !important;
     margin-bottom: 2%;
 }
+     
     
     .update-date {
 	font-size:10px;
@@ -1272,52 +1330,43 @@ a.tooltip {outline:none; }
         font-size:12px;
     }
 .dummies_button {
-    float: left;
-    position: absolute;
-    font-size: 12px;
-    font-weight: bold;
-    top: 463px;
-    left: 78px;
-    font-family: 'Open Sans',sans-serif;
+    top: 25.2%;
+    left: 20%;
+
 }
 
 .wel_button {
-    float: left;
-    position: absolute;
-    font-size: 12px;
-    font-weight: bold;
-    top: 463px;
-    left: 160px;
-    font-family: 'Open Sans',sans-serif;
+    top: 25.2%;
+    left: 40%;
+
 }
     
 .wp_button {
-    float: left;
-    position: absolute;
-    font-size: 12px;
-    font-weight: bold;
-    top: 463px;
-    left: 245px;
-    font-family: 'Open Sans',sans-serif;
+    top: 25.2%;
+    left: 61%;
+
 }
     
 .dummies_visitor_button {
-	top:878px;
-    right:290px;
+    top: 45.9%;
+    left: 9%;
 }
 
 .wel_visitor_button {
-	top:878px;
-    right:205px
+    top: 45.9%;
+    left: 30%;
 }
     
 .wp_visitor_button {
-	top:878px;
-    left:205px;
+	top: 45.9%;
+    left: 50%;
 }    
 
 .wpls_visitor_button {
-	top:878px;
-    left:285px;
-}    
+	top: 45.9%;
+    left: 70%;
+}
+    .unslider-nav ol {
+        margin-left:-8%;
+    }    
 }

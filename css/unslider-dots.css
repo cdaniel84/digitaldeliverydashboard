@@ -12,25 +12,26 @@
  *   hardware-accelerated goodness.
  */
 .unslider-nav ol {
-  list-style: none;
+  list-style: disc;
   text-align: center;
 }
 .unslider-nav ol li {
   display: inline-block;
-  width: 75px;
-  height: 35px;
+  width: 25px;
+  height: 25px;
   margin: 0 4px;
   background: #4E4B5C;
-  border-radius: 5px;
+  border-radius: 25px;
   overflow: hidden;
   text-indent: -999em;
   /*border: 2px solid #fff;*/
   cursor: pointer;
   margin-top:1%;
-  opacity:0;
+  /*opacity:0;*/
   z-index: 1;
 }
 .unslider-nav ol li.unslider-active {
   background: #3399cc;
   cursor: default;
+  content:'Dummies';
 }
